@@ -1,3 +1,5 @@
+</div>
+<!-- end container-fluid -->
 <!-- Footer Start -->
 <footer class="footer">
     <div class="container-fluid">
