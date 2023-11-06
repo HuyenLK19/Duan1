@@ -19,8 +19,7 @@
                 break;
             case "thongke":
                 include "thongke/chart.php";
-                break;
-                                
+                break;                        
         } 
     } else include "home.php";
 
