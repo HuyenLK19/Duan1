@@ -1,5 +1,5 @@
 <?php
     include "header.php";
-    include "binhluan.php";
+    include "home.php";
     include "footer.php";
 ?>
