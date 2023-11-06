@@ -103,15 +103,12 @@
             </ul>
 
             <!-- LOGO -->
-            <!-- LOGO -->
             <div class="logo-box">
                 <a href="index.html" class="logo text-center logo-dark">
                     <span class="logo-lg">
                         <img src="css/images/logo-dark.png" alt="" height="26">
-                        <!-- <span class="logo-lg-text-dark">Simple</span> -->
                     </span>
                     <span class="logo-sm">
-                        <!-- <span class="logo-lg-text-dark">S</span> -->
                         <img src="css/images/logo-sm.png" alt="" height="22">
                     </span>
                 </a>
@@ -119,10 +116,8 @@
                 <a href="index.html" class="logo text-center logo-light">
                     <span class="logo-lg">
                         <img src="css/images/logo-light.png" alt="" height="26">
-                        <!-- <span class="logo-lg-text-light">Simple</span> -->
                     </span>
                     <span class="logo-sm">
-                        <!-- <span class="logo-lg-text-light">S</span> -->
                         <img src="css/images/logo-sm.png" alt="" height="22">
                     </span>
                 </a>
