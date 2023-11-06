@@ -22,37 +22,37 @@
                 </a>
             </li>
             <li>
-                <a href="index.html">
+                <a href="index.php?act=addsp">
                     <i class="ti-package"></i>
                     <span> Sản phẩm </span>
                 </a>
             </li>
             <li>
-                <a href="index.html">
+                <a href="index.php?act=adddm">
                     <i class="ti-bookmark"></i>
                     <span> Danh mục </span>
                 </a>
             </li>
             <li>
-                <a href="index.php" class="test">
+                <a href="index.php?act=listtk">
                     <i class="ti-user"></i>
                     <span> Người dùng </span>
                 </a>
             </li>
             <li>
-                <a href="index.html">
+                <a href="index.php?act=listbl">
                     <i class="ti-comments"></i>
                     <span> Bình luận </span>
                 </a>
             </li>
             <li>
-                <a href="index.html">
+                <a href="index.php?act=listbill">
                     <i class="ti-shopping-cart"></i>
                     <span> Đơn hàng </span>
                 </a>
             </li>
             <li>
-                <a href="charts.php">
+                <a href="index.php?act=thongke">
                     <i class="ti-pie-chart"></i>
                     <span> Thống kê </span>
                 </a>
