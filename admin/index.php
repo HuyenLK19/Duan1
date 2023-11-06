@@ -24,3 +24,4 @@
     } else include "home.php";
 
     include "footer.php";
+?>
