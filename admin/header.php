@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body>
+<body class="sidebar-enable" id="body">
 
     <!-- Begin page -->
     <div id="wrapper">
@@ -124,11 +124,11 @@
             </div>
 
             <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
-                <li>
-                    <button class="button-menu-mobile">
-                        <i class="mdi mdi-menu"></i>
-                    </button>
-                </li>
+                    <li>
+                        <button class="button-menu-mobile" onclick="hideSideBar()">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </li>
                 <li>
                     <div class="custom-control custom-switch mb-3 pos">
                         <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch"
