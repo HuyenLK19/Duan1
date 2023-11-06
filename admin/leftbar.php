@@ -16,7 +16,7 @@
             <li class="menu-title">Navigation</li>
 
             <li>
-                <a href="index.php">
+                <a href="index.php" class="test">
                     <i class="ti-home"></i>
                     <span> Trang chủ </span>
                 </a>
@@ -31,6 +31,12 @@
                 <a href="index.html">
                     <i class="ti-bookmark"></i>
                     <span> Danh mục </span>
+                </a>
+            </li>
+            <li>
+                <a href="index.php" class="test">
+                    <i class="ti-user"></i>
+                    <span> Người dùng </span>
                 </a>
             </li>
             <li>
