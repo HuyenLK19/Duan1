@@ -52,12 +52,6 @@
                 </a>
             </li>
             <li>
-                <a href="index.html">
-                    <i class="ti-receipt"></i>
-                    <span> Hóa đơn </span>
-                </a>
-            </li>
-            <li>
                 <a href="charts.php">
                     <i class="ti-pie-chart"></i>
                     <span> Thống kê </span>

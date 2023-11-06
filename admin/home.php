@@ -54,8 +54,3 @@
 
         </div>
         <!-- end container-fluid -->
-
-    </div>
-    <!-- end content -->
-
-</div>
