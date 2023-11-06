@@ -28,54 +28,44 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     <tr>
                                         <td>
                                             Tomaslau
                                         </td>
-
                                         <td>
                                             <a class="text-muted">tomaslau@dummy.com</a>
                                         </td>
-
                                         <td>
                                             <b>
                                                 <a class="text-dark"><b>356</b></a>
                                             </b>
                                         </td>
-
                                         <td>
                                             01/11/2003
                                         </td>
-                                        
                                         <td>
-                                            <a href="" ><i class="ti-trash"></i></a>
+                                            <a href=""><i class="ti-trash"></i></a>
                                         </td>
                                     </tr>
-
                                     <tr>
                                         <td>
                                             Chadengle
                                         </td>
-
                                         <td>
                                             <a class="text-muted">chadengle@dummy.com</a>
                                         </td>
-
                                         <td>
                                             <b>
                                                 <a class="text-dark"><b>568</b></a>
                                             </b>
                                         </td>
-
                                         <td>
                                             01/11/2003
                                         </td>
                                         <td>
-                                            <a href="" ><i class="ti-trash"></i></a>
+                                            <a href=""><i class="ti-trash"></i></a>
                                         </td>
-
                                     </tr>
                                 </tbody>
                             </table>
