@@ -22,6 +22,6 @@
                 break;
                                 
         } 
-    }else include "home.php";
+    } else include "home.php";
 
     include "footer.php";
