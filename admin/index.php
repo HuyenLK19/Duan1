@@ -5,6 +5,15 @@
             case "addsp":
                 include "sanpham/add.php";
                 break;
+            case "listsp":
+                include "sanpham/list.php";
+                break;
+            case "editsp":
+                include "sanpham/edit.php";
+                break;
+            case "delsp":
+                include "";
+                break;
             case "adddm":
                 include "danhmuc/add.php";
                 break;
