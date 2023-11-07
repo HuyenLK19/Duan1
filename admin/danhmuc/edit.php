@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-12">
         <div>
-            <h4 class="header-title mb-3">Thêm danh mục sản phẩm</h4>
+            <h4 class="header-title mb-3">Cập nhật danh mục sản phẩm</h4>
         </div>
     </div>
 </div>

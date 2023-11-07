@@ -11,6 +11,11 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="css/images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <!-- third party css -->
+    <link href="css/libs/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="css/libs/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="css/libs/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="css/libs/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
     <!-- App css -->
     <link href="css/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
     <link href="css/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -24,7 +29,7 @@
     </style>
 </head>
 
-<body class="sidebar-enable" id="body">
+<body>
 
     <!-- Begin page -->
     <div id="wrapper">
@@ -32,41 +37,34 @@
             <ul class="list-unstyled topnav-menu float-right mb-0">
 
                 <li class="dropdown d-none d-lg-block">
-                    <a class="nav-link dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="false" aria-expanded="false">
-                        <img src="css/images/flags/us.jpg" alt="user-image" class="mr-2" height="12"> <span
-                            class="align-middle">English <i class="mdi mdi-chevron-down"></i> </span>
+                    <a class="nav-link dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="css/images/flags/us.jpg" alt="user-image" class="mr-2" height="12"> <span class="align-middle">English <i class="mdi mdi-chevron-down"></i> </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <img src="css/images/flags/spain.jpg" alt="user-image" class="mr-2" height="12"> <span
-                                class="align-middle">Spanish</span>
+                            <img src="css/images/flags/spain.jpg" alt="user-image" class="mr-2" height="12"> <span class="align-middle">Spanish</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <img src="css/images/flags/italy.jpg" alt="user-image" class="mr-2" height="12"> <span
-                                class="align-middle">Italian</span>
+                            <img src="css/images/flags/italy.jpg" alt="user-image" class="mr-2" height="12"> <span class="align-middle">Italian</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <img src="css/images/flags/french.jpg" alt="user-image" class="mr-2" height="12"> <span
-                                class="align-middle">French</span>
+                            <img src="css/images/flags/french.jpg" alt="user-image" class="mr-2" height="12"> <span class="align-middle">French</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <img src="css/images/flags/russia.jpg" alt="user-image" class="mr-2" height="12"> <span
-                                class="align-middle">Russian</span>
+                            <img src="css/images/flags/russia.jpg" alt="user-image" class="mr-2" height="12"> <span class="align-middle">Russian</span>
                         </a>
                     </div>
                 </li>
 
                 <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="false" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                         <span class="pro-user-name ml-1">
                             Maxine K <i class="mdi mdi-chevron-down"></i>
                         </span>
@@ -104,7 +102,7 @@
 
             <!-- LOGO -->
             <div class="logo-box">
-                <a href="index.html" class="logo text-center logo-dark">
+                <a href="index.php" class="logo text-center logo-dark">
                     <span class="logo-lg">
                         <img src="css/images/logo-dark.png" alt="" height="26">
                     </span>
@@ -125,14 +123,13 @@
 
             <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
                 <li>
-                    <button class="button-menu-mobile" onclick="hideSideBar()">
+                    <button class="button-menu-mobile">
                         <i class="mdi mdi-menu"></i>
                     </button>
                 </li>
                 <li>
                     <div class="custom-control custom-switch mb-3 pos">
-                        <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch"
-                            onclick="switchDarkMode()">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" onclick="switchDarkMode()">
                         <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
                     </div>
                 </li>
