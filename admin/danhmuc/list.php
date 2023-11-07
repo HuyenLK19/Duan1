@@ -24,24 +24,24 @@
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>
-                                <a href="index.php?act=editsp" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=delsp" style="font-size: 20px;"><i class="ti-trash"></i></a>
+                                <a href="index.php?act=editdm" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
+                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Jacob</td>
                             <td>
-                                <a href="index.php?act=editsp" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=delsp" style="font-size: 20px;"><i class="ti-trash"></i></a>
+                                <a href="index.php?act=editdm" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
+                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>Larry</td>
                             <td>
-                                <a href="index.php?act=editsp" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=delsp" style="font-size: 20px;"><i class="ti-trash"></i></a>
+                                <a href="index.php?act=editdm" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
+                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
                         </tr>
                     </tbody>
