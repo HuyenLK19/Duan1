@@ -17,6 +17,15 @@
             case "adddm":
                 include "danhmuc/add.php";
                 break;
+            case "listdm":
+                include "danhmuc/list.php";
+                break;
+            case "editdm":
+                include "danhmuc/edit.php";
+                break;
+            case "deldm":
+                include "";
+                break;
             case "listbill":
                 include "donhang/list.php";
                 break;

@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-12">
         <div>
-            <h4 class="header-title mb-3">Data Tables</h4>
+            <h4 class="header-title mb-3">Danh sách sản phẩm</h4>
         </div>
     </div>
 </div>
@@ -13,6 +13,7 @@
             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Tên sản phẩm</th>
                         <th>Danh mục</th>
                         <th>Giá</th>
@@ -24,6 +25,7 @@
 
                 <tbody>
                     <tr>
+                        <td>01</td>
                         <td>Tiger Nixon</td>
                         <td>System Architect</td>
                         <td>Edinburgh</td>
@@ -91,7 +93,7 @@
                     </tr>
                 </tbody>
             </table>
-
+            <a href="index.php?act=addsp" class="btn btn-secondary">Thêm sản phẩm</a>
         </div>
         <!-- end -->
 
