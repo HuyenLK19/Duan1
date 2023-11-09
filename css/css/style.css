@@ -11269,6 +11269,14 @@ screen and (max-width:374px) and (-ms-high-contrast:active) {
     }
 }
 
+.banner{
+    width: 1110px;
+    position: relative;
+    left: 207px;
+    top: 10px;
+    margin-bottom: 50px;
+}
+
 .block-banner__body {
     position: relative;
     display: block;
