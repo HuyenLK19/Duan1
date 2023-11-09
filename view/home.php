@@ -69,11 +69,7 @@
                         <div class="owl-carousel">
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__badges-list">
                                             <div class="product-card__badge product-card__badge--new">New</div>
                                         </div>
@@ -225,11 +221,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__badges-list">
                                             <div class="product-card__badge product-card__badge--hot">Hot</div>
                                         </div>
@@ -383,11 +375,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/anh3.webp" alt=""></a></div>
@@ -536,11 +524,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__badges-list">
                                             <div class="product-card__badge product-card__badge--sale">Sale</div>
                                         </div>
@@ -692,11 +676,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-5.jpg" alt=""></a></div>
@@ -846,11 +826,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-6.jpg" alt=""></a></div>
@@ -997,11 +973,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-7.jpg" alt=""></a></div>
@@ -1147,11 +1119,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-8.jpg" alt=""></a></div>
@@ -1297,11 +1265,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-9.jpg" alt=""></a></div>
@@ -1451,11 +1415,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-10.jpg" alt=""></a></div>
@@ -1606,11 +1566,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-11.jpg" alt=""></a></div>
@@ -1760,11 +1716,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-12.jpg" alt=""></a></div>
@@ -1916,11 +1868,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-13.jpg" alt=""></a></div>
@@ -2066,11 +2014,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-14.jpg" alt=""></a></div>
@@ -2218,11 +2162,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-15.jpg" alt=""></a></div>
@@ -2368,11 +2308,7 @@
                             </div>
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions"><button
-                                            class="product-card__quickview" type="button"><svg width="16px"
-                                                height="16px">
-                                                <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                            </svg> <span class="fake-svg-icon"></span></button>
+                                    <div class="product-card product-card--hidden-actions">
                                         <div class="product-card__image product-image"><a href="product.html"
                                                 class="product-image__body"><img class="product-image__img"
                                                     src="css/images/products/product-16.jpg" alt=""></a></div>
@@ -2537,10 +2473,7 @@
                     <div class="block-products__body">
                         <div class="block-products__featured">
                             <div class="block-products__featured-item">
-                                <div class="product-card product-card--hidden-actions"><button
-                                        class="product-card__quickview" type="button"><svg width="16px" height="16px">
-                                            <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                        </svg> <span class="fake-svg-icon"></span></button>
+                                <div class="product-card product-card--hidden-actions">
                                     <div class="product-card__badges-list">
                                         <div class="product-card__badge product-card__badge--new">New</div>
                                     </div>
@@ -2682,10 +2615,7 @@
                         </div>
                         <div class="block-products__list">
                             <div class="block-products__list-item">
-                                <div class="product-card product-card--hidden-actions"><button
-                                        class="product-card__quickview" type="button"><svg width="16px" height="16px">
-                                            <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                        </svg> <span class="fake-svg-icon"></span></button>
+                                <div class="product-card product-card--hidden-actions">
                                     <div class="product-card__badges-list">
                                         <div class="product-card__badge product-card__badge--hot">Hot</div>
                                     </div>
@@ -2827,10 +2757,7 @@
                                 </div>
                             </div>
                             <div class="block-products__list-item">
-                                <div class="product-card product-card--hidden-actions"><button
-                                        class="product-card__quickview" type="button"><svg width="16px" height="16px">
-                                            <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                        </svg> <span class="fake-svg-icon"></span></button>
+                                <div class="product-card product-card--hidden-actions">
                                     <div class="product-card__image product-image"><a href="product.html"
                                             class="product-image__body"><img class="product-image__img"
                                                 src="css/images/products/anh9.webp" alt=""></a></div>
@@ -2967,10 +2894,7 @@
                                 </div>
                             </div>
                             <div class="block-products__list-item">
-                                <div class="product-card product-card--hidden-actions"><button
-                                        class="product-card__quickview" type="button"><svg width="16px" height="16px">
-                                            <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                        </svg> <span class="fake-svg-icon"></span></button>
+                                <div class="product-card product-card--hidden-actions">
                                     <div class="product-card__badges-list">
                                         <div class="product-card__badge product-card__badge--sale">Sale</div>
                                     </div>
@@ -3110,10 +3034,7 @@
                                 </div>
                             </div>
                             <div class="block-products__list-item">
-                                <div class="product-card product-card--hidden-actions"><button
-                                        class="product-card__quickview" type="button"><svg width="16px" height="16px">
-                                            <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                        </svg> <span class="fake-svg-icon"></span></button>
+                                <div class="product-card product-card--hidden-actions">
                                     <div class="product-card__image product-image"><a href="product.html"
                                             class="product-image__body"><img class="product-image__img"
                                                 src="css/images/products/anh8.webp" alt=""></a></div>
@@ -3250,10 +3171,7 @@
                                 </div>
                             </div>
                             <div class="block-products__list-item">
-                                <div class="product-card product-card--hidden-actions"><button
-                                        class="product-card__quickview" type="button"><svg width="16px" height="16px">
-                                            <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                        </svg> <span class="fake-svg-icon"></span></button>
+                                <div class="product-card product-card--hidden-actions">
                                     <div class="product-card__image product-image"><a href="product.html"
                                             class="product-image__body"><img class="product-image__img"
                                                 src="css/images/products/anh2.webp" alt=""></a></div>
@@ -3388,10 +3306,7 @@
                                 </div>
                             </div>
                             <div class="block-products__list-item">
-                                <div class="product-card product-card--hidden-actions"><button
-                                        class="product-card__quickview" type="button"><svg width="16px" height="16px">
-                                            <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                        </svg> <span class="fake-svg-icon"></span></button>
+                                <div class="product-card product-card--hidden-actions">
                                     <div class="product-card__image product-image"><a href="product.html"
                                             class="product-image__body"><img class="product-image__img"
                                                 src="css/images/products/anh10.webp" alt=""></a></div>
