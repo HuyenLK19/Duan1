@@ -74,6 +74,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="site-header__phone">
+                        <div class="site-header__phone-title">Customer Service</div>
+                        <div class="site-header__phone-number">(800) 060-0730</div>
+                    </div>
                 </div>
                 <div class="site-header__nav-panel">
                     <!-- data-sticky-mode - one of [pullToShow, alwaysOnTop] -->
