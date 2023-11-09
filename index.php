@@ -1,11 +1,9 @@
 <?php
     include "view/header.php";
-    include "view/home.php";
-    include "view/footer.php";
     if (isset($_GET["act"]) && $_GET["act"] =! ""){
-        switch($GET["act"]){
+        switch($_GET["act"]){
             case "danhmuc":
-                include "danhmuc.php";
+                include "view/danhmuc.php";
                 break;
             case "gioithieu":
                 include "gioithieu.php";
@@ -13,6 +11,11 @@
             case "lienhe.php":
                 include "lienhe.php";
                 break;
+            default:
+                include "view/home.php";
+                break;
         }
-    }
+    } else include "view/home.php";
+
+    include "view/footer.php";
 ?>

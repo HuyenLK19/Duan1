@@ -115,10 +115,6 @@
                                     </ul>
                                 </div><!-- .nav-links / end -->
                                 <div class="nav-panel__indicators">
-                                    <div class="indicator"><a href="wishlist.html" class="indicator__button"><span
-                                                class="indicator__area"><svg width="20px" height="20px">
-                                                    <use xlink:href="css/images/sprite.svg#heart-20"></use>
-                                                </svg> <span class="indicator__value">0</span></span></a></div>
                                     <div class="indicator indicator--trigger--click"><a href="cart.html"
                                             class="indicator__button"><span class="indicator__area"><svg width="20px"
                                                     height="20px">
