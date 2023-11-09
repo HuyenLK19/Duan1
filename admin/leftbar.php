@@ -22,13 +22,13 @@
                 </a>
             </li>
             <li>
-                <a href="index.php?act=addsp">
+                <a href="index.php?act=listsp">
                     <i class="ti-package"></i>
                     <span> Sản phẩm </span>
                 </a>
             </li>
             <li>
-                <a href="index.php?act=adddm">
+                <a href="index.php?act=listdm">
                     <i class="ti-bookmark"></i>
                     <span> Danh mục </span>
                 </a>
@@ -37,12 +37,6 @@
                 <a href="index.php?act=listtk">
                     <i class="ti-user"></i>
                     <span> Người dùng </span>
-                </a>
-            </li>
-            <li>
-                <a href="index.php?act=listbl">
-                    <i class="ti-comments"></i>
-                    <span> Bình luận </span>
                 </a>
             </li>
             <li>

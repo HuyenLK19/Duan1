@@ -24,7 +24,7 @@
                 </thead>
 
                 <tbody>
-                    <tr>
+                    <tr onclick="document.location.href = 'index.php?act=listbl&id=1'">
                         <td>01</td>
                         <td>Tiger Nixon</td>
                         <td>System Architect</td>

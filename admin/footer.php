@@ -88,6 +88,10 @@
             document.getElementById("app-stylesheet").href = "css/css/app.min.css";
         }
     }
+    
+    showFullProduct = (id) => {
+        
+    }
 </script>
 
 </html>
