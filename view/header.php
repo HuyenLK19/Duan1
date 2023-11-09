@@ -81,32 +81,32 @@
                                 <div class="nav-panel__nav-links nav-links">
                                     <ul class="nav-links__list">
                                         <li class="nav-links__item nav-links__item--has-submenu"><a
-                                                class="nav-links__item-link" href="index.html">
+                                                class="nav-links__item-link" href="index.php">
                                                 <div class="nav-links__item-body">Trang chủ</div>
                                             </a>
                                         </li>
                                         <li class="nav-links__item nav-links__item--has-submenu"><a
-                                                class="nav-links__item-link" href="#">
+                                                class="nav-links__item-link" href="index.php?act=danhmuc">
                                                 <div class="nav-links__item-body">Nam</div>
                                             </a>
                                         </li>
                                         <li class="nav-links__item nav-links__item--has-submenu"><a
-                                                class="nav-links__item-link" href="shop-grid-3-columns-sidebar.html">
+                                                class="nav-links__item-link" href="index.php?act=danhmuc">
                                                 <div class="nav-links__item-body">Nữ</div>
                                             </a>
                                         </li>
                                         <li class="nav-links__item nav-links__item--has-submenu"><a
-                                                class="nav-links__item-link" href="account-login.html">
+                                                class="nav-links__item-link" href="index.php?act=danhmuc">
                                                 <div class="nav-links__item-body">Trẻ em</div>
                                             </a>
                                         </li>
                                         <li class="nav-links__item nav-links__item--has-submenu"><a
-                                                class="nav-links__item-link" href="blog-classic.html">
+                                                class="nav-links__item-link" href="index.php?act=gioithieu">
                                                 <div class="nav-links__item-body">Giới thiệu</div>
                                             </a>
                                         </li>
                                         <li class="nav-links__item nav-links__item--has-submenu"><a
-                                                class="nav-links__item-link" href="#">
+                                                class="nav-links__item-link" href="index.php?act=lienhe">
                                                 <div class="nav-links__item-body">Liên hệ</div>
                                             </a>
                                             <div class="nav-links__submenu nav-links__submenu--type--menu">
