@@ -65,8 +65,8 @@
                         </div>
                     </div>
                     <div class="site-header__phone">
-                        <div class="site-header__phone-title">Customer Service</div>
-                        <div class="site-header__phone-number">(800) 060-0730</div>
+                        <div class="site-header__phone-title">Hỗ trợ khách hàng</div>
+                        <div class="site-header__phone-number">0123456789JQKA</div>
                     </div>
                 </div>
                 <div class="site-header__nav-panel">

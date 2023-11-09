@@ -5451,7 +5451,7 @@ screen and (-ms-high-contrast:active) {
 }
 
 .nav-links__item {
-    height: 100%
+    height: 100%;
 }
 
 .nav-links__item-link {
@@ -5481,7 +5481,7 @@ screen and (-ms-high-contrast:active) {
     height: 42px;
     border-radius: 2px;
     background: transparent;
-    box-shadow: none
+    box-shadow: none;
 }
 
 .nav-links__item--has-submenu .nav-links__item-body {
