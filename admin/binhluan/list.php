@@ -1,171 +1,101 @@
 <div class="row">
-    <div class="col-sm-12">
-        <div class="card-box">
-            <h5 class="mt-0 font-14 mb-3">Bình luận</h5>
+    <div class="col-12">
+        <div>
+            <h4 class="header-title mb-3">Chi tiết sản phẩm</h4>
+        </div>
+    </div>
+</div>
+<div class="col-lg-6">
+    <form class="form-horizontal mt-4 mt-lg-0">
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label">Tên sản phẩm</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" readonly="" value="Readonly value">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label">Danh mục</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" readonly="" value="Readonly value">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label">Giá sản phẩm</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" readonly="" value="Readonly value">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label">Hình ảnh</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" readonly="" value="Readonly value">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label">Mô tả</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" readonly="" value="Readonly value">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div>
+            <h4 class="header-title mb-3">Bình luận</h4>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6" style="position: relative; left: 20%;">
+        <div class="mt-5">
             <div class="table-responsive">
-                <table class="table table-hover mails m-0 table table-actions-bar table-centered">
-                    <thead>
+                <table class="table">
+                    <thead class="thead-light">
                         <tr>
-                            <th style="min-width: 20px;">ID</th>
-                            <th>Nội dung</th>
-                            <th>Người gửi</th>
-                            <th>Sản phẩm đánh giá</th>
-                            <th>Ngày đánh giá</th>
-                            <th></th>
+                            <th>ID</th>
+                            <th>Nội dung bình luận</th>
+                            <th>Người bình luận</th>
+                            <th>Ngày bình luận</th>
+                            <th style="width: 100px"></th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr>
+                            <th scope="row">1</th>
+                            <td>Good</td>
+                            <td>Mark</td>
+                            <td>27/05/2004</td>
                             <td>
-                                1
+                                <a href="index.php?act=editdm" style="font-size: 20px;"><i class="ti-pencil"></i></a>
+                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
-                            <td>
-                                Sản phẩm đẹp
-                            </td>
-
-                            <td>
-                                <a>tomaslau</a>
-                            </td>
-
-                            <td>
-                                Áo polo unisex
-                            </td>
-
-                            <td>
-                                01/01/2023
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>
-
                         </tr>
-
                         <tr>
+                            <th scope="row">2</th>
+                            <td>Good</td>
+                            <td>Mark</td>
+                            <td>27/05/2004</td>
                             <td>
-                                2
+                                <a href="index.php?act=editdm" style="font-size: 20px;"><i class="ti-pencil"></i></a>
+                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
-
-                            <td>
-                                Sản phẩm đẹp
-                            </td>
-
-                            <td>
-                                <a href="#" class="text-muted">chadengle</a>
-                            </td>
-
-                            <td>
-                            Áo polo unisex
-                            </td>
-
-                            <td>
-                                01/01/2023
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>
-
                         </tr>
-
                         <tr>
+                            <th scope="row">3</th>
+                            <td>Good</td>
+                            <td>Mark</td>
+                            <td>27/05/2004</td>
                             <td>
-                                3
-                            <td>
-                                Sản phẩm đẹp
-
+                                <a href="index.php?act=editdm" style="font-size: 20px;"><i class="ti-pencil"></i></a>
+                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
-
-                            <td>
-                                <a href="#" class="text-muted">stillnotdavi</a>
-                            </td>
-                            <td>
-                            Áo polo unisex
-                            </td>
-
-                            <td>
-                                01/01/2023
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>
-
-
                         </tr>
-
-                        <tr>
-                            <td>
-                                4
-                            </td>
-
-                            <td>
-                                Sản phẩm đẹp
-
-                            </td>
-
-                            <td>
-                                <a href="#" class="text-muted">kurafire</a>
-                            </td>
-
-                            <td>
-                            Áo polo unisex
-                            </td>
-
-                            <td>
-                                01/01/2023
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>
-
-
-                        </tr>
-
-                        <tr>
-                            <td>
-                                5
-                            </td>
-
-                            <td>
-                                Sản phẩm đẹp
-
-                            </td>
-
-                            <td>
-                                <a href="#" class="text-muted">shahedk</a>
-                            </td>
-
-                            <td>
-                            Áo polo unisex
-                            </td>
-
-                            <td>
-                                01/01/2023
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>
-
-
-                        </tr>
-
-                        <tr>
-                            <td>
-                                6
-                            </td>
-
-                            <td>
-                                Sản phẩm đẹp
-
-                            </td>
-
-                            <td>
-                                <a href="#" class="text-muted">adhamdannaway</a>
-                            </td>
-
-                            <td>
-                            Áo polo unisex
-                            </td>
-
-                            <td>
-                                01/01/2023
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>
-
-                        </tr>
-
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    <!-- end -->
+
 </div>

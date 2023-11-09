@@ -1,7 +1,15 @@
+<!-- start  -->
+<div class="row">
+    <div class="col-12">
+        <div>
+            <h4 class="header-title mb-3">Danh sách người dùng</h4>
+        </div>
+    </div>
+</div>
+<!-- end row -->
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box">
-            <h5 class="mt-0 font-14 mb-3">Người dùng</h5>
             <div class="table-responsive">
                 <table class="table table-hover mails m-0 table table-actions-bar table-centered">
                     <thead>
