@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/default-ltr/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Nov 2023 09:43:40 GMT -->
+<!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/default-ltr/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Nov 2023 09:43:45 GMT -->
 
 <head>
     <meta charset="UTF-8">
@@ -30,51 +30,205 @@
 </head>
 
 <body><!-- site -->
-    <div class="site">
-       
-        <div class="site__body">
-            <div class="block about-us">
-                <div class="about-us__image"></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-xl-10">
-                            <div class="about-us__body">
-                                <h1 class="about-us__title">Về Chúng Tôi</h1>
-                                <div class="about-us__text typography">
-                                    <p>Khách hàng rất quan trọng, khách hàng sẽ được khách hàng theo đuổi. Ngày mai nỗi sợ hãi của hồ, thung lũng như một con sư tử và không, tincidunt eleifend justo. Với tư cách là yếu tố kích hoạt lâm sàng, hendrerit a pulvinar et, gradida et lorem. Nhưng cuộc sống của kẻ quấy rối tình dục, nhưng sự chăm sóc của bác sĩ.
-
-</p>
-                                    <p>Duis rằng cuộc sống là tự do, tiền đình đó là trong sáng. Anh ta muốn đồ ăn bổ dưỡng, anh ta không ghét sự kiêu ngạo, anh ta muốn uống rượu.</p>
+    <div class="site"><!-- mobile site__header -->
+        <header class="site__header d-lg-none"><!-- data-sticky-mode - one of [pullToShow, alwaysOnTop] -->
+            <div class="mobile-header mobile-header--sticky" data-sticky-mode="pullToShow">
+                <div class="mobile-header__panel">
+                    <div class="container">
+                        <div class="mobile-header__body"><button class="mobile-header__menu-button"><svg width="18px" height="14px">
+                                    <use xlink:href="images/sprite.svg#menu-18x14"></use>
+                                </svg></button> <a class="mobile-header__logo" href="index.html"><!-- mobile-logo --> <svg xmlns="http://www.w3.org/2000/svg" width="120px" height="20px">
+                                    <path d="M118.5,20h-1.1c-0.6,0-1.2-0.4-1.4-1l-1.5-4h-6.1l-1.5,4c-0.2,0.6-0.8,1-1.4,1h-1.1c-1,0-1.8-1-1.4-2l1.1-3
+                                 l1.5-4l3.6-10c0.2-0.6,0.8-1,1.4-1h1.6c0.6,0,1.2,0.4,1.4,1l3.6,10l1.5,4l1.1,3C120.3,19,119.5,20,118.5,20z M111.5,6.6l-1.6,4.4
+                                 h3.2L111.5,6.6z M99.5,20h-1.4c-0.4,0-0.7-0.2-0.9-0.5L94,14l-2,3.5v1c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5v-17
+                                 C88,0.7,88.7,0,89.5,0h1C91.3,0,92,0.7,92,1.5v8L94,6l3.2-5.5C97.4,0.2,97.7,0,98.1,0h1.4c1.2,0,1.9,1.3,1.3,2.3L96.3,10l4.5,7.8
+                                 C101.4,18.8,100.7,20,99.5,20z M80.3,11.8L80,12.3v6.2c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5v-6.2l-0.3-0.5l-5.5-9.5
+                                 c-0.6-1,0.2-2.3,1.3-2.3h1.4c0.4,0,0.7,0.2,0.9,0.5L76,4.3l2,3.5l2-3.5l2.2-3.8C82.4,0.2,82.7,0,83.1,0h1.4c1.2,0,1.9,1.3,1.3,2.3
+                                 L80.3,11.8z M60,20c-5.5,0-10-4.5-10-10S54.5,0,60,0s10,4.5,10,10S65.5,20,60,20z M60,4c-3.3,0-6,2.7-6,6s2.7,6,6,6s6-2.7,6-6
+                                 S63.3,4,60,4z M47.8,17.8c0.6,1-0.2,2.3-1.3,2.3h-2L41,14h-4v4.5c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5v-17
+                                 C33,0.7,33.7,0,34.5,0H41c0.3,0,0.7,0,1,0.1c3.4,0.5,6,3.4,6,6.9c0,2.4-1.2,4.5-3.1,5.8L47.8,17.8z M42,4.2C41.7,4.1,41.3,4,41,4h-3
+                                 c-0.6,0-1,0.4-1,1v4c0,0.6,0.4,1,1,1h3c0.3,0,0.7-0.1,1-0.2c0.3-0.1,0.6-0.3,0.9-0.5C43.6,8.8,44,7.9,44,7C44,5.7,43.2,4.6,42,4.2z
+                                  M29.5,4H25v14.5c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5V4h-4.5C15.7,4,15,3.3,15,2.5v-1C15,0.7,15.7,0,16.5,0h13
+                                 C30.3,0,31,0.7,31,1.5v1C31,3.3,30.3,4,29.5,4z M6.5,20c-2.8,0-5.5-1.7-6.4-4c-0.4-1,0.3-2,1.3-2h1c0.5,0,0.9,0.3,1.2,0.7
+                                 c0.2,0.3,0.4,0.6,0.8,0.8C4.9,15.8,5.8,16,6.5,16c1.5,0,2.8-0.9,2.8-2c0-0.7-0.5-1.3-1.2-1.6C7.4,12,7,11,7.4,10.3l0.4-0.9
+                                 c0.4-0.7,1.2-1,1.8-0.6c0.6,0.3,1.2,0.7,1.6,1.2c1,1.1,1.7,2.5,1.7,4C13,17.3,10.1,20,6.5,20z M11.6,6h-1c-0.5,0-0.9-0.3-1.2-0.7
+                                 C9.2,4.9,8.9,4.7,8.6,4.5C8.1,4.2,7.2,4,6.5,4C5,4,3.7,4.9,3.7,6c0,0.7,0.5,1.3,1.2,1.6C5.6,8,6,9,5.6,9.7l-0.4,0.9
+                                 c-0.4,0.7-1.2,1-1.8,0.6c-0.6-0.3-1.2-0.7-1.6-1.2C0.6,8.9,0,7.5,0,6c0-3.3,2.9-6,6.5-6c2.8,0,5.5,1.7,6.4,4C13.3,4.9,12.6,6,11.6,6
+                                 z"></path>
+                                </svg><!-- mobile-logo / end --></a>
+                            <div class="search search--location--mobile-header mobile-header__search">
+                                <div class="search__body">
+                                    <form class="search__form" action="#"><input class="search__input" name="search" placeholder="Search over 10,000 products" aria-label="Site search" type="text" autocomplete="off"> <button class="search__button search__button--type--submit" type="submit"><svg width="20px" height="20px">
+                                                <use xlink:href="images/sprite.svg#search-20"></use>
+                                            </svg></button> <button class="search__button search__button--type--close" type="button"><svg width="20px" height="20px">
+                                                <use xlink:href="images/sprite.svg#cross-20"></use>
+                                            </svg></button>
+                                        <div class="search__border"></div>
+                                    </form>
+                                    <div class="search__suggestions suggestions suggestions--location--mobile-header"></div>
                                 </div>
-                                <div class="about-us__team">
-                                    <h2 class="about-us__team-title">Nhóm của chúng tôi</h2>
-                                    <div class="about-us__team-subtitle text-muted">Bạn muốn làm việc trong đội ngũ thân thiện của chúng tôi?<br><a href="contact-us.html">Hãy liên hệ với chúng tôi</a> và chúng tôi sẽ xem xét việc ứng cử của bạn.</div>
-                                    <div class="about-us__teammates teammates">
-                                        <div class="owl-carousel">
-                                            <div class="teammates__item teammate">
-                                                <div class="teammate__avatar"><img src="../css/images/teammate/teammate-1.jpg" alt=""></div>
-                                                <div class="teammate__name">Michael Russo</div>
-                                                <div class="teammate__position text-muted">Giám đốc điều hành</div>
-                                            </div>
-                                            <div class="teammates__item teammate">
-                                                <div class="teammate__avatar"><img src="../css/images/teammates/teammate-2.jpg" alt=""></div>
-                                                <div class="teammate__name">Katherine Miller</div>
-                                                <div class="teammate__position text-muted">Nhân viên tiếp thị</div>
-                                            </div>
-                                            <div class="teammates__item teammate">
-                                                <div class="teammate__avatar"><img src="../css/images/teammates/teammate-3.jpg" alt=""></div>
-                                                <div class="teammate__name">Anthony Harris</div>
-                                                <div class="teammate__position text-muted">Giám đốc tài chính</div>
-                                            </div>
-                                        </div>
+                            </div>
+                            <div class="mobile-header__indicators">
+                                <div class="indicator indicator--mobile-search indicator--mobile d-md-none"><button class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
+                                                <use xlink:href="images/sprite.svg#search-20"></use>
+                                            </svg></span></button></div>
+                                <div class="indicator indicator--mobile d-sm-flex d-none"><a href="wishlist.html" class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
+                                                <use xlink:href="images/sprite.svg#heart-20"></use>
+                                            </svg> <span class="indicator__value">0</span></span></a></div>
+                                <div class="indicator indicator--mobile"><a href="cart.html" class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
+                                                <use xlink:href="images/sprite.svg#cart-20"></use>
+                                            </svg> <span class="indicator__value">3</span></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><!-- mobile site__header / end -->
+        <div class="site__body">
+            <div class="page-header">
+                <div class="page-header__container container">
+                   
+                    <div class="page-header__title">
+                        <h1>Thủ tục thanh toán</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="checkout block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="alert alert-lg alert-primary">Phản hồi khách hàng? <a href="#">Nhấn vào đây để đăng nhập</a></div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-7">
+                            <div class="card mb-lg-0">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chi tiết thanh toán</h3>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6"><label for="checkout-first-name">Tên</label> <input type="text" class="form-control" id="checkout-first-name" placeholder="First Name"></div>
+                                        <div class="form-group col-md-6"><label for="checkout-last-name">Họ</label> <input type="text" class="form-control" id="checkout-last-name" placeholder="Last Name"></div>
                                     </div>
+                                    <div class="form-group"><label for="checkout-company-name">Tên công ty  <span class="text-muted">(Tùy chọn)</span></label> <input type="text" class="form-control" id="checkout-company-name" placeholder="Company Name"></div>
+                                    <div class="form-group"><label for="checkout-country">Quốc gia</label> <select id="checkout-country" class="form-control form-control-select2">
+                                            <option>Chọn một quốc gia...</option>
+                                            <option>United States</option>
+                                            <option>Russia</option>
+                                            <option>Italy</option>
+                                            <option>France</option>
+                                            <option>Ukraine</option>
+                                            <option>Germany</option>
+                                            <option>Australia</option>
+                                        </select></div>
+                                    <div class="form-group"><label for="checkout-street-address">Địa chỉ đường phố</label> <input type="text" class="form-control" id="checkout-street-address" ></div>
+                                    <div class="form-group"><label for="checkout-address">Căn hộ, dãy phòng, căn hộ, v.v. (Tùy chọn) <span class="text-muted">(Optional)</span></label> <input type="text" class="form-control" id="checkout-address"></div>
+                                    <div class="form-group"><label for="checkout-city">Thị trấn / Thành phố</label> <input type="text" class="form-control" id="checkout-city"></div>
+                                    <div class="form-group"><label for="checkout-state">Quận</label> <input type="text" class="form-control" id="checkout-state"></div>
+                                    <div class="form-group"><label for="checkout-postcode">Mã bưu / Zip</label> <input type="text" class="form-control" id="checkout-postcode"></div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6"><label for="checkout-email">Địa chỉ email</label> <input type="email" class="form-control" id="checkout-email" ></div>
+                                        <div class="form-group col-md-6"><label for="checkout-phone">Điện thoại</label> <input type="text" class="form-control" id="checkout-phone"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check"><span class="form-check-input input-check"><span class="input-check__body"><input class="input-check__input" type="checkbox" id="checkout-create-account"> <span class="input-check__box"></span> <svg class="input-check__icon" width="9px" height="7px">
+                                                        <use xlink:href="images/sprite.svg#check-9x7"></use>
+                                                    </svg> </span></span><label class="form-check-label" for="checkout-create-account">Tạo một tài khoản?</label></div>
+                                    </div>
+                                </div>
+                                <div class="card-divider"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Chi tiết vận chuyển</h3>
+                                    <div class="form-group">
+                                        <div class="form-check"><span class="form-check-input input-check"><span class="input-check__body"><input class="input-check__input" type="checkbox" id="checkout-different-address"> <span class="input-check__box"></span> <svg class="input-check__icon" width="9px" height="7px">
+                                                        <use xlink:href="images/sprite.svg#check-9x7"></use>
+                                                    </svg> </span></span><label class="form-check-label" for="checkout-different-address">SGửi đến một địa chỉ khác?</label></div>
+                                    </div>
+                                    <div class="form-group"><label for="checkout-comment">Ghi chú đơn hàng <span class="text-muted">(Tùy chọn)</span></label> <textarea id="checkout-comment" class="form-control" rows="4"></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
+                            <div class="card mb-0">
+                                <div class="card-body">
+                                    <h3 class="card-title">Đơn hàng của bạn</h3>
+                                    <table class="checkout__totals">
+                                        <thead class="checkout__totals-header">
+                                            <tr>
+                                                <th>
+Sản phẩm</th>
+                                                <th>Tổng cộng</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="checkout__totals-products">
+                                            <tr>
+                                                <td>Máy Bào Điện Brandix KL370090G 300 Watts × 2</td>
+                                                <td>$1,398.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Undefined Tool IRadix DPS3000SY 2700 watts × 1</td>
+                                                <td>$849.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brandix Router Power Tool 2017ERXPK × 3</td>
+                                                <td>$3,630.00</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody class="checkout__totals-subtotals">
+                                            <tr>
+                                                <th>Tổng phụ</th>
+                                                <td>$5,877.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Lưu trữ tín dụng</th>
+                                                <td>$-20.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Đang chuyển hàng</th>
+                                                <td>$25.00</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot class="checkout__totals-footer">
+                                            <tr>
+                                                <th>Tổng cộng</th>
+                                                <td>$5,882.00</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    <div class="payment-methods">
+                                        <ul class="payment-methods__list">
+                                            <li class="payment-methods__item payment-methods__item--active"><label class="payment-methods__item-header"><span class="payment-methods__item-radio input-radio"><span class="input-radio__body"><input class="input-radio__input" name="checkout_payment_method" type="radio" checked="checked"> <span class="input-radio__circle"></span> </span></span><span class="payment-methods__item-title">Chuyển khoản trực tiếp</span></label>
+                                                <div class="payment-methods__item-container">
+                                                    <div class="payment-methods__item-description text-muted">Thực hiện thanh toán trực tiếp vào tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng ID đơn hàng của bạn làm tài liệu tham khảo thanh toán. Đơn đặt hàng của bạn sẽ không được vận chuyển cho đến khi tiền đã được xóa trong tài khoản của chúng tôi.</div>
+                                                </div>
+                                            </li>
+                                            <li class="payment-methods__item"><label class="payment-methods__item-header"><span class="payment-methods__item-radio input-radio"><span class="input-radio__body"><input class="input-radio__input" name="checkout_payment_method" type="radio"> <span class="input-radio__circle"></span> </span></span><span class="payment-methods__item-title">Kiểm tra thanh toán</span></label>
+                                                <div class="payment-methods__item-container">
+                                                    <div class="payment-methods__item-description text-muted">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</div>
+                                                </div>
+                                            </li>
+                                            <li class="payment-methods__item"><label class="payment-methods__item-header"><span class="payment-methods__item-radio input-radio"><span class="input-radio__body"><input class="input-radio__input" name="checkout_payment_method" type="radio"> <span class="input-radio__circle"></span> </span></span><span class="payment-methods__item-title">Cash on delivery</span></label>
+                                                <div class="payment-methods__item-container">
+                                                    <div class="payment-methods__item-description text-muted">Pay with cash upon delivery.</div>
+                                                </div>
+                                            </li>
+                                            <li class="payment-methods__item"><label class="payment-methods__item-header"><span class="payment-methods__item-radio input-radio"><span class="input-radio__body"><input class="input-radio__input" name="checkout_payment_method" type="radio"> <span class="input-radio__circle"></span> </span></span><span class="payment-methods__item-title">PayPal</span></label>
+                                                <div class="payment-methods__item-container">
+                                                    <div class="payment-methods__item-description text-muted">Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="checkout__agree form-group">
+                                        <div class="form-check"><span class="form-check-input input-check"><span class="input-check__body"><input class="input-check__input" type="checkbox" id="checkout-terms"> <span class="input-check__box"></span> <svg class="input-check__icon" width="9px" height="7px">
+                                                        <use xlink:href="images/sprite.svg#check-9x7"></use>
+                                                    </svg> </span></span><label class="form-check-label" for="checkout-terms">Tôi đã đọc và đồng ý với <a target="_blank" href="terms-and-conditions.html"> các điều khoản và điều kiện của trang web</a>*</label></div>
+                                    </div><button type="submit" class="btn btn-primary btn-xl btn-block">Đặt hàng</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div><!-- site__body / end -->
+        </div><!-- site__body / end --><!-- site__footer -->
+       
     </div><!-- site / end --><!-- quickview-modal -->
     <div id="quickview-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -311,7 +465,7 @@
                         <div class="mobile-links__item-sub-links" data-collapse-content>
                             <ul class="mobile-links mobile-links--level--1">
                                 <li class="mobile-links__item" data-collapse-item>
-                                    <div class="mobile-links__item-title"><a href="about-us.html" class="mobile-links__item-link">Về chúng tôi</a></div>
+                                    <div class="mobile-links__item-title"><a href="about-us.html" class="mobile-links__item-link">About Us</a></div>
                                 </li>
                                 <li class="mobile-links__item" data-collapse-item>
                                     <div class="mobile-links__item-title"><a href="contact-us.html" class="mobile-links__item-link">Contact Us</a></div>
@@ -429,6 +583,6 @@
         svg4everybody();
     </script>
 </body>
-<!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/default-ltr/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Nov 2023 09:43:41 GMT -->
+<!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/default-ltr/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Nov 2023 09:43:45 GMT -->
 
 </html>

@@ -115,7 +115,7 @@
                                     </ul>
                                 </div><!-- .nav-links / end -->
                                 <div class="nav-panel__indicators">
-                                    <div class="indicator indicator--trigger--click"><a href="cart.html"
+                                    <div class="indicator indicator--trigger--click"><a href="index.php?act=cart"
                                             class="indicator__button"><span class="indicator__area"><svg width="20px"
                                                     height="20px">
                                                     <use xlink:href="css/images/sprite.svg#cart-20"></use>
@@ -215,8 +215,8 @@
                                                         </table>
                                                     </div>
                                                     <div class="dropcart__buttons"><a class="btn btn-secondary"
-                                                            href="cart.html">View Cart</a> <a class="btn btn-primary"
-                                                            href="checkout.html">Checkout</a></div>
+                                                            href="index.php?act=cart">View Cart</a> <a class="btn btn-primary"
+                                                            href="index.php?act=checkout">Checkout</a></div>
                                                 </div>
                                             </div><!-- .dropcart / end -->
                                         </div>
