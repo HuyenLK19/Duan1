@@ -11,10 +11,6 @@
     <div class="checkout block">
         <div class="container">
             <div class="row">
-                <div class="col-12 mb-3">
-                    <div class="alert alert-lg alert-primary">Phản hồi khách hàng? <a href="#">Nhấn vào đây để đăng
-                            nhập</a></div>
-                </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="card mb-lg-0">
                         <div class="card-body">
