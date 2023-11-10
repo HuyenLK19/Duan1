@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <title>Stroyka</title>
-    <link rel="icon" type="image/png" href="css/images/favicon.png"><!-- fonts -->
+    <link rel="icon" type="image/png" href="admin/css/images/favicon.ico"><!-- fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i"><!-- css -->
     <link rel="stylesheet" href="css/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/owl-carousel/assets/owl.carousel.min.css">
@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="css/fonts/stroyka/stroyka.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97489509-8"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-97489509-8');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-97489509-8');
     </script>
 </head>
 
@@ -53,9 +53,10 @@
                                         <option>Nữ</option>
                                         <option>Trẻ em</option>
                                     </select> <input class="search__input" name="search"
-                                        placeholder="Tìm kiếm hơn 1000 sản phẩm" aria-label="Site search" type="text"
-                                        autocomplete="off"> <button class="search__button search__button--type--submit"
-                                        type="submit"><svg width="20px" height="20px">
+                                        placeholder="Tìm kiếm hơn 1000 sản phẩm" aria-label="Site search"
+                                        type="text" autocomplete="off"> <button
+                                        class="search__button search__button--type--submit" type="submit"><svg
+                                            width="20px" height="20px">
                                             <use xlink:href="css/images/sprite.svg#search-20"></use>
                                         </svg></button>
                                     <div class="search__border"></div>
@@ -120,10 +121,10 @@
                                             <span class="indicator__area">
                                                 <svg width="20px" height="20px">
                                                     <use xlink:href="css/images/sprite.svg#cart-20"></use>
-                                                </svg> 
+                                                </svg>
                                                 <span class="indicator__value">3</span>
                                             </span>
-                                            </a>
+                                        </a>
                                         <div class="indicator__dropdown">
                                             <!-- .dropcart -->
                                             <div class="dropcart dropcart--style--dropdown">
@@ -133,7 +134,8 @@
                                                             <div class="product-image dropcart__product-image"><a
                                                                     href="product.html" class="product-image__body"><img
                                                                         class="product-image__img"
-                                                                        src="css/images/products/product-1.jpg" alt=""></a>
+                                                                        src="css/images/products/product-1.jpg"
+                                                                        alt=""></a>
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a
@@ -150,14 +152,16 @@
                                                             </div><button type="button"
                                                                 class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg
                                                                     width="10px" height="10px">
-                                                                    <use xlink:href="css/images/sprite.svg#cross-10"></use>
+                                                                    <use xlink:href="css/images/sprite.svg#cross-10">
+                                                                    </use>
                                                                 </svg></button>
                                                         </div>
                                                         <div class="dropcart__product">
                                                             <div class="product-image dropcart__product-image"><a
                                                                     href="product.html" class="product-image__body"><img
                                                                         class="product-image__img"
-                                                                        src="css/images/products/product-2.jpg" alt=""></a>
+                                                                        src="css/images/products/product-2.jpg"
+                                                                        alt=""></a>
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a
@@ -170,14 +174,16 @@
                                                             </div><button type="button"
                                                                 class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg
                                                                     width="10px" height="10px">
-                                                                    <use xlink:href="css/images/sprite.svg#cross-10"></use>
+                                                                    <use xlink:href="css/images/sprite.svg#cross-10">
+                                                                    </use>
                                                                 </svg></button>
                                                         </div>
                                                         <div class="dropcart__product">
                                                             <div class="product-image dropcart__product-image"><a
                                                                     href="product.html" class="product-image__body"><img
                                                                         class="product-image__img"
-                                                                        src="css/images/products/product-5.jpg" alt=""></a>
+                                                                        src="css/images/products/product-5.jpg"
+                                                                        alt=""></a>
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a
@@ -186,13 +192,17 @@
                                                                 <ul class="dropcart__product-options">
                                                                     <li>Color: True Red</li>
                                                                 </ul>
-                                                                <div class="dropcart__product-meta"><span class="dropcart__product-quantity">3</span> ×
-                                                                    <span class="dropcart__product-price">$1,210.00</span>
+                                                                <div class="dropcart__product-meta"><span
+                                                                        class="dropcart__product-quantity">3</span> ×
+                                                                    <span
+                                                                        class="dropcart__product-price">$1,210.00</span>
                                                                 </div>
                                                             </div>
-                                                            <button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
+                                                            <button type="button"
+                                                                class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
                                                                 <svg width="10px" height="10px">
-                                                                    <use xlink:href="css/images/sprite.svg#cross-10"></use>
+                                                                    <use xlink:href="css/images/sprite.svg#cross-10">
+                                                                    </use>
                                                                 </svg>
                                                             </button>
                                                         </div>
@@ -218,8 +228,9 @@
                                                         </table>
                                                     </div>
                                                     <div class="dropcart__buttons"><a class="btn btn-secondary"
-                                                            href="index.php?act=cart">Giỏ hàng</a> <a class="btn btn-primary"
-                                                            href="index.php?act=checkout">Thanh toán</a></div>
+                                                            href="index.php?act=cart">Giỏ hàng</a> <a
+                                                            class="btn btn-primary" href="index.php?act=checkout">Thanh
+                                                            toán</a></div>
                                                 </div>
                                             </div><!-- .dropcart / end -->
                                         </div>
