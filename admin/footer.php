@@ -44,8 +44,7 @@
 <script src="css/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
 <script src="css/libs/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 <script src="css/libs/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script src="css/libs/datatables/jquery.dataTables.min.js"></script>
-<script src="css/libs/datatables/dataTables.bootstrap4.min.js"></script>
+
 <!-- KNOB JS -->
 <script src="css/libs/jquery-knob/jquery.knob.min.js"></script>
 
@@ -69,6 +68,12 @@
 <!-- Responsive examples -->
 <script src="css/libs/datatables/dataTables.responsive.min.js"></script>
 <script src="css/libs/datatables/responsive.bootstrap4.min.js"></script>
+
+<!-- Summernote js -->
+<script src="css/libs/summernote/summernote-bs4.min.js"></script>
+
+<!-- Init js-->
+<script src="css/js/pages/form-advanced.init.js"></script>
 
 <!-- Datatables init -->
 <script src="css/js/pages/datatables.init.js"></script>
