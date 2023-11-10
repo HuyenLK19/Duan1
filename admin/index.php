@@ -8,6 +8,9 @@
             case "listsp":
                 include "sanpham/list.php";
                 break;
+            case "chitietsanpham":
+                include "sanpham/chitietsanpham.php";
+                break;
             case "editsp":
                 include "sanpham/edit.php";
                 break;
@@ -32,8 +35,8 @@
             case "listtk":
                 include "taikhoan/list.php";
                 break;
-            case "listbl":
-                include "binhluan/list.php";
+            case "chitiettk":
+                include "taikhoan/chitiettk.php";
                 break;
             case "thongke":
                 include "thongke/chart.php";

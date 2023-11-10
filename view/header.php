@@ -204,8 +204,7 @@
                                                     <div class="dropcart__totals">
                                                         <table>
                                                             <tr>
-                                                                <th>
-Tổng phụ</th>
+                                                                <th>Tổng phụ</th>
                                                                 <td>5,877.00 VND</td>
                                                             </tr>
                                                             <tr>
@@ -226,7 +225,7 @@ Tổng phụ</th>
                                                             href="index.php?act=cart">Xem giỏ hàng</a> <a class="btn btn-primary"
                                                             href="index.php?act=checkout">Đơn hàng</a></div>
                                                 </div>
-                                            </div>.dropcart / end
+                                            </div><!-- .dropcart / end -->
                                         </div>
                                     </div>
                                     <div class="indicator indicator--trigger--click">

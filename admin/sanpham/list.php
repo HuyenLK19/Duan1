@@ -24,7 +24,7 @@
                 </thead>
 
                 <tbody>
-                    <tr onclick="document.location.href = 'index.php?act=listbl&id=1'">
+                    <tr onclick="document.location.href = 'index.php?act=chitietsanpham'">
                         <td>01</td>
                         <td>Tiger Nixon</td>
                         <td>System Architect</td>
@@ -32,8 +32,7 @@
                         <td>61</td>
                         <td>2011/04/25</td>
                         <td>
-                            <a href="index.php?act=editsp" style="margin: 0 20px;font-size: 20px;"><i
-                                    class="ti-pencil"></i></a>
+                            <a href="index.php?act=editsp" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
                             <a href="index.php?act=delsp" style="font-size: 20px;"><i class="ti-trash"></i></a>
                         </td>
                     </tr>

@@ -32,7 +32,7 @@
         <div class="form-group row">
             <label class="col-md-2 col-form-label">Mô tả</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" readonly="" value="Readonly value">
+            <textarea class="form-control" rows="5" readonly id="example-textarea"></textarea>
             </div>
         </div>
     </form>
