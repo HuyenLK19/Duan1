@@ -132,14 +132,7 @@
                                                     <div class="dropcart__products-list">
                                                         <div class="dropcart__product">
                                                             <div class="product-image dropcart__product-image"><a
-                                                                    href="product.html" class="product-image__body"><img
-                                                                        class="product-image__img"
-<<<<<<< HEAD
-                                                                        src="css/images/products/anh1.webp" alt=""></a>
-=======
-                                                                        src="css/images/products/product-1.jpg"
-                                                                        alt=""></a>
->>>>>>> 162ad0aba3ad98de7851f809955308db8e9489c2
+                                                                    href="product.html" class="product-image__body"></a>
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a
