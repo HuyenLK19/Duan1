@@ -115,11 +115,15 @@
                                     </ul>
                                 </div><!-- .nav-links / end -->
                                 <div class="nav-panel__indicators">
-                                    <div class="indicator indicator--trigger--click"><a href="index.php?act=cart"
-                                            class="indicator__button"><span class="indicator__area"><svg width="20px"
-                                                    height="20px">
+                                    <div class="indicator indicator--trigger--click">
+                                        <a href="index.php?act=cart" class="indicator__button">
+                                            <span class="indicator__area">
+                                                <svg width="20px" height="20px">
                                                     <use xlink:href="css/images/sprite.svg#cart-20"></use>
-                                                </svg> <span class="indicator__value">3</span></span></a>
+                                                </svg> 
+                                                <span class="indicator__value">3</span>
+                                            </span>
+                                            </a>
                                         <div class="indicator__dropdown">
                                             <!-- .dropcart -->
                                             <div class="dropcart dropcart--style--dropdown">
@@ -182,16 +186,15 @@
                                                                 <ul class="dropcart__product-options">
                                                                     <li>Color: True Red</li>
                                                                 </ul>
-                                                                <div class="dropcart__product-meta"><span
-                                                                        class="dropcart__product-quantity">3</span> ×
-                                                                    <span
-                                                                        class="dropcart__product-price">$1,210.00</span>
+                                                                <div class="dropcart__product-meta"><span class="dropcart__product-quantity">3</span> ×
+                                                                    <span class="dropcart__product-price">$1,210.00</span>
                                                                 </div>
-                                                            </div><button type="button"
-                                                                class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg
-                                                                    width="10px" height="10px">
+                                                            </div>
+                                                            <button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
+                                                                <svg width="10px" height="10px">
                                                                     <use xlink:href="css/images/sprite.svg#cross-10"></use>
-                                                                </svg></button>
+                                                                </svg>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                     <div class="dropcart__totals">
@@ -215,8 +218,8 @@
                                                         </table>
                                                     </div>
                                                     <div class="dropcart__buttons"><a class="btn btn-secondary"
-                                                            href="index.php?act=cart">View Cart</a> <a class="btn btn-primary"
-                                                            href="index.php?act=checkout">Checkout</a></div>
+                                                            href="index.php?act=cart">Giỏ hàng</a> <a class="btn btn-primary"
+                                                            href="index.php?act=checkout">Thanh toán</a></div>
                                                 </div>
                                             </div><!-- .dropcart / end -->
                                         </div>
