@@ -235,35 +235,42 @@
                                             </div><!-- .dropcart / end -->
                                         </div>
                                     </div>
-                                    <div class="indicator indicator--trigger--click"><a href="account-login.html"
-                                            class="indicator__button"><span class="indicator__area"><svg width="20px"
-                                                    height="20px">
+                                    <div class="indicator indicator--trigger--click">
+                                        <div class="indicator__button">
+                                            <span class="indicator__area">
+                                                <svg width="20px" height="20px">
                                                     <use xlink:href="css/images/sprite.svg#person-20"></use>
-                                                </svg></span></a>
+                                                </svg>
+                                            </span>
+                                        </div>
                                         <div class="indicator__dropdown">
                                             <div class="account-menu">
-                                                <form class="account-menu__form">
-                                                    <div class="account-menu__form-title">Log In to Your Account</div>
-                                                    <div class="form-group"><label for="header-signin-email"
-                                                            class="sr-only">Email address</label> <input
-                                                            id="header-signin-email" type="email"
-                                                            class="form-control form-control-sm"
-                                                            placeholder="Email address"></div>
-                                                    <div class="form-group"><label for="header-signin-password"
-                                                            class="sr-only">Password</label>
-                                                        <div class="account-menu__form-forgot"><input
-                                                                id="header-signin-password" type="password"
-                                                                class="form-control form-control-sm"
-                                                                placeholder="Password"> <a href="#"
-                                                                class="account-menu__form-forgot-link">Forgot?</a></div>
+                                                <form class="account-menu__form" action="index.php?act=dangnhap" method="POST">
+                                                    <div class="account-menu__form-title">Đăng nhập</div>
+                                                    <div class="form-group">
+                                                        <label for="header-signin-email" class="sr-only">Email</label> 
+                                                        <input id="header-signin-email" type="email" class="form-control form-control-sm" placeholder="Email">
                                                     </div>
-                                                    <div class="form-group account-menu__form-button"><button
-                                                            type="submit" class="btn btn-primary btn-sm">Login</button>
+                                                    <div class="form-group">
+                                                        <label for="header-signin-password" class="sr-only">Mật khẩu</label>
+                                                        <div class="account-menu__form-forgot">
+                                                            <input id="header-signin-password" type="password" class="form-control form-control-sm" placeholder="Mật khẩu"> 
+                                                            <a href="index.php?act=quenmk" class="account-menu__form-forgot-link">
+                                                                Quên mật khẩu ?
+                                                            </a>
+                                                        </div>
                                                     </div>
-                                                    <div class="account-menu__form-link"><a
-                                                            href="account-login.html">Create An Account</a></div>
+                                                    <div class="form-group account-menu__form-button">
+                                                        <button type="submit" class="btn btn-primary btn-sm">
+                                                            Đăng nhập
+                                                        </button>
+                                                    </div>
+                                                    <div class="account-menu__form-link">
+                                                        <a href="index.php?act=dangky">Tạo tài khoản mới</a>
+                                                    </div>
                                                 </form>
-                                                <div class="account-menu__divider"></div><a
+                                                <!-- After login -->
+                                                <!-- <div class="account-menu__divider"></div><a
                                                     href="account-dashboard.html" class="account-menu__user">
                                                     <div class="account-menu__user-avatar"><img
                                                             src="css/images/avatars/avatar-3.jpg" alt=""></div>
@@ -282,7 +289,8 @@
                                                 <div class="account-menu__divider"></div>
                                                 <ul class="account-menu__links">
                                                     <li><a href="account-login.html">Logout</a></li>
-                                                </ul>
+                                                </ul> -->
+                                                <!-- After login -->
                                             </div>
                                         </div>
                                     </div>
