@@ -13,7 +13,7 @@
                         </svg></div>
                     <div class="block-features__content">
                         <div class="block-features__title">Miễn phí vận chuyển</div>
-                        <div class="block-features__subtitle">Chỉ từ 50k</div>
+                        <div class="block-features__subtitle">Từ đơn 50k trở lên</div>
                     </div>
                 </div>
                 <div class="block-features__divider"></div>
@@ -23,7 +23,7 @@
                         </svg></div>
                     <div class="block-features__content">
                         <div class="block-features__title">Hỗ trợ 24/7</div>
-                        <div class="block-features__subtitle">Gọi chúng tôi mọi lúc</div>
+                        <div class="block-features__subtitle">Hỗ trợ mọi lúc</div>
                     </div>
                 </div>
                 <div class="block-features__divider"></div>
@@ -33,7 +33,7 @@
                         </svg></div>
                     <div class="block-features__content">
                         <div class="block-features__title">100% bảo mật</div>
-                        <div class="block-features__subtitle">Thanh toán bảo mật</div>
+                        <div class="block-features__subtitle">An toàn tuyệt đối</div>
                     </div>
                 </div>
                 <div class="block-features__divider"></div>

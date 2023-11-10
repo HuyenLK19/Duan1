@@ -2,7 +2,6 @@
 <div class="site__body">
     <div class="page-header">
         <div class="page-header__container container">
-
             <div class="page-header__title">
                 <h1>Thủ tục thanh toán</h1>
             </div>
