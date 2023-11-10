@@ -129,19 +129,18 @@
                                                             <div class="product-image dropcart__product-image"><a
                                                                     href="product.html" class="product-image__body"><img
                                                                         class="product-image__img"
-                                                                        src="css/images/products/product-1.jpg" alt=""></a>
+                                                                        src="css/images/products/anh1.webp" alt=""></a>
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a
-                                                                        href="product.html">Electric Planer Brandix
-                                                                        KL370090G 300 Watts</a></div>
+                                                                        href="product.html">Áo khoác</a></div>
                                                                 <ul class="dropcart__product-options">
-                                                                    <li>Color: Yellow</li>
-                                                                    <li>Material: Aluminium</li>
+                                                                    <li>Màu vàng</li>
+                                                                    <li>Chất liệu: Vải trơn</li>
                                                                 </ul>
                                                                 <div class="dropcart__product-meta"><span
                                                                         class="dropcart__product-quantity">2</span> ×
-                                                                    <span class="dropcart__product-price">$699.00</span>
+                                                                    <span class="dropcart__product-price">699.000 VND</span>
                                                                 </div>
                                                             </div><button type="button"
                                                                 class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg
@@ -153,15 +152,14 @@
                                                             <div class="product-image dropcart__product-image"><a
                                                                     href="product.html" class="product-image__body"><img
                                                                         class="product-image__img"
-                                                                        src="css/images/products/product-2.jpg" alt=""></a>
+                                                                        src="css/images/products/anh7.webp" alt=""></a>
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a
-                                                                        href="product.html">Undefined Tool IRadix
-                                                                        DPS3000SY 2700 watts</a></div>
+                                                                        href="product.html">Áo giữ nhiệt</a></div>
                                                                 <div class="dropcart__product-meta"><span
                                                                         class="dropcart__product-quantity">1</span> ×
-                                                                    <span class="dropcart__product-price">$849.00</span>
+                                                                    <span class="dropcart__product-price">849.000 VND</span>
                                                                 </div>
                                                             </div><button type="button"
                                                                 class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg
@@ -173,19 +171,18 @@
                                                             <div class="product-image dropcart__product-image"><a
                                                                     href="product.html" class="product-image__body"><img
                                                                         class="product-image__img"
-                                                                        src="css/images/products/product-5.jpg" alt=""></a>
+                                                                        src="css/images/products/anh5.webp" alt=""></a>
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a
-                                                                        href="product.html">Brandix Router Power Tool
-                                                                        2017ERXPK</a></div>
+                                                                        href="product.html">Quần Jean</a></div>
                                                                 <ul class="dropcart__product-options">
-                                                                    <li>Color: True Red</li>
+                                                                    <li>Màu sắc: Vàng</li>
                                                                 </ul>
                                                                 <div class="dropcart__product-meta"><span
                                                                         class="dropcart__product-quantity">3</span> ×
                                                                     <span
-                                                                        class="dropcart__product-price">$1,210.00</span>
+                                                                        class="dropcart__product-price">1,210.000 VND</span>
                                                                 </div>
                                                             </div><button type="button"
                                                                 class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg
@@ -197,26 +194,27 @@
                                                     <div class="dropcart__totals">
                                                         <table>
                                                             <tr>
-                                                                <th>Subtotal</th>
-                                                                <td>$5,877.00</td>
+                                                                <th>
+Tổng phụ</th>
+                                                                <td>5,877.00 VND</td>
                                                             </tr>
                                                             <tr>
-                                                                <th>Shipping</th>
-                                                                <td>$25.00</td>
+                                                                <th>Đang chuyển hàng</th>
+                                                                <td>25.000 VND</td>
                                                             </tr>
                                                             <tr>
-                                                                <th>Tax</th>
-                                                                <td>$0.00</td>
+                                                                <th>Thuế</th>
+                                                                <td>0.00</td>
                                                             </tr>
                                                             <tr>
-                                                                <th>Total</th>
-                                                                <td>$5,902.00</td>
+                                                                <th>Tổng cộng</th>
+                                                                <td>5,902.00 VND</td>
                                                             </tr>
                                                         </table>
                                                     </div>
                                                     <div class="dropcart__buttons"><a class="btn btn-secondary"
-                                                            href="index.php?act=cart">View Cart</a> <a class="btn btn-primary"
-                                                            href="index.php?act=checkout">Checkout</a></div>
+                                                            href="index.php?act=cart">Xem giỏ hàng</a> <a class="btn btn-primary"
+                                                            href="index.php?act=checkout">Đơn hàng</a></div>
                                                 </div>
                                             </div><!-- .dropcart / end -->
                                         </div>

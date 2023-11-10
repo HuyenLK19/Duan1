@@ -110,11 +110,11 @@
                     <table class="cart__table cart-table">
                         <thead class="cart-table__head">
                             <tr class="cart-table__row">
-                                <th class="cart-table__column cart-table__column--image">Image</th>
-                                <th class="cart-table__column cart-table__column--product">Product</th>
-                                <th class="cart-table__column cart-table__column--price">Price</th>
-                                <th class="cart-table__column cart-table__column--quantity">Quantity</th>
-                                <th class="cart-table__column cart-table__column--total">Total</th>
+                                <th class="cart-table__column cart-table__column--image">Ảnh sản phẩm</th>
+                                <th class="cart-table__column cart-table__column--product">Tên sản phẩm</th>
+                                <th class="cart-table__column cart-table__column--price">Giá</th>
+                                <th class="cart-table__column cart-table__column--quantity">Số lượng</th>
+                                <th class="cart-table__column cart-table__column--total">Tổng</th>
                                 <th class="cart-table__column cart-table__column--remove"></th>
                             </tr>
                         </thead>
@@ -125,35 +125,35 @@
                                 </td>
                                 <td class="cart-table__column cart-table__column--product"><a href="#" class="cart-table__product-name">Electric Planer Brandix KL370090G 300 Watts</a>
                                     <ul class="cart-table__options">
-                                        <li>Color: Yellow</li>
-                                        <li>Material: Aluminium</li>
+                                        <li>Màu: Vàng</li>
+                                        <li>Chất liệu: vải trơn</li>
                                     </ul>
                                 </td>
-                                <td class="cart-table__column cart-table__column--price" data-title="Price">$699.00</td>
+                                <td class="cart-table__column cart-table__column--price" data-title="Price">699.000 VND</td>
                                 <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
                                     <div class="input-number"><input class="form-control input-number__input" type="number" min="1" value="2">
                                         <div class="input-number__add"></div>
                                         <div class="input-number__sub"></div>
                                     </div>
                                 </td>
-                                <td class="cart-table__column cart-table__column--total" data-title="Total">$1,398.00</td>
+                                <td class="cart-table__column cart-table__column--total" data-title="Total">1.398.000 VND</td>
                                 <td class="cart-table__column cart-table__column--remove"><button type="button" class="btn btn-light btn-sm btn-svg-icon"><svg width="12px" height="12px">
                                             <use xlink:href="images/sprite.svg#cross-12"></use>
                                         </svg></button></td>
                             </tr>
                             <tr class="cart-table__row">
                                 <td class="cart-table__column cart-table__column--image">
-                                    <div class="product-image"><a href="#" class="product-image__body"><img class="product-image__img" src="images/products/product-2.jpg" alt=""></a></div>
+                                    <div class="product-image"><a href="#" class="product-image__body"><img class="product-image__img" src="../css/images/products/anh5.webp" alt=""></a></div>
                                 </td>
                                 <td class="cart-table__column cart-table__column--product"><a href="#" class="cart-table__product-name">Undefined Tool IRadix DPS3000SY 2700 watts</a></td>
-                                <td class="cart-table__column cart-table__column--price" data-title="Price">$849.00</td>
+                                <td class="cart-table__column cart-table__column--price" data-title="Price">849.00</td>
                                 <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
                                     <div class="input-number"><input class="form-control input-number__input" type="number" min="1" value="1">
                                         <div class="input-number__add"></div>
                                         <div class="input-number__sub"></div>
                                     </div>
                                 </td>
-                                <td class="cart-table__column cart-table__column--total" data-title="Total">$849.00</td>
+                                <td class="cart-table__column cart-table__column--total" data-title="Total">849.00</td>
                                 <td class="cart-table__column cart-table__column--remove"><button type="button" class="btn btn-light btn-sm btn-svg-icon"><svg width="12px" height="12px">
                                             <use xlink:href="images/sprite.svg#cross-12"></use>
                                         </svg></button></td>
@@ -167,14 +167,14 @@
                                         <li>Color: True Red</li>
                                     </ul>
                                 </td>
-                                <td class="cart-table__column cart-table__column--price" data-title="Price">$1,210.00</td>
+                                <td class="cart-table__column cart-table__column--price" data-title="Price">120.000 VND</td>
                                 <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
                                     <div class="input-number"><input class="form-control input-number__input" type="number" min="1" value="3">
                                         <div class="input-number__add"></div>
                                         <div class="input-number__sub"></div>
                                     </div>
                                 </td>
-                                <td class="cart-table__column cart-table__column--total" data-title="Total">$3,630.00</td>
+                                <td class="cart-table__column cart-table__column--total" data-title="Total">3,630.00</td>
                                 <td class="cart-table__column cart-table__column--remove"><button type="button" class="btn btn-light btn-sm btn-svg-icon"><svg width="12px" height="12px">
                                             <use xlink:href="images/sprite.svg#cross-12"></use>
                                         </svg></button></td>
@@ -194,24 +194,24 @@
                                         <thead class="cart__totals-header">
                                             <tr>
                                                 <th>Subtotal</th>
-                                                <td>$5,877.00</td>
+                                                <td>5,877.00</td>
                                             </tr>
                                         </thead>
                                         <tbody class="cart__totals-body">
                                             <tr>
                                                 <th>Shipping</th>
-                                                <td>$25.00<div class="cart__calc-shipping"><a href="#">Calculate Shipping</a></div>
+                                                <td>25.00<div class="cart__calc-shipping"><a href="#">Calculate Shipping</a></div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th>Tax</th>
-                                                <td>$0.00</td>
+                                                <td>0.00</td>
                                             </tr>
                                         </tbody>
                                         <tfoot class="cart__totals-footer">
                                             <tr>
                                                 <th>Total</th>
-                                                <td>$5,902.00</td>
+                                                <td>5,902.00</td>
                                             </tr>
                                         </tfoot>
                                     </table><a class="btn btn-primary btn-xl btn-block cart__checkout-button" href="checkout.html">Proceed to checkout</a>
