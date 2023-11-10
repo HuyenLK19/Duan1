@@ -27,9 +27,7 @@
         </div>
         <div class="form-group row">
             <label class="col-md-2 col-form-label">Hình ảnh</label>
-            <div class="col-md-10">
-                <input type="text" class="form-control" readonly="" value="Readonly value">
-            </div>
+                <img src="../css/images/products/anh1.webp" style="width: 80px; height: 100px; margin-left: 10px" alt="">
         </div>
         <div class="form-group row">
             <label class="col-md-2 col-form-label">Mô tả</label>
@@ -53,7 +51,6 @@
                 <table class="table">
                     <thead class="thead-light">
                         <tr>
-                            <th>ID</th>
                             <th>Nội dung bình luận</th>
                             <th>Người bình luận</th>
                             <th>Ngày bình luận</th>
@@ -62,33 +59,27 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
                             <td>Good</td>
                             <td>Mark</td>
                             <td>27/05/2004</td>
                             <td>
-                                <a href="index.php?act=editdm" style="font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
+                                <a href="index.php?act=delbl" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
                             <td>Good</td>
                             <td>Mark</td>
                             <td>27/05/2004</td>
                             <td>
-                                <a href="index.php?act=editdm" style="font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
+                                <a href="index.php?act=delbl" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
                             <td>Good</td>
                             <td>Mark</td>
                             <td>27/05/2004</td>
                             <td>
-                                <a href="index.php?act=editdm" style="font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
+                                <a href="index.php?act=delbl" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
                         </tr>
                     </tbody>

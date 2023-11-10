@@ -8,169 +8,84 @@
 </div>
 <!-- end row -->
 <div class="row">
-    <div class="col-sm-12">
-        <div class="card-box">
-            <div class="table-responsive">
-                <table class="table table-hover mails m-0 table table-actions-bar table-centered">
-                    <thead>
-                        <tr>
-                            <th style="min-width: 20px;">
-                            </th>
-                            <th>Tên</th>
-                            <th>Email</th>
-                            <th>Vai trò</th>
-                            <th>Mật khẩu</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                                Tomaslau
-                            </td>
-
-                            <td>
-                                <a>tomaslau@dummy.com</a>
-                            </td>
-
-                            <td>
-                                <b><a href="#" class="text-dark"><b>Admin</b></a>
-                                </b>
-                            </td>
-
-                            <td>
-                                123
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>                  
-                    
-                        </tr>
-
-                        <tr>
-                            <td>
-                            </td>
-
-                            <td>
-                                Chadengle
-                            </td>
-
-                            <td>
-                                <a href="#" class="text-muted">chadengle@dummy.com</a>
-                            </td>
-
-                            <td>
-                                <b><a href="#" class="text-dark"><b>User</b></a>
-                                </b>
-                            </td>
-
-                            <td>
-                                123
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>                  
-                        
-                        </tr>
-
-                        <tr>
-                            <td>
-                            <td>
-                                Stillnotdavid
-                            </td>
-
-                            <td>
-                                <a href="#" class="text-muted">stillnotdavid@dummy.com</a>
-                            </td>
-                            <td>
-                                <b><a href="#" class="text-dark"><b>User</b></a>
-                                </b>
-                            </td>
-
-                            <td>
-                                123
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>                  
-                      
-
-                        </tr>
-
-                        <tr>
-                            <td>
-                            </td>
-
-                            <td>
-                                Kurafire
-                            </td>
-
-                            <td>
-                                <a href="#" class="text-muted">kurafire@dummy.com</a>
-                            </td>
-
-                            <td>
-                                <b><a href="#" class="text-dark"><b>User</b></a>
-                                </b>
-                            </td>
-
-                            <td>
-                                123
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>                  
-                     
-
-                        </tr>
-
-                        <tr>
-                            <td>
-                            </td>
-
-                            <td>
-                                Shahedk
-                            </td>
-
-                            <td>
-                                <a href="#" class="text-muted">shahedk@dummy.com</a>
-                            </td>
-
-                            <td>
-                                <b><a href="#" class="text-dark"><b>User</b></a>
-                                </b>
-                            </td>
-
-                            <td>
-                                123
-                            </td>
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>                  
-                     
-
-                        </tr>
-
-                        <tr>
-                            <td>
-                            </td>
-
-                            <td>
-                                Adhamdannaway
-                            </td>
-
-                            <td>
-                                <a href="#" class="text-muted">adhamdannaway@dummy.com</a>
-                            </td>
-
-                            <td>
-                                <b><a href="#" class="text-dark"><b>Admin</b></a>
-                                </b>
-                            </td>
-
-                            <td>
-                                123
-                            </td>  
-                            <td><a href=""><i class=" mdi mdi-trash-can-outline"></i></a></td>                  
-
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
+    <div class="col-12">
+        <div>
+            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên người dùng</th>
+                        <th>Email</th>
+                        <th>Mật khẩu</th>
+                        <th>Vai trò</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>Admin</td>
+                        <td>
+                            <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>Nhân viên</td>
+                        <td>
+                            <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>Admin</td>
+                        <td>
+                            <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>Khách hàng</td>
+                        <td>
+                            <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>Michael Bruce</td>
+                        <td>Javascript Developer</td>
+                        <td>Singapore</td>
+                        <td>Admin</td>
+                        <td>
+                            <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>Donna Snider</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td>Nhân viên</td>
+                        <td>
+                            <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        <!-- end -->
+
     </div>
 </div>
