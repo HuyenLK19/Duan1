@@ -156,12 +156,7 @@
                                                             <div class="product-image dropcart__product-image"><a
                                                                     href="product.html" class="product-image__body"><img
                                                                         class="product-image__img"
-<<<<<<< HEAD
                                                                         src="css/images/products/anh7.webp" alt=""></a>
-=======
-                                                                        src="css/images/products/product-2.jpg"
-                                                                        alt=""></a>
->>>>>>> 162ad0aba3ad98de7851f809955308db8e9489c2
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a
@@ -181,12 +176,7 @@
                                                             <div class="product-image dropcart__product-image"><a
                                                                     href="product.html" class="product-image__body"><img
                                                                         class="product-image__img"
-<<<<<<< HEAD
                                                                         src="css/images/products/anh5.webp" alt=""></a>
-=======
-                                                                        src="css/images/products/product-5.jpg"
-                                                                        alt=""></a>
->>>>>>> 162ad0aba3ad98de7851f809955308db8e9489c2
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a
@@ -212,8 +202,7 @@
                                                     <div class="dropcart__totals">
                                                         <table>
                                                             <tr>
-                                                                <th>
-Tổng phụ</th>
+                                                                <th>Tổng phụ</th>
                                                                 <td>5,877.00 VND</td>
                                                             </tr>
                                                             <tr>
@@ -231,16 +220,11 @@ Tổng phụ</th>
                                                         </table>
                                                     </div>
                                                     <div class="dropcart__buttons"><a class="btn btn-secondary"
-<<<<<<< HEAD
                                                             href="index.php?act=cart">Xem giỏ hàng</a> <a class="btn btn-primary"
                                                             href="index.php?act=checkout">Đơn hàng</a></div>
-=======
-                                                            href="index.php?act=cart">Giỏ hàng</a> <a
-                                                            class="btn btn-primary" href="index.php?act=checkout">Thanh
-                                                            toán</a></div>
->>>>>>> 162ad0aba3ad98de7851f809955308db8e9489c2
                                                 </div>
-                                            </div><!-- .dropcart / end -->
+                                            </div>
+                                            <!-- .dropcart / end -->
                                         </div>
                                     </div>
                                     <div class="indicator indicator--trigger--click">

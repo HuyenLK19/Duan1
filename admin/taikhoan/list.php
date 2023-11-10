@@ -22,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr onclick="document.location.href = 'index.php?act=chitiettk'">
                         <td>01</td>
                         <td>Tiger Nixon</td>
                         <td>System Architect</td>
@@ -32,7 +32,7 @@
                             <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr onclick="document.location.href = 'index.php?act=chitiettk'">
                         <td>02</td>
                         <td>Garrett Winters</td>
                         <td>Accountant</td>
@@ -42,7 +42,7 @@
                             <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr onclick="document.location.href = 'index.php?act=chitiettk'">
                         <td>03</td>
                         <td>Ashton Cox</td>
                         <td>Junior Technical Author</td>
@@ -52,7 +52,7 @@
                             <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr onclick="document.location.href = 'index.php?act=chitiettk'">
                         <td>04</td>
                         <td>Cedric Kelly</td>
                         <td>Senior Javascript Developer</td>
@@ -62,7 +62,7 @@
                             <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr onclick="document.location.href = 'index.php?act=chitiettk'">
                         <td>05</td>
                         <td>Michael Bruce</td>
                         <td>Javascript Developer</td>
@@ -72,7 +72,7 @@
                             <a href="index.php?act=delsp&&idsp=" style="position: relative; left: 15px; font-size: 20px;"><i class="ti-trash"></i></a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr onclick="document.location.href = 'index.php?act=chitiettk'">
                         <td>06</td>
                         <td>Donna Snider</td>
                         <td>Customer Support</td>
