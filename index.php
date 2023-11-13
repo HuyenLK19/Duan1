@@ -18,7 +18,9 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
         case "checkout":
             include "view/checkout.php";
             break;
-
+        case "chitietsanpham":
+            include "view/chitietsanpham.php";
+            break;
         default:
             include "view/home.php";
             break;

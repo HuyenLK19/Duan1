@@ -218,11 +218,11 @@
                                 <div class="product-card__badges-list">
                                     <div class="product-card__badge product-card__badge--hot">Hot</div>
                                 </div>
-                                <div class="product-card__image product-image"><a href="product.html"
+                                <div class="product-card__image product-image"><a href="index.php?act=chitietsanpham"
                                         class="product-image__body"><img class="product-image__img"
                                             src="css/images/products/anh2.webp" alt=""></a></div>
                                 <div class="product-card__info">
-                                    <div class="product-card__name"><a href="product.html">Áo giữ nhiệt</a></div>
+                                    <div class="product-card__name"><a href="index.php?act=chitietsanpham">Áo giữ nhiệt</a></div>
                                     <div class="product-card__rating">
                                         <div class="product-card__rating-stars">
                                             <div class="rating">
