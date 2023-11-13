@@ -51,11 +51,11 @@
     </div>
 </div>
 <script>
-    <?php 
-        if (isset($thongbao) && ($thongbao != '')){
-    ?>
-    alert(<?php echo $thongbao ?>);
-    <?php
-        }
-    ?>
+    var form = document.getElementById('f');
+
+    function myFunction() {
+        if (form.checkValidity()) {
+            alert("Sửa sản phẩm thành công!");
+        };
+    };
 </script>

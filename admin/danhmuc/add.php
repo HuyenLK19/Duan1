@@ -10,13 +10,13 @@
 <div class="row">
     <div class="col-lg-6" style="position: relative; left: 20%">
         <div class="">
-            <form action="index.php?act=adddm" method="POST" class="form-validation">
+            <form action="index.php?act=adddm" method="POST" class="form-validation" id="f">
                 <div class="form-group">
                     <label for="tendm">Tên danh mục<span class="text-danger">*</span></label>
                     <input type="text" name="tendm" parsley-trigger="change" required class="form-control">
                 </div>
                 <div class="form-group text-right mb-0">
-                    <input class="btn btn-primary waves-effect waves-light mr-1" type="submit" name="themmoi" value="Thêm">
+                    <input class="btn btn-primary waves-effect waves-light mr-1" type="submit" name="themmoi" onclick="myFunction()" value="Thêm">
                     <input type="reset" class="btn btn-danger waves-effect" value="Reset">
                     <a href="index.php?act=listdm" class="btn btn-secondary">Danh sách danh mục</a>
                 </div>
@@ -25,11 +25,11 @@
     </div>
 </div>
 <script>
-    <?php 
-        if (isset($thongbao) && ($thongbao != '')){
-    ?>
-    alert(<?php echo $thongbao ?>);
-    <?php
-        }
-    ?>
+    var form = document.getElementById('f');
+
+    function myFunction() {
+        if (form.checkValidity()) {
+            alert("Thêm danh mục thành công!");
+        };
+    };
 </script>

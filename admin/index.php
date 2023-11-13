@@ -23,7 +23,6 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm);
-                $thongbao = "Thêm sản phẩm thành công!";
                 header("Location: index.php?act=listsp");
             };
             $listdanhmuc = listall_danhmuc();
@@ -52,7 +51,6 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_sanpham($_GET['id'], $tensp, $giasp, $hinh, $mota, $iddm);
-                $thongbao = "Sửa sản phẩm thành công!";
                 header("Location: index.php?act=listsp");
             }
             $listdanhmuc = listall_danhmuc();
@@ -80,7 +78,6 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
                 $tendm = $_POST["tendm"];
                 update_danhmuc($_GET['id'], $tendm);
-                $thongbao = "Sửa danh mục thành công!";
                 header("Location: index.php?act=listdm");
             }
             $danhmuc = listone_danhmuc($_GET['id']);
@@ -101,7 +98,6 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $role = $_POST["role"];
                 insert_taikhoan($tentk, $user, $pass, $email, $address, $tel, 1, $role);
                 header("Location: index.php?act=listtk");
-                $thongbao = "Thêm tài khoản thành công!";
             }
             include "taikhoan/add.php";
             break;
@@ -124,7 +120,6 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $status = $_POST["status"];
                 $role = $_POST["role"];
                 update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $tel, $status, $role);
-                $thongbao = "Sửa tài khoản thành công!";
                 header("Location: index.php?act=listtk");
             }
             $tk = listone_taikhoan($_GET['id']);

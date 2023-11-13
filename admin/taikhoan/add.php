@@ -53,11 +53,11 @@
     </div>
 </div>
 <script>
-    <?php 
-        if (isset($thongbao) && ($thongbao != '')){
-    ?>
-    alert(<?php echo $thongbao ?>);
-    <?php
-        }
-    ?>
+    var form = document.getElementById('f');
+
+    function myFunction() {
+        if (form.checkValidity()) {
+            alert("Thêm tài khoản thành công!");
+        };
+    };
 </script>
