@@ -1,5 +1,6 @@
 <?php
 include "view/header.php";
+include "model/pdo.php";
 
 if (isset($_GET["act"]) && $_GET["act"] !== "") {
     switch ($_GET["act"]) {
@@ -17,9 +18,6 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             break;
         case "checkout":
             include "view/checkout.php";
-            break;
-        case "chitietsanpham":
-            include "view/chitietsanpham.php";
             break;
         default:
             include "view/home.php";

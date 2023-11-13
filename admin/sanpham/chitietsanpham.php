@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12">
         <div>
-            <h4 class="header-title mb-3">Chi tiết sản phẩm</h4>
+            <h4 class="header-title mb-3">Chi tiết sản phẩm <?php echo $_GET['id'] ?></h4>
         </div>
     </div>
 </div>
@@ -10,29 +10,30 @@
         <div class="form-group row">
             <label class="col-md-2 col-form-label">Tên sản phẩm</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" readonly="" value="Readonly value">
+                <input type="text" class="form-control" readonly="" value="<?php echo $product['name'] ?>">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-md-2 col-form-label">Danh mục</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" readonly="" value="Readonly value">
+                <input type="text" class="form-control" readonly="" value="<?php echo $product['cate_name'] ?>">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-md-2 col-form-label">Giá sản phẩm</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" readonly="" value="Readonly value">
+                <input type="text" class="form-control" readonly="" value="<?php echo $product['price'] ?>">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-md-2 col-form-label">Hình ảnh</label>
-                <img src="../css/images/products/anh1.webp" style="width: 80px; height: 100px; margin-left: 10px" alt="">
+            <img src="../css/images/products/<?php echo $product['img'] ?>" style="width: 80px; height: 100px; margin-left: 10px">
         </div>
         <div class="form-group row">
             <label class="col-md-2 col-form-label">Mô tả</label>
             <div class="col-md-10">
-            <textarea class="form-control" rows="5" readonly id="example-textarea"></textarea>
+                <textarea class="form-control" rows="5" readonly id="example-textarea"><?php echo $product['mota'] ?>
+                </textarea>
             </div>
         </div>
     </form>

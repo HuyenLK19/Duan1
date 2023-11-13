@@ -20,30 +20,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                            foreach ($list_danhmuc as $danhmuc) {
+                        ?>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
+                            <th scope="row"><?php echo $danhmuc['id'] ?></th>
+                            <td><?php echo $danhmuc['name'] ?></td>
                             <td>
-                                <a href="index.php?act=editdm" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
+                                <a href="index.php?act=editdm&&id=<?php echo $danhmuc['id'] ?>" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
+                                <a href="index.php?act=deldm&&id=<?php echo $danhmuc['id'] ?>" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>
-                                <a href="index.php?act=editdm" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>
-                                <a href="index.php?act=editdm" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=deldm" style="font-size: 20px;"><i class="ti-trash"></i></a>
-                            </td>
-                        </tr>
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
                 <a href="index.php?act=adddm" class="btn btn-secondary">Thêm danh mục</a>

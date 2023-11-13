@@ -1,48 +1,125 @@
 <?php
-    include "header.php";
-    if (isset($_GET['act']) && ($_GET['act'] != '')){
-        switch($_GET['act']){
-            case "addsp":
-                include "sanpham/add.php";
-                break;
-            case "listsp":
-                include "sanpham/list.php";
-                break;
-            case "chitietsanpham":
-                include "sanpham/chitietsanpham.php";
-                break;
-            case "editsp":
-                include "sanpham/edit.php";
-                break;
-            case "delsp":
-                include "";
-                break;
-            case "adddm":
-                include "danhmuc/add.php";
-                break;
-            case "listdm":
-                include "danhmuc/list.php";
-                break;
-            case "editdm":
-                include "danhmuc/edit.php";
-                break;
-            case "deldm":
-                include "";
-                break;
-            case "listbill":
-                include "donhang/list.php";
-                break;
-            case "listtk":
-                include "taikhoan/list.php";
-                break;
-            case "chitiettk":
-                include "taikhoan/chitiettk.php";
-                break;
-            case "thongke":
-                include "thongke/chart.php";
-                break;                        
-        } 
-    } else include "home.php";
+ob_start();
+include "../model/pdo.php";
+include "../model/sanpham.php";
+include "../model/danhmuc.php";
+include "../model/taikhoan.php";
+include "header.php";
 
-    include "footer.php";
+if (isset($_GET['act']) && ($_GET['act'] != '')) {
+    switch ($_GET['act']) {
+        case "addsp":
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $iddm = $_POST['iddm'];
+                $tensp = $_POST['tensp'];
+                $giasp = $_POST['giasp'];
+                $mota = $_POST['mota'];
+                $hinh = $_FILES['hinh']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm);
+                $thongbao = 1;
+            }
+            ;
+            $listdanhmuc = listall_danhmuc();
+            include "sanpham/add.php";
+            break;
+        case "listsp":
+            $listProduct = listall_sanpham();
+            include "sanpham/list.php";
+            break;
+        case "chitietsanpham":
+            $product = listone_sanpham($_GET['id']);
+            include "sanpham/chitietsanpham.php";
+            break;
+        case "editsp":
+            if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
+                $iddm = $_POST['iddm'];
+                $tensp = $_POST['tensp'];
+                $giasp = $_POST['giasp'];
+                $mota = $_POST['mota'];
+                $hinh = $_FILES['hinh']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                update_sanpham($_GET['id'], $tensp, $giasp, $hinh, $mota, $iddm);
+                $thongbao = 1;
+            }
+            $listdanhmuc = listall_danhmuc();
+            $product = listone_sanpham($_GET['id']);
+            include "sanpham/edit.php";
+            break;
+        case "delsp":
+            delete_sanpham($_GET["id"]);
+            header("Location: index.php?act=listsp");
+            break;
+        case "adddm":
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $tendm = $_POST['tendm'];
+                insert_danhmuc($tendm);
+                $thongbao = 1;
+            }
+            include "danhmuc/add.php";
+            break;
+        case "listdm":
+            $list_danhmuc = listall_danhmuc();
+            include "danhmuc/list.php";
+            break;
+        case "editdm":
+            if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
+                $tendm = $_POST["tendm"];
+                update_danhmuc($_GET['id'], $tendm);
+                $thongbao = 1;
+            }
+            $danhmuc = listone_danhmuc($_GET['id']);
+            include "danhmuc/edit.php";
+            break;
+        case "deldm":
+            delete_danhmuc($_GET["id"]);
+            header("Location: index.php?act=listdm");
+            break;
+        case "listtk":
+            $listtk = listall_taikhoan();
+            include "taikhoan/list.php";
+            break;
+        case "chitiettk":
+            $tk = listone_taikhoan($_GET['id']);
+            include "taikhoan/chitiettk.php";
+            break;
+        case "edittk":
+            if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
+                $tentk = $_POST["tentk"];
+                $user = $_POST["user"];
+                $pass = $_POST["pass"];
+                $email = $_POST["email"];
+                $address = $_POST["address"];
+                $tel = $_POST["tel"];
+                $status = $_POST["status"];
+                $role = $_POST["role"];
+                update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $tel, $status, $role);
+                $thongbao = 1;
+            }
+            $tk = listone_taikhoan($_GET['id']);
+            include "taikhoan/edit.php";
+            break;
+        case "listbill":
+            include "donhang/list.php";
+            break;
+        case "thongke":
+            include "thongke/chart.php";
+            break;
+    }
+} else
+    include "home.php";
+
+include "footer.php";
 ?>
