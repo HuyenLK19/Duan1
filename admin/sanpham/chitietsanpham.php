@@ -32,7 +32,7 @@
         <div class="form-group row">
             <label class="col-md-2 col-form-label">Mô tả</label>
             <div class="col-md-10">
-                <textarea class="form-control" rows="5" readonly id="example-textarea"><?php echo $product['description'] ?>
+                <textarea class="form-control" rows="5" readonly id="example-textarea"><?php echo $product['mota'] ?>
                 </textarea>
             </div>
         </div>

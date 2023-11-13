@@ -27,62 +27,36 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr onclick="document.location.href = 'index.php?act=chitiettk'">
-                            <td>01</td>
-                            <td>Tiger Nixon</td>
-                            <td>tigernixon123</td>
-                            <td>1234</td>
-                            <td>tigernixon@gmail.com</td>
-                            <td>Hà Nội</td>
-                            <td>012345678</td>
-                            <td><div class="btn btn-success" style="cursor: default;">Hoạt động</div></td>
-                            <td>Admin</td>
+                        <?php
+                            foreach($listtk as $tk) {
+                        ?>
+                        <tr onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'">
+                            <td><?php echo $tk['id'] ?></td>
+                            <td><?php echo $tk['name'] ?></td>
+                            <td><?php echo $tk['user'] ?></td>
+                            <td><?php echo $tk['pass'] ?></td>
+                            <td><?php echo $tk['email'] ?></td>
+                            <td><?php echo $tk['address'] ?></td>
+                            <td><?php echo $tk['tel'] ?></td>
+                            <?php
+                                if($tk['active'] == 0) {
+                                    echo '<td><div class="btn btn-dark" style="cursor: default;">Tạm dừng</div></td>';
+                                } else echo'<td><div class="btn btn-success" style="cursor: default;">Hoạt động</div></td>';
+                            ?>
+                            <?php
+                                if($tk['role'] == 0) {
+                                    echo '<td>User</td>';
+                                } else if($tk['role'] == 1) {
+                                    echo '<td>Nhân viên</td>';
+                                } else echo '<td>Admin</td>';
+                            ?>
                             <td>
-                                <a href="index.php?act=edittk&&idsp=" style="font-size: 20px;"><i class="ti-pencil"></i></a>
+                                <a href="index.php?act=edittk&&id=<?php echo $tk['id'] ?>" style="font-size: 20px;"><i class="ti-pencil"></i></a>
                             </td>
                         </tr>
-                        <tr onclick="document.location.href = 'index.php?act=chitiettk'">
-                            <td>02</td>
-                            <td>Garrett Winters</td>
-                            <td>garrettwinter4123</td>
-                            <td>1234</td>
-                            <td>garret@gmail.com</td>
-                            <td>Tokyo</td>
-                            <td>0981212424</td>
-                            <td><div class="btn btn-dark" style="cursor: default;">Tạm dừng</div></td>
-                            <td>Nhân viên</td>
-                            <td>
-                                <a href="index.php?act=edittk&&idsp=" style="font-size: 20px;"><i class="ti-pencil"></i></a>
-                            </td>
-                        </tr>
-                        <tr onclick="document.location.href = 'index.php?act=chitiettk'">
-                            <td>02</td>
-                            <td>Garrett Winters</td>
-                            <td>garrettwinter4123</td>
-                            <td>1234</td>
-                            <td>garret@gmail.com</td>
-                            <td>Tokyo</td>
-                            <td>0981212424</td>
-                            <td><div class="btn btn-success" style="cursor: default;">Hoạt động</div></td>
-                            <td>Nhân viên</td>
-                            <td>
-                                <a href="index.php?act=edittk&&idsp=" style="font-size: 20px;"><i class="ti-pencil"></i></a>
-                            </td>
-                        </tr>
-                        <tr onclick="document.location.href = 'index.php?act=chitiettk'">
-                            <td>02</td>
-                            <td>Garrett Winters</td>
-                            <td>garrettwinter4123</td>
-                            <td>1234</td>
-                            <td>garret@gmail.com</td>
-                            <td>Tokyo</td>
-                            <td>0981212424</td>
-                            <td><div class="btn btn-dark" style="cursor: default;">Tạm dừng</div></td>
-                            <td>Nhân viên</td>
-                            <td>
-                                <a href="index.php?act=edittk&&idsp=" style="font-size: 20px;"><i class="ti-pencil"></i></a>
-                            </td>
-                        </tr>
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>
