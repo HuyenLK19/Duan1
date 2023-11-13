@@ -31,7 +31,15 @@
                             <td style="line-height: 100px;"><?php echo $row['name'] ?></td>
                             <td style="line-height: 100px;"><?php echo $row['cate_name'] ?></td>
                             <td style="line-height: 100px;"><?php echo $row['price'] ?>đ</td>
-                            <td><img src="../upload/<?php echo $row['img'] ?>" style="width: 100px; height: 100px;"></td>
+                            <td>
+                                <?php
+                                    if ($row['img'] != ''){
+                                ?>
+                                    <img src="../upload/<?php echo $row['img'] ?>" style="width: 100px; height: 100px;">
+                                <?php
+                                    }
+                                ?>
+                            </td>
                             <td>
                                 <div style="width: 100px; line-height: 100px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                                     <?php echo $row['mota'] ?>
@@ -50,6 +58,5 @@
             <a href="index.php?act=addsp" class="btn btn-secondary">Thêm sản phẩm</a>
         </div>
         <!-- end -->
-
     </div>
 </div>

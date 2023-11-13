@@ -59,9 +59,9 @@
                         ?>
                     </tbody>
                 </table>
+                <a href="index.php?act=addtk" class="btn btn-secondary">Thêm tài khoản</a>
             </div>
             <!-- end -->
-
         </div>
     </div>
 </div>

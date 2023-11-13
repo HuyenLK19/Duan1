@@ -46,19 +46,16 @@
                     <input type="reset" value="Reset" class="btn btn-danger waves-effect">
                     <a href="index.php?act=listsp" class="btn btn-secondary">Danh sách sản phẩm</a>
                 </div>
-                <?php
-                if (isset($thongbao) && ($thongbao == 1)) {
-                    ?>
-                    <div class="alert alert-success text-success alert-dismissible fade show" style="margin-top: 20px;" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        Thêm thành công!
-                    </div>
-                    <?php
-                }
-                ?>
             </form>
         </div>
     </div>
 </div>
+<script>
+    <?php 
+        if (isset($thongbao) && ($thongbao != '')){
+    ?>
+    alert(<?php echo $thongbao ?>);
+    <?php
+        }
+    ?>
+</script>
