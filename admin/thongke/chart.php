@@ -1,6 +1,6 @@
 <div class="row">
-
-<div id="piechart" style="width: 1000px; height: 800px;"></div>
+   
+<div id="piechart"></div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -24,13 +24,13 @@ $i=1;
     }
 ?>
 ]);
-  // Optional; add a title and set the width and height of the chart
-  var options = {'title':'Thống kê sản phẩm theo danh mục', 'width':550, 'height':400};
 
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Thống kê sản phẩm theo danh mục', 'width':750, 'height':600,'titleTextStyle':{'fontSize':27}};
+  
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
 }
 </script>
-
 </div>
