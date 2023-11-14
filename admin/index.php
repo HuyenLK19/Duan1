@@ -5,6 +5,8 @@ include "../model/sanpham.php";
 include "../model/danhmuc.php";
 include "../model/taikhoan.php";
 include "header.php";
+include "../model/thongke.php";
+
 
 if (isset($_GET['act']) && ($_GET['act'] != '')) {
     switch ($_GET['act']) {
@@ -115,6 +117,13 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             include "donhang/list.php";
             break;
         case "thongke":
+            $listthongke = loadall_thongke();
+
+            include "thongke/list.php";
+            break;
+           
+        case "bieudo":
+            $listthongke = loadall_thongke();
             include "thongke/chart.php";
             break;
     }
