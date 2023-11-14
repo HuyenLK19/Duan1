@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="giasp">Giá sản phẩm<span class="text-danger">*</span></label>
-                    <input type="text" name="giasp" parsley-trigger="change" required class="form-control" value="<?php echo $product['price'] ?>đ">
+                    <input type="text" name="giasp" parsley-trigger="change" required class="form-control" value="<?php echo $product['price'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="hinh">Hình ảnh</label>
@@ -46,19 +46,16 @@
                     <input type="reset" value="Reset" class="btn btn-danger waves-effect">
                     <a href="index.php?act=listsp" class="btn btn-secondary">Danh sách sản phẩm</a>
                 </div>
-                <?php
-                if (isset($thongbao) && ($thongbao == 1)) {
-                    ?>
-                    <div class="alert alert-success text-success alert-dismissible fade show" style="margin-top: 20px;" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        Cập nhật thành công!
-                    </div>
-                    <?php
-                }
-                ?>
             </form>
         </div>
     </div>
 </div>
+<script>
+    var form = document.getElementById('f');
+
+    function myFunction() {
+        if (form.checkValidity()) {
+            alert("Sửa sản phẩm thành công!");
+        };
+    };
+</script>

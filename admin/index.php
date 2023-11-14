@@ -25,9 +25,8 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm);
-                $thongbao = 1;
-            }
-            ;
+                header("Location: index.php?act=listsp");
+            };
             $listdanhmuc = listall_danhmuc();
             include "sanpham/add.php";
             break;
@@ -54,7 +53,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_sanpham($_GET['id'], $tensp, $giasp, $hinh, $mota, $iddm);
-                $thongbao = 1;
+                header("Location: index.php?act=listsp");
             }
             $listdanhmuc = listall_danhmuc();
             $product = listone_sanpham($_GET['id']);
@@ -68,8 +67,9 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $tendm = $_POST['tendm'];
                 insert_danhmuc($tendm);
-                $thongbao = 1;
-            }
+                $thongbao = "Thêm danh mục thành công!";
+                header("Location: index.php?act=listdm");
+            };
             include "danhmuc/add.php";
             break;
         case "listdm":
@@ -80,7 +80,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
                 $tendm = $_POST["tendm"];
                 update_danhmuc($_GET['id'], $tendm);
-                $thongbao = 1;
+                header("Location: index.php?act=listdm");
             }
             $danhmuc = listone_danhmuc($_GET['id']);
             include "danhmuc/edit.php";
@@ -88,6 +88,20 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
         case "deldm":
             delete_danhmuc($_GET["id"]);
             header("Location: index.php?act=listdm");
+            break;
+        case "addtk":
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])){
+                $tentk = $_POST["tentk"];
+                $user = $_POST["user"];
+                $pass = $_POST["pass"];
+                $email = $_POST["email"];
+                $address = $_POST["address"];
+                $tel = $_POST["tel"];
+                $role = $_POST["role"];
+                insert_taikhoan($tentk, $user, $pass, $email, $address, $tel, 1, $role);
+                header("Location: index.php?act=listtk");
+            }
+            include "taikhoan/add.php";
             break;
         case "listtk":
             $listtk = listall_taikhoan();
@@ -108,7 +122,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $status = $_POST["status"];
                 $role = $_POST["role"];
                 update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $tel, $status, $role);
-                $thongbao = 1;
+                header("Location: index.php?act=listtk");
             }
             $tk = listone_taikhoan($_GET['id']);
             include "taikhoan/edit.php";
@@ -127,8 +141,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             include "thongke/chart.php";
             break;
     }
-} else
-    include "home.php";
+} else include "home.php";
 
 include "footer.php";
 ?>
