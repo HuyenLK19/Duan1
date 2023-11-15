@@ -65,18 +65,31 @@
                         <div class="table-responsive">
                             <table class="table table-centered mt-4">
                                 <thead>
-                                <tr><th>#</th>
-                                    <th>Mục</th>
-                                    <th>Số lượng</th>
-                                    <th>Đơn giá</th>
-                                    <th class="text-right">Tổng cộng</th>
-                                </tr></thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Số lượng</th>
+                                        <th>Đơn giá</th>
+                                        <th class="text-right">Tổng cộng</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
+                                    <?php
+                                        foreach($listbill as $bill){
+                                    ?>
+                                    <td><?php echo $bill['id'] ?></td>
+                                    <td><?php echo $bill['name'] ?></td>
+                                    <td><?php echo $bill['soluong'] ?></td>
+                                    <td><?php echo $bill['giasp'] ?>đ</td>
+                                    <td></td>
+                                    <td class="text-right"><?php echo $bill['giasp']*$bill['soluong'] ?>đ</td>
+                                    <?php
+                                        }
+                                    ?>
                                 <tr>
                                     <td>1</td>
                                     <td>
-                                        <b>Laptop</b> <br/>
-                                        Thương Hiệu Model VGN-TXN27N/B 11.1" Notebook PC
+                                        
                                     </td>
                                     <td>1</td>
                                     <td>$1799</td>

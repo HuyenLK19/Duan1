@@ -260,6 +260,13 @@
                                                 </a>
                                                 <div class="account-menu__divider"></div>
                                                 <ul class="account-menu__links">
+                                                    <?php
+                                                    if ($_SESSION['user']['role'] > 0){
+                                                    ?>
+                                                    <li><a href="./admin/">Vào trang quản lý</a></li>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                     <li><a href="index.php?act=lichsumua">Lịch sử đặt hàng</a></li>
                                                     <li><a href="index.php?act=capnhattt">Cập nhật thông tin</a></li>
                                                     <li><a href="index.php?act=doimk">Đổi mật khẩu</a></li>

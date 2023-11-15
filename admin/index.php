@@ -4,9 +4,9 @@ include "../model/pdo.php";
 include "../model/sanpham.php";
 include "../model/danhmuc.php";
 include "../model/taikhoan.php";
-include "header.php";
+include "../model/donhang.php";
 include "../model/thongke.php";
-
+include "header.php";
 
 if (isset($_GET['act']) && ($_GET['act'] != '')) {
     switch ($_GET['act']) {
@@ -159,13 +159,13 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             include "taikhoan/edit.php";
             break;
         case "listbill":
+            $listbill = listall_donhang();
             include "donhang/list.php";
             break;
         case "thongke":
             $listthongke = loadall_thongke();
             include "thongke/list.php";
             break;
-           
         case "bieudo":
             $listthongke = loadall_thongke();
             include "thongke/chart.php";
