@@ -15,6 +15,11 @@
                     <label for="tendm">Tên danh mục<span class="text-danger">*</span></label>
                     <input type="text" name="tendm" parsley-trigger="change" value="<?php echo $danhmuc[0][1] ?>" required class="form-control">
                 </div>
+                <div class="form-group">
+                    <label for="hinh">Hình ảnh</label>
+                    <img src="../upload/category/<?php echo $danhmuc[0][2] ?>" style="width: 100px; height: 100px; position: relative; left: 40px; top: -10px;">
+                    <input type="file" name="hinh" class="filestyle form-control">
+                </div>
                 <div class="form-group text-right mb-0">
                     <input class="btn btn-primary waves-effect waves-light mr-1" type="submit" value="Cập nhật" name="capnhat">
                     <input type="reset" class="btn btn-danger waves-effect" value="Reset">

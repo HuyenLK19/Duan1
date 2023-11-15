@@ -25,7 +25,11 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email<span class="text-danger">*</span></label>
-                    <input type="text" name="email" parsley-trigger="change" required class="form-control">
+                    <input type="email" name="email" parsley-trigger="change" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Avatar</label>
+                    <input type="file" name="hinh" class="filestyle form-control">
                 </div>
                 <div class="form-group">
                     <label for="address">Địa chỉ<span class="text-danger">*</span></label>

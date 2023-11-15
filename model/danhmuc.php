@@ -9,13 +9,15 @@
         return pdo_query($sql);
     };
 
-    function insert_danhmuc($tendm){
-        $sql = "INSERT INTO danhmuc(name) VALUES('$tendm')";
+    function insert_danhmuc($tendm, $hinh){
+        $sql = "INSERT INTO danhmuc(name, img) VALUES('$tendm', '$hinh')";
         pdo_execute($sql);
     };
 
-    function update_danhmuc($id, $tendm){
-        $sql = "UPDATE danhmuc SET name = '$tendm' WHERE id = '$id'";
+    function update_danhmuc($id, $tendm, $hinh){
+        if ($hinh != ''){
+            $sql = "UPDATE danhmuc SET name = '$tendm', img = '$hinh' WHERE id = '$id'";
+        } $sql = "UPDATE danhmuc SET name = '$tendm' WHERE id = '$id'";
         pdo_execute($sql);
     };
 

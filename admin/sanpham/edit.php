@@ -35,6 +35,13 @@
                 </div>
                 <div class="form-group">
                     <label for="hinh">Hình ảnh</label>
+                    <?php
+                        if ($product['img'] != ''){
+                    ?>
+                    <img src="../upload/<?php echo $product['img'] ?>" style="width: 100px; height: 100px; position: relative; left: 40px; top: -10px;">
+                    <?php
+                        }
+                    ?>
                     <input type="file" name="hinh" class="filestyle form-control">
                 </div>
                 <div class="form-group">

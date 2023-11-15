@@ -25,29 +25,40 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email<span class="text-danger">*</span></label>
-                    <input type="text" name="email" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][4] ?>">
+                    <input type="email" name="email" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][4] ?>">
+                </div>
+                <div class="form-group">
+                    <label>Avatar</label>
+                    <?php
+                        if ($tk[0][5] != ""){
+                    ?>
+                    <img src="../upload/avatar/<?php echo $tk[0][5] ?>" alt="">
+                    <?php
+                        }
+                    ?>
+                    <input type="file" name="hinh" class="filestyle form-control">
                 </div>
                 <div class="form-group">
                     <label for="address">Địa chỉ<span class="text-danger">*</span></label>
-                    <input type="text" name="address" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][5] ?>">
+                    <input type="text" name="address" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][6] ?>">
                 </div>
                 <div class="form-group">
                     <label for="tel">Số điện thoại<span class="text-danger">*</span></label>
-                    <input type="text" name="tel" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][6] ?>">
+                    <input type="text" name="tel" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][7] ?>">
                 </div>
                 <div class="form-group">
                     <label for="status">Trạng thái<span class="text-danger">*</span></label>
                     <select class="custom-select" name="status" parsley-trigger="change" required>
-                        <option value="0" <?php if($tk[0][7] == 0) echo "selected"; ?>>Dừng hoạt động</option>
-                        <option value="1" <?php if($tk[0][7] == 1) echo "selected"; ?>>Hoạt động</option>
+                        <option value="0" <?php if($tk[0][8] == 0) echo "selected"; ?>>Dừng hoạt động</option>
+                        <option value="1" <?php if($tk[0][8] == 1) echo "selected"; ?>>Hoạt động</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="role">Vai trò<span class="text-danger">*</span></label>
                     <select class="custom-select" name="role" parsley-trigger="change" required>
-                        <option value="0" <?php if($tk[0][8] == 0) echo "selected"; ?>>User</option>
-                        <option value="1" <?php if($tk[0][8] == 1) echo "selected"; ?>>Nhân viên</option>
-                        <option value="2" <?php if($tk[0][8] == 2) echo "selected"; ?>>Admin</option>
+                        <option value="0" <?php if($tk[0][9] == 0) echo "selected"; ?>>User</option>
+                        <option value="1" <?php if($tk[0][9] == 1) echo "selected"; ?>>Nhân viên</option>
+                        <option value="2" <?php if($tk[0][9] == 2) echo "selected"; ?>>Admin</option>
                     </select>
                 </div>
                 <div class="form-group text-right mb-0">

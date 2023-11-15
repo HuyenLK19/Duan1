@@ -19,6 +19,7 @@
                             <th>Tài khoản</th>
                             <th>Mật khẩu</th>
                             <th>Email</th>
+                            <th>Avatar</th>
                             <th>Địa chỉ</th>
                             <th>Số điện thoại</th>
                             <th>Trạng thái</th>
@@ -30,14 +31,23 @@
                         <?php
                             foreach($listtk as $tk) {
                         ?>
-                        <tr onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'">
-                            <td><?php echo $tk['id'] ?></td>
-                            <td><?php echo $tk['name'] ?></td>
-                            <td><?php echo $tk['user'] ?></td>
-                            <td><?php echo $tk['pass'] ?></td>
-                            <td><?php echo $tk['email'] ?></td>
-                            <td><?php echo $tk['address'] ?></td>
-                            <td><?php echo $tk['tel'] ?></td>
+                        <tr>
+                            <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'"><?php echo $tk['id'] ?></td>
+                            <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'"><?php echo $tk['name'] ?></td>
+                            <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'"><?php echo $tk['user'] ?></td>
+                            <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'"><?php echo $tk['pass'] ?></td>
+                            <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'"><?php echo $tk['email'] ?></td>
+                            <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'">
+                                <?php
+                                if ($tk['img'] != ''){
+                                ?>
+                                <img class="rounded-circle" src="../upload/avatar/<?php echo $tk['img'] ?>" style="width: 48px; height: 48px;">
+                                <?php
+                                }
+                                ?>
+                            </td>
+                            <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'"><?php echo $tk['address'] ?></td>
+                            <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'"><?php echo $tk['tel'] ?></td>
                             <?php
                                 if($tk['active'] == 0) {
                                     echo '<td><div class="btn btn-dark" style="cursor: default;">Tạm dừng</div></td>';

@@ -26,12 +26,12 @@
                     <?php
                     foreach ($listProduct as $row) {
                     ?>
-                        <tr style="text-align: center;" onclick="document.location.href = 'index.php?act=chitietsanpham&&id=<?php echo $row['id'] ?>'">
-                            <td style="line-height: 100px;"><?php echo $row['id'] ?></td>
-                            <td style="line-height: 100px;"><?php echo $row['name'] ?></td>
-                            <td style="line-height: 100px;"><?php echo $row['cate_name'] ?></td>
-                            <td style="line-height: 100px;"><?php echo $row['price'] ?>đ</td>
-                            <td>
+                        <tr style="text-align: center;">
+                            <td style="line-height: 100px;" onclick="document.location.href = 'index.php?act=chitietsanpham&&id=<?php echo $row['id'] ?>'"><?php echo $row['id'] ?></td>
+                            <td style="line-height: 100px;" onclick="document.location.href = 'index.php?act=chitietsanpham&&id=<?php echo $row['id'] ?>'"><?php echo $row['name'] ?></td>
+                            <td style="line-height: 100px;" onclick="document.location.href = 'index.php?act=chitietsanpham&&id=<?php echo $row['id'] ?>'"><?php echo $row['cate_name'] ?></td>
+                            <td style="line-height: 100px;" onclick="document.location.href = 'index.php?act=chitietsanpham&&id=<?php echo $row['id'] ?>'"><?php echo $row['price'] ?>đ</td>
+                            <td onclick="document.location.href = 'index.php?act=chitietsanpham&&id=<?php echo $row['id'] ?>'">
                                 <?php
                                     if ($row['img'] != ''){
                                 ?>
@@ -40,14 +40,14 @@
                                     }
                                 ?>
                             </td>
-                            <td>
+                            <td onclick="document.location.href = 'index.php?act=chitietsanpham&&id=<?php echo $row['id'] ?>'">
                                 <div style="width: 100px; line-height: 100px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                                     <?php echo $row['mota'] ?>
                                 </div>
                             </td>
                             <td style="line-height: 100px;">
                                 <a href="index.php?act=editsp&&id=<?php echo $row['id'] ?>" style="font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=delsp&&id=<?php echo $row['id'] ?>" style="font-size: 20px;"><i class="ti-trash"></i></a>
+                                <a href="index.php?act=delsp&&id=<?php echo $row['id'] ?>" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này không?')" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
                         </tr>
                     <?php

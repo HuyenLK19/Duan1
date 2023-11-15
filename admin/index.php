@@ -17,7 +17,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $giasp = $_POST['giasp'];
                 $mota = $_POST['mota'];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/";
+                $target_dir = "../upload/product";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
@@ -45,7 +45,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $giasp = $_POST['giasp'];
                 $mota = $_POST['mota'];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/";
+                $target_dir = "../upload/product";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
@@ -66,8 +66,15 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
         case "adddm":
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $tendm = $_POST['tendm'];
-                insert_danhmuc($tendm);
-                $thongbao = "Thêm danh mục thành công!";
+                $hinh = $_FILES['hinh']['name'];
+                $target_dir = "../upload/product";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                insert_danhmuc($tendm, $hinh);
                 header("Location: index.php?act=listdm");
             };
             include "danhmuc/add.php";
@@ -79,7 +86,15 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
         case "editdm":
             if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
                 $tendm = $_POST["tendm"];
-                update_danhmuc($_GET['id'], $tendm);
+                $hinh = $_FILES['hinh']['name'];
+                $target_dir = "../upload/product";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                update_danhmuc($_GET['id'], $tendm, $hinh);
                 header("Location: index.php?act=listdm");
             }
             $danhmuc = listone_danhmuc($_GET['id']);
@@ -96,9 +111,17 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $pass = $_POST["pass"];
                 $email = $_POST["email"];
                 $address = $_POST["address"];
+                $hinh = $_FILES['hinh']['name'];
+                $target_dir = "../upload/avatar";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
                 $tel = $_POST["tel"];
                 $role = $_POST["role"];
-                insert_taikhoan($tentk, $user, $pass, $email, $address, $tel, 1, $role);
+                insert_taikhoan($tentk, $user, $pass, $email, $address, $hinh, $tel, $role);
                 header("Location: index.php?act=listtk");
             }
             include "taikhoan/add.php";
@@ -118,10 +141,18 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $pass = $_POST["pass"];
                 $email = $_POST["email"];
                 $address = $_POST["address"];
+                $hinh = $_FILES['hinh']['name'];
+                $target_dir = "../upload/avatar";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
                 $tel = $_POST["tel"];
                 $status = $_POST["status"];
                 $role = $_POST["role"];
-                update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $tel, $status, $role);
+                update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
                 header("Location: index.php?act=listtk");
             }
             $tk = listone_taikhoan($_GET['id']);
@@ -132,7 +163,6 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             break;
         case "thongke":
             $listthongke = loadall_thongke();
-
             include "thongke/list.php";
             break;
            

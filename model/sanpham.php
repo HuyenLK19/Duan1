@@ -15,7 +15,9 @@
     };
 
     function update_sanpham($id, $tensp, $giasp, $hinh, $mota, $iddm){
-        $sql = "UPDATE sanpham SET name = '$tensp', price = '$giasp', img = '$hinh', mota = '$mota', iddm = '$iddm' WHERE id = '$id'";
+        if ($hinh != ''){
+            $sql = "UPDATE sanpham SET name = '$tensp', price = '$giasp', img = '$hinh', mota = '$mota', iddm = '$iddm' WHERE id = '$id'";
+        } else $sql = "UPDATE sanpham SET name = '$tensp', price = '$giasp', mota = '$mota', iddm = '$iddm' WHERE id = '$id'";
         pdo_execute($sql);
     };
 

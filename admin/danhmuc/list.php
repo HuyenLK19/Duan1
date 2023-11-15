@@ -8,14 +8,15 @@
 </div>
 <!-- end row -->
 <div class="row">
-    <div class="col-lg-6" style="position: relative; left: 20%;">
+    <div class="col-lg-12">
         <div class="mt-5">
             <div class="table-responsive">
-                <table class="table">
-                    <thead class="thead-light">
+                <table class="table m-0">
+                    <thead>
                         <tr>
                             <th>ID</th>
                             <th>Tên danh mục</th>
+                            <th>Hình ảnh</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -24,11 +25,20 @@
                             foreach ($list_danhmuc as $danhmuc) {
                         ?>
                         <tr>
-                            <th scope="row"><?php echo $danhmuc['id'] ?></th>
+                            <td><?php echo $danhmuc['id'] ?></td>
                             <td><?php echo $danhmuc['name'] ?></td>
                             <td>
-                                <a href="index.php?act=editdm&&id=<?php echo $danhmuc['id'] ?>" style="margin: 0 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
-                                <a href="index.php?act=deldm&&id=<?php echo $danhmuc['id'] ?>" style="font-size: 20px;"><i class="ti-trash"></i></a>
+                                <?php
+                                if ($danhmuc['img'] != ''){
+                                ?>
+                                <img src="../upload/category/<?php echo $danhmuc['img'] ?>" style="width: 100px; height: 100px;">
+                                <?php
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <a href="index.php?act=editdm&&id=<?php echo $danhmuc['id'] ?>" style="margin-right: 20px;font-size: 20px;"><i class="ti-pencil"></i></a>
+                                <a href="index.php?act=deldm&&id=<?php echo $danhmuc['id'] ?>" onclick="return confirm('Bạn có muốn xóa danh mục này không?')" style="font-size: 20px;"><i class="ti-trash"></i></a>
                             </td>
                         </tr>
                         <?php

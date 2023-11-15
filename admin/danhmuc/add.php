@@ -15,6 +15,10 @@
                     <label for="tendm">Tên danh mục<span class="text-danger">*</span></label>
                     <input type="text" name="tendm" parsley-trigger="change" required class="form-control">
                 </div>
+                <div class="form-group">
+                    <label for="hinh">Hình ảnh</label>
+                    <input type="file" name="hinh" class="filestyle form-control">
+                </div>
                 <div class="form-group text-right mb-0">
                     <input class="btn btn-primary waves-effect waves-light mr-1" type="submit" name="themmoi" onclick="myFunction()" value="Thêm">
                     <input type="reset" class="btn btn-danger waves-effect" value="Reset">

@@ -242,22 +242,20 @@
                                                 <form class="account-menu__form" action="index.php?act=dangnhap" method="POST">
                                                     <div class="account-menu__form-title">Đăng nhập</div>
                                                     <div class="form-group">
-                                                        <label for="header-signin-email" class="sr-only">Email</label> 
-                                                        <input id="header-signin-email" type="email" class="form-control form-control-sm" placeholder="Email">
+                                                        <label for="header-signin-email" class="sr-only">Tài khoản</label> 
+                                                        <input id="header-signin-email" type="text" name="user" class="form-control form-control-sm" placeholder="Nhập tài khoản">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="header-signin-password" class="sr-only">Mật khẩu</label>
                                                         <div class="account-menu__form-forgot">
-                                                            <input id="header-signin-password" type="password" class="form-control form-control-sm" placeholder="Mật khẩu"> 
+                                                            <input id="header-signin-password" type="password" name="pass" class="form-control form-control-sm" placeholder="Mật khẩu"> 
                                                             <a href="index.php?act=quenmk" class="account-menu__form-forgot-link">
                                                                 Quên mật khẩu ?
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="form-group account-menu__form-button">
-                                                        <button type="submit" class="btn btn-primary btn-sm">
-                                                            Đăng nhập
-                                                        </button>
+                                                        <input type="submit" class="btn btn-primary btn-sm" name="dangnhap" value="Đăng nhập">
                                                     </div>
                                                     <div class="account-menu__form-link">
                                                         <a href="index.php?act=dangky">Tạo tài khoản mới</a>
