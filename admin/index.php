@@ -162,6 +162,10 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             $listbill = listall_donhang();
             include "donhang/list.php";
             break;
+        case "chitietdonhang":
+            $bill = listone_donhang($_GET['id']);
+            include "donhang/chitietdonhang.php";
+            break;
         case "thongke":
             $listthongke = loadall_thongke();
             include "thongke/list.php";
