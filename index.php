@@ -1,4 +1,6 @@
 <?php
+ob_start();
+session_start();
 include "view/header.php";
 include "model/pdo.php";
 include "model/taikhoan.php";
@@ -12,13 +14,27 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $check_login = login($user, $pass);
                 if (is_array($check_login)){
                     $_SESSION['user'] = $check_login;
-                    header("location: index.php");
+                    echo "<script type='text/javascript'>
+                            alert('Đăng nhập thành công!');
+                            window.location.href='index.php'
+                        </script>";
                 } else {
                     $thongbao = $check_login;
-                    echo "<script type='text/javascript'>alert('$thongbao');</script>";
+                    if (strlen($check_login) == 48) {
+                    echo "<script type='text/javascript'>
+                            alert('$thongbao');
+                            window.location.href='index.php'
+                        </script>";
+                    } else echo "<script type='text/javascript'>
+                                    alert('$thongbao');
+                                    window.location.href='index.php?act=dangky'
+                                </script>";
                 }
             }
-            include "view/home.php";
+            break;
+        case "dangxuat":
+            session_unset();
+            header("Location: index.php");
             break;
         case "danhmuc":
             include "view/danhmuc.php";

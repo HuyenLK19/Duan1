@@ -239,16 +239,48 @@
                                         </div>
                                         <div class="indicator__dropdown">
                                             <div class="account-menu">
+                                                <?php 
+                                                if (isset($_SESSION['user'])){
+                                                ?>
+                                                <div class="account-menu__divider"></div>
+                                                <a href="index.php?act=thongtintk" class="account-menu__user">
+                                                    <?php
+                                                    if($_SESSION['user']['avatar'] != ''){
+                                                    ?>
+                                                    <div class="account-menu__user-avatar">
+                                                        <img src="upload/avatar/<?php echo $_SESSION['user']['avatar'] ?>">
+                                                    </div>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                    <div class="account-menu__user-info">
+                                                        <div class="account-menu__user-name"><?php echo $_SESSION['user']['name'] ?></div>
+                                                        <div class="account-menu__user-email"><?php echo $_SESSION['user']['email'] ?></div>
+                                                    </div>
+                                                </a>
+                                                <div class="account-menu__divider"></div>
+                                                <ul class="account-menu__links">
+                                                    <li><a href="index.php?act=lichsumua">Lịch sử đặt hàng</a></li>
+                                                    <li><a href="index.php?act=capnhattt">Cập nhật thông tin</a></li>
+                                                    <li><a href="index.php?act=doimk">Đổi mật khẩu</a></li>
+                                                </ul>
+                                                <div class="account-menu__divider"></div>
+                                                <ul class="account-menu__links">
+                                                    <li><a href="index.php?act=dangxuat">Đăng xuất</a></li>
+                                                </ul>
+                                                <?php
+                                                } else {
+                                                ?>
                                                 <form class="account-menu__form" action="index.php?act=dangnhap" method="POST">
                                                     <div class="account-menu__form-title">Đăng nhập</div>
                                                     <div class="form-group">
                                                         <label for="header-signin-email" class="sr-only">Tài khoản</label> 
-                                                        <input id="header-signin-email" type="text" name="user" class="form-control form-control-sm" placeholder="Nhập tài khoản">
+                                                        <input id="header-signin-email" type="text" name="user" required class="form-control form-control-sm" placeholder="Nhập tài khoản">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="header-signin-password" class="sr-only">Mật khẩu</label>
                                                         <div class="account-menu__form-forgot">
-                                                            <input id="header-signin-password" type="password" name="pass" class="form-control form-control-sm" placeholder="Mật khẩu"> 
+                                                            <input id="header-signin-password" type="password" name="pass" required class="form-control form-control-sm" placeholder="Mật khẩu"> 
                                                             <a href="index.php?act=quenmk" class="account-menu__form-forgot-link">
                                                                 Quên mật khẩu ?
                                                             </a>
@@ -261,6 +293,9 @@
                                                         <a href="index.php?act=dangky">Tạo tài khoản mới</a>
                                                     </div>
                                                 </form>
+                                                <?php
+                                                };
+                                                ?>
                                                 <!-- After login -->
                                                 <!-- <div class="account-menu__divider"></div><a
                                                     href="account-dashboard.html" class="account-menu__user">

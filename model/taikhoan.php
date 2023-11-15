@@ -23,14 +23,14 @@
 
     function login($user, $pass){
         $sql = "SELECT * FROM taikhoan WHERE user = '$user' AND pass = '$pass'";
-        if (is_array(pdo_query($sql))){
+        if (is_array(pdo_query_one($sql))){
             return pdo_query_one($sql);
         } else {
             $sql = "SELECT * FROM taikhoan WHERE user = '$user'";
             if (is_array(pdo_query_one($sql))){
-                return "Nhập sai mật khẩu!";
+                return "Nhập sai mật khẩu! Vui lòng nhập lại!";
             }
-            return "Tài khoản không tồn tại!";
+            return "Tài khoản không tồn tại! Vui lòng đăng ký tài khoản tại đây !";
         }
     }
 ?>
