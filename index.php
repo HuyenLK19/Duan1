@@ -36,8 +36,14 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             session_unset();
             header("Location: index.php");
             break;
+        case "dangky":
+            include "view/dangky.php";
+            break;
         case "danhmuc":
             include "view/danhmuc.php";
+            break;
+        case "chitietsanpham":
+            include "view/chitietsanpham.php";
             break;
         case "gioithieu":
             include "view/gioithieu.php";
