@@ -110,8 +110,8 @@ ini_set('display_errors', 1);
                     $i=0;
                     foreach($spnew as $sp){
                         extract($sp);
-                        $hinh=$imgpath.$img;
-                        $linksp="index.php?act=chitietsanpham&idsp=".$id;
+                        $hinh= "upload/product/".$img;
+                        $linksp= "index.php?act=chitietsanpham&idsp=".$id;
                         // if(($i==2)||($i==5)||($i==8)){
                         //     $mr="mr";
                         // }else{

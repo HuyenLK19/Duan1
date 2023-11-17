@@ -9,16 +9,16 @@ include "global.php";
 
 
 $spnew = loadall_sanpham_home();
-$sphot=loadall_sanpham_hot();
+$sphot = loadall_sanpham_hot();
 
 if (isset($_GET["act"]) && $_GET["act"] !== "") {
     switch ($_GET["act"]) {
         case "dangnhap":
-            if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])){
+            if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
                 $check_login = login($user, $pass);
-                if (is_array($check_login)){
+                if (is_array($check_login)) {
                     $_SESSION['user'] = $check_login;
                     echo "<script type='text/javascript'>
                             alert('Đăng nhập thành công!');
@@ -27,7 +27,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 } else {
                     $thongbao = $check_login;
                     if (strlen($check_login) == 48) {
-                    echo "<script type='text/javascript'>
+                        echo "<script type='text/javascript'>
                             alert('$thongbao');
                             window.location.href='index.php'
                         </script>";
@@ -43,22 +43,22 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             header("Location: index.php");
             break;
         case "dangky":
-            if (isset($_POST['dangky']) && ($_POST['dangky'])){
+            if (isset($_POST['dangky']) && ($_POST['dangky'])) {
                 $user = $_POST['user'];
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
                 $repass = $_POST['repass'];
-                if (checkuser($user) != ''){
+                if (checkuser($user) != '') {
                     $thongbao = checkuser($user);
                     echo "<script type='text/javascript'>
                             alert('$thongbao');
                         </script>";
-                } else if (checkemail($email) != ''){
+                } else if (checkemail($email) != '') {
                     $thongbao = checkemail($email);
                     echo "<script type='text/javascript'>
                             alert('Sai email!');
                         </script>";
-                } else if ($pass != $repass){
+                } else if ($pass != $repass) {
                     echo "<script type='text/javascript'>
                             alert('Sai mật khẩu!');
                         </script>";
@@ -69,32 +69,32 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             }
             include "view/dangky.php";
             break;
-            case "sanpham":
-                if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
-                    $kyw = $_POST['kyw'];
-                } else {
-                    $kyw = "";
-                }
-                if (isset($_GET['iddm']) && ($_GET['iddm']) > 0) {
-                    $iddm = $_GET['iddm'];
-                } else{
-                    $iddm = 0;
-                }
-                $dssp = listall_sanpham($kyw, $iddm);
-                // $tendm = load_ten_dm($iddm);
-                include "view/sanpham.php";
-                break;
-                case "chitietsnpham":
-                    if (isset($_GET['idsp']) && ($_GET['idsp']) > 0) {
-                        $id = $_GET['idsp'];
-                        $onesp = listall_sanpham($id);
-                        extract($onesp);
-                        // $sp_cungloai = load_sanpham_cungloai($id);
-                        include "view/sanphamct.php";
-                    } else {
-                        include "view/home.php";
-                    }
-                    break;
+        case "sanpham":
+            if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            if (isset($_GET['iddm']) && ($_GET['iddm']) > 0) {
+                $iddm = $_GET['iddm'];
+            } else {
+                $iddm = 0;
+            }
+            $dssp = listall_sanpham($kyw, $iddm);
+            // $tendm = load_ten_dm($iddm);
+            include "view/sanpham.php";
+            break;
+        case "chitietsnpham":
+            if (isset($_GET['idsp']) && ($_GET['idsp']) > 0) {
+                $id = $_GET['idsp'];
+                $onesp = listall_sanpham($id);
+                extract($onesp);
+                // $sp_cungloai = load_sanpham_cungloai($id);
+                include "view/sanphamct.php";
+            } else {
+                include "view/home.php";
+            }
+            break;
         case "danhmuc":
             include "view/danhmuc.php";
             break;
