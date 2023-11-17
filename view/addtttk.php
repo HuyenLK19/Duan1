@@ -15,7 +15,7 @@
                 </nav>
             </div>
             <div class="page-header__title">
-                <h1>Đăng ký tài khoản</h1>
+                <h1>Thêm thông tin tài khoản</h1>
             </div>
         </div>
     </div>
@@ -25,10 +25,10 @@
                 <div class="col-md-6 d-flex flex-column mt-4 mt-md-0">
                     <div class="card flex-grow-1 mb-0">
                         <div class="card-body">
-                            <h3 class="card-title">Đăng ký</h3>
+                            <h3 class="card-title">Thông tin </h3>
                             <form method="post" action="index.php?act=dangky">
                                 <div class="form-group">
-                                    <label>Tài khoản</label>
+                                    <label></label>
                                     <input type="text" name="user" class="form-control" placeholder="Nhập tài khoản" required>
                                 </div>
                                 <div class="form-group">

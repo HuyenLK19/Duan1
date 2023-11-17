@@ -35,7 +35,7 @@
                                 <?php
                                     if ($row['img'] != ''){
                                 ?>
-                                    <img src="../upload/<?php echo $row['img'] ?>" style="width: 100px; height: 100px;">
+                                    <img src="../upload/product/<?php echo $row['img'] ?>" style="width: 100px; height: 100px;">
                                 <?php
                                     }
                                 ?>

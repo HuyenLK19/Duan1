@@ -33,4 +33,23 @@
             return "Tài khoản không tồn tại! Vui lòng đăng ký tài khoản tại đây !";
         }
     }
+
+    function checkuser($user){
+        $sql = "SELECT * FROM taikhoan WHERE user = '$user'";
+        if (is_array(pdo_query_one($sql))){
+            return "Tài khoản đã tồn tại!";
+        }
+    }
+
+    function checkemail($email){
+        $sql = "SELECT * FROM taikhoan WHERE email = '$email'";
+        if (is_array(pdo_query_one($sql))){
+            return "Email đã được liên kết với một tài khoản khác!";
+        }
+    }
+    
+    function dangky($user, $email, $pass){
+        $sql = "INSERT INTO taikhoan(user, pass, email) VALUES('$user', '$pass', '$email')";
+        pdo_execute($sql);
+    };
 ?>

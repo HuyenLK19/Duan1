@@ -37,7 +37,34 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             header("Location: index.php");
             break;
         case "dangky":
+            if (isset($_POST['dangky']) && ($_POST['dangky'])){
+                $user = $_POST['user'];
+                $email = $_POST['email'];
+                $pass = $_POST['pass'];
+                $repass = $_POST['repass'];
+                if (checkuser($user) != ''){
+                    $thongbao = checkuser($user);
+                    echo "<script type='text/javascript'>
+                            alert('$thongbao');
+                        </script>";
+                } else if (checkemail($email) != ''){
+                    $thongbao = checkemail($email);
+                    echo "<script type='text/javascript'>
+                            alert('Sai email!');
+                        </script>";
+                } else if ($pass != $repass){
+                    echo "<script type='text/javascript'>
+                            alert('Sai mật khẩu!');
+                        </script>";
+                } else {
+                    dangky($user, $email, $pass);
+                    header("Location: index.php?act=addtt");
+                }
+            }
             include "view/dangky.php";
+            break;
+        case "addtt":
+            include "view/addtttk.php";
             break;
         case "danhmuc":
             include "view/danhmuc.php";

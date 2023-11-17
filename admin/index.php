@@ -67,7 +67,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $tendm = $_POST['tendm'];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/product";
+                $target_dir = "../upload/category";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
@@ -87,7 +87,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
                 $tendm = $_POST["tendm"];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/product";
+                $target_dir = "../upload/category";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
