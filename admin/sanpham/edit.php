@@ -57,12 +57,3 @@
         </div>
     </div>
 </div>
-<script>
-    var form = document.getElementById('f');
-
-    function myFunction() {
-        if (form.checkValidity()) {
-            alert("Sửa sản phẩm thành công!");
-        };
-    };
-</script>

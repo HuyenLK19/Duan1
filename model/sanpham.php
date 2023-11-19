@@ -8,16 +8,12 @@
         $sql = "SELECT sp.id, sp.name, sp.price, sp.img, sp.mota, sp.iddm, dm.name as cate_name FROM sanpham sp INNER JOIN danhmuc dm ON sp.iddm = dm.id WHERE sp.id = ".$id;
         return pdo_query_one($sql);
     }
-    function loadall_sanpham_home(){
-        $sql="SELECT * FROM sanpham WHERE 1 ORDER BY id DESC limit 0,9";
-                    $listsanpham=pdo_query($sql);
-                    return $listsanpham;
-    }
+
     function loadall_sanpham_hot(){
         $sql="SELECT * FROM sanpham WHERE 1 ORDER BY view DESC limit 0,6";
-                    $listsanpham=pdo_query($sql);
-                    return $listsanpham;
+        return pdo_query($sql);
     }
+    
     function insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm){
         $sql = "INSERT INTO sanpham(name, price, img, mota, iddm) VALUES('$tensp', '$giasp', '$hinh', '$mota', '$iddm')";
         pdo_execute($sql);

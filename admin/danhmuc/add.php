@@ -28,12 +28,3 @@
         </div>
     </div>
 </div>
-<script>
-    var form = document.getElementById('f');
-
-    function myFunction() {
-        if (form.checkValidity()) {
-            alert("Thêm danh mục thành công!");
-        };
-    };
-</script>

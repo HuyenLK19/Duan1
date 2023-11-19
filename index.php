@@ -8,7 +8,7 @@ include "model/taikhoan.php";
 include "global.php";
 
 
-$spnew = loadall_sanpham_home();
+$allsp = listall_sanpham();
 $sphot = loadall_sanpham_hot();
 
 if (isset($_GET["act"]) && $_GET["act"] !== "") {
@@ -56,7 +56,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 } else if (checkemail($email) != '') {
                     $thongbao = checkemail($email);
                     echo "<script type='text/javascript'>
-                            alert('Sai email!');
+                            alert('$thongbao');
                         </script>";
                 } else if ($pass != $repass) {
                     echo "<script type='text/javascript'>
@@ -64,10 +64,16 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                         </script>";
                 } else {
                     dangky($user, $email, $pass);
-                    header("Location: index.php?act=addtt");
+                    echo "<script type='text/javascript'>
+                            alert('Đăng ký thành công! Vui lòng đăng nhập lại!');
+                            window.location.href='index.php';
+                        </script>";
                 }
             }
             include "view/dangky.php";
+            break;
+        case "thongtintk":
+            include "view/thongtintk.php";
             break;
         case "sanpham":
             if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {

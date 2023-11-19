@@ -6,6 +6,7 @@ include "../model/danhmuc.php";
 include "../model/taikhoan.php";
 include "../model/donhang.php";
 include "../model/thongke.php";
+include "../model/binhluan.php";
 include "header.php";
 
 if (isset($_GET['act']) && ($_GET['act'] != '')) {
@@ -25,7 +26,10 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm);
-                header("Location: index.php?act=listsp");
+                echo "<script type='text/javascript'>
+                        alert('Thêm thành công!');
+                        window.location.href='index.php?act=listsp'
+                    </script>";
             };
             $listdanhmuc = listall_danhmuc();
             include "sanpham/add.php";
@@ -36,6 +40,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             break;
         case "chitietsanpham":
             $product = listone_sanpham($_GET['id']);
+            $binhluan = listall_binhluan($_GET['id']);
             include "sanpham/chitietsanpham.php";
             break;
         case "editsp":
@@ -53,7 +58,10 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_sanpham($_GET['id'], $tensp, $giasp, $hinh, $mota, $iddm);
-                header("Location: index.php?act=listsp");
+                echo "<script type='text/javascript'>
+                        alert('Sửa thành công!');
+                        window.location.href='index.php?act=listsp'
+                    </script>";
             }
             $listdanhmuc = listall_danhmuc();
             $product = listone_sanpham($_GET['id']);
@@ -75,7 +83,10 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 insert_danhmuc($tendm, $hinh);
-                header("Location: index.php?act=listdm");
+                echo "<script type='text/javascript'>
+                        alert('Thêm thành công!');
+                        window.location.href='index.php?act=listsp'
+                    </script>";
             };
             include "danhmuc/add.php";
             break;
@@ -95,7 +106,10 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_danhmuc($_GET['id'], $tendm, $hinh);
-                header("Location: index.php?act=listdm");
+                echo "<script type='text/javascript'>
+                        alert('Sửa thành công!');
+                        window.location.href='index.php?act=listsp'
+                    </script>";
             }
             $danhmuc = listone_danhmuc($_GET['id']);
             include "danhmuc/edit.php";
@@ -122,7 +136,10 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $tel = $_POST["tel"];
                 $role = $_POST["role"];
                 insert_taikhoan($tentk, $user, $pass, $email, $address, $hinh, $tel, $role);
-                header("Location: index.php?act=listtk");
+                echo "<script type='text/javascript'>
+                        alert('Thêm thành công!');
+                        window.location.href='index.php?act=listsp'
+                    </script>";
             }
             include "taikhoan/add.php";
             break;
@@ -153,7 +170,10 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $status = $_POST["status"];
                 $role = $_POST["role"];
                 update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
-                header("Location: index.php?act=listtk");
+                echo "<script type='text/javascript'>
+                        alert('Sửa thành công!');
+                        window.location.href='index.php?act=listsp'
+                    </script>";
             }
             $tk = listone_taikhoan($_GET['id']);
             include "taikhoan/edit.php";

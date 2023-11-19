@@ -5,38 +5,40 @@ ini_set('display_errors', 1);
 // Các dòng mã PHP khác ở đây...
 ?>
 <style>
-    .slide{
-        margin-left: 60px;
+    .slide {
+        margin-top: 10px;
         position: relative;
         top: -10px;
-        
+
     }
-    .slide img{
+
+    .slide img {
         height: 400px;
     }
-    .block-products__list{
+
+    .block-products__list {
         width: 710px;
         display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(2,1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
-    .block-products__list-item{
+
+    .block-products__list-item {
         width: 100%;
         height: 100%;
     }
- 
 </style>
 <!-- site__body -->
 <div class="site__body">
     <!-- .block-banner -->
     <div class="slide">
-    <img src="css/images/banners/banner.webp" class="banner" alt="">
+        <img src="css/images/banners/banner.webp" class="banner" alt="">
     </div>
     <div class="slide">
-    <img src="css/images/banners/banner2.png" class="banner" alt="">
+        <img src="css/images/banners/banner2.png" class="banner" alt="">
     </div>
     <div class="slide">
-    <img src="css/images/banners/banner3.png" class="banner" alt="">
+        <img src="css/images/banners/banner3.png" class="banner" alt="">
     </div>
     <!-- <div class="active-button">
                 <button class="next" onclick="prevSlide(1)"><i class="fa-solid fa-arrow-right"></i></i></button>
@@ -95,39 +97,32 @@ ini_set('display_errors', 1);
             <div class="block-header">
                 <h3 class="block-header__title">Tất cả sản phẩm</h3>
                 <div class="block-header__divider"></div>
-                <div class="block-header__arrows-list"><button class="block-header__arrow block-header__arrow--left"
-                        type="button"><svg width="7px" height="11px">
+                <div class="block-header__arrows-list"><button class="block-header__arrow block-header__arrow--left" type="button"><svg width="7px" height="11px">
                             <use xlink:href="css/images/sprite.svg#arrow-rounded-left-7x11"></use>
-                        </svg></button> <button class="block-header__arrow block-header__arrow--right"
-                        type="button"><svg width="7px" height="11px">
+                        </svg></button> <button class="block-header__arrow block-header__arrow--right" type="button"><svg width="7px" height="11px">
                             <use xlink:href="css/images/sprite.svg#arrow-rounded-right-7x11"></use>
                         </svg></button></div>
             </div>
             <div class="block-products-carousel__slider">
                 <div class="block-products-carousel__preloader"></div>
                 <div class="owl-carousel">
-                    <?php 
-                    $i=0;
-                    foreach($spnew as $sp){
+                    <?php
+                    $i = 0;
+                    foreach ($allsp as $sp) {
                         extract($sp);
-                        $hinh= "upload/product/".$img;
-                        $linksp= "index.php?act=chitietsanpham&idsp=".$id;
-                        // if(($i==2)||($i==5)||($i==8)){
-                        //     $mr="mr";
-                        // }else{
-                        //     $mr="";
-                        // }
+                        $hinh = "upload/product/" . $img;
+                        $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
                         echo '<div class="block-products-carousel__column ">
                         <div class="block-products-carousel__cell">
                             <div class="product-card product-card--hidden-actions">
                                 <div class="product-card__badges-list">
                                     <div class="product-card__badge product-card__badge--new">New</div>
                                 </div>
-                                <div class="product-card__image product-image"><a href="'.$linksp.'"
+                                <div class="product-card__image product-image"><a href="' . $linksp . '"
                                         class="product-image__body"><img class="product-image__img"
-                                            src="'.$hinh.'" alt=""></a></div>
+                                            src="' . $hinh . '" alt=""></a></div>
                                 <div class="product-card__info">
-                                    <div class="product-card__name"><a href="'.$linksp.'">'.$name.'</a></div>
+                                    <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
                                     <div class="product-card__rating">
                                         <div class="product-card__rating-stars">
                                             <div class="rating">
@@ -241,7 +236,7 @@ ini_set('display_errors', 1);
                                 <div class="product-card__actions">
                                     <div class="product-card__availability">Availability: <span class="text-success">In
                                             Stock</span></div>
-                                    <div class="product-card__prices">'.$price.' VND</div>
+                                    <div class="product-card__prices">' . $price . ' VND</div>
                                     <div class="product-card__buttons"><button
                                             class="btn btn-primary product-card__addtocart" type="button">Add To
                                             Cart</button> <button
@@ -263,7 +258,7 @@ ini_set('display_errors', 1);
                             </div>
                         </div>
                     </div>';
-                    $i+=1;
+                        $i += 1;
                     }
                     ?>
                     <!-- <div class="block-products-carousel__column">
@@ -2573,27 +2568,25 @@ ini_set('display_errors', 1);
                 <div class="block-header__divider"></div>
             </div>
             <div class="block-products__body">
-                    <?php 
-                    foreach($sphot as $sp){
-                        extract($sp);
-                    $hinh=$imgpath.$img;
-                        
-                    $linksp="index.php?act=chitietsanpham&idsp=".$id;
+                <?php
+                foreach ($sphot as $sp) {
+                    extract($sp);
+                    $hinh = "upload/product/" . $img;
 
-
-                    }
-                    echo '
+                    $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
+                }
+                echo '
                     <div class="block-products__featured">
                     <div class="block-products__featured-item">
                         <div class="product-card product-card--hidden-actions">
                             <div class="product-card__badges-list">
                                 <div class="product-card__badge product-card__badge--new">New</div>
                             </div>
-                            <div class="product-card__image product-image"><a href="'.$linksp.'"
+                            <div class="product-card__image product-image"><a href="' . $linksp . '"
                                     class="product-image__body"><img class="product-image__img"
-                                        src="'.$img.'" alt=""></a></div>
+                                        src="' . $img . '" alt=""></a></div>
                             <div class="product-card__info">
-                                <div class="product-card__name"><a href="'.$linksp.'">'.$name.'</a></div>
+                                <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
                                 <div class="product-card__rating">
                                     <div class="product-card__rating-stars">
                                         <div class="rating">
@@ -2698,7 +2691,7 @@ ini_set('display_errors', 1);
                             <div class="product-card__actions">
                                 <div class="product-card__availability">Availability: <span class="text-success">In
                                         Stock</span></div>
-                                <div class="product-card__prices">'.$price.'</div>
+                                <div class="product-card__prices">' . $price . '</div>
                                 <div class="product-card__buttons"><button
                                         class="btn btn-primary product-card__addtocart" type="button">Add To
                                         Cart</button> <button
@@ -2724,11 +2717,11 @@ ini_set('display_errors', 1);
                             <div class="product-card__badges-list">
                                 <div class="product-card__badge product-card__badge--hot">Hot</div>
                             </div>
-                            <div class="product-card__image product-image"><a href="'.$linksp.'"
+                            <div class="product-card__image product-image"><a href="' . $linksp . '"
                                     class="product-image__body"><img class="product-image__img"
-                                        src="'.$img.'" alt=""></a></div>
+                                        src="' . $img . '" alt=""></a></div>
                             <div class="product-card__info">
-                                <div class="product-card__name"><a href="'.$linksp.'">'.$name.'</a></div>
+                                <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
                                 <div class="product-card__rating">
                                     <div class="product-card__rating-stars">
                                         <div class="rating">
@@ -2834,7 +2827,7 @@ ini_set('display_errors', 1);
                             <div class="product-card__actions">
                                 <div class="product-card__availability">Availability: <span class="text-success">In
                                         Stock</span></div>
-                                <div class="product-card__prices">'.$price.'</div>
+                                <div class="product-card__prices">' . $price . '</div>
                                 <div class="product-card__buttons"><button
                                         class="btn btn-primary product-card__addtocart" type="button">Add To
                                         Cart</button> <button
@@ -2855,11 +2848,11 @@ ini_set('display_errors', 1);
                     </div>
                     <div class="block-products__list-item">
                         <div class="product-card product-card--hidden-actions">
-                            <div class="product-card__image product-image"><a href="'.$linksp.'"
+                            <div class="product-card__image product-image"><a href="' . $linksp . '"
                                     class="product-image__body"><img class="product-image__img"
-                                        src="'.$hinh.'" alt=""></a></div>
+                                        src="' . $hinh . '" alt=""></a></div>
                             <div class="product-card__info">
-                                <div class="product-card__name"><a href="'.$linksp.'">'.$name.'</a></div>
+                                <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
                                 <div class="product-card__rating">
                                     <div class="product-card__rating-stars">
                                         <div class="rating">
@@ -2964,7 +2957,7 @@ ini_set('display_errors', 1);
                             <div class="product-card__actions">
                                 <div class="product-card__availability">Availability: <span class="text-success">In
                                         Stock</span></div>
-                                <div class="product-card__prices">'.$price.' VND</div>
+                                <div class="product-card__prices">' . $price . ' VND</div>
                                 <div class="product-card__buttons"><button
                                         class="btn btn-primary product-card__addtocart" type="button">Add To
                                         Cart</button> <button
@@ -2988,11 +2981,11 @@ ini_set('display_errors', 1);
                             <div class="product-card__badges-list">
                                 <div class="product-card__badge product-card__badge--sale">Sale</div>
                             </div>
-                            <div class="product-card__image product-image"><a href="'.$linksp.'"
+                            <div class="product-card__image product-image"><a href="' . $linksp . '"
                                     class="product-image__body"><img class="product-image__img"
-                                        src="'.$hinh.'" alt=""></a></div>
+                                        src="' . $hinh . '" alt=""></a></div>
                             <div class="product-card__info">
-                                <div class="product-card__name"><a href="'.$linksp.'">'.$name.'</a></div>
+                                <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
                                 <div class="product-card__rating">
                                     <div class="product-card__rating-stars">
                                         <div class="rating">
@@ -3097,7 +3090,7 @@ ini_set('display_errors', 1);
                                 <div class="product-card__availability">Availability: <span class="text-success">In
                                         Stock</span></div>
                                 <div class="product-card__prices"><span class="product-card__new-price">333.000
-                                        VND</span> <span class="product-card__old-price">'.$price.' VND</span></div>
+                                        VND</span> <span class="product-card__old-price">' . $price . ' VND</span></div>
                                 <div class="product-card__buttons"><button
                                         class="btn btn-primary product-card__addtocart" type="button">Add To
                                         Cart</button> <button
@@ -3118,11 +3111,11 @@ ini_set('display_errors', 1);
                     </div>
                     <div class="block-products__list-item">
                         <div class="product-card product-card--hidden-actions">
-                            <div class="product-card__image product-image"><a href="'.$linksp.'"
+                            <div class="product-card__image product-image"><a href="' . $linksp . '"
                                     class="product-image__body"><img class="product-image__img"
-                                        src="'.$hinh.'" alt=""></a></div>
+                                        src="' . $hinh . '" alt=""></a></div>
                             <div class="product-card__info">
-                                <div class="product-card__name"><a href="'.$linksp.'">'.$name.'</a></div>
+                                <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
                                 <div class="product-card__rating">
                                     <div class="product-card__rating-stars">
                                         <div class="rating">
@@ -3227,7 +3220,7 @@ ini_set('display_errors', 1);
                             <div class="product-card__actions">
                                 <div class="product-card__availability">Availability: <span class="text-success">In
                                         Stock</span></div>
-                                <div class="product-card__prices">'.$price.' VND</div>
+                                <div class="product-card__prices">' . $price . ' VND</div>
                                 <div class="product-card__buttons"><button
                                         class="btn btn-primary product-card__addtocart" type="button">Add To
                                         Cart</button> <button
@@ -3248,11 +3241,11 @@ ini_set('display_errors', 1);
                     </div>
                     <div class="block-products__list-item">
                         <div class="product-card product-card--hidden-actions">
-                            <div class="product-card__image product-image"><a href="'.$linksp.'"
+                            <div class="product-card__image product-image"><a href="' . $linksp . '"
                                     class="product-image__body"><img class="product-image__img"
-                                        src="'.$hinh.'" alt=""></a></div>
+                                        src="' . $hinh . '" alt=""></a></div>
                             <div class="product-card__info">
-                                <div class="product-card__name"><a href="'.$linksp.'">'.$name.'</a></div>
+                                <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
                                 <div class="product-card__rating">
                                     <div class="product-card__rating-stars">
                                         <div class="rating">
@@ -3356,7 +3349,7 @@ ini_set('display_errors', 1);
                             <div class="product-card__actions">
                                 <div class="product-card__availability">Availability: <span class="text-success">In
                                         Stock</span></div>
-                                <div class="product-card__prices">'.$price.'</div>
+                                <div class="product-card__prices">' . $price . '</div>
                                 <div class="product-card__buttons"><button
                                         class="btn btn-primary product-card__addtocart" type="button">Add To
                                         Cart</button> <button
@@ -3377,11 +3370,11 @@ ini_set('display_errors', 1);
                     </div>
                     <div class="block-products__list-item">
                         <div class="product-card product-card--hidden-actions">
-                            <div class="product-card__image product-image"><a href="'.$linksp.'"
+                            <div class="product-card__image product-image"><a href="' . $linksp . '"
                                     class="product-image__body"><img class="product-image__img"
-                                        src="'.$hinh.'" alt=""></a></div>
+                                        src="' . $hinh . '" alt=""></a></div>
                             <div class="product-card__info">
-                                <div class="product-card__name"><a href="'.$linksp.'">'.$name.'</a></div>
+                                <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
                                 <div class="product-card__rating">
                                     <div class="product-card__rating-stars">
                                         <div class="rating">
@@ -3484,7 +3477,7 @@ ini_set('display_errors', 1);
                             <div class="product-card__actions">
                                 <div class="product-card__availability">Availability: <span class="text-success">In
                                         Stock</span></div>
-                                <div class="product-card__prices">'.$price.' VND</div>
+                                <div class="product-card__prices">' . $price . ' VND</div>
                                 <div class="product-card__buttons"><button
                                         class="btn btn-primary product-card__addtocart" type="button">Add To
                                         Cart</button> <button
@@ -3505,7 +3498,7 @@ ini_set('display_errors', 1);
                     </div>
                     </div>
                     ';
-                    ?>
+                ?>
 
                 <!-- <div class="block-products__featured">
                     <div class="block-products__featured-item">
@@ -4434,19 +4427,19 @@ ini_set('display_errors', 1);
 </div><!-- site__body / end -->
 <script>
     // slide
-let indexs=0;
-const slideShow=()=>{
-    const mySlide=document.querySelectorAll('.slide');
-    for(let i=0;i<mySlide.length;i++){
-        mySlide[i].style.display="none";
-    }
-    indexs++;
+    let indexs = 0;
+    const slideShow = () => {
+        const mySlide = document.querySelectorAll('.slide');
+        for (let i = 0; i < mySlide.length; i++) {
+            mySlide[i].style.display = "none";
+        }
+        indexs++;
 
-    if(indexs>mySlide.length-1) {
-        indexs=0;
+        if (indexs > mySlide.length - 1) {
+            indexs = 0;
+        }
+        mySlide[indexs].style.display = "block";
+        setTimeout(slideShow, 2000);
     }
-    mySlide[indexs].style.display="block";
-    setTimeout(slideShow,2000);
-}
-slideShow();
+    slideShow();
 </script>
