@@ -42,7 +42,6 @@
                                 <h1 class="about-us__title">Về Chúng Tôi</h1>
                                 <div class="about-us__text typography">
                                     <p>Khách hàng rất quan trọng, khách hàng sẽ được khách hàng theo đuổi. Ngày mai nỗi sợ hãi của hồ, thung lũng như một con sư tử và không, tincidunt eleifend justo. Với tư cách là yếu tố kích hoạt lâm sàng, hendrerit a pulvinar et, gradida et lorem. Nhưng cuộc sống của kẻ quấy rối tình dục, nhưng sự chăm sóc của bác sĩ.
-
 </p>
                                     <p>Duis rằng cuộc sống là tự do, tiền đình đó là trong sáng. Anh ta muốn đồ ăn bổ dưỡng, anh ta không ghét sự kiêu ngạo, anh ta muốn uống rượu.</p>
                                 </div>
