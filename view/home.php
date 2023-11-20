@@ -387,22 +387,6 @@ ini_set('display_errors', 1);
             </div>
         </div>
     </div><!-- .block-products-carousel / end -->
-
-
-    <div class="box-service">
-        <div class="box-img">
-            <img src="css/images/products/anhshop1.jpeg" alt="">
-            <a href="index.php?act=lienhe"><button class="btn-sv">Liên hệ ngay nhận ưu đãi lớn</button></a>
-        </div>
-        <div class="box-sv">
-            <img src="css/images/products/sale.png" alt="">
-            <!-- <img src="css/images/products/sale2.webp" alt=""> -->
-
-        </div>
-    </div>
-
-
-
     <!-- .block-products -->
     
         <div class="container">
