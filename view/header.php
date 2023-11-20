@@ -27,6 +27,9 @@
         gtag('js', new Date());
         gtag('config', 'UA-97489509-8');
     </script>
+    <?php 
+        $cart_total = 0;
+    ?> 
 </head>
 
 <body>
@@ -108,7 +111,7 @@
                                                 <svg width="20px" height="20px">
                                                     <use xlink:href="css/images/sprite.svg#cart-20"></use>
                                                 </svg>
-                                                <!-- <span class="indicator__value">3</span> -->
+                                                <span class="indicator__value"><?php echo $soluong['sum_soluong'] ?></span>
                                             </span>
                                         </a>
                                         <div class="indicator__dropdown">
@@ -116,45 +119,43 @@
                                             <div class="dropcart dropcart--style--dropdown">
                                                 <div class="dropcart__body">
                                                     <div class="dropcart__products-list">
-                                                        
-                                                        <!-- <div class="dropcart__product">
-                                                            <div class="product-image dropcart__product-image">
-                                                                <a href="product.html" class="product-image__body">
-                                                                    <img class="product-image__img" src="css/images/products/anh1.webp" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="dropcart__product-info">
-                                                                <div class="dropcart__product-name"><a href="product.html">Áo khoác</a></div>
-                                                                <ul class="dropcart__product-options">
-                                                                    <li>Màu vàng</li>
-                                                                    <li>Chất liệu: Vải trơn</li>
-                                                                </ul>
-                                                                <div class="dropcart__product-meta"><span class="dropcart__product-quantity">2</span> ×
-                                                                    <span class="dropcart__product-price">699.000 VND</span>
+                                                        <?php
+                                                        foreach ($listgiohang as $gh) {
+                                                        ?>
+                                                            <div class="dropcart__product">
+                                                                <div class="product-image dropcart__product-image">
+                                                                    <a href="product.html" class="product-image__body">
+                                                                        <img class="product-image__img" src="upload/product/<?php echo $gh['img'] ?>" alt="">
+                                                                    </a>
                                                                 </div>
-                                                            </div><button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg width="10px" height="10px">
-                                                                    <use xlink:href="css/images/sprite.svg#cross-10">
-                                                                    </use>
-                                                                </svg></button>
-                                                        </div> -->
+                                                                <div class="dropcart__product-info">
+                                                                    <div class="dropcart__product-name"><a href="product.html"><?php echo $gh['name'] ?></a></div>
+                                                                    <div class="dropcart__product-meta"><span class="dropcart__product-quantity"><?php echo $gh['soluong'] ?></span> ×
+                                                                        <span class="dropcart__product-price"><?php echo $gh['price'] ?> VNĐ</span>
+                                                                    </div>
+                                                                </div><button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg width="10px" height="10px">
+                                                                        <use xlink:href="css/images/sprite.svg#cross-10">
+                                                                        </use>
+                                                                    </svg></button>
+                                                            </div>
+                                                        <?php
+                                                        $cart_total += $gh['price']*$gh['soluong'];
+                                                        }
+                                                        ?>
                                                     </div>
                                                     <div class="dropcart__totals">
                                                         <table>
                                                             <tr>
-                                                                <th>Tổng phụ</th>
-                                                                <td>5,877.00 VND</td>
+                                                                <th>Tổng tiền sản phẩm</th>
+                                                                <td><?php echo $cart_total ?> VND</td>
                                                             </tr>
                                                             <tr>
-                                                                <th>Đang chuyển hàng</th>
-                                                                <td>25.000 VND</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Thuế</th>
-                                                                <td>0.00</td>
+                                                                <th>Phí ship</th>
+                                                                <td>25000 VND</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>Tổng cộng</th>
-                                                                <td>5,902.00 VND</td>
+                                                                <td><?php echo $cart_total + 25000 ?> VND</td>
                                                             </tr>
                                                         </table>
                                                     </div>
@@ -247,4 +248,4 @@
                 </div>
             </div>
         </header>
-        <!-- desktop site__header / end --> 
+        <!-- desktop site__header / end -->
