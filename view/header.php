@@ -71,17 +71,13 @@
                     <div class="nav-panel nav-panel--sticky" data-sticky-mode="pullToShow">
                         <div class="nav-panel__container container">
                             <div class="nav-panel__row">
-                                <div class="nav-panel__departments">
-                                    <!-- .departments -->
-                                    <!-- .departments / end -->
-                                </div>
                                 <!-- .nav-links -->
                                 <div class="nav-panel__nav-links nav-links">
                                     <ul class="nav-links__list">
-                                        <!-- <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php">
+                                        <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php">
                                                 <div class="nav-links__item-body">Trang chủ</div>
                                             </a>
-                                        </li> -->
+                                        </li>
                                         <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php?act=danhmuc">
                                                 <div class="nav-links__item-body">Nam</div>
                                             </a>
@@ -99,10 +95,8 @@
                                             </a>
                                         </li>
                                         <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php?act=lienhe">
-                                                <div class="nav-links__item-body">Liên hệ</div>
+                                                <div class="nav-links__item-body">Liên hệ</div>
                                             </a>
-                                            <div class="nav-links__submenu nav-links__submenu--type--menu">
-                                                <!-- .menu -->
                                         </li>
                                     </ul>
                                 </div>
@@ -114,7 +108,7 @@
                                                 <svg width="20px" height="20px">
                                                     <use xlink:href="css/images/sprite.svg#cart-20"></use>
                                                 </svg>
-                                                <span class="indicator__value">3</span>
+                                                <!-- <span class="indicator__value">3</span> -->
                                             </span>
                                         </a>
                                         <div class="indicator__dropdown">
@@ -122,8 +116,12 @@
                                             <div class="dropcart dropcart--style--dropdown">
                                                 <div class="dropcart__body">
                                                     <div class="dropcart__products-list">
-                                                        <div class="dropcart__product">
-                                                            <div class="product-image dropcart__product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="css/images/products/anh1.webp" alt=""></a>
+                                                        
+                                                        <!-- <div class="dropcart__product">
+                                                            <div class="product-image dropcart__product-image">
+                                                                <a href="product.html" class="product-image__body">
+                                                                    <img class="product-image__img" src="css/images/products/anh1.webp" alt="">
+                                                                </a>
                                                             </div>
                                                             <div class="dropcart__product-info">
                                                                 <div class="dropcart__product-name"><a href="product.html">Áo khoác</a></div>
@@ -138,39 +136,7 @@
                                                                     <use xlink:href="css/images/sprite.svg#cross-10">
                                                                     </use>
                                                                 </svg></button>
-                                                        </div>
-                                                        <div class="dropcart__product">
-                                                            <div class="product-image dropcart__product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="css/images/products/anh7.webp" alt=""></a>
-                                                            </div>
-                                                            <div class="dropcart__product-info">
-                                                                <div class="dropcart__product-name"><a href="product.html">Áo giữ nhiệt</a></div>
-                                                                <div class="dropcart__product-meta"><span class="dropcart__product-quantity">1</span> ×
-                                                                    <span class="dropcart__product-price">849.000 VND</span>
-                                                                </div>
-                                                            </div><button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg width="10px" height="10px">
-                                                                    <use xlink:href="css/images/sprite.svg#cross-10">
-                                                                    </use>
-                                                                </svg></button>
-                                                        </div>
-                                                        <div class="dropcart__product">
-                                                            <div class="product-image dropcart__product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="css/images/products/anh5.webp" alt=""></a>
-                                                            </div>
-                                                            <div class="dropcart__product-info">
-                                                                <div class="dropcart__product-name"><a href="product.html">Quần Jean</a></div>
-                                                                <ul class="dropcart__product-options">
-                                                                    <li>Màu sắc: Vàng</li>
-                                                                </ul>
-                                                                <div class="dropcart__product-meta"><span class="dropcart__product-quantity">3</span> ×
-                                                                    <span class="dropcart__product-price">1,210.000 VND</span>
-                                                                </div>
-                                                            </div>
-                                                            <button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
-                                                                <svg width="10px" height="10px">
-                                                                    <use xlink:href="css/images/sprite.svg#cross-10">
-                                                                    </use>
-                                                                </svg>
-                                                            </button>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="dropcart__totals">
                                                         <table>

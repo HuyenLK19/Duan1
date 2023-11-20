@@ -113,6 +113,10 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
         case "lienhe":
             include "view/lienhe.php";
             break;
+        case "addtocart":
+            
+            include "view/home.php";
+            break;
         case "cart":
             include "view/cart.php";
             break;

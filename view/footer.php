@@ -136,7 +136,6 @@
         </div>
     </div><!-- photoswipe / end -->
     <!-- js -->
-    <script src="admin/css/libs/parsleyjs/parsley.min.js"></script>
     <script src="css/vendor/jquery/jquery.min.js"></script>
     <script src="css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="css/vendor/owl-carousel/owl.carousel.min.js"></script>
