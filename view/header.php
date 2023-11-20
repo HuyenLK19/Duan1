@@ -111,7 +111,13 @@
                                                 <svg width="20px" height="20px">
                                                     <use xlink:href="css/images/sprite.svg#cart-20"></use>
                                                 </svg>
+                                                <?php 
+                                                if ($soluong['sum_soluong'] != 0){
+                                                ?>
                                                 <span class="indicator__value"><?php echo $soluong['sum_soluong'] ?></span>
+                                                <?php
+                                                }
+                                                ?>
                                             </span>
                                         </a>
                                         <div class="indicator__dropdown">
@@ -133,10 +139,13 @@
                                                                     <div class="dropcart__product-meta"><span class="dropcart__product-quantity"><?php echo $gh['soluong'] ?></span> ×
                                                                         <span class="dropcart__product-price"><?php echo $gh['price'] ?> VNĐ</span>
                                                                     </div>
-                                                                </div><button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg width="10px" height="10px">
+                                                                </div>
+                                                                <button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon" onclick="window.location.href='index.php?act=delcart&&id=<?php echo $gh['id'] ?>'">
+                                                                    <svg width="10px" height="10px">
                                                                         <use xlink:href="css/images/sprite.svg#cross-10">
                                                                         </use>
-                                                                    </svg></button>
+                                                                    </svg>
+                                                                </button>
                                                             </div>
                                                         <?php
                                                         $cart_total += $gh['price']*$gh['soluong'];
@@ -155,7 +164,11 @@
                                                             </tr>
                                                             <tr>
                                                                 <th>Tổng cộng</th>
-                                                                <td><?php echo $cart_total + 25000 ?> VND</td>
+                                                                <td><?php
+                                                                    if ($cart_total != 0){
+                                                                        echo $cart_total + 25000;
+                                                                    } else echo 0;
+                                                                ?> VND</td>
                                                             </tr>
                                                         </table>
                                                     </div>

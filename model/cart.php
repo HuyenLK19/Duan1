@@ -9,7 +9,10 @@
         return pdo_query_one($sql);
     }
 
-    
+    function del_giohang($id){
+        $sql = "DELETE FROM cart WHERE id = ".$id;
+        pdo_execute($sql);
+    }
 
     function insert_giohang($id){
         $sql = "SELECT * FROM cart WHERE idpro = '$id'";

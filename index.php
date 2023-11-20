@@ -125,11 +125,16 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             insert_giohang($_GET['id']);
             header("Location: index.php");
             break;
+        case "delcart":
+            del_giohang($_GET['id']);
+            header("Location: index.php");
+            break;
         case "cart":
             $list = listall_giohang();
             include "view/cart.php";
             break;
         case "checkout":
+            $list = listall_giohang();
             include "view/checkout.php";
             break;
         default:

@@ -97,10 +97,14 @@
                                 <tfoot class="cart__totals-footer">
                                     <tr>
                                         <th>Tổng tiền</th>
-                                        <td><?php echo $cart_total + 25000 ?> VNĐ</td>
+                                        <td><?php 
+                                        if ($cart_total != 0){
+                                            echo $cart_total + 25000;
+                                        } else echo 0;
+                                        ?> VNĐ</td>
                                     </tr>
                                 </tfoot>
-                            </table><a class="btn btn-primary btn-xl btn-block cart__checkout-button" href="index.php?act=thanhtoan">Thanh toán</a>
+                            </table><a class="btn btn-primary btn-xl btn-block cart__checkout-button" href="index.php?act=checkout">Thanh toán</a>
                         </div>
                     </div>
                 </div>
