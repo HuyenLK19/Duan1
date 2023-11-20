@@ -38,7 +38,7 @@
                     <?php
                         if ($product['img'] != ''){
                     ?>
-                    <img src="../upload/<?php echo $product['img'] ?>" style="width: 100px; height: 100px; position: relative; left: 40px; top: -10px;">
+                    <img src="../upload/product/<?php echo $product['img'] ?>" style="width: 100px; height: 100px; position: relative; left: 40px; top: -10px;">
                     <?php
                         }
                     ?>
