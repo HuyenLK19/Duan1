@@ -6,7 +6,7 @@
 
     function listone_danhmuc($id){
         $sql = "SELECT * FROM danhmuc WHERE id = ".$id;
-        return pdo_query($sql);
+        return pdo_query_one($sql);
     };
 
     function insert_danhmuc($tendm, $hinh){

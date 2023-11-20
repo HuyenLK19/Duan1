@@ -9,6 +9,11 @@
         return pdo_query_one($sql);
     }
 
+    function listsptheodm($id) {
+        $sql = "SELECT * FROM sanpham WHERE iddm = ".$id;
+        return pdo_query($sql);
+    }
+
     function loadall_sanpham_hot(){
         $sql="SELECT * FROM sanpham WHERE 1 ORDER BY view DESC limit 0,6";
         return pdo_query($sql);

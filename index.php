@@ -104,9 +104,13 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             }
             break;
         case "danhmuc":
+            $dm = listone_danhmuc($_GET['id']);
+            $list = listsptheodm($_GET['id']);
             include "view/danhmuc.php";
             break;
         case "chitietsanpham":
+            // $list = listsptheodm($_GET["id"]);
+            $ctsp = listone_sanpham($_GET['idsp']);
             include "view/chitietsanpham.php";
             break;
         case "gioithieu":
