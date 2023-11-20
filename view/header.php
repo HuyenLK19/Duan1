@@ -27,6 +27,9 @@
         gtag('js', new Date());
         gtag('config', 'UA-97489509-8');
     </script>
+    <?php 
+        $cart_total = 0;
+    ?> 
 </head>
 
 <body>

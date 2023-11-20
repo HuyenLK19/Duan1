@@ -5,6 +5,12 @@ include "model/pdo.php";
 include "model/sanpham.php";
 include "model/taikhoan.php";
 include "model/danhmuc.php";
+include "model/cart.php";
+$listgiohang = listall_giohang();
+$soluong = sumall_soluong();
+include "view/header.php";
+
+
 $allsp = listall_sanpham();
 $sphot = loadall_sanpham_hot();
 $listdm = listall_danhmuc();
@@ -121,13 +127,19 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/lienhe.php";
             break;
         case "addtocart":
-            
-            include "view/home.php";
+            insert_giohang($_GET['id']);
+            header("Location: index.php");
+            break;
+        case "delcart":
+            del_giohang($_GET['id']);
+            header("Location: index.php");
             break;
         case "cart":
+            $list = listall_giohang();
             include "view/cart.php";
             break;
         case "checkout":
+            $list = listall_giohang();
             include "view/checkout.php";
             break;
         default:
