@@ -18,7 +18,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $giasp = $_POST['giasp'];
                 $mota = $_POST['mota'];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/product";
+                $target_dir = "../upload/product/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
@@ -50,7 +50,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $giasp = $_POST['giasp'];
                 $mota = $_POST['mota'];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/product";
+                $target_dir = "../upload/product/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
@@ -75,7 +75,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $tendm = $_POST['tendm'];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/category";
+                $target_dir = "../upload/category/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
@@ -85,7 +85,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 insert_danhmuc($tendm, $hinh);
                 echo "<script type='text/javascript'>
                         alert('Thêm thành công!');
-                        window.location.href='index.php?act=listsp'
+                        window.location.href='index.php?act=listdm'
                     </script>";
             };
             include "danhmuc/add.php";
@@ -98,7 +98,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
                 $tendm = $_POST["tendm"];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/category";
+                $target_dir = "../upload/category/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
@@ -108,7 +108,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 update_danhmuc($_GET['id'], $tendm, $hinh);
                 echo "<script type='text/javascript'>
                         alert('Sửa thành công!');
-                        window.location.href='index.php?act=listsp'
+                        window.location.href='index.php?act=listdm'
                     </script>";
             }
             $danhmuc = listone_danhmuc($_GET['id']);
@@ -126,7 +126,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $email = $_POST["email"];
                 $address = $_POST["address"];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/avatar";
+                $target_dir = "../upload/avatar/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
@@ -159,7 +159,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $email = $_POST["email"];
                 $address = $_POST["address"];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/avatar";
+                $target_dir = "../upload/avatar/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
                     // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
