@@ -36,16 +36,16 @@
                                 <?php
                                 foreach ($list as $sp) {
                                     ?>
-                                    <div class="products-list__item">
+                                    <div class="products-list__item" onclick="window.location.href='index.php?act=chitietsanpham&&idsp=<?php echo $sp['id']?>'">
                                         <div class="product-card">
                                             <div class="product-card__badges-list">
                                                 <div class="product-card__badge product-card__badge--new">New</div>
                                             </div>
-                                            <div class="product-card__image product-image"><a href="product.html"
+                                            <div class="product-card__image product-image"><a href="index.php?act=chitietsanpham&&idsp=<?php echo $sp['id']?>"
                                                     class="product-image__body"><img class="product-image__img"
                                                         src="upload/product/<?php echo $sp['img']?>" alt=""></a></div>
                                             <div class="product-card__info">
-                                                <div class="product-card__name"><a href="product.html"><?php echo $sp['name']?></a>
+                                                <div class="product-card__name"><a href="index.php?act=chitietsanpham&&idsp=<?php echo $sp['id']?>"><?php echo $sp['name']?></a>
                                                 </div>
                                                 <div class="product-card__rating">
                                                     <div class="product-card__rating-stars">
@@ -161,25 +161,11 @@
                                                         class="text-success">In Stock</span></div>
                                                 <div class="product-card__prices"><?php echo $sp['price']?> VNĐ</div>
                                                 <div class="product-card__buttons">
-                                                    <button class="btn btn-primary product-card__addtocart" type="button" onclick="window.location.href='index.php?act=addtocart&&id=<?php echo $sp['id'] ?>'">Add To Cart</button> 
+                                                    <button class="btn btn-primary product-card__addtocart" type="button" onclick="window.location.href='index.php?act=addtocart&&id=<?php echo $sp['id'] ?>'">Thêm vào giỏ hàng</button> 
                                                     <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
-                                                        type="button" onclick="window.location.href='index.php?act=addtocart&&id='.$sp['id']">Add To Cart</button> <button
-                                                        class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
-                                                        type="button"><svg width="16px" height="16px">
-                                                            <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
-                                                        </svg> <span
-                                                            class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
-                                                    <button
-                                                        class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare"
-                                                        type="button"><svg width="16px" height="16px">
-                                                            <use xlink:href="css/images/sprite.svg#compare-16"></use>
-                                                        </svg> <span
-                                                            class="fake-svg-icon fake-svg-icon--compare-16"></span></button>
-                                                <div class="product-card__prices"><?php echo $sp['price']?>VNĐ</div>
-                                                <div class="product-card__buttons"><button
-                                                        class="btn btn-primary product-card__addtocart" type="button" style='font-size: 12px;'>Thêm vào giỏ hàng</button> <button
-                                                        class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
-                                                        type="button">Add To Cart</button>
+                                                        type="button" onclick="window.location.href='index.php?act=addtocart&&id=<?php echo $sp['id'] ?>'">Thêm vào giỏ hàng</button>
+                                                <div class="product-card__buttons">
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>

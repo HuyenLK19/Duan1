@@ -29,10 +29,9 @@
                                     data-with-features="false" data-mobile-grid-columns="2">
                                     <div class="products-list__body">
                                         <?php
-                                            foreach($list as $all){
+                                            foreach($list as $all){ 
                                         ?>
-                                        <a href="index.php?act=chitietsanpham&&idsp=<?php echo $all['id']?>">
-                                            <div class="products-list__item">
+                                            <div class="products-list__item" onclick="window.location.href='index.php?act=chitietsanpham&&idsp=<?php echo $all['id']?>'">
                                                 <div class="product-card">
                                                     <div class="product-card__badges-list">
                                                         <div class="product-card__badge product-card__badge--new">New</div>
@@ -271,7 +270,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
                                         <?php
                                             }
                                         ?>

@@ -8,9 +8,6 @@ include "model/danhmuc.php";
 include "model/cart.php";
 $listgiohang = listall_giohang();
 $soluong = sumall_soluong();
-include "view/header.php";
-
-
 $allsp = listall_sanpham();
 $sphot = loadall_sanpham_hot();
 $listdm = listall_danhmuc();
