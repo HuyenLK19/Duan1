@@ -178,11 +178,38 @@ ini_set('display_errors', 1);
             </div>
         </div>
     </div><!-- .block-features / end -->
+    <div class="block block--highlighted block-categories block-categories--layout--classic">
+                <div class="container">
+                    <div class="block-header">
+                        <h3 class="block-header__title">Danh mục</h3>
+                        <div class="block-header__divider"></div>
+                    </div>
+                    <div class="block-categories__list">
+                    <?php
+                        foreach($listdm as $dm){
+                    ?>
+                        <div class="block-categories__item category-card category-card--layout--classic">
+                            <div class="category-card__body">
+                                <div class="category-card__image"><a href="#"><img
+                                            src="upload/category/<?php echo $dm['img']?>" alt=""></a></div>
+                                <div class="category-card__content">
+                                    
+                                    <div class="category-card__name"><a href="#"><?php echo $dm['name']?></a></div>
+                                    <div class="category-card__all"><a href="#">Hiển thị tất cả</a></div>
+                                    <div class="category-card__products">572 Products</div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                        }
+                    ?>
+                    </div>
+                </div>
+            </div>
     <!-- .block-products-carousel -->
     <div class="block block-products-carousel" data-layout="grid-4" data-mobile-grid-columns="2">
         <div class="container">
             <div class="block-header">
-                    
                 <h3 class="block-header__titles">Sản phẩm Hot <img src="css/images/products/flashsale-hot.png" alt=""></h3>
                 <div class="block-header__divider"></div>
                 <div class="block-header__arrows-list"><button class="block-header__arrow block-header__arrow--left" type="button"><svg width="7px" height="11px">
@@ -355,24 +382,9 @@ ini_set('display_errors', 1);
             </div>
         </div>
     </div><!-- .block-products-carousel / end -->
-    
-
-    <div class="box-service">
-        <div class="box-img">
-        <img src="css/images/products/anhshop1.jpeg" alt="">
-   <a href="index.php?act=lienhe"><button class="btn-sv">Liên hệ ngay nhận ưu đãi lớn</button></a>
-    </div>
-        <div class="box-sv">
-                <img src="css/images/products/sale.png" alt="">
-                <!-- <img src="css/images/products/sale2.webp" alt=""> -->
-
-        </div>
-    </div>
-
-
 
     <!-- .block-products -->
-    <div class="block block-products block-products--layout--large-first" data-mobile-grid-columns="2">
+    
         <div class="container">
             <div class="block-header">
                 <h3 class="block-header__title">Tất cả sản phẩm</h3>
@@ -526,7 +538,6 @@ ini_set('display_errors', 1);
 </div>
 
             </div>
-        </div>
     </div><!-- .block-products / end -->
 </div><!-- site__body / end -->
 <script>

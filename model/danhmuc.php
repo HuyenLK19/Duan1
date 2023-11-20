@@ -15,9 +15,7 @@
     };
 
     function update_danhmuc($id, $tendm, $hinh){
-        if ($hinh != ''){
-            $sql = "UPDATE danhmuc SET name = '$tendm', img = '$hinh' WHERE id = '$id'";
-        } $sql = "UPDATE danhmuc SET name = '$tendm' WHERE id = '$id'";
+        $sql = "UPDATE danhmuc SET name = '$tendm', img = '$hinh' WHERE id = '$id'";
         pdo_execute($sql);
     };
 

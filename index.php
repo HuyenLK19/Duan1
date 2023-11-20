@@ -5,11 +5,13 @@ include "view/header.php";
 include "model/pdo.php";
 include "model/sanpham.php";
 include "model/taikhoan.php";
+include "model/danhmuc.php";
 include "global.php";
 
 
 $allsp = listall_sanpham();
 $sphot = loadall_sanpham_hot();
+$listdm = listall_danhmuc();
 
 if (isset($_GET["act"]) && $_GET["act"] !== "") {
     switch ($_GET["act"]) {

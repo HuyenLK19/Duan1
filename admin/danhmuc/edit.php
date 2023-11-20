@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-lg-6" style="position: relative; left: 20%">
         <div class="">
-            <form action="index.php?act=editdm&&id=<?php echo $danhmuc[0][0] ?>" method="POST" class="form-validation">
+            <form action="index.php?act=editdm&&id=<?php echo $danhmuc[0][0] ?>" method="POST" enctype="multipart/form-data" class="form-validation">
                 <div class="form-group">
                     <label for="tendm">Tên danh mục<span class="text-danger">*</span></label>
                     <input type="text" name="tendm" parsley-trigger="change" value="<?php echo $danhmuc[0][1] ?>" required class="form-control">
