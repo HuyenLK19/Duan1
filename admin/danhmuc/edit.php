@@ -10,14 +10,14 @@
 <div class="row">
     <div class="col-lg-6" style="position: relative; left: 20%">
         <div class="">
-            <form action="index.php?act=editdm&&id=<?php echo $danhmuc[0][0] ?>" method="POST" enctype="multipart/form-data" class="form-validation">
+            <form action="index.php?act=editdm&&id=<?php echo $danhmuc['id'] ?>" method="POST" enctype="multipart/form-data" class="form-validation">
                 <div class="form-group">
                     <label for="tendm">Tên danh mục<span class="text-danger">*</span></label>
-                    <input type="text" name="tendm" parsley-trigger="change" value="<?php echo $danhmuc[0][1] ?>" required class="form-control">
+                    <input type="text" name="tendm" parsley-trigger="change" value="<?php echo $danhmuc['name'] ?>" required class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="hinh">Hình ảnh</label>
-                    <img src="../upload/category/<?php echo $danhmuc[0][2] ?>" style="width: 100px; height: 100px; position: relative; left: 40px; top: -10px;">
+                    <img src="../upload/category/<?php echo $danhmuc['img'] ?>" style="width: 100px; height: 100px; position: relative; left: 40px; top: -10px;">
                     <input type="file" name="hinh" class="filestyle form-control">
                 </div>
                 <div class="form-group text-right mb-0">

@@ -1,17 +1,14 @@
 <?php
 ob_start();
 session_start();
-include "view/header.php";
 include "model/pdo.php";
 include "model/sanpham.php";
 include "model/taikhoan.php";
 include "model/danhmuc.php";
-include "global.php";
-
-
 $allsp = listall_sanpham();
 $sphot = loadall_sanpham_hot();
 $listdm = listall_danhmuc();
+include "view/header.php";
 
 if (isset($_GET["act"]) && $_GET["act"] !== "") {
     switch ($_GET["act"]) {
@@ -112,6 +109,10 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             // $list = listsptheodm($_GET["id"]);
             $ctsp = listone_sanpham($_GET['idsp']);
             include "view/chitietsanpham.php";
+            break;
+        case "allsanpham":
+            $list = listall_sanpham();
+            include "view/allsanpham.php";
             break;
         case "gioithieu":
             include "view/gioithieu.php";
