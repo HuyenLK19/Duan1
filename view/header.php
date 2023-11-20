@@ -78,10 +78,10 @@
                                 <!-- .nav-links -->
                                 <div class="nav-panel__nav-links nav-links">
                                     <ul class="nav-links__list">
-                                        <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php">
+                                        <!-- <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php">
                                                 <div class="nav-links__item-body">Trang chủ</div>
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php?act=danhmuc">
                                                 <div class="nav-links__item-body">Nam</div>
                                             </a>
