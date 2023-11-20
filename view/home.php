@@ -195,12 +195,12 @@ ini_set('display_errors', 1);
                     ?>
                         <div class="block-categories__item category-card category-card--layout--classic">
                             <div class="category-card__body">
-                                <div class="category-card__image"><a href="#"><img
+                                <div class="category-card__image"><a href="index.php?act=danhmuc&&id=<?php echo $dm['id']?>"><img
                                             src="upload/category/<?php echo $dm['img']?>" alt=""></a></div>
                                 <div class="category-card__content">
                                     
-                                    <div class="category-card__name"><a href="#"><?php echo $dm['name']?></a></div>
-                                    <div class="category-card__all"><a href="#">Hiển thị tất cả</a></div>
+                                    <div class="category-card__name"><a href="index.php?act=danhmuc&&id=<?php echo $dm['id']?>"><?php echo $dm['name']?></a></div>
+                                    <div class="category-card__all"><a href="index.php?act=danhmuc&&id=<?php echo $dm['id']?>">Hiển thị tất cả</a></div>
                                     <div class="category-card__products">572 Products</div>
                                 </div>
                             </div>
