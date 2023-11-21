@@ -11,6 +11,8 @@ $soluong = sumall_soluong();
 $allsp = listall_sanpham();
 $sphot = loadall_sanpham_hot();
 $listdm = listall_danhmuc();
+
+
 include "view/header.php";
 
 if (isset($_GET["act"]) && $_GET["act"] !== "") {
@@ -74,9 +76,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             }
             include "view/dangky.php";
             break;
-        case "thongtintk":
-            include "view/thongtintk.php";
-            break;
+
         case "sanpham":
             if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
                 $kyw = $_POST['kyw'];
@@ -99,7 +99,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 extract($onesp);
                 // $sp_cungloai = load_sanpham_cungloai($id);
                 include "view/sanphamct.php";
-            } else{
+            } else {
                 include "view/home.php";
             }
             break;
@@ -123,6 +123,49 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
         case "lienhe":
             include "view/lienhe.php";
             break;
+        case "thongtintk":
+            $user_id = $_SESSION['user']['id'];
+            $user_info = listone_taikhoan($user_id);
+
+            include "view/thongtintk.php";
+            break;
+
+            case "suatk":
+                if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
+                    $id = $_POST['id'];
+            
+                    if ($id > 0) {
+                        $tentk = $_POST["tentk"];
+                        $user = $_POST["user"];
+                        $pass = $_POST["pass"];
+                        $email = $_POST["email"];
+                        $address = $_POST["address"];
+                        $hinh = $_FILES['hinh']['name'];
+                        $target_dir = "../upload/avatar/";
+                        $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                        if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                            // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
+                        } else {
+                            // echo "Sorry, there was an error uploading your file.";
+                        }
+                        $tel = $_POST["tel"];
+            
+                        update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
+                        echo "<script type='text/javascript'>
+                                    alert('Cập nhật thành công!');
+                                    window.location.href='index.php?act=listsp'
+                                </script>";
+                    } else {
+                        echo "Chỉ mục không xác định: id";
+                    }
+            
+                    $user_info = listone_taikhoan($id);
+                    $_SESSION['user_info'] = $user_info;
+                }
+            
+                include "view/suatk.php";
+                break;
+            
         case "addtocart":
             insert_giohang($_GET['id']);
             header("Location: index.php");
