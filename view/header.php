@@ -119,18 +119,7 @@
                                             </a>
                                         </li>
 
-                                        <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="#">
-                                                <div class="nav-links__item-body"><?php
-
-                                                                                    if (isset($_SESSION['user']['userName'])) {
-                                                                                        echo '<a href="#">Xin chào, ' . $_SESSION['user']['userName']  . '</a>';
-                                                                                    } else {
-                                                                                        
-                                                                                    //   
-                                                                                    }
-                                                                                    ?></div>
-                                            </a>
-                                        </li>
+                                       
                                     </ul>
                                 </div>
                                 <!-- .nav-links / end -->
