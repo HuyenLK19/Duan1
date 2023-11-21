@@ -99,7 +99,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 extract($onesp);
                 // $sp_cungloai = load_sanpham_cungloai($id);
                 include "view/sanphamct.php";
-            } else {
+            } else{
                 include "view/home.php";
             }
             break;
