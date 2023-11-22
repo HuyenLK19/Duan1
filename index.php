@@ -1,6 +1,6 @@
 <?php
-ob_start();
 session_start();
+ob_start();
 include "model/pdo.php";
 include "model/sanpham.php";
 include "model/taikhoan.php";
@@ -124,10 +124,13 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/lienhe.php";
             break;
         case "thongtintk":
-            $user_id = $_SESSION['user']['id'];
-            $user_info = listone_taikhoan($user_id);
-
-            include "view/thongtintk.php";
+            if (isset($_SESSION['user']['id'])) {
+                $user_id = $_SESSION['user']['id'];
+                $user_info = listone_taikhoan($user_id);
+                include "view/thongtintk.php";
+            } else {
+                // Xử lý khi không tìm thấy phần tử 'user' trong $_SESSION
+            }
             break;
 
             case "suatk":
@@ -190,4 +193,4 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 
 include "view/footer.php";
 
-$result = pdo_query($sql);
+// $result = pdo_query($sql);
