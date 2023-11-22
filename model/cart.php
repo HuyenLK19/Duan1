@@ -1,6 +1,6 @@
 <?php
     function listall_giohang(){
-        $sql = "SELECT c.id, c.soluong, sp.name, sp.img, sp.price FROM cart c INNER JOIN sanpham sp ON c.idpro = sp.id";
+        $sql = "SELECT c.id, c.soluong, sp.name, sp.img, sp.price, c.idpro FROM cart c INNER JOIN sanpham sp ON c.idpro = sp.id";
         return pdo_query($sql);
     }
 

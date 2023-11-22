@@ -96,189 +96,181 @@
                                                                     <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="index.php?act=danhmuc&&id=<?php echo $dm['id'] ?>"><?php echo $dm['name'] ?></a>
                                                                 </li>
                                                             <?php
-                                                                        }
-                                                                        ?>
-                                            </ul>
-                                </div><!-- .menu / end -->
-                            </div>
-                            </ul>
-                            <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link"
-                                    href="index.php?act=allsanpham">
-                                    <div class="nav-links__item-body">Sản phẩm</div>
-                                </a>
-                            </li>
-                            <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link"
-                                    href="index.php?act=gioithieu">
-                                    <div class="nav-links__item-body">Giới thiệu</div>
-                                </a>
-                            </li>
-                            <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link"
-                                    href="index.php?act=lienhe">
-                                    <div class="nav-links__item-body">Liên hệ</div>
-                                </a>
-                            </li>
-                            <?php 
-                            if (isset($_SESSION['user'])){
-                            ?>
-                            <li style="line-height: 54px; text-align: right; width: 373px;">
-                            Xin chào! <?php echo $_SESSION['user']['name'] ?>
-                            <?php
-                            }
-                            ?>
-                            
-                        </li>
-                            </ul>
-                        </div>
-                        <!-- .nav-links / end -->
-                        <div class="nav-panel__indicators">
-                            <div class="indicator indicator--trigger--click">
-                                <a href="index.php?act=cart" class="indicator__button">
-                                    <span class="indicator__area">
-                                        <svg width="20px" height="20px">
-                                            <use xlink:href="css/images/sprite.svg#cart-20"></use>
-                                        </svg>
-                                        <!-- <span class="indicator__value">3</span> -->
-                                    </span>
-                                </a>
-                                <div class="indicator__dropdown">
-                                    <!-- .dropcart -->
-                                    <div class="dropcart dropcart--style--dropdown">
-                                        <div class="dropcart__body">
-                                            <div class="dropcart__products-list">
-
-                                                        <!-- <div class="dropcart__product">
-                                                            <div class="product-image dropcart__product-image">
-                                                                <a href="product.html" class="product-image__body">
-                                                                    <img class="product-image__img" src="css/images/products/anh1.webp" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="dropcart__product-info">
-                                                                <div class="dropcart__product-name"><a href="product.html">Áo khoác</a></div>
-                                                                <ul class="dropcart__product-options">
-                                                                    <li>Màu vàng</li>
-                                                                    <li>Chất liệu: Vải trơn</li>
-                                                                </ul>
-                                                                <div class="dropcart__product-meta"><span class="dropcart__product-quantity">2</span> ×
-                                                                    <span class="dropcart__product-price">699.000 VND</span>
-                                                                </div>
-                                                            </div><button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg width="10px" height="10px">
-                                                                    <use xlink:href="css/images/sprite.svg#cross-10">
-                                                                    </use>
-                                                                </svg></button>
-                                                        </div> -->
-                                            </div>
-                                            <div class="dropcart__totals">
-                                                <table>
-                                                    <tr>
-                                                        <th>Tổng phụ</th>
-                                                        <td>5,877.00 VND</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Đang chuyển hàng</th>
-                                                        <td>25.000 VND</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Thuế</th>
-                                                        <td>0.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Tổng cộng</th>
-                                                        <td>5,902.00 VND</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="dropcart__buttons"><a class="btn btn-secondary"
-                                                    href="index.php?act=cart">Xem giỏ hàng</a> <a
-                                                    class="btn btn-primary" href="index.php?act=checkout">Đơn hàng</a>
-                                            </div>
-                                        </div>
-                                    </div><!-- .dropcart / end -->
-                                </div>
-                            </div>
-                            <div class="indicator indicator--trigger--click">
-                                <div class="indicator__button">
-                                    <span class="indicator__area">
-                                        <svg width="20px" height="20px">
-                                            <use xlink:href="css/images/sprite.svg#person-20"></use>
-                                        </svg>
-                                    </span>
-                                </div>
-                                <div class="indicator__dropdown">
-                                    <div class="account-menu">
+                                                            }
+                                                            ?>
+                                                        </ul>
+                                                    </div><!-- .menu / end -->
+                                                </div>
+                                        </ul>
+                                        <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php?act=allsanpham">
+                                                <div class="nav-links__item-body">Sản phẩm</div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php?act=gioithieu">
+                                                <div class="nav-links__item-body">Giới thiệu</div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php?act=lienhe">
+                                                <div class="nav-links__item-body">Liên hệ</div>
+                                            </a>
+                                        </li>
                                         <?php
                                         if (isset($_SESSION['user'])) {
-                                            ?>
-                                            <div class="account-menu__divider"></div>
-                                            <a href="index.php?act=thongtintk" class="account-menu__user">
-                                                <?php
-                                                if ($_SESSION['user']['avatar'] != '') {
-                                                    ?>
-                                                    <div class="account-menu__user-avatar">
-                                                        <img src="upload/avatar/<?php echo $_SESSION['user']['avatar'] ?>">
-                                                    </div>
-                                                    <?php
-                                                }
-                                                ?>
-                                                <div class="account-menu__user-info">
-                                                    <div class="account-menu__user-name">
-                                                        <?php echo $_SESSION['user']['name'] ?>
-                                                    </div>
-                                                    <div class="account-menu__user-email">
-                                                        <?php echo $_SESSION['user']['email'] ?>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div class="account-menu__divider"></div>
-                                            <ul class="account-menu__links">
-                                                <?php
-                                                if ($_SESSION['user']['role'] > 0) {
-                                                    ?>
-                                                    <li><a href="./admin/">Vào trang quản lý</a></li>
-                                                    <?php
-                                                }
-                                                ?>
-                                                <li><a href="index.php?act=lichsumua">Lịch sử đặt hàng</a></li>
-                                                <li><a href="index.php?act=capnhattt">Cập nhật thông tin</a></li>
-                                                <li><a href="index.php?act=doimk">Đổi mật khẩu</a></li>
-                                            </ul>
-                                            <div class="account-menu__divider"></div>
-                                            <ul class="account-menu__links">
-                                                <li><a href="index.php?act=dangxuat">Đăng xuất</a></li>
-                                            </ul>
-                                            <?php
-                                        } else {
-                                            ?>
-                                            <form class="account-menu__form" action="index.php?act=dangnhap" method="POST">
-                                                <div class="account-menu__form-title">Đăng nhập</div>
-                                                <div class="form-group">
-                                                    <label for="header-signin-email" class="sr-only">Tài khoản</label>
-                                                    <input id="header-signin-email" type="text" name="user" required
-                                                        class="form-control form-control-sm" placeholder="Nhập tài khoản">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="header-signin-password" class="sr-only">Mật khẩu</label>
-                                                    <div class="account-menu__form-forgot">
-                                                        <input id="header-signin-password" type="password" name="pass"
-                                                            required class="form-control form-control-sm"
-                                                            placeholder="Mật khẩu">
-                                                        <a href="index.php?act=quenmk"
-                                                            class="account-menu__form-forgot-link">
-                                                            Quên mật khẩu ?
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group account-menu__form-button">
-                                                    <input type="submit" class="btn btn-primary btn-sm" name="dangnhap"
-                                                        value="Đăng nhập">
-                                                </div>
-                                                <div class="account-menu__form-link">
-                                                    <a href="index.php?act=dangky">Tạo tài khoản mới</a>
-                                                </div>
-                                            </form>
+                                        ?>
+                                            <li style="line-height: 54px; text-align: right; width: 373px;">
+                                                Xin chào! <?php echo $_SESSION['user']['name'] ?>
                                             <?php
                                         }
-                                        ;
-                                        ?>
+                                            ?>
+
+                                            </li>
+                                    </ul>
+                                </div>
+                                <!-- .nav-links / end -->
+                                <div class="nav-panel__indicators">
+                                    <div class="indicator indicator--trigger--click">
+                                        <a href="index.php?act=cart" class="indicator__button">
+                                            <span class="indicator__area">
+                                                <svg width="20px" height="20px">
+                                                    <use xlink:href="css/images/sprite.svg#cart-20"></use>
+                                                </svg>
+                                                <!-- <span class="indicator__value">3</span> -->
+                                            </span>
+                                        </a>
+                                        <div class="indicator__dropdown">
+                                            <!-- .dropcart -->
+                                            <div class="dropcart dropcart--style--dropdown">
+                                                <div class="dropcart__body">
+                                                    <div class="dropcart__products-list" id="badge">
+                                                        <?php
+                                                        foreach ($listgiohang as $gh) {
+                                                        ?>
+                                                            <div class="dropcart__product">
+                                                                <div class="product-image dropcart__product-image">
+                                                                    <a href="index.php?act=chitietsanpham&idsp=<?php echo $gh['idpro'] ?>" class="product-image__body">
+                                                                        <img class="product-image__img" src="upload/product/<?php echo $gh['img'] ?>" alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="dropcart__product-info">
+                                                                    <div class="dropcart__product-name"><a href="index.php?act=chitietsanpham&idsp=<?php echo $gh['idpro'] ?>"><?php echo $gh['name'] ?></a></div>
+                                                                    <div class="dropcart__product-meta"><span class="dropcart__product-quantity"><?php echo $gh['soluong'] ?></span> ×
+                                                                        <span class="dropcart__product-price"><?php echo $gh['price'] ?> VND</span>
+                                                                    </div>
+                                                                </div><button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon" onclick="window.location.href='index.php?act=delcart&id=<?php echo $gh['id'] ?>'"><svg width="10px" height="10px">
+                                                                        <use xlink:href="css/images/sprite.svg#cross-10">
+                                                                        </use>
+                                                                    </svg></button>
+                                                            </div>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </div>
+                                                    <div class="dropcart__totals">
+                                                        <table>
+                                                            <tr>
+                                                                <th>Tổng phụ</th>
+                                                                <td>5,877.00 VND</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Đang chuyển hàng</th>
+                                                                <td>25.000 VND</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Thuế</th>
+                                                                <td>0.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Tổng cộng</th>
+                                                                <td>5,902.00 VND</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="dropcart__buttons"><a class="btn btn-secondary" href="index.php?act=cart">Xem giỏ hàng</a> <a class="btn btn-primary" href="index.php?act=checkout">Đơn hàng</a>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .dropcart / end -->
+                                        </div>
+                                    </div>
+                                    <div class="indicator indicator--trigger--click">
+                                        <div class="indicator__button">
+                                            <span class="indicator__area">
+                                                <svg width="20px" height="20px">
+                                                    <use xlink:href="css/images/sprite.svg#person-20"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div class="indicator__dropdown">
+                                            <div class="account-menu">
+                                                <?php
+                                                if (isset($_SESSION['user'])) {
+                                                ?>
+                                                    <div class="account-menu__divider"></div>
+                                                    <a href="index.php?act=thongtintk" class="account-menu__user">
+                                                        <?php
+                                                        if ($_SESSION['user']['avatar'] != '') {
+                                                        ?>
+                                                            <div class="account-menu__user-avatar">
+                                                                <img src="upload/avatar/<?php echo $_SESSION['user']['avatar'] ?>">
+                                                            </div>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                        <div class="account-menu__user-info">
+                                                            <div class="account-menu__user-name">
+                                                                <?php echo $_SESSION['user']['name'] ?>
+                                                            </div>
+                                                            <div class="account-menu__user-email">
+                                                                <?php echo $_SESSION['user']['email'] ?>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <div class="account-menu__divider"></div>
+                                                    <ul class="account-menu__links">
+                                                        <?php
+                                                        if ($_SESSION['user']['role'] > 0) {
+                                                        ?>
+                                                            <li><a href="./admin/">Vào trang quản lý</a></li>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                        <li><a href="index.php?act=lichsumua">Lịch sử đặt hàng</a></li>
+                                                        <li><a href="index.php?act=capnhattt">Cập nhật thông tin</a></li>
+                                                        <li><a href="index.php?act=doimk">Đổi mật khẩu</a></li>
+                                                    </ul>
+                                                    <div class="account-menu__divider"></div>
+                                                    <ul class="account-menu__links">
+                                                        <li><a href="index.php?act=dangxuat">Đăng xuất</a></li>
+                                                    </ul>
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <form class="account-menu__form" action="index.php?act=dangnhap" method="POST">
+                                                        <div class="account-menu__form-title">Đăng nhập</div>
+                                                        <div class="form-group">
+                                                            <label for="header-signin-email" class="sr-only">Tài khoản</label>
+                                                            <input id="header-signin-email" type="text" name="user" required class="form-control form-control-sm" placeholder="Nhập tài khoản">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="header-signin-password" class="sr-only">Mật khẩu</label>
+                                                            <div class="account-menu__form-forgot">
+                                                                <input id="header-signin-password" type="password" name="pass" required class="form-control form-control-sm" placeholder="Mật khẩu">
+                                                                <a href="index.php?act=quenmk" class="account-menu__form-forgot-link">
+                                                                    Quên mật khẩu ?
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group account-menu__form-button">
+                                                            <input type="submit" class="btn btn-primary btn-sm" name="dangnhap" value="Đăng nhập">
+                                                        </div>
+                                                        <div class="account-menu__form-link">
+                                                            <a href="index.php?act=dangky">Tạo tài khoản mới</a>
+                                                        </div>
+                                                    </form>
+                                                <?php
+                                                };
+                                                ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +278,5 @@
                     </div>
                 </div>
             </div>
-    </div>
-    </div>
-    </header>
-    <!-- desktop site__header / end -->
+        </header>
+        <!-- desktop site__header / end -->

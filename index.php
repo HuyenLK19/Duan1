@@ -191,11 +191,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             
                 include "view/suatk.php";
                 break;
-            
         case "addtocart":
-            echo "<script type='text/javascript'>
-                        alert('Hello');
-                    </script>";
             insert_giohang($_GET['id']);
             header("Location: index.php");
             break;
@@ -218,5 +214,3 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 } else include "view/home.php";
 
 include "view/footer.php";
-
-// $result = pdo_query($sql);

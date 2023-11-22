@@ -368,10 +368,10 @@ ini_set('display_errors', 1);
                                     <div class="product-card__availability">Availability: <span class="text-success">In
                                             Stock</span></div>
                                     <div class="product-card__prices"><?php echo $price; ?> VND</div>
-                                    <div class="product-card__buttons"><button 
+                                    <div class="product-card__buttons"><button
                                             class="btn btn-primary product-card__addtocart"
                                             <?php if(!isset($_SESSION['user'])){echo "onclick='alert(`Vui lòng đăng nhập trước khi đặt hàng!`); window.location.href=`index.php?act=formdangnhap`;'";} else { ?>
-                                            onclick="addToCart(<?php echo $id ?>) <?php } ?>"  type="button">Thêm vào giỏ
+                                            onclick="addToCart(<?php echo $id ?>)"<?php } ?> type="button">Thêm vào giỏ
                                             </button> <button
                                             class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
                                             type="button">Add To Cart</button> <button
@@ -398,7 +398,6 @@ ini_set('display_errors', 1);
             </div>
         </div>
     </div><!-- .block-products-carousel / end -->
-    
     <!-- .block-products -->
     <div class="container box-product">
             <div class="block-header">
@@ -415,18 +414,18 @@ ini_set('display_errors', 1);
                     extract($sp);
                     $hinh = "upload/product/" . $img;
                     $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
-
-                    echo '<div class="block-products-carousel__column ">
+                ?>
+                    <div class="block-products-carousel__column ">
                         <div class="block-products-carousel__cell">
                             <div class="product-card product-card--hidden-actions">
                                 <div class="product-card__badges-list">
                                     <div class="product-card__badge product-card__badge--new">New</div>
                                 </div>
-                                <div class="product-card__image product-image"><a href="' . $linksp . '"
+                                <div class="product-card__image product-image"><a href="<?php echo $linksp ?>"
                                         class="product-image__body"><img class="product-image__img"
-                                            src="' . $hinh . '" alt=""></a></div>
+                                            src="<?php echo $hinh ?>" alt=""></a></div>
                                 <div class="product-card__info">
-                                    <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
+                                    <div class="product-card__name"><a href="' . $linksp . '"><?php echo $name ?></a></div>
                                     <div class="product-card__rating">
                                         <div class="product-card__rating-stars">
                                             <div class="rating">
@@ -533,12 +532,14 @@ ini_set('display_errors', 1);
                                 </div>
                                 <div class="product-card__actions">
                                 
-                                    <div class="product-card__prices ">' . $price . ' VND</div>
+                                    <div class="product-card__prices "><?php echo $price ?> VND</div>
                                 
                                
                                 <div class="product-card__buttons atc"><button
-                                class="btn btn-primary product-card__addtocart" onclick="window.location.href=`index.php?act=addtocart&&id='.$id.'`" type="button">Thêm vào giỏ
-                                </button>  
+                                            class="btn btn-primary product-card__addtocart"
+                                            <?php if(!isset($_SESSION['user'])){echo "onclick='alert(`Vui lòng đăng nhập trước khi đặt hàng!`); window.location.href=`index.php?act=formdangnhap`;'";} else { ?>
+                                            onclick="addToCart(<?php echo $id ?>)"<?php } ?> type="button">Thêm vào giỏ
+                                            </button>  
                                 <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                                     <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
                                 </svg> <span
@@ -553,7 +554,8 @@ ini_set('display_errors', 1);
                                 </div>
                             </div>
                         </div>
-                    </div>';
+                    </div>
+                    <?php
                     $i += 1;
                 }
 
@@ -590,6 +592,19 @@ ini_set('display_errors', 1);
     slideShow();
 
     addToCart = (id) => {
-        window.history.pushState({urlPath: "index.php?act=addtocart&id=" + id}, "", "index.php?act=addtocart");
+        var result = $.ajax({
+            type: "POST",
+            url: "http://localhost/Duan1/view/headerCart.php?id="+id,
+            param: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: false,
+            success: function (data) {
+                // nothing needed here
+            }
+        }) .responseText ;
+        document.getElementById("badge").innerHTML = result;
+        return result;
     }
+  
 </script>
