@@ -128,6 +128,13 @@ ini_set('display_errors', 1);
     margin-top: -80px;
     margin-left: 20px;
  }
+ .block-header__title img{
+    width: 20px;
+    
+ }
+ .product-card__badge.product-card__badge--new.hot{
+    background-color: #DE0000;
+ }
 </style>
 <!-- site__body -->
 <div class="site__body">
@@ -214,6 +221,7 @@ ini_set('display_errors', 1);
                                 </div>
                             </div>
                         </div>
+
                     <?php
                         }
                     ?>
@@ -246,7 +254,7 @@ ini_set('display_errors', 1);
                         <div class="block-products-carousel__cell">
                             <div class="product-card product-card--hidden-actions">
                                 <div class="product-card__badges-list">
-                                    <div class="product-card__badge product-card__badge--new">New</div>
+                                    <div class="product-card__badge product-card__badge--new hot">Hot</div>
                                 </div>
                                 <div class="product-card__image product-image"><a href="<?php echo $linksp ?>"
                                         class="product-image__body"><img class="product-image__img"
@@ -394,7 +402,7 @@ ini_set('display_errors', 1);
     <!-- .block-products -->
     <div class="container box-product">
             <div class="block-header">
-                <h3 class="block-header__title">Sản Phẩm Mới</h3>
+                <h3 class="block-header__title">Sản Phẩm Mới <img src="css/images/products/menu_icon_3.png" alt=""></h3>
                 <div class="block-header__divider"></div>
             </div>
 
