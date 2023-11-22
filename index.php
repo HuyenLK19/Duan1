@@ -15,6 +15,9 @@ include "view/header.php";
 
 if (isset($_GET["act"]) && $_GET["act"] !== "") {
     switch ($_GET["act"]) {
+        case "formdangnhap":
+            include "view/dangnhap.php";
+            break;
         case "dangnhap":
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                 $user = $_POST['user'];
@@ -39,6 +42,26 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                                 </script>";
                 }
             }
+            break;
+        case "quenmk":
+            if (isset($_POST['khoiphuc'])){
+                $user = $_POST['user'];
+                $email = $_POST['email'];
+                $thongbao = "Mật khẩu của bạn là: ".repass($user, $email)['pass'];
+                if (!is_array(repass($user, $email))){
+                    $thongbao = "Tài khoản không tồn tại!";
+                    echo "<script type='text/javascript'>
+                            window.location.href='index.php?act=quenmk'
+                            alert('$thongbao');
+                        </script>";
+                } else {
+                echo "<script type='text/javascript'>
+                            alert('$thongbao');
+                            window.location.href='index.php?act=formdangnhap'
+                        </script>";
+                }
+            }
+            include "view/quenmk.php";
             break;
         case "dangxuat":
             session_unset();
@@ -124,6 +147,9 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/lienhe.php";
             break;
         case "addtocart":
+            echo "<script type='text/javascript'>
+                        alert('Hello');
+                    </script>";
             insert_giohang($_GET['id']);
             header("Location: index.php");
             break;

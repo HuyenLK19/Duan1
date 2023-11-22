@@ -40,34 +40,6 @@
                                                         class="product-image__img" src="upload/product/<?php echo $ctsp['img'] ?>"
                                                         alt=""></a></div>
                                             <div class="product-image product-image--location--gallery"><!--
-                                The data-width and data-height attributes must contain the size of a larger version
-                                of the product image.
-
-                                If you do not know the image size, you can remove the data-width and data-height
-                                attribute, in which case the width and height will be obtained from the naturalWidth
-                                and naturalHeight property of img.product-image__img.
-                                --> <a href="css/images/products/product-16-1.jpg" data-width="700" data-height="700"
-                                                    class="product-image__body" target="_blank"><img
-                                                        class="product-image__img"
-                                                        src="css/images/products/anh1.webp" alt=""></a></div>
-                                            <div class="product-image product-image--location--gallery"><!--
-                                The data-width and data-height attributes must contain the size of a larger version
-                                of the product image.
-
-                                If you do not know the image size, you can remove the data-width and data-height
-                                attribute, in which case the width and height will be obtained from the naturalWidth
-                                and naturalHeight property of img.product-image__img.
-                                --> <a href="css/images/products/anh2.webp" data-width="700" data-height="700"
-                                                    class="product-image__body" target="_blank"><img
-                                                        class="product-image__img"
-                                                        src="css/images/products/anh2.webp" alt=""></a></div>
-                                            <div class="product-image product-image--location--gallery"><!--
-                                The data-width and data-height attributes must contain the size of a larger version
-                                of the product image.
-
-                                If you do not know the image size, you can remove the data-width and data-height
-                                attribute, in which case the width and height will be obtained from the naturalWidth
-                                and naturalHeight property of img.product-image__img.
                                 --> <a href="css/images/products/product-16-3.jpg" data-width="700" data-height="700"
                                                     class="product-image__body" target="_blank"><img
                                                         class="product-image__img"
@@ -188,7 +160,7 @@
                                     <div class="product__rating-legend"><a href="#">7 Reviews</a><span>/</span><a
                                             href="#">Viết đánh giá</a></div>
                                 </div>
-                                <div class="product__description"><?php echo $ctsp['mota']?></div>
+                                <div class="product__description"><?php echo $ctsp['mota']; ?></div>
                                 
                             </div><!-- .product__info / end --><!-- .product__sidebar -->
                             <div class="product__sidebar">

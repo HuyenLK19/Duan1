@@ -52,4 +52,11 @@
         $sql = "INSERT INTO taikhoan(user, pass, email) VALUES('$user', '$pass', '$email')";
         pdo_execute($sql);
     };
+
+    function repass($user, $email){
+        $sql = "SELECT * FROM taikhoan WHERE user = '$user' AND email = '$email'";
+        if (is_array(pdo_query_one($sql))){
+            return pdo_query_one($sql);
+        }
+    }
 ?>

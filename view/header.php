@@ -71,7 +71,7 @@
                 </div>
                 <div class="site-header__nav-panel">
                     <!-- data-sticky-mode - one of [pullToShow, alwaysOnTop] -->
-                    <div class="nav-panel nav-panel--sticky" data-sticky-mode="pullToShow">
+                    <div class="nav-panel nav-panel--sticky" data-sticky>
                         <div class="nav-panel__container container">
                             <div class="nav-panel__row">
                                 <!-- .nav-links -->
@@ -126,6 +126,16 @@
                                     <div class="nav-links__item-body">Liên hệ</div>
                                 </a>
                             </li>
+                            <?php 
+                            if (isset($_SESSION['user'])){
+                            ?>
+                            <li style="line-height: 54px; text-align: right; width: 373px;">
+                            Xin chào! <?php echo $_SESSION['user']['name'] ?>
+                            <?php
+                            }
+                            ?>
+                            
+                        </li>
                             </ul>
                         </div>
                         <!-- .nav-links / end -->
@@ -210,10 +220,10 @@
                                             <div class="account-menu__divider"></div>
                                             <a href="index.php?act=thongtintk" class="account-menu__user">
                                                 <?php
-                                                if ($_SESSION['user']['img'] != '') {
+                                                if ($_SESSION['user']['avatar'] != '') {
                                                     ?>
                                                     <div class="account-menu__user-avatar">
-                                                        <img src="upload/avatar/<?php echo $_SESSION['user']['img'] ?>">
+                                                        <img src="upload/avatar/<?php echo $_SESSION['user']['avatar'] ?>">
                                                     </div>
                                                     <?php
                                                 }

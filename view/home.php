@@ -237,23 +237,22 @@ ini_set('display_errors', 1);
                 <div class="block-products-carousel__preloader"></div>
                 <div class="owl-carousel">
                     <?php
-
-
                     foreach ($sphot as $sp) {
-                        extract($sp);
-                        $hinh = "upload/product/" . $img;
-                        $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
-                        echo '<div class="block-products-carousel__column ">
+                    extract($sp);
+                    $hinh = "upload/product/" . $img;
+                    $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
+                    ?> 
+                        <div class="block-products-carousel__column">
                         <div class="block-products-carousel__cell">
                             <div class="product-card product-card--hidden-actions">
                                 <div class="product-card__badges-list">
                                     <div class="product-card__badge product-card__badge--new">New</div>
                                 </div>
-                                <div class="product-card__image product-image"><a href="' . $linksp . '"
+                                <div class="product-card__image product-image"><a href="<?php echo $linksp ?>"
                                         class="product-image__body"><img class="product-image__img"
-                                            src="' . $hinh . '" alt=""></a></div>
+                                            src="<?php echo $hinh ?>" alt=""></a></div>
                                 <div class="product-card__info">
-                                    <div class="product-card__name"><a href="' . $linksp . '">' . $name . '</a></div>
+                                    <div class="product-card__name"><a href="<?php echo $linksp; ?>"><?php echo $name ?></a></div>
                                     <div class="product-card__rating">
                                         <div class="product-card__rating-stars">
                                             <div class="rating">
@@ -356,20 +355,15 @@ ini_set('display_errors', 1);
                                         </div>
                                         <div class="product-card__rating-legend">9 Reviews</div>
                                     </div>
-                                    <ul class="product-card__features-list">
-                                        <li>Speed: 750 RPM</li>
-                                        <li>Power Source: Cordless-Electric</li>
-                                        <li>Battery Cell Type: Lithium</li>
-                                        <li>Voltage: 20 Volts</li>
-                                        <li>Battery Capacity: 2 Ah</li>
-                                    </ul>
                                 </div>
                                 <div class="product-card__actions">
                                     <div class="product-card__availability">Availability: <span class="text-success">In
                                             Stock</span></div>
-                                    <div class="product-card__prices">' . $price . ' VND</div>
-                                    <div class="product-card__buttons"><button
-                                            class="btn btn-primary product-card__addtocart" onclick="window.location.href=`index.php?act=addtocart&&id='.$id.'`" type="button">Thêm vào giỏ
+                                    <div class="product-card__prices"><?php echo $price; ?> VND</div>
+                                    <div class="product-card__buttons"><button 
+                                            class="btn btn-primary product-card__addtocart"
+                                            <?php if(!isset($_SESSION['user'])){echo "onclick='alert(`Vui lòng đăng nhập trước khi đặt hàng!`); window.location.href=`index.php?act=formdangnhap`;'";} else { ?>
+                                            onclick="addToCart(<?php echo $id ?>) <?php } ?>"  type="button">Thêm vào giỏ
                                             </button> <button
                                             class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
                                             type="button">Add To Cart</button> <button
@@ -388,10 +382,10 @@ ini_set('display_errors', 1);
                                 </div>
                             </div>
                         </div>
-                    </div>';
-                    }
+                    </div>
+                    <?php
+                    };
                     ?>
-
                 </div>
             </div>
         </div>
@@ -586,4 +580,8 @@ ini_set('display_errors', 1);
         setTimeout(slideShow, 2000);
     }
     slideShow();
+
+    addToCart = (id) => {
+        window.history.pushState({urlPath: "index.php?act=addtocart&id=" + id}, "", "index.php?act=addtocart");
+    }
 </script>
