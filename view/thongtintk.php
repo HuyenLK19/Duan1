@@ -19,12 +19,12 @@
                         <ul>
                             <li class="account-nav__item"><a href="index.php?act=suatk">Chỉnh sửa hồ sơ</a></li>
                             <li class="account-nav__item"><a href="account-orders.html">Lịch sử đơn hàng</a></li>
-                            <li class="account-nav__item"><a href="account-order-details.html">Chi tiết đặt hàng</a>
-                            </li>
-                            <li class="account-nav__item"><a href="account-addresses.html">Địa chỉ</a></li>
+                            <li class="account-nav__item"><a href="account-order-details.html">Đơn mua</a></li>
+                            
+                            <!-- <li class="account-nav__item"><a href="account-addresses.html">Địa chỉ</a></li>
                             <li class="account-nav__item"><a href="account-edit-address.html">Sửa địa chỉ</a>
                             </li>
-                            <li class="account-nav__item"><a href="account-password.html">Mật khẩu</a></li>
+                            <li class="account-nav__item"><a href="account-password.html">Mật khẩu</a></li> -->
                             <li class="account-nav__item"><a href="index.php?act=dangxuat">Đăng xuất</a></li>
                         </ul>
                     </div>

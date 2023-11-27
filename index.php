@@ -111,7 +111,8 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             } else {
                 $iddm = 0;
             }
-            $dssp = listall_sanpham($kyw, $iddm);
+            $dssp = list_sanphamhot();
+
             // $tendm = load_ten_dm($iddm);
             include "view/sanpham.php";
             break;
@@ -179,7 +180,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                         update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
                         echo "<script type='text/javascript'>
                                     alert('Cập nhật thành công!');
-                                    window.location.href='index.php?act=listsp'
+                                    window.location.href='index.php?act=thongtintk'
                                 </script>";
                     } else {
                         echo "Chỉ mục không xác định: id";

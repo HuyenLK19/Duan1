@@ -16,7 +16,7 @@
 <div class="row">
     <div class="col-lg-6" style="position: relative; left: 20%">
         <div class="">
-            <form action="index.php?act=suatk" method="post" class="form-validation">
+            <form action="index.php?act=suatk&id=<?=$id?>" method="post" class="form-validation">
 
                 <div class="form-group">
                     <label for="tentk">ID<span class="text-danger">*</span></label>

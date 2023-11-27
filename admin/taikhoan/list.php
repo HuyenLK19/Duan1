@@ -39,9 +39,9 @@
                             <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'"><?php echo $tk['email'] ?></td>
                             <td onclick="document.location.href = 'index.php?act=chitiettk&&id=<?php echo $tk['id'] ?>'">
                                 <?php
-                                if ($tk['img'] != ''){
+                                if ($tk['avatar'] != ''){
                                 ?>
-                                <img class="rounded-circle" src="../upload/avatar/<?php echo $tk['img'] ?>" style="width: 48px; height: 48px;">
+                                <img class="rounded-circle" src="../upload/avatar/<?php echo $tk['avatar'] ?>" style="width: 48px; height: 48px;">
                                 <?php
                                 }
                                 ?>
