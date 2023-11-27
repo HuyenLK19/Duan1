@@ -252,7 +252,7 @@ ini_set('display_errors', 1);
                     ?> 
                         <div class="block-products-carousel__column">
                         <div class="block-products-carousel__cell">
-                            <div class="product-card product-card--hidden-actions">
+                            <div class="product-card">
                                 <div class="product-card__badges-list">
                                     <div class="product-card__badge product-card__badge--new hot">Hot</div>
                                 </div>
