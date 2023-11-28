@@ -153,44 +153,44 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $user_info = listone_taikhoan($user_id);
                 include "view/thongtintk.php";
             } else {
-                // Xử lý khi không tìm thấy phần tử 'user' trong $_SESSION
+                // 
             }
             break;
 
             case "suatk":
                 if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
-                    $id = $_POST['id'];
-            
-                    if ($id > 0) {
-                        $tentk = $_POST["tentk"];
-                        $user = $_POST["user"];
-                        $pass = $_POST["pass"];
-                        $email = $_POST["email"];
-                        $address = $_POST["address"];
-                        $hinh = $_FILES['hinh']['name'];
-                        $target_dir = "../upload/avatar/";
-                        $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-                        if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                            // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
-                        } else {
-                            // echo "Sorry, there was an error uploading your file.";
-                        }
-                        $tel = $_POST["tel"];
-            
-                        update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
-                        echo "<script type='text/javascript'>
-                                    alert('Cập nhật thành công!');
-                                    window.location.href='index.php?act=thongtintk'
-                                </script>";
+                    $tentk = isset($_POST["name"]) ? $_POST["name"] : '';
+                    $user = isset($_POST["user"]) ? $_POST["user"] : '';
+                    $pass = isset($_POST["pass"]) ? $_POST["pass"] : '';
+                    $email = isset($_POST["email"]) ? $_POST["email"] : '';
+                    $address = isset($_POST["address"]) ? $_POST["address"] : '';
+                    $tel = isset($_POST["tel"]) ? $_POST["tel"] : '';
+                    $status = isset($_POST["status"]) ? $_POST["status"] : '';
+                    $role = isset($_POST["role"]) ? $_POST["role"] : '';
+                    // Kiểm tra xem 'id' có tồn tại trong $_GET không
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
                     } else {
-                        echo "Chỉ mục không xác định: id";
+                        echo "ko co id";
+    
+                        exit; 
                     }
-            
-                    $user_info = listone_taikhoan($id);
-                    $_SESSION['user_info'] = $user_info;
+                    update_taikhoans($id, $tentk, $user, $pass, $email, $address, $tel);
+    
+                    echo "<script type='text/javascript'>
+                        alert('Sửa thành công!');
+                        window.location.href='index.php?act=thongtintk'
+                    </script>";
                 }
-            
-                include "view/suatk.php";
+    
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    $tk = listone_taikhoan($_GET['id']);
+                    include "view/suatk.php";
+                } else {
+    
+                    echo "ko co id";
+                }
                 break;
         case "addtocart":
             insert_giohang($_GET['id']);
