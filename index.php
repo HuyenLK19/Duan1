@@ -111,8 +111,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             } else {
                 $iddm = 0;
             }
-            $dssp = list_sanphamhot();
-
+            $dssp = list_sanphamnew();
             // $tendm = load_ten_dm($iddm);
             include "view/sanpham.php";
             break;
@@ -192,6 +191,48 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     echo "ko co id";
                 }
                 break;
+                case "matkhau":
+                    if (!isset($_SESSION['user']['user'])) {
+                        header("Location: login.php");
+                        exit();
+                    }
+                
+                    $errors = array();
+                
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $tendn = $_POST['tendn'];
+                        $oldPassword = $_POST['old_password'];
+                        $newPassword = $_POST['new_password'];
+                        $confirmPassword = $_POST['confirm_password'];
+                
+                        // Kiểm tra xem có trường nào không được nhập không
+                        $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
+                
+                        foreach ($requiredFields as $field) {
+                            if (empty($_POST[$field])) {
+                                $errors[$field] = 'Trường này không được để trống.';
+                            }
+                        }
+                
+                        // Kiểm tra mật khẩu mới có ít nhất 6 ký tự
+                        if (strlen($newPassword) < 6) {
+                            $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
+                        }
+                
+                        // Kiểm tra xác nhận mật khẩu
+                        if ($newPassword != $confirmPassword) {
+                            $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
+                        }
+                
+                        // Nếu không có lỗi, thực hiện các hành động cập nhật mật khẩu
+                        if (empty($errors)) {
+                            echo "Cập nhật mật khẩu thành công!";
+
+                        }
+                    }
+                
+                    include "view/matkhau.php";
+                    break;
         case "addtocart":
             insert_giohang($_GET['id']);
             header("Location: index.php");

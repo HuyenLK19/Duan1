@@ -34,7 +34,7 @@
                     <div class="account-nav flex-grow-1">
                         <h4 class="account-nav__title">Navigation</h4>
                         <ul class="box-ul">
-                            <li class="account-nav__item"><a href="index.php?act=suatk&&id=<?php echo $tk[0][0]; ?>">Chỉnh sửa hồ sơ</a></li>
+                            <li class="account-nav__item"><a href="index.php?act=suatk&&id=<?php echo $user_info[0][0]; ?>">Chỉnh sửa hồ sơ</a></li>
                             <li class="account-nav__item"><a href="account-orders.html">Lịch sử đơn hàng</a></li>
                             <!-- <li class="account-nav__item"><a href="account-order-details.html">Đơn mua</a> -->
                             </li>
@@ -44,12 +44,8 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-12 col-lg-9 mt-4 mt-lg-0">
                     <div class="dashboard">
-
-                        <!--  -->
-
 
                         <!-- Kiểm tra xem ảnh đại diện có tồn tại không -->
                         <?php
@@ -82,10 +78,7 @@
                             <div class="address-card__row-title">Địa chỉ email</div>
                             <div class="address-card__row-content">' . $email . '</div>
                         </div>
-                        <div class="address-card__row">
-                        <div class="address-card__row-title">Mật khẩu</div>
-                        <div class="address-card__row-content">' . $pass . '</div>
-                    </div>
+                       
                         <div class="address-card__footer">
                             
                         </div>
