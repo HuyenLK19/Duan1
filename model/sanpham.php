@@ -1,6 +1,6 @@
 <?php
     function listall_sanpham(){
-        $sql = "SELECT sp.id, sp.name, sp.price, sp.img, sp.mota, sp.iddm, dm.name as cate_name FROM sanpham sp INNER JOIN danhmuc dm ON sp.iddm = dm.id limit 17";
+        $sql = "SELECT sp.id, sp.name, sp.price, sp.img, sp.mota, sp.iddm, dm.name as cate_name FROM sanpham sp INNER JOIN danhmuc dm ON sp.iddm = dm.id limit 16";
         return pdo_query($sql);
     }
     function list_sanphamnew(){
