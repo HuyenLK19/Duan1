@@ -52,11 +52,11 @@
                         <!-- Kiểm tra xem ảnh đại diện có tồn tại không -->
                         <?php
                         foreach ($user_info as $tk) {
-                            extract($tk);
-
+                           
+                           
                             $hinh = "upload/avatar/" . $user_info[0][5];
                             echo '   <div class="card-body profile-card__body">
-                            <div class="profile-card__avatar"><img src="' . $hinh . '" alt=""></div>
+                            <div class="profile-card__avatar"><img src="'.$hinh.'" alt=""></div>
                         <div class="profile-card__name">' . $name . '</div>
                         <div class="profile-card__email">' . $email . '</div>
                         <div class="profile-card__edit">
@@ -100,42 +100,33 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>TÊN SẢN PHẨM</th>
-                                            <th>Ngày đặt hàng</th>
-                                            <th>GIÁ</th>
-                                            <th>SỐ LƯỢNG</th>
+                                            <th>ĐẶT HÀNG</th>
+                                            <th>NGÀY</th>
                                             <th>TRẠNG THÁI</th>
-                                            <th>PHƯƠNG THỨC THANH TOÁN</th>
-                                            <th>TỔNG</th>
+                                            <th>TỔNG CỘNG</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        foreach ($listdh as $dh) {
-                                        ?>
-                                            <tr>
-                                                <td><a href="#"><?=$dh['id']?></a></td>
-                                                <td><?=$dh['tensp']?></td>
-                                                <td><?=$dh['ngaydathang']?></td>
-                                                <td><?=$dh['giasp']?> VND</td>
-                                                <td><?=$dh['soluong']?></td>
-                                                <td><?php  
-                                                    if ($dh['status'] == 0){
-                                                        echo "Đang vận chuyển";
-                                                    } else echo "Đơn đã hủy";
-                                                ?></td>
-                                                <td><?php  
-                                                    if ($dh['pttt'] == 1){
-                                                        echo "Thanh toán khi nhận hàng";
-                                                    } else echo "Chuyển khoản";
-                                                ?></td>
-                                                <td><?php echo $dh['giasp'] * $dh['soluong'] ?> VND</td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
+                                        <tr>
+                                            <td><a href="#">#8132</a></td>
+                                            <td>02 April, 2019</td>
+                                            <td>Pending</td>
+                                            <td>$2,719.00 for 5 item(s)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">#7592</a></td>
+                                            <td>28 March, 2019</td>
+                                            <td>Pending</td>
+                                            <td>$374.00 for 3 item(s)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">#7192</a></td>
+                                            <td>15 March, 2019</td>
+                                            <td>Shipped</td>
+                                            <td>$791.00 for 4 item(s)</td>
+                                        </tr>
                                     </tbody>
+
                                 </table>
                             </div>
                         </div>

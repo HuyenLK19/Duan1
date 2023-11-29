@@ -10,7 +10,7 @@
         }
 
         h1 {
-            color: #333;
+            color: #3D464C;
         }
 
         table {
@@ -40,16 +40,11 @@
     </style>
     <table>
     <thead>
-    <tr>
-
-            <th>Tên sản phẩm</th>
-            <th>Địa chỉ</th>
-            <th>Số điện thoại</th>
-            <th>Email</th>
-            <th>Đơn giá</th>
+    <tr>  
             <th>Phương thức thanh toán</th>
+            <th>Số lượng</th>
+            <th>Tổng</th>
             <th>Trạng thái đơn hàng</th>
-
     </tr>
   </thead>
   <tbody>
@@ -57,38 +52,19 @@
             if(is_array($lichsumua) && $lichsumua != null){
                 for ($i = 0; $i < count($lichsumua); $i++) {
                     $id = $lichsumua[$i]['id'];
-                    $tensanpham = $lichsumua[$i]['name'];
-                    $diachi = $lichsumua[$i]['address'];
-                    $tel = $lichsumua[$i]['tel'];
-                    $iemail = $lichsumua[$i]['email'];
                     $pttt = $lichsumua[$i]['pttt'];
-                    $ngaydathang = $lichsumua[$i]['ngaydathang'];
-                    $dongia = $lichsumua[$i]['tong'];
+                    $soluong = $lichsumua[$i]['soluong'];
+                    $tong = $lichsumua[$i]['tong'];
                     $status = $lichsumua[$i]['status'];
-                   
                    ?>
-
-                            <tr>
-                               
-                                <td><?= $tensanpham ?></td>
-                                <td><?= $diachi ?></td>
-                                <td><?= $tel ?></td>
-                                <td><?= $iemail ?></td>
+                            <tr>        
                                 <td><?= $pttt ?></td>
-                                <td><?= $ngaydathang ?></td>
-                                <td><?=  $dongia  ?></td>
+                                <td><?= $soluong ?></td>
+                                <td><?=  $tong  ?></td>
                                 <td><?=  $status ?></td>
-
                                 </tr>
-                                <?php } }?>
-   
-   
+                                <?php } }?> 
   </tbody>
-      
-
-      
-
-
 
     </table>
 </body>
