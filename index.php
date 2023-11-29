@@ -162,6 +162,14 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $tentk = isset($_POST["name"]) ? $_POST["name"] : '';
                 $user = isset($_POST["user"]) ? $_POST["user"] : '';
                 $pass = isset($_POST["pass"]) ? $_POST["pass"] : '';
+                $hinh = $_FILES['hinh']['name'];
+                $target_dir = "upload/avatar/";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
                 $email = isset($_POST["email"]) ? $_POST["email"] : '';
                 $address = isset($_POST["address"]) ? $_POST["address"] : '';
                 $tel = isset($_POST["tel"]) ? $_POST["tel"] : '';
@@ -175,7 +183,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 
                     exit;
                 }
-                update_taikhoans($id, $tentk, $user, $pass, $email, $address, $tel);
+                update_taikhoan($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
 
                 echo "<script type='text/javascript'>
                         alert('Sửa thành công!');
