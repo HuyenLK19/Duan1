@@ -65,7 +65,10 @@
                     } else echo "Chuyển khoản"; ?></td>
                                 <td><?= $soluong ?></td>
                                 <td><?=  $tong  ?></td>
-                                <td><?=  $status ?></td>
+                                <td><?  if ($status ==  0) {
+                                        echo "Đơn hàng đang được vận chuyển";
+                                    } else echo "Đơn hàng đã bị hủy";
+                                    ?> </td>
                                 </tr>
                                 <?php } }?> 
   </tbody>
