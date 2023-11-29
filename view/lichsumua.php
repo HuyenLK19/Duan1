@@ -4,7 +4,6 @@
     <title>Lịch sử đặt hàng</title>
 </head>
 <body>
-    <h1>Lịch sử đặt hàng</h1>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,9 +14,10 @@
         }
 
         table {
-            width: 100%;
+            width: 80%;
+            margin: auto;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 50px;
         }
 
         th, td {
@@ -41,7 +41,7 @@
     <table>
     <thead>
     <tr>
-    <th>ID Bill</th>
+
             <th>Tên sản phẩm</th>
             <th>Địa chỉ</th>
             <th>Số điện thoại</th>
