@@ -6,12 +6,10 @@ include "model/sanpham.php";
 include "model/taikhoan.php";
 include "model/danhmuc.php";
 include "model/cart.php";
-$listgiohang = listall_giohang();
-$soluong = sumall_soluong();
+
 $allsp = listall_sanpham();
 $sphot = loadall_sanpham_hot();
 $listdm = listall_danhmuc();
-
 
 include "view/header.php";
 
@@ -26,6 +24,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $pass = $_POST['pass'];
                 $check_login = login($user, $pass);
                 if (is_array($check_login)) {
+                    $_SESSION['cart'] = [];
                     $_SESSION['user'] = $check_login;
                     echo "<script type='text/javascript'>
                             alert('Đăng nhập thành công!');
@@ -189,23 +188,25 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     $user_info = listone_taikhoan($id);
                     $_SESSION['user_info'] = $user_info;
                 }
-            
                 include "view/suatk.php";
                 break;
-        case "addtocart":
-            insert_giohang($_GET['id']);
-            header("Location: index.php");
-            break;
-        case "delcart":
-            del_giohang($_GET['id']);
-            header("Location: index.php");
-            break;
         case "cart":
-            $list = listall_giohang();
             include "view/cart.php";
             break;
         case "checkout":
-            $list = listall_giohang();
+            if (isset($_POST['checkout'])){
+                $id = $_SESSION['user']['id'];
+                $pttt = $_POST['checkout_payment_method'];
+                $tong = $_POST['tong'];
+                foreach ($_SESSION['cart'] as $cart){
+                    pdo_execute("INSERT INTO donhang(pttt, tong, soluong, idpro, iduser) VALUES('$pttt', '$tong', '$cart[1]', '$cart[0]', '$id')");
+                }
+                $_SESSION['cart'] = [];
+                echo "<script type='text/javascript'>
+                        alert('Đã thanh toán thành công!');
+                        window.location.href='index.php';
+                    </script>";
+            }
             include "view/checkout.php";
             break;
         default:

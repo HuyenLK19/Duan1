@@ -1,5 +1,5 @@
 <!-- site__body -->
-<div class="site__body">
+<form class="site__body" method="post" action="index.php?act=checkout">
     <div class="page-header">
         <div class="page-header__container container">
             <div class="page-header__title">
@@ -14,24 +14,17 @@
                     <div class="card mb-lg-0">
                         <div class="card-body">
                             <h3 class="card-title">Hóa đơn</h3>
-                            <div class="form-row">
-                                <div class="form-group col-md-6"><label for="checkout-first-name">Họ</label>
-                                    <input type="text" class="form-control" value="Nhập họ" id="checkout-first-name">
-                                </div>
-                                <div class="form-group col-md-6"><label for="checkout-last-name">Tên</label>
-                                    <input type="text" class="form-control" value="Nhập tên" id="checkout-last-name">
-                                </div>
+                            <div class="form-group"><label for="checkout-first-name">Họ tên</label>
+                                <input type="text" class="form-control" placeholder="<?= $_SESSION['user']['name'] ?>" id="checkout-first-name">
                             </div>
                             <div class="form-group"><label for="checkout-street-address">Địa chỉ</label>
-                                <input type="text" class="form-control" id="checkout-street-address">
+                                <input type="text" class="form-control" placeholder="<?= $_SESSION['user']['address'] ?>" id="checkout-street-address">
                             </div>
-                            <div class="form-group"><label for="checkout-city">Tỉnh</label> <input type="text" class="form-control" id="checkout-city"></div>
-                            <div class="form-group"><label for="checkout-state">Quận / Huyện / Thành phố</label> <input type="text" class="form-control" id="checkout-state"></div>
                             <div class="form-row">
                                 <div class="form-group col-md-6"><label for="checkout-email">Địa chỉ email</label>
-                                    <input type="email" class="form-control" id="checkout-email">
+                                    <input type="email" class="form-control" placeholder="<?= $_SESSION['user']['email'] ?>" id="checkout-email">
                                 </div>
-                                <div class="form-group col-md-6"><label for="checkout-phone">Điện thoại</label> <input type="text" class="form-control" id="checkout-phone"></div>
+                                <div class="form-group col-md-6"><label for="checkout-phone">Điện thoại</label> <input type="text" class="form-control" placeholder="<?= $_SESSION['user']['tel'] ?>" id="checkout-phone"></div>
                             </div>
                         </div>
                     </div>
@@ -50,14 +43,15 @@
                                 <tbody class="checkout__totals-products">
                                     <?php
                                     $cart_total = 0;
-                                    foreach ($list as $gh) {
+                                    foreach ($_SESSION['cart'] as $cart) {
+                                        $sp = listone_sanpham($cart[0]);
                                     ?>
                                         <tr>
-                                            <td><?php echo $gh['name'] ?> × <?php echo $gh['soluong'] ?></td>
-                                            <td><?php echo $gh['soluong'] * $gh['price'] ?> VNĐ</td>
+                                            <td><?php echo $sp['name'] ?> × <?php echo $cart[1] ?></td>
+                                            <td><?php echo $cart[1] * $sp['price'] ?> VNĐ</td>
                                         </tr>
                                     <?php
-                                        $cart_total += $gh['price'] * $gh['soluong'];
+                                        $cart_total += $sp['price'] * $cart[1];
                                     }
                                     ?>
                                 </tbody>
@@ -84,26 +78,8 @@
                                         <label class="payment-methods__item-header">
                                             <span class="payment-methods__item-radio input-radio">
                                                 <span class="input-radio__body">
-                                                    <input class="input-radio__input" name="checkout_payment_method" type="radio" checked="checked">
-                                                    <span class="input-radio__circle"></span> 
-                                                </span>
-                                            </span>
-                                            <span class="payment-methods__item-title">Chuyển khoản</span>
-                                            </label>
-                                        <div class="payment-methods__item-container">
-                                            <div class="payment-methods__item-description text-muted">Thực hiện thanh
-                                                toán trực tiếp vào tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng
-                                                ID đơn hàng của bạn làm tài liệu tham khảo thanh toán. Đơn đặt hàng của
-                                                bạn sẽ không được vận chuyển cho đến khi tiền đã được xóa trong tài
-                                                khoản của chúng tôi.</div>
-                                        </div>
-                                    </li>
-                                    <li class="payment-methods__item">
-                                        <label class="payment-methods__item-header">
-                                            <span class="payment-methods__item-radio input-radio">
-                                                <span class="input-radio__body">
-                                                    <input class="input-radio__input" name="checkout_payment_method" type="radio"> 
-                                                    <span class="input-radio__circle"></span> 
+                                                    <input class="input-radio__input" name="checkout_payment_method" type="radio" value="1" checked="checked">
+                                                    <span class="input-radio__circle"></span>
                                                 </span>
                                             </span>
                                             <span class="payment-methods__item-title">Thanh toán bằng tiền mặt</span>
@@ -112,18 +88,61 @@
                                             <div class="payment-methods__item-description text-muted">Thanh toán khi giao hàng.</div>
                                         </div>
                                     </li>
+                                    <li class="payment-methods__item">
+                                        <label class="payment-methods__item-header">
+                                            <span class="payment-methods__item-radio input-radio">
+                                                <span class="input-radio__body">
+                                                    <input class="input-radio__input" name="checkout_payment_method" value="2" type="radio">
+                                                    <span class="input-radio__circle"></span>
+                                                </span>
+                                            </span>
+                                            <span class="payment-methods__item-title">Chuyển khoản</span>
+                                        </label>
+                                        <div class="payment-methods__item-container">
+                                            <div class="payment-methods__item-description text-muted">Thực hiện thanh
+                                                toán trực tiếp vào tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng
+                                                ID đơn hàng của bạn làm tài liệu tham khảo thanh toán. Đơn đặt hàng của
+                                                bạn sẽ không được vận chuyển cho đến khi tiền đã được xóa trong tài
+                                                khoản của chúng tôi.</div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
+                            <input type="hidden" value="<?=$cart_total?>" name="tong">
                             <div class="checkout__agree form-group">
-                                <div class="form-check"><span class="form-check-input input-check"><span class="input-check__body"><input class="input-check__input" type="checkbox" id="checkout-terms"> <span class="input-check__box"></span> <svg class="input-check__icon" width="9px" height="7px">
-                                                <use xlink:href="images/sprite.svg#check-9x7"></use>
-                                            </svg> </span></span><label class="form-check-label" for="checkout-terms">Tôi đã đọc và đồng ý với <a target="_blank" href="terms-and-conditions.html"> các điều khoản và điều kiện của trang
-                                            web</a>*</label></div>
-                            </div><button type="submit" class="btn btn-primary btn-xl btn-block">Đặt hàng</button>
+                                <div class="form-check" onclick="checkterm()">
+                                    <span class="form-check-input input-check">
+                                        <span class="input-check__body">
+                                            <input class="input-check__input" type="checkbox" id="checkout-terms"> 
+                                            <span class="input-check__box"></span> 
+                                            <svg class="input-check__icon" width="9px" height="7px">
+                                                <use xlink:href="css/images/sprite.svg#check-9x7"></use>
+                                            </svg> 
+                                        </span>
+                                    </span>
+                                    <label class="form-check-label" for="checkout-terms">Tôi đã đọc và đồng ý với các điều khoản và điều kiện của trang
+                                            web*</label></div>
+                            </div><button type="submit" id="checkout" name="checkout" class="btn btn-secondary btn-xl btn-block" disabled>Đặt hàng</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div><!-- site__body / end -->
+</form>
+<!-- site__body / end -->
+<script>
+    checkterm = () => {
+        if(document.getElementById('checkout-terms').checked == false){
+            document.getElementById('checkout-terms').checked = true;
+            document.getElementById('checkout').className = 'btn btn-primary btn-xl btn-block';
+            document.getElementById('checkout').disabled = false;
+        } else {
+            document.getElementById('checkout-terms').checked = false;
+            document.getElementById('checkout').className = 'btn btn-secondary btn-xl btn-block';
+            document.getElementById('checkout').disabled = true;
+        }
+    }
+
+
+</script>
