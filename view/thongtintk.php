@@ -67,7 +67,7 @@
                     <div class="address-card__row-title">Tài khoản</div>
 
                         <div class="address-card__name">' . $user . '</div>
-                        <div class="address-card__row">
+<div class="address-card__row">
                             ' . $address . '
                         </div>
                         <div class="address-card__row">
@@ -123,7 +123,7 @@
                                                     if ($dh['status'] == 0){
                                                         echo "Đang vận chuyển";
                                                     } else echo "Đơn đã hủy";
-                                                ?></td>
+?></td>
                                                 <td><?php  
                                                     if ($dh['pttt'] == 1){
                                                         echo "Thanh toán khi nhận hàng";
