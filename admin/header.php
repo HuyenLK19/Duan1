@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,10 +53,16 @@
                 <li class="dropdown d-none d-lg-block">
                     <a class="nav-link dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="false" aria-expanded="false">
-                        <img src="css/images/flags/us.jpg" alt="user-image" class="mr-2" height="12"> <span
-                            class="align-middle">English <i class="mdi mdi-chevron-down"></i> </span>
+                        <img src="css/images/flags/vn.png" alt="user-image" class="mr-2" height="12"> <span
+                            class="align-middle">Tiếng Việt <i class="mdi mdi-chevron-down"></i> </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="css/images/flags/us.jpg" alt="user-image" class="mr-2" height="12"> <span
+                                class="align-middle">English</span>
+                        </a>
+
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <img src="css/images/flags/spain.jpg" alt="user-image" class="mr-2" height="12"> <span
@@ -84,25 +93,25 @@
                     <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="false" aria-expanded="false">
                         <span class="pro-user-name ml-1">
-                            Maxine K <i class="mdi mdi-chevron-down"></i>
+                            <?=$_SESSION['user']['name']?> <i class="mdi mdi-chevron-down"></i>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                         <!-- item-->
                         <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome !</h6>
+                            <h6 class="text-overflow m-0">Xin chào!</h6>
                         </div>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <i class="mdi mdi-account-outline"></i>
-                            <span>Profile</span>
+                            <span>Thông tin tài khoản</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="mdi mdi-lock-outline"></i>
-                            <span>Lock Screen</span>
+                            <i class="mdi mdi-home-outline"></i>
+                            <span onclick="window.location.href='http://localhost/Duan1/index.php'">Về trang sản phẩm</span>
                         </a>
 
                         <div class="dropdown-divider"></div>

@@ -132,7 +132,6 @@
 <script>
     svg4everybody();
 </script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 <!-- Mirrored from stroyka.html.themeforest.scompiler.ru/themes/default-ltr/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Nov 2023 09:43:40 GMT -->
 

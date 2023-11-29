@@ -5,7 +5,6 @@ include "model/pdo.php";
 include "model/sanpham.php";
 include "model/taikhoan.php";
 include "model/danhmuc.php";
-include "model/cart.php";
 include "model/donhang.php";
 
 $newsp = list_sanphamnew();
@@ -28,21 +27,48 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 if (is_array($check_login)) {
                     $_SESSION['cart'] = [];
                     $_SESSION['user'] = $check_login;
-                    echo "<script type='text/javascript'>
-                            alert('Đăng nhập thành công!');
-                            window.location.href='index.php'
-                        </script>";
+?>
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            title: "Đăng nhập thành công!",
+                            icon: "success",
+                            confirmButtonText: "OK"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = "index.php";
+                            }
+                        });
+                    </script>";
+                <?php
                 } else {
                     $thongbao = $check_login;
                     if (strlen($check_login) == 48) {
-                        echo "<script type='text/javascript'>
-                            alert('$thongbao');
-                            window.location.href='index.php'
-                        </script>";
-                    } else echo "<script type='text/javascript'>
-                                    alert('$thongbao');
-                                    window.location.href='index.php?act=dangky'
-                                </script>";
+                ?>
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            title: "<?=$thongbao?>",
+                            icon: "error",
+                            confirmButtonText: "OK"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = "index.php";
+                            }
+                        });
+                    </script>;
+                <?php
+                    } else ?>
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            title: "<?=$thongbao?>",
+                            icon: "error",
+                            confirmButtonText: "OK"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = "index.php?act=dangky";
+                            }
+                        });
+                    </script>;
+                <?php
                 }
             }
             break;
@@ -53,22 +79,52 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $thongbao = "Mật khẩu của bạn là: " . repass($user, $email)['pass'];
                 if (!is_array(repass($user, $email))) {
                     $thongbao = "Tài khoản không tồn tại!";
-                    echo "<script type='text/javascript'>
-                            window.location.href='index.php?act=quenmk'
-                            alert('$thongbao');
-                        </script>";
+                ?>
+                <script type='text/javascript'>
+                    Swal.fire({
+                        title: "<?=$thongbao?>",
+                        icon: "error",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "index.php";
+                        }
+                    });
+                </script>;
+                <?php
                 } else {
-                    echo "<script type='text/javascript'>
-                            alert('$thongbao');
-                            window.location.href='index.php?act=formdangnhap'
-                        </script>";
+                ?>
+                <script type='text/javascript'>
+                    Swal.fire({
+                        title: "<?=$thongbao?>",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "index.php?act=formdangnhap";
+                        }
+                    });
+                </script>;
+                <?php
                 }
             }
             include "view/quenmk.php";
             break;
         case "dangxuat":
             session_unset();
-            header("Location: index.php");
+            ?>
+            <script type='text/javascript'>
+                Swal.fire({
+                    title: "Đăng xuất thành công!",
+                    icon: "success",
+                    confirmButtonText: "OK"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "index.php";
+                    }
+                });
+            </script>;
+            <?php
             break;
         case "dangky":
             if (isset($_POST['dangky']) && ($_POST['dangky'])) {
@@ -77,26 +133,48 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $pass = $_POST['pass'];
                 $repass = $_POST['repass'];
                 if (checkuser($user) != '') {
-                    $thongbao = checkuser($user);
-                    echo "<script type='text/javascript'>
-                            alert('$thongbao');
-                        </script>";
+                ?> 
+                <script type='text/javascript'>
+                Swal.fire({
+                    title: "Tài khoản đã tồn tại!",
+                    icon: "error",
+                });
+                </script>;
+                <?php
                 } else if (checkemail($email) != '') {
-                    $thongbao = checkemail($email);
-                    echo "<script type='text/javascript'>
-                            alert('$thongbao');
-                        </script>";
+                ?>
+                <script type='text/javascript'>
+                Swal.fire({
+                    title: "Email đã được gắn vào tài khoản khác!",
+                    icon: "error",
+                });
+                </script>;
+                <?php
                 } else if ($pass != $repass) {
-                    echo "<script type='text/javascript'>
-                            alert('Sai mật khẩu!');
-                        </script>";
+                ?>
+                <script type='text/javascript'>
+                Swal.fire({
+                    title: "Mật khẩu không trùng khớp!",
+                    icon: "error",
+                });
+                </script>;
+                <?php
                 } else {
                     dangky($user, $email, $pass);
-                    echo "<script type='text/javascript'>
-                            alert('Đăng ký thành công! Vui lòng đăng nhập lại!');
-                            window.location.href='index.php';
-                        </script>";
-                }
+                ?>
+                <script type='text/javascript'>
+                    Swal.fire({
+                        title: "Đăng ký thành công! Vui lòng đăng nhập lại!",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "index.php?act=formdangnhap";
+                        };
+                    });
+                </script>;
+                <?php
+                };
             }
             include "view/dangky.php";
             break;
@@ -148,12 +226,11 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/lienhe.php";
             break;
         case "thongtintk":
+            $listdh = listone_donhang_user($_SESSION['user']['id']);
             if (isset($_SESSION['user']['id'])) {
                 $user_id = $_SESSION['user']['id'];
                 $user_info = listone_taikhoan($user_id);
                 include "view/thongtintk.php";
-            } else {
-                // 
             }
             break;
 
@@ -241,14 +318,6 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 
             include "view/matkhau.php";
             break;
-        case "addtocart":
-            insert_giohang($_GET['id']);
-            header("Location: index.php");
-            break;
-        case "delcart":
-            del_giohang($_GET['id']);
-            header("Location: index.php");
-            break;
         case "cart":
             include "view/cart.php";
             break;
@@ -268,10 +337,19 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     pdo_execute("INSERT INTO donhang(pttt, tong, soluong, idpro, iduser) VALUES('$pttt', '$tong', '$cart[1]', '$cart[0]', '$id')");
                 }
                 $_SESSION['cart'] = [];
-                echo "<script type='text/javascript'>
-                        alert('Đã thanh toán thành công!');
-                        window.location.href='index.php';
-                    </script>";
+                ?>
+                <script>
+                    Swal.fire({
+                        title: "Thanh toán thành công!",
+                        icon: "success",
+                        confirmButtonText: "OK",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "index.php";
+                        }
+                    });
+                </script>
+<?php
             }
             include "view/checkout.php";
             break;
@@ -282,3 +360,4 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 } else include "view/home.php";
 
 include "view/footer.php";
+

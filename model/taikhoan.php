@@ -31,7 +31,7 @@
             if (is_array(pdo_query_one($sql))){
                 return "Nhập sai mật khẩu! Vui lòng nhập lại!";
             }
-            return "Tài khoản không tồn tại! Vui lòng đăng ký tài khoản tại đây !";
+            return "Tài khoản không tồn tại! Vui lòng đăng ký tài khoản tại đây!";
         }
     }
 
