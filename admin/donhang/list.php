@@ -15,16 +15,13 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Tên người đặt</th>
-                            <th>Địa chỉ</th>
-                            <th>Số điện thoại</th>
-                            <th>Ngày đặt hàng</th>
-                            <th>Đơn giá</th>
                             <th>Số lượng</th>
-                            <th>Phương thức thanh toán</th>
-                            <th>Trạng thái</th>
-                            <th class="text-right">Tổng</th>
+
+                            <th>Tổng</th>
+                            <th>Pương thức thanh toán</th>
+                            <th>Trạng thái đơn hàng</th>
+
+
                         </tr>
                     </thead>
                     <tbody>
@@ -33,13 +30,10 @@
                         ?>
                             <tr onclick="window.location.href='index.php?act=chitietdonhang&&id=<?php echo $bill['id'] ?>'" style="cursor: pointer;">
                                 <td><?php echo $bill['id'] ?></td>
-                                <td><?php echo $bill['tensp'] ?></td>
-                                <td><?php echo $bill['tentk'] ?></td>
-                                <td><?php echo $bill['diachi'] ?></td>
-                                <td><?php echo $bill['sdt'] ?></td>
-                                <td><?php echo $bill['ngaydathang'] ?></td>
-                                <td><?php echo $bill['giasp'] ?></td>
+
                                 <td><?php echo $bill['soluong'] ?></td>
+
+                                <td><?php echo $bill['tong'] ?></td>
                                 <td>
                                     <?php
                                     if ($bill['pttt'] ==  1) {
@@ -54,7 +48,7 @@
                                     } else echo "Đơn hàng đã bị hủy";
                                     ?>
                                 </td>
-                                <td><?php echo $bill['soluong'] * $bill['giasp'] ?></td>
+
                             </tr>
                         <?php
                         }
