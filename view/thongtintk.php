@@ -36,7 +36,7 @@
                         <h4 class="account-nav__title">Menu</h4>
                         <ul class="box-ul">
                             <li class="account-nav__item"><a href="index.php?act=suatk&&id=<?php echo $user_info[0][0]; ?>">Chỉnh sửa hồ sơ</a></li>
-                            <li class="account-nav__item"><a href="account-orders.html">Lịch sử đơn hàng</a></li>
+                            <li class="account-nav__item"><a href="index.php?act=lichsumua">Lịch sử đặt hàng</a></li>
                             <!-- <li class="account-nav__item"><a href="account-order-details.html">Đơn mua</a> -->
                             </li>
 

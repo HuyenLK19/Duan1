@@ -53,12 +53,16 @@
                 for ($i = 0; $i < count($lichsumua); $i++) {
                     $id = $lichsumua[$i]['id'];
                     $pttt = $lichsumua[$i]['pttt'];
+                 
+                    
                     $soluong = $lichsumua[$i]['soluong'];
                     $tong = $lichsumua[$i]['tong'];
                     $status = $lichsumua[$i]['status'];
                    ?>
                             <tr>        
-                                <td><?= $pttt ?></td>
+                                <td><?php if ($pttt ==  1) {
+                        echo "Thanh toán bằng tiền mặt";
+                    } else echo "Chuyển khoản"; ?></td>
                                 <td><?= $soluong ?></td>
                                 <td><?=  $tong  ?></td>
                                 <td><?=  $status ?></td>
