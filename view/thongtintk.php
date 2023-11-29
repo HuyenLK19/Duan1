@@ -1,7 +1,6 @@
 <style>
     .box-ul li a {
         font-size: 20px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
 
     .profile-card__name,
@@ -34,7 +33,7 @@
             <div class="row">
                 <div class="col-12 col-lg-3 d-flex">
                     <div class="account-nav flex-grow-1">
-                        <h4 class="account-nav__title">Navigation</h4>
+                        <h4 class="account-nav__title">Menu</h4>
                         <ul class="box-ul">
                             <li class="account-nav__item"><a href="index.php?act=suatk&&id=<?php echo $user_info[0][0]; ?>">Chỉnh sửa hồ sơ</a></li>
                             <li class="account-nav__item"><a href="account-orders.html">Lịch sử đơn hàng</a></li>

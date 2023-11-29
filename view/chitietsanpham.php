@@ -146,8 +146,7 @@
                     <div class="product__sidebar">
                         <div class="product__availability">Availability: <span class="text-success">In
                                 Stock</span></div>
-                        <div class="product__prices">700.000 VND</div><!-- .product__options -->
-                        <form class="product__options">
+                        <div class="product__prices"><?=$ctsp['price']?> VND</div><!-- .product__options -->
                             <div class="form-group product__option"><label class="product__option-label" for="product-quantity">Số Lượng</label>
                                 <div class="product__actions">
                                     <div class="product__actions-item">
@@ -156,10 +155,19 @@
                                             <div class="input-number__sub"></div>
                                         </div>
                                     </div>
-                                    <div class="product__actions-item product__actions-item--addtocart"><button class="btn btn-primary btn-lg">Thêm vào giỏ hàng</button></div>
+                                    <div class="product__actions-item product__actions-item--addtocart"><button class="btn btn-primary btn-lg" <?php if (!isset($_SESSION['user'])) { ?> 
+                                                                                                                                    onclick='Swal.fire({
+                                                                                                                                        title: "Vui lòng đăng nhập trước khi thêm sản phẩm!",
+                                                                                                                                        icon: "info",
+                                                                                                                                        confirmButtonText: "OK",
+                                                                                                                                        }).then((result) => {
+                                                                                                                                            if (result.isConfirmed) {
+                                                                                                                                                window.location.href = "index.php?act=formdangnhap";
+                                                                                                                                            }
+                                                                                                                                        });';
+                                                                                                                                    <?php } else { ?> onclick=" addToCart(<?php echo $ctsp['id'] ?>, 'add' )" <?php } ?> >Thêm vào giỏ hàng</button></div>
                                 </div>
                             </div>
-                        </form><!-- .product__options / end -->
                     </div><!-- .product__end -->
                     <div class="product__footer">
                         <div class="product__tags tags">
@@ -214,7 +222,7 @@
 
         </div>
     </div><!-- .block-products-carousel -->
-    <div class="block block-products-carousel" data-layout="grid-5" data-mobile-grid-columns="2">
+    <div class="block block-products-carousel" data-layout="grid-5" data-mobile-grid-columns="2" style="margin-top: 40px;">
         <div class="container">
             <div class="block-header">
                 <h3 class="block-header__title">Sản phẩm tương tự</h3>
@@ -228,153 +236,62 @@
             <div class="block-products-carousel__slider">
                 <div class="block-products-carousel__preloader"></div>
                 <div class="owl-carousel">
-                    <!-- <?php
+                    <?php
                             foreach ($list as $sp) {
-                            ?> -->
+                            ?>
                     <div class="block-products-carousel__column">
                         <div class="block-products-carousel__cell">
-                            <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
-                                        <use xlink:href="css/images/sprite.svg#quickview-16"></use>
-                                    </svg> <span class="fake-svg-icon"></span></button>
-                                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="css/images/products/anh2.webp" alt=""></a></div>
+                            <div class="product-card">
+                                <div class="product-card__image product-image"><a href="index.php?act=chitietsanpham&idsp=<?=$sp['id']?>" class="product-image__body"><img class="product-image__img" src="upload/product/<?=$sp['img']?>" alt=""></a></div>
                                 <div class="product-card__info">
-                                    <div class="product-card__name"><a href="product.html"><?php echo $sp['name'] ?></a>
-                                    </div>
-                                    <div class="product-card__rating">
-                                        <div class="product-card__rating-stars">
-                                            <div class="rating">
-                                                <div class="rating__body"><svg class="rating__star rating__star--active" width="13px" height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star" width="13px" height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div class="rating__star rating__star--only-edge">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__rating-legend">9 Reviews</div>
+                                    <div class="product-card__name"><a href="index.php?act=chitietsanpham&idsp=<?=$sp['id']?>"><?php echo $sp['name'] ?></a>
                                     </div>
                                 </div>
                                 <div class="product-card__actions">
                                     <div class="product-card__availability">Availability: <span class="text-success">In Stock</span></div>
-                                    <div class="product-card__prices">149.000 VND</div>
-                                    <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To
-                                            Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
-                                                <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
-                                            </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
-                                        <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
-                                                <use xlink:href="css/images/sprite.svg#compare-16"></use>
-                                            </svg> <span class="fake-svg-icon fake-svg-icon--compare-16"></span></button>
+                                    <div class="product-card__prices"><?=$sp['price']?> VND</div>
+                                    <div class="product-card__buttons">
+                                        <button class="btn btn-primary product-card__addtocart" type="button" <?php if (!isset($_SESSION['user'])) { ?> 
+                                                                                                                                    onclick='Swal.fire({
+                                                                                                                                        title: "Vui lòng đăng nhập trước khi thêm sản phẩm!",
+                                                                                                                                        icon: "info",
+                                                                                                                                        confirmButtonText: "OK",
+                                                                                                                                        }).then((result) => {
+                                                                                                                                            if (result.isConfirmed) {
+                                                                                                                                                window.location.href = "index.php?act=formdangnhap";
+                                                                                                                                            }
+                                                                                                                                        });';
+                                                                                                                                    <?php } else { ?> onclick=" addToCart(<?php echo $sp['id'] ?>, 'add' )" <?php } ?>>Thêm vào giỏ hàng</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="block-products-carousel__column">
-                    </div>
-                    <div class="block-products-carousel__column">
-                    </div>
-                    <div class="block-products-carousel__column">
-                    </div>
-                    <div class="block-products-carousel__column">
-                    </div>
-                    <div class="block-products-carousel__column">
-                    </div>
-                    <div class="block-products-carousel__column">
-                    </div>
-                    <div class="block-products-carousel__column">
-                    </div>
-                    <div class="block-products-carousel__column">
-                    </div>
-                    <div class="block-products-carousel__column">
-                    </div>
-                    <div class="block-products-carousel__column">
-                    </div>
                 <?php
-                            }
+                    }
                 ?>
                 </div>
             </div>
         </div>
     </div><!-- .block-products-carousel / end -->
 </div><!-- site__body / end -->
+<script>
+        addToCart = (id, act) => {
+        var result = $.ajax({
+            type: "POST",
+            url: "http://localhost/Duan1/view/headerCart.php?act=" + act + "&id=" + id,
+            param: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: false,
+            success: function(data) {
+                Swal.fire({
+                    title: "Thành công!",
+                    icon: "success"
+                });
+            }
+        }).responseText;
+        document.getElementById("dropdowncart").innerHTML = result;
+        return result;
+    }
+</script>

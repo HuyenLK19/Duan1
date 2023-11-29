@@ -40,7 +40,7 @@
                     <?php
                         if ($tk[0][5] != ""){
                     ?>
-                    <img src="upload/avatar/<?php echo $tk[0][5] ?>" alt="">
+                    <img src="upload/avatar/<?php echo $tk[0][5] ?>" style="width: 100px; height: 100px;">
                     <?php
                         }
                     ?>

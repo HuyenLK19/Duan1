@@ -178,7 +178,6 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             }
             include "view/dangky.php";
             break;
-
         case "sanpham":
             if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
                 $kyw = $_POST['kyw'];
@@ -211,8 +210,8 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/danhmuc.php";
             break;
         case "chitietsanpham":
-            // $list = listsptheodm($_GET["id"]);
             $ctsp = listone_sanpham($_GET['idsp']);
+            $list = listsptheodm($ctsp['iddm']);
             include "view/chitietsanpham.php";
             break;
         case "allsanpham":
@@ -233,7 +232,6 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 include "view/thongtintk.php";
             }
             break;
-
         case "suatk":
             if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
                 $tentk = isset($_POST["name"]) ? $_POST["name"] : '';
