@@ -53,7 +53,6 @@
                             extract($tk);
                            
                             $hinh = "upload/avatar/" . $user_info[0][5];
-                            echo $hinh;
                             echo '   <div class="card-body profile-card__body">
                             <div class="profile-card__avatar"><img src="'.$hinh.'" alt=""></div>
                         <div class="profile-card__name">' . $name . '</div>
