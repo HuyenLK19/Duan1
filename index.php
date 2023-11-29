@@ -225,7 +225,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/lienhe.php";
             break;
         case "thongtintk":
-            $listdh = listone_donhang($_SESSION['user']['id']);
+            $listdh = listone_donhang_user($_SESSION['user']['id']);
             if (isset($_SESSION['user']['id'])) {
                 $user_id = $_SESSION['user']['id'];
                 $user_info = listone_taikhoan($user_id);

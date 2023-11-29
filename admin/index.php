@@ -180,14 +180,12 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             include "taikhoan/edit.php";
             break;
         case "listbill":
-            $listbill = loadall_bill(0);
+            $listbill = listall_donhang();
             include "donhang/list.php";
             break;
         case "chitietdonhang":
             $oneBill = listone_donhang($_GET['id']);
-
             include "donhang/chitietdonhang.php";
-            
             break;
         case "thongke":
             $listthongke = loadall_thongke();

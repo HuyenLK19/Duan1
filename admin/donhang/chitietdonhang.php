@@ -1,4 +1,3 @@
-
 <div class="row">
     <div class="col-md-12">
         <div class="mt-3">
@@ -10,8 +9,8 @@
             <div class="row">
                 <div class="col-6">
                     <div class="float-left mt-3">
-                        <p><strong>Ngày đặt hàng: </strong><?php echo $oneBill[0]['ngaydathang'] ?></p>
-                        <p><strong>Tình trạng đơn hàng: </strong><?php if ($oneBill[0]['status'] == 0) { ?>
+                        <p><strong>Ngày đặt hàng: </strong><?php echo $oneBill['ngaydathang'] ?></p>
+                        <p><strong>Tình trạng đơn hàng: </strong><?php if ($oneBill['status'] == 0) { ?>
                                 <span class="badge badge-success">Đang được vận chuyển</span>
                         </p>
                     <?php } else { ?>
@@ -24,7 +23,7 @@
                 <!-- end col -->
                 <div class="col-4 offset-2">
                     <div class="text-sm-right">
-                        <h5 class="font-16">Địa chỉ giao hàng<?php echo $oneBill[0]['address'] ?></h5>
+                        <h5 class="font-16">Địa chỉ giao hàng <?php echo $oneBill['diachi'] ?></h5>
                         <address class="line-h-24">
                             Tên người nhận: <?php echo $oneBill['tentk'] ?><br>
                             Địa chỉ: <?php echo $oneBill['diachi'] ?><br>
