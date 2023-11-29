@@ -1,18 +1,20 @@
 <style>
-    .box-ul li a{
+    .box-ul li a {
         font-size: 20px;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
+
     .profile-card__name,
     .profile-card__email,
     .address-card__name,
     .address-card__row,
     .address-card__row-content {
-        font-size: 20px; 
+        font-size: 20px;
         margin-top: 15px;
     }
-    .address-card__row-title{
-        font-size: 18px; 
+
+    .address-card__row-title {
+        font-size: 18px;
     }
 </style>
 <!-- site__body -->
@@ -38,7 +40,7 @@
                             <li class="account-nav__item"><a href="account-orders.html">Lịch sử đơn hàng</a></li>
                             <!-- <li class="account-nav__item"><a href="account-order-details.html">Đơn mua</a> -->
                             </li>
-                           
+
                             <li class="account-nav__item"><a href="index.php?act=matkhau">Mật khẩu</a></li>
                             <li class="account-nav__item"><a href="index.php?act=dangxuat">Đăng xuất</a></li>
                         </ul>
@@ -51,10 +53,10 @@
                         <?php
                         foreach ($user_info as $tk) {
                             extract($tk);
-                           
+
                             $hinh = "upload/avatar/" . $user_info[0][5];
                             echo '   <div class="card-body profile-card__body">
-                            <div class="profile-card__avatar"><img src="'.$hinh.'" alt=""></div>
+                            <div class="profile-card__avatar"><img src="' . $hinh . '" alt=""></div>
                         <div class="profile-card__name">' . $name . '</div>
                         <div class="profile-card__email">' . $email . '</div>
                         <div class="profile-card__edit">
@@ -90,7 +92,7 @@
                     </div>
                     <div class="dashboard__orders card">
                         <div class="card-header">
-                            <h5>Đơn đặt hàng gần đây</h5>
+                            <h5>Đơn đặt đã đặt</h5>
                         </div>
                         <div class="card-divider"></div>
                         <div class="card-table">
@@ -98,31 +100,41 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>ĐẶT HÀNG</th>
-                                            <th>NGÀY</th>
+                                            <th>ID</th>
+                                            <th>TÊN SẢN PHẨM</th>
+                                            <th>Ngày đặt hàng</th>
+                                            <th>GIÁ</th>
+                                            <th>SỐ LƯỢNG</th>
                                             <th>TRẠNG THÁI</th>
-                                            <th>TỔNG CỘNG</th>
+                                            <th>PHƯƠNG THỨC THANH TOÁN</th>
+                                            <th>TỔNG</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><a href="#">#8132</a></td>
-                                            <td>02 April, 2019</td>
-                                            <td>Pending</td>
-                                            <td>$2,719.00 for 5 item(s)</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">#7592</a></td>
-                                            <td>28 March, 2019</td>
-                                            <td>Pending</td>
-                                            <td>$374.00 for 3 item(s)</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">#7192</a></td>
-                                            <td>15 March, 2019</td>
-                                            <td>Shipped</td>
-                                            <td>$791.00 for 4 item(s)</td>
-                                        </tr>
+                                        <?php
+                                        foreach ($listdh as $dh) {
+                                        ?>
+                                            <tr>
+                                                <td><a href="#"><?=$dh['id']?></a></td>
+                                                <td><?=$dh['tensp']?></td>
+                                                <td><?=$dh['ngaydathang']?></td>
+                                                <td><?=$dh['giasp']?> VND</td>
+                                                <td><?=$dh['soluong']?></td>
+                                                <td><?php  
+                                                    if ($dh['status'] == 0){
+                                                        echo "Đang vận chuyển";
+                                                    } else echo "Đơn đã hủy";
+                                                ?></td>
+                                                <td><?php  
+                                                    if ($dh['pttt'] == 1){
+                                                        echo "Thanh toán khi nhận hàng";
+                                                    } else echo "Chuyển khoản";
+                                                ?></td>
+                                                <td><?php echo $dh['giasp'] * $dh['soluong'] ?> VND</td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

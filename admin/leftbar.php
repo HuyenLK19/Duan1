@@ -3,8 +3,18 @@
 
     <div class="user-box">
         <div class="user-info">
-            <p class="name">Stanley Jones</p>
+            <p class="name"><?=$_SESSION['user']['name']?></p>
+            <?php
+            if ($_SESSION['user']['role'] == 1){
+            ?>
+            <p class="text-muted m-0">Nhân viên</p>
+            <?php
+            } else {
+            ?>
             <p class="text-muted m-0">Administrator</p>
+            <?php
+            }
+            ?>
         </div>
     </div>
 
@@ -13,7 +23,7 @@
 
         <ul class="metismenu" id="side-menu">
 
-            <li class="menu-title">Navigation</li>
+            <li class="menu-title">Điều hướng</li>
 
             <li>
                 <a href="index.php" class="test">
