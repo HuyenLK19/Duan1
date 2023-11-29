@@ -6,7 +6,6 @@
 
     function listone_taikhoan($id){
         $sql = "SELECT * FROM taikhoan WHERE id = '$id'";
-        
         return pdo_query($sql);
     }
 

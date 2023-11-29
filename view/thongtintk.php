@@ -51,16 +51,16 @@
                         <?php
                         foreach ($user_info as $tk) {
                             extract($tk);
-                            // $hinh = "upload/product/" . $img;
-
+                           
+                            $hinh = "upload/avatar/" . $user_info[0][5];
+                            echo $hinh;
                             echo '   <div class="card-body profile-card__body">
-                        <div class="profile-card__avatar"><img src="" alt=""></div>
+                            <div class="profile-card__avatar"><img src="'.$hinh.'" alt=""></div>
                         <div class="profile-card__name">' . $name . '</div>
                         <div class="profile-card__email">' . $email . '</div>
                         <div class="profile-card__edit">
                         </div>
                     </div>
-                
                 <div class="dashboard__address card address-card address-card--featured">
                     <div class="address-card__badge">ĐỊA CHỈ MẶC ĐỊNH</div>
                     <div class="address-card__body">
@@ -89,9 +89,6 @@
                         ?>
 
                     </div>
-
-
-                    <!--  -->
                     <div class="dashboard__orders card">
                         <div class="card-header">
                             <h5>Đơn đặt hàng gần đây</h5>

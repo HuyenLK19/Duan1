@@ -7,6 +7,10 @@ $idpro = $_REQUEST['idpro'];
 $dsbl = loadall_binhluan($idpro);
 ?>
 <style>
+    h1{
+        font-size: 20px;
+        color: red;
+    }
     .demobinhluan {
         border: .5px solid gray;
 
@@ -107,7 +111,7 @@ $dsbl = loadall_binhluan($idpro);
         </div>
     ';
                 } else {
-                    echo '<h1>Bạn vui lòng đăng nhập để bình luận</h1>';
+                    echo '<h1>*Bạn vui lòng đăng nhập để bình luận</h1>';
                 }
                 ?>
 

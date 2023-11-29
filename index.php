@@ -209,7 +209,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 
                         foreach ($requiredFields as $field) {
                             if (empty($_POST[$field])) {
-                                $errors[$field] = 'Trường này không được để trống.';
+                                $errors[$field] = 'Vui lòng nhập thông tin.';
                             }
                         }
                 
