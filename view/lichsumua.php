@@ -14,7 +14,7 @@
         }
 
         table {
-            width: 80%;
+            width: 60%;
             margin: auto;
             border-collapse: collapse;
             margin-top: 50px;
