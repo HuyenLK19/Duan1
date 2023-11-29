@@ -4,6 +4,7 @@ include "../model/pdo.php";
 include "../model/sanpham.php";
 include "../model/danhmuc.php";
 include "../model/taikhoan.php";
+include "../model/cart.php";
 include "../model/donhang.php";
 include "../model/thongke.php";
 include "../model/binhluan.php";
@@ -179,12 +180,14 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             include "taikhoan/edit.php";
             break;
         case "listbill":
-            $listbill = listall_donhang();
+            $listbill = loadall_bill(0);
             include "donhang/list.php";
             break;
         case "chitietdonhang":
-            $bill = listone_donhang($_GET['id']);
+            $oneBill = listone_donhang($_GET['id']);
+
             include "donhang/chitietdonhang.php";
+            
             break;
         case "thongke":
             $listthongke = loadall_thongke();
