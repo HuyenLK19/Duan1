@@ -110,8 +110,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             } else {
                 $iddm = 0;
             }
-            $dssp = list_sanphamhot();
-
+            $dssp = list_sanphamnew();
             // $tendm = load_ten_dm($iddm);
             include "view/sanpham.php";
             break;
@@ -152,44 +151,95 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $user_info = listone_taikhoan($user_id);
                 include "view/thongtintk.php";
             } else {
-                // Xử lý khi không tìm thấy phần tử 'user' trong $_SESSION
+                // 
             }
             break;
 
             case "suatk":
                 if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
-                    $id = $_POST['id'];
-            
-                    if ($id > 0) {
-                        $tentk = $_POST["tentk"];
-                        $user = $_POST["user"];
-                        $pass = $_POST["pass"];
-                        $email = $_POST["email"];
-                        $address = $_POST["address"];
-                        $hinh = $_FILES['hinh']['name'];
-                        $target_dir = "../upload/avatar/";
-                        $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-                        if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                            // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
-                        } else {
-                            // echo "Sorry, there was an error uploading your file.";
-                        }
-                        $tel = $_POST["tel"];
-            
-                        update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
-                        echo "<script type='text/javascript'>
-                                    alert('Cập nhật thành công!');
-                                    window.location.href='index.php?act=thongtintk'
-                                </script>";
+                    $tentk = isset($_POST["name"]) ? $_POST["name"] : '';
+                    $user = isset($_POST["user"]) ? $_POST["user"] : '';
+                    $pass = isset($_POST["pass"]) ? $_POST["pass"] : '';
+                    $email = isset($_POST["email"]) ? $_POST["email"] : '';
+                    $address = isset($_POST["address"]) ? $_POST["address"] : '';
+                    $tel = isset($_POST["tel"]) ? $_POST["tel"] : '';
+                    $status = isset($_POST["status"]) ? $_POST["status"] : '';
+                    $role = isset($_POST["role"]) ? $_POST["role"] : '';
+                    // Kiểm tra xem 'id' có tồn tại trong $_GET không
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
                     } else {
-                        echo "Chỉ mục không xác định: id";
+                        echo "ko co id";
+    
+                        exit; 
                     }
-            
-                    $user_info = listone_taikhoan($id);
-                    $_SESSION['user_info'] = $user_info;
+                    update_taikhoans($id, $tentk, $user, $pass, $email, $address, $tel);
+    
+                    echo "<script type='text/javascript'>
+                        alert('Sửa thành công!');
+                        window.location.href='index.php?act=thongtintk'
+                    </script>";
                 }
-                include "view/suatk.php";
+    
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    $tk = listone_taikhoan($_GET['id']);
+                    include "view/suatk.php";
+                } else {
+    
+                    echo "ko co id";
+                }
                 break;
+                case "matkhau":
+                    if (!isset($_SESSION['user']['user'])) {
+                        header("Location: login.php");
+                        exit();
+                    }
+                
+                    $errors = array();
+                
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $tendn = $_POST['tendn'];
+                        $oldPassword = $_POST['old_password'];
+                        $newPassword = $_POST['new_password'];
+                        $confirmPassword = $_POST['confirm_password'];
+                
+                        // Kiểm tra xem có trường nào không được nhập không
+                        $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
+                
+                        foreach ($requiredFields as $field) {
+                            if (empty($_POST[$field])) {
+                                $errors[$field] = 'Trường này không được để trống.';
+                            }
+                        }
+                
+                        // Kiểm tra mật khẩu mới có ít nhất 6 ký tự
+                        if (strlen($newPassword) < 6) {
+                            $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
+                        }
+                
+                        // Kiểm tra xác nhận mật khẩu
+                        if ($newPassword != $confirmPassword) {
+                            $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
+                        }
+                
+                        // Nếu không có lỗi, thực hiện các hành động cập nhật mật khẩu
+                        if (empty($errors)) {
+                            echo "Cập nhật mật khẩu thành công!";
+
+                        }
+                    }
+                
+                    include "view/matkhau.php";
+                    break;
+        case "addtocart":
+            insert_giohang($_GET['id']);
+            header("Location: index.php");
+            break;
+        case "delcart":
+            del_giohang($_GET['id']);
+            header("Location: index.php");
+            break;
         case "cart":
             include "view/cart.php";
             break;
