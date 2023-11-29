@@ -1,10 +1,10 @@
-<?php 
-    if(isset($_SESSION['user']) && (is_array($_SESSION['user']))){
-        extract($_SESSION['user']);
+<style>
+    .header-title.mb-3{
+        margin: 50px 0 50px 370px ;
+        font-size: 30px;
     }
- ?>
-
-<!-- start -->
+</style>
+<!-- start  -->
 <div class="row">
     <div class="col-12">
         <div>
@@ -16,43 +16,53 @@
 <div class="row">
     <div class="col-lg-6" style="position: relative; left: 20%">
         <div class="">
-            <form action="index.php?act=suatk" method="post" class="form-validation">
-
-                <div class="form-group">
-                    <label for="tentk">ID<span class="text-danger">*</span></label>
-                    <input type="hidden" name="id" value="<?=$id ?>">
-                </div>
+            <form action="index.php?act=suatk&&id=<?php echo $tk[0][0]; ?>" method="post" class="form-validation" enctype="multipart/form-data">
+                <?php
+                if (!empty($tk)) {
+                    // Kiểm tra xem $tk có phần tử nào không trước khi truy cập các phần tử
+                    $id = $tk[0][0];
+                ?>
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="form-group">
                     <label for="tentk">Tên người dùng<span class="text-danger">*</span></label>
-                    <input type="text" name="user" parsley-trigger="change" required class="form-control" value="<?=$name ?>">
+                    <input type="text" name="name" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][1] ?>">
                 </div>
                 <div class="form-group">
                     <label for="user">Tài khoản<span class="text-danger">*</span></label>
-                    <input type="text" name="user" parsley-trigger="change" required class="form-control" value="<?=$user ?>">
-                </div>
-                <div class="form-group">
-                    <label for="pass">Mật khẩu<span class="text-danger">*</span></label>
-                    <input type="text" name="pass" parsley-trigger="change" required class="form-control" value="<?=$pass ?>">
+                    <input type="text" name="user" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][2] ?>">
                 </div>
                 <div class="form-group">
                     <label for="email">Email<span class="text-danger">*</span></label>
-                    <input type="email" name="email" parsley-trigger="change" required class="form-control" value="<?=$email ?>">
+                    <input type="email" name="email" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][4] ?>">
+                </div>
+                <div class="form-group">
+                    <label>Avatar</label>
+                    <?php
+                        if ($tk[0][5] != ""){
+                    ?>
+                    <img src="../upload/avatar/<?php echo $tk[0][5] ?>" alt="">
+                    <?php
+                        }
+                    ?>
+                    <input type="file" name="hinh" class="filestyle form-control">
                 </div>
                 <div class="form-group">
                     <label for="address">Địa chỉ<span class="text-danger">*</span></label>
-                    <input type="text" name="address" parsley-trigger="change" required class="form-control" value="<?=$address ?>">
+                    <input type="text" name="address" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][6] ?>">
                 </div>
                 <div class="form-group">
                     <label for="tel">Số điện thoại<span class="text-danger">*</span></label>
-                    <input type="text" name="tel" parsley-trigger="change" required class="form-control" value="<?=$tel ?>">
+                    <input type="text" name="tel" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][7] ?>">
                 </div>
-
+                <?php
+                } else {
+                    echo "Không có dữ liệu cho tài khoản này.";
+                }
+                ?>
                 <div class="form-group text-right mb-0">
                     <input type="submit" value="Cập nhật" class="btn btn-primary waves-effect waves-light mr-1" name="capnhat">
                     <input type="reset" value="Reset" class="btn btn-danger waves-effect">
-                    <a href="index.php?act=listtk" class="btn btn-secondary">Danh sách tài khoản</a>
                 </div>
-
             </form>
         </div>
     </div>

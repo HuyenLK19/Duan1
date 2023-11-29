@@ -1,15 +1,15 @@
 <!-- site__body -->
-<div class="site__body">
+<div class="site__body" id="cartbody">
     <div class="page-header">
         <div class="page-header__container container">
             <div class="page-header__breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                        <li class="breadcrumb-item"><a href="index.php">Trang chủ</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
+                                <use xlink:href="css/images/sprite.svg#arrow-rounded-right-6x9"></use>
                             </svg></li>
-                        <li class="breadcrumb-item"><a href="#">Giỏ hàng</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                        <li class="breadcrumb-item"><a href="index.php?act=cart">Giỏ hàng</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
+                                <use xlink:href="css/images/sprite.svg#arrow-rounded-right-6x9"></use>
                             </svg></li>
                         <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
                     </ol>
@@ -36,35 +36,36 @@
                 <tbody class="cart-table__body">
                     <?php
                     $cart_total = 0;
-                    foreach ($list as $gh) {
+                    foreach ($_SESSION['cart'] as $cart) {
+                        $sp = listone_sanpham($cart[0]);
                     ?>
                         <tr class="cart-table__row">
                             <td class="cart-table__column cart-table__column--image">
                                 <div class="product-image">
                                     <a href="#" class="product-image__body">
-                                        <img class="product-image__img" src="upload/product/<?php echo $gh['img'] ?>" alt="">
+                                        <img class="product-image__img" src="upload/product/<?php echo $sp['img'] ?>" alt="">
                                     </a>
                                 </div>
                             </td>
                             <td class="cart-table__column cart-table__column--product">
-                                <a href="#" class="cart-table__product-name"><?php echo $gh['name'] ?></a>
+                                <a href="#" class="cart-table__product-name"><?php echo $sp['name'] ?></a>
                             </td>
-                            <td class="cart-table__column cart-table__column--price" data-title="Price"><?php echo $gh['price'] ?> VNĐ</td>
+                            <td class="cart-table__column cart-table__column--price" data-title="Price"><?php echo $sp['price'] ?> VNĐ</td>
                             <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
-                                <div class="input-number"><input class="form-control input-number__input" type="number" min="1" value="<?php echo $gh['soluong'] ?>">
-                                    <div class="input-number__add"></div>
-                                    <div class="input-number__sub"></div>
+                                <div class="input-number"><input class="form-control input-number__input" type="number" min="1" value="<?php echo $cart[1] ?>">
+                                    <div class="input-number__add" onclick="<?php $cart[1]++ ?>"></div>
+                                    <div class="input-number__sub"  onclick="<?php $cart[1]-- ?>"></div>
                                 </div>
                             </td>
-                            <td class="cart-table__column cart-table__column--total" data-title="Total"><?php echo $gh['soluong']*$gh['price'] ?> VNĐ</td>
+                            <td class="cart-table__column cart-table__column--total" data-title="Total"><?php echo $cart[1]*$sp['price'] ?> VNĐ</td>
                             <td class="cart-table__column cart-table__column--remove">
-                                <button type="button" class="btn btn-light btn-sm btn-svg-icon">
+                                <button type="button" class="btn btn-light btn-sm btn-svg-icon" onclick="delCart(<?php echo $sp['id'] ?>)">
                                     <svg width="12px" height="12px">
                                         <use xlink:href="css/images/sprite.svg#cross-12"></use>
                                     </svg></button></td>
                         </tr>
                     <?php
-                    $cart_total += $gh['price']*$gh['soluong'];
+                    $cart_total += $sp['price']*$cart[1];
                     }
                     ?>
                 </tbody>
@@ -104,7 +105,18 @@
                                         ?> VNĐ</td>
                                     </tr>
                                 </tfoot>
-                            </table><a class="btn btn-primary btn-xl btn-block cart__checkout-button" href="index.php?act=checkout">Thanh toán</a>
+                            </table>
+                            <?php
+                            if (count($_SESSION['cart']) == 0){
+                            ?>
+                            <button class="btn btn-secondary btn-xl btn-block cart__checkout-button" disabled>Thanh toán</button>
+                            <?php
+                            } else {
+                            ?>
+                            <a class="btn btn-primary btn-xl btn-block cart__checkout-button" href="index.php?act=checkout">Thanh toán</a>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -113,3 +125,38 @@
     </div>
 </div>
 <!-- site__body / end -->
+<script>
+    delCart = (id) => {
+        var result = $.ajax({
+            type: "POST",
+            url: "http://localhost/Duan1/view/morecart.php?id=" + id,
+            param: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: false,
+            success: function(data) {
+                Swal.fire({
+                    title: "Thành công!",
+                    icon: "success"
+                });
+            }
+        }).responseText;
+        document.getElementById("cartbody").innerHTML = result;
+        var result = $.ajax({
+            type: "POST",
+            url: "http://localhost/Duan1/view/headerCart.php?act=abcd",
+            param: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: false,
+            success: function(data) {
+                Swal.fire({
+                    title: "Thành công!",
+                    icon: "success"
+                });
+            }
+        }).responseText;
+        document.getElementById("dropdowncart").innerHTML = result;
+        return result;
+    }
+</script>

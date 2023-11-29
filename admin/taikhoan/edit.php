@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-lg-6" style="position: relative; left: 20%">
         <div class="">
-            <form action="index.php?act=edittk&&id=<?php echo $tk[0][0]; ?>" method="post" class="form-validation">
+            <form action="index.php?act=edittk&&id=<?php echo $tk[0][0]; ?>" method="post" enctype="multipart/form-data" class="form-validation">
                 <div class="form-group">
                     <label for="tentk">Tên người dùng<span class="text-danger">*</span></label>
                     <input type="text" name="tentk" parsley-trigger="change" required class="form-control" value="<?php echo $tk[0][1] ?>">

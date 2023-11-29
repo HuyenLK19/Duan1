@@ -13,7 +13,7 @@ ini_set('display_errors', 1);
 
 
     }
-   
+
     .block-products__list-item {
         width: 100%;
         height: 100%;
@@ -26,6 +26,7 @@ ini_set('display_errors', 1);
     .block-products--layout--large-first {
         margin-top: 100px;
     }
+
     .block-products__body {
 
         display: grid;
@@ -34,23 +35,29 @@ ini_set('display_errors', 1);
 
         grid-gap: 20px;
     }
+
     .block-products__featured-item {
         width: 266.5px;
         height: 430px;
     }
+
     .product-card:before {
         border: none;
     }
+
     .product-card-hoverable .product-card__actions {
         display: none;
     }
+
     .product-card-hoverable:hover .product-card__actions {
         display: block;
     }
+
     .block-header__titles img {
         width: 50px;
         margin: -15px 0 0 -10px;
     }
+
     .box-service {
         width: 1120px;
         height: 350px;
@@ -59,15 +66,15 @@ ini_set('display_errors', 1);
         margin-top: 70px;
         display: flex;
         position: relative;
-
-
     }
+
     .box-service .box-img img {
         height: 350px;
         width: 95%;
         border-radius: 5px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     }
+
     .btn-sv {
         position: absolute;
         z-index: 9999;
@@ -79,7 +86,6 @@ ini_set('display_errors', 1);
         border: none;
         border-radius: 10px;
         font-size: 20px;
-
     }
 
     .btn-sv:hover {
@@ -87,6 +93,7 @@ ini_set('display_errors', 1);
         /* color: #FFD333; */
         border: 1px solid #292929;
     }
+
     .box-sv {
         width: 50%;
         height: 350px;
@@ -94,7 +101,6 @@ ini_set('display_errors', 1);
         flex-direction: column;
         gap: 10px;
         overflow: hidden;
-
     }
 
     .box-sv img {
@@ -102,49 +108,43 @@ ini_set('display_errors', 1);
         height: 100%;
         border-radius: 7px;
     }
-    .box-product{
+
+    .box-product {
         margin-top: 100px;
     }
-  /*  */
-  .box-product .product-card {
-    position: relative;
-    height: 400px;
-    
-}
 
-.box-product .product-card__buttons {
-    /* display: none; */
-    position: absolute;
-    bottom: 10px; 
-    left: 10px;
+    /*  */
+    .box-product .product-card {
+        position: relative;
+        height: 400px;
+    }
 
-    z-index: 1;
+    .box-product .product-card__buttons {
+        /* display: none; */
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 1;
+    }
 
-}
-/* .product-card:hover .product-card__buttons {
+    /* .product-card:hover .product-card__buttons {
     display: block;
 } */
-.box-product .product-card__prices {
-    margin-top: -80px;
-    margin-left: 20px;
- }
- .block-header__title img{
-    width: 20px;
-    
- }
- .product-card__badge.product-card__badge--new.hot{
-    background-color: #DE0000;
- }
+    .box-product .product-card__prices {
+        margin-top: -80px;
+        margin-left: 20px;
+    }
+
+    .block-header__title img {
+        width: 20px;
+    }
+
+    .product-card__badge.product-card__badge--new.hot {
+        background-color: #DE0000;
+    }
 </style>
 <!-- site__body -->
 <div class="site__body">
-    <!-- .block-banner -->
-
-    <!-- <div class="active-button">
-                <button class="next" onclick="prevSlide(1)"><i class="fa-solid fa-arrow-right"></i></i></button>
-                <button class="prev" onclick="nextSlide(-1)"><i class="fa-solid fa-arrow-right"></i></button>
-            </div> -->
-    <!-- .block-banner / end -->
     <!-- .block-features -->
     <div class="block block-features block-features--layout--classic">
         <div class="container">
@@ -201,33 +201,32 @@ ini_set('display_errors', 1);
         </div>
     </div><!-- .block-features / end -->
     <div class="block block--highlighted block-categories block-categories--layout--classic">
-                <div class="container">
-                    <div class="block-header">
-                        <h3 class="block-header__title">Danh mục</h3>
-                        <div class="block-header__divider"></div>
-                    </div>
-                    <div class="block-categories__list">
-                    <?php
-                        foreach($listdm as $dm){
-                    ?>
-                        <div class="block-categories__item category-card category-card--layout--classic">
-                            <div class="category-card__body">
-                                <div class="category-card__image"><a href="index.php?act=danhmuc&&id=<?php echo $dm['id']?>"><img
-                                src="upload/category/<?php echo $dm['img']?>" alt=""></a></div>
-                                <div class="category-card__content">
-                                    <div class="category-card__name"><a href="index.php?act=danhmuc&&id=<?php echo $dm['id']?>"><?php echo $dm['name']?></a></div>
-                                    <div class="category-card__all"><a href="index.php?act=danhmuc&&id=<?php echo $dm['id']?>">Hiển thị tất cả</a></div>
-                                    <div class="category-card__products">572 Products</div>
-                                </div>
+        <div class="container">
+            <div class="block-header">
+                <h3 class="block-header__title">Danh mục</h3>
+                <div class="block-header__divider"></div>
+            </div>
+            <div class="block-categories__list">
+                <?php
+                foreach ($listdm as $dm) {
+                ?>
+                    <div class="block-categories__item category-card category-card--layout--classic">
+                        <div class="category-card__body">
+                            <div class="category-card__image"><a href="index.php?act=danhmuc&&id=<?php echo $dm['id'] ?>"><img src="upload/category/<?php echo $dm['img'] ?>" alt=""></a></div>
+                            <div class="category-card__content">
+                                <div class="category-card__name"><a href="index.php?act=danhmuc&&id=<?php echo $dm['id'] ?>"><?php echo $dm['name'] ?></a></div>
+                                <div class="category-card__all"><a href="index.php?act=danhmuc&&id=<?php echo $dm['id'] ?>">Hiển thị tất cả</a></div>
+                                <div class="category-card__products">572 Products</div>
                             </div>
                         </div>
-
-                    <?php
-                        }
-                    ?>
                     </div>
-                </div>
+
+                <?php
+                }
+                ?>
             </div>
+        </div>
+    </div>
     <!-- .block-products-carousel -->
     <div class="block block-products-carousel" data-layout="grid-4" data-mobile-grid-columns="2">
         <div class="container">
@@ -246,151 +245,40 @@ ini_set('display_errors', 1);
                 <div class="owl-carousel">
                     <?php
                     foreach ($sphot as $sp) {
-                    extract($sp);
-                    $hinh = "upload/product/" . $img;
-                    $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
-                    ?> 
+                        extract($sp);
+                        $hinh = "upload/product/" . $img;
+                        $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
+                    ?>
                         <div class="block-products-carousel__column">
-                        <div class="block-products-carousel__cell">
-                            <div class="product-card product-card--hidden-actions">
-                                <div class="product-card__badges-list">
-                                    <div class="product-card__badge product-card__badge--new hot">Hot</div>
-                                </div>
-                                <div class="product-card__image product-image"><a href="<?php echo $linksp ?>"
-                                        class="product-image__body"><img class="product-image__img"
-                                            src="<?php echo $hinh ?>" alt=""></a></div>
-                                <div class="product-card__info">
-                                    <div class="product-card__name"><a href="<?php echo $linksp; ?>"><?php echo $name ?></a></div>
-                                    <div class="product-card__rating">
-                                        <div class="product-card__rating-stars">
-                                            <div class="rating">
-                                                <div class="rating__body"><svg class="rating__star rating__star--active"
-                                                        width="13px" height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div
-                                                        class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star rating__star--active" width="13px"
-                                                        height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div
-                                                        class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star rating__star--active" width="13px"
-                                                        height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div
-                                                        class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star rating__star--active" width="13px"
-                                                        height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div
-                                                        class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star" width="13px" height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div class="rating__star rating__star--only-edge">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__rating-legend">9 Reviews</div>
+                            <div class="block-products-carousel__cell">
+                                <div class="product-card">
+                                    <div class="product-card__badges-list">
+                                        <div class="product-card__badge product-card__badge--new hot">Hot</div>
                                     </div>
-                                </div>
-                                <div class="product-card__actions">
-                                    <div class="product-card__availability">Availability: <span class="text-success">In
-                                            Stock</span></div>
-                                    <div class="product-card__prices"><?php echo $price; ?> VND</div>
-                                    <div class="product-card__buttons"><button
-                                            class="btn btn-primary product-card__addtocart"
-                                            <?php if(!isset($_SESSION['user'])){echo "onclick='alert(`Vui lòng đăng nhập trước khi đặt hàng!`); window.location.href=`index.php?act=formdangnhap`;'";} else { ?>
-                                            onclick="addToCart(<?php echo $id ?>)"<?php } ?> type="button">Thêm vào giỏ
-                                            </button> <button
-                                            class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
-                                            type="button">Add To Cart</button> <button
-                                            class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
-                                            type="button"><svg width="16px" height="16px">
-                                                <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
-                                            </svg> <span
-                                                class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
-                                        <button
-                                            class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare"
-                                            type="button"><svg width="16px" height="16px">
-                                                <use xlink:href="css/images/sprite.svg#compare-16"></use>
-                                            </svg> <spa
-                                                class="fake-svg-icon fake-svg-icon--compare-16"></span></button>
+                                    <div class="product-card__image product-image"><a href="<?php echo $linksp ?>" class="product-image__body"><img class="product-image__img" src="<?php echo $hinh ?>" alt=""></a></div>
+                                    <div class="product-card__info">
+                                        <div class="product-card__name"><a href="<?php echo $linksp; ?>"><?php echo $name ?></a></div>
+                                    </div>
+                                    <div class="product-card__actions">
+                                        <div class="product-card__availability">Availability: <span class="text-success">In
+                                                Stock</span></div>
+                                        <div class="product-card__prices"><?php echo $price; ?> VND</div>
+                                        <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" <?php if (!isset($_SESSION['user'])) {
+                                                                                                                                        echo "onclick='alert(`Vui lòng đăng nhập trước khi đặt hàng!`); window.location.href=`index.php?act=formdangnhap`;'";
+                                                                                                                                    } else { ?> onclick="addToCart(<?php echo $id ?>, 'add')" <?php } ?> type="button">Thêm vào giỏ
+                                            </button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                                                    <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
+                                                </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
+                                            <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
+                                                    <use xlink:href="css/images/sprite.svg#compare-16"></use>
+                                                </svg>
+                                                <spa class="fake-svg-icon fake-svg-icon--compare-16"></span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php
                     };
                     ?>
@@ -400,179 +288,71 @@ ini_set('display_errors', 1);
     </div><!-- .block-products-carousel / end -->
     <!-- .block-products -->
     <div class="container box-product">
-            <div class="block-header">
-                <h3 class="block-header__title">Sản Phẩm Mới <img src="css/images/products/menu_icon_3.png" alt=""></h3>
-                <div class="block-header__divider"></div>
-            </div>
+        <div class="block-header">
+            <h3 class="block-header__title">Sản Phẩm Mới <img src="css/images/products/menu_icon_3.png" alt=""></h3>
+            <div class="block-header__divider"></div>
+        </div>
 
 
-            <div class="block-products__body">
-                <?php
+        <div class="block-products__body">
+            <?php
 
-                $i = 0;
-                foreach ($allsp as $sp) {
-                    extract($sp);
-                    $hinh = "upload/product/" . $img;
-                    $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
-                ?>
-                    <div class="block-products-carousel__column ">
-                        <div class="block-products-carousel__cell">
-                            <div class="product-card product-card--hidden-actions">
-                                <div class="product-card__badges-list">
-                                    <div class="product-card__badge product-card__badge--new">New</div>
-                                </div>
-                                <div class="product-card__image product-image"><a href="<?php echo $linksp ?>"
-                                        class="product-image__body"><img class="product-image__img"
-                                            src="<?php echo $hinh ?>" alt=""></a></div>
-                                <div class="product-card__info">
-                                    <div class="product-card__name"><a href="' . $linksp . '"><?php echo $name ?></a></div>
-                                    <div class="product-card__rating">
-                                        <div class="product-card__rating-stars">
-                                            <div class="rating">
-                                                <div class="rating__body"><svg class="rating__star rating__star--active"
-                                                        width="13px" height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div
-                                                        class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star rating__star--active" width="13px"
-                                                        height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div
-                                                        class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star rating__star--active" width="13px"
-                                                        height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div
-                                                        class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star rating__star--active" width="13px"
-                                                        height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div
-                                                        class="rating__star rating__star--only-edge rating__star--active">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div><svg class="rating__star" width="13px" height="12px">
-                                                        <g class="rating__fill">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal">
-                                                            </use>
-                                                        </g>
-                                                        <g class="rating__stroke">
-                                                            <use xlink:href="css/images/sprite.svg#star-normal-stroke">
-                                                            </use>
-                                                        </g>
-                                                    </svg>
-                                                    <div class="rating__star rating__star--only-edge">
-                                                        <div class="rating__fill">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                        <div class="rating__stroke">
-                                                            <div class="fake-svg-icon"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__rating-legend">9 Reviews</div>
-                                    </div>
-                                   
-                                </div>
-                                <div class="product-card__actions">
-                                
-                                    <div class="product-card__prices "><?php echo $price ?> VND</div>
-                                
-                               
-                                <div class="product-card__buttons atc"><button
-                                            class="btn btn-primary product-card__addtocart"
-                                            <?php if(!isset($_SESSION['user'])){echo "onclick='alert(`Vui lòng đăng nhập trước khi đặt hàng!`); window.location.href=`index.php?act=formdangnhap`;'";} else { ?>
-                                            onclick="addToCart(<?php echo $id ?>)"<?php } ?> type="button">Thêm vào giỏ
-                                            </button>  
-                                <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
-                                    <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
-                                </svg> <span
-                                    class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
-                                    <button
-                                class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare"
-                                type="button"><svg width="16px" height="16px">
-                                    <use xlink:href="css/images/sprite.svg#compare-16"></use>
-                                </svg> <spa
-                                    class="fake-svg-icon fake-svg-icon--compare-16"></span></button>
+            $i = 0;
+            foreach ($allsp as $sp) {
+                extract($sp);
+                $hinh = "upload/product/" . $img;
+                $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
+            ?>
+                <div class="block-products-carousel__column ">
+                    <div class="block-products-carousel__cell">
+                        <div class="product-card product-card--hidden-actions">
+                            <div class="product-card__badges-list">
+                                <div class="product-card__badge product-card__badge--new">New</div>
                             </div>
+                            <div class="product-card__image product-image"><a href="<?php echo $linksp ?>" class="product-image__body"><img class="product-image__img" src="<?php echo $hinh ?>" alt=""></a></div>
+                            <div class="product-card__info">
+                                <div class="product-card__name"><a href="' . $linksp . '"><?php echo $name ?></a></div>
+                            </div>
+                            <div class="product-card__actions">
+
+                                <div class="product-card__prices" style="position: relative; top: -10px;"><?php echo $price ?> VND</div>
+
+
+                                <div class="product-card__buttons atc"><button class="btn btn-primary product-card__addtocart" <?php if (!isset($_SESSION['user'])) {
+                                                                                                                                    echo "onclick='alert(`Vui lòng đăng nhập trước khi đặt hàng!`); window.location.href=`index.php?act=formdangnhap`;'";
+                                                                                                                                } else { ?> onclick="addToCart(<?php echo $id ?>, 'add')" <?php } ?> type="button">Thêm vào giỏ
+                                    </button>
+                                    <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                                            <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
+                                        </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
+                                    <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
+                                            <use xlink:href="css/images/sprite.svg#compare-16"></use>
+                                        </svg>
+                                        <spa class="fake-svg-icon fake-svg-icon--compare-16"></span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <?php
-                    $i += 1;
-                }
+                </div>
+            <?php
+                $i += 1;
+            }
 
-                ?>
+            ?>
 
-            </div>
-               
         </div>
+
+    </div>
 
 
 
 </div><!-- .block-products / end -->
 </div><!-- site__body / end -->
 
-                                 
-                                   
-                            
+
+
+
 <script>
     // slide
     let indexs = 0;
@@ -591,20 +371,28 @@ ini_set('display_errors', 1);
     }
     slideShow();
 
-    addToCart = (id) => {
+    addToCart = (id, act) => {
         var result = $.ajax({
             type: "POST",
-            url: "http://localhost/Duan1/view/headerCart.php?id="+id,
+            url: "http://localhost/Duan1/view/headerCart.php?act=" + act + "&id=" + id,
             param: '{}',
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             async: false,
-            success: function (data) {
-                // nothing needed here
+            success: function(data) {
+                Swal.fire({
+                    title: "Thành công!",
+                    icon: "success"
+                });
             }
-        }) .responseText ;
-        document.getElementById("badge").innerHTML = result;
+        }).responseText;
+        document.getElementById("dropdowncart").innerHTML = result;
         return result;
     }
-  
+</script>
+<script>
+    Swal.fire({
+        title: "Bạn đã đặt hàng thành công!",
+        icon: "success"
+    });
 </script>

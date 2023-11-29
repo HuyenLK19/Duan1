@@ -4476,10 +4476,6 @@ screen and (-ms-high-contrast:active) {
     font-size: 15px;
     font-weight: 400;
     color: #3d464d;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    -webkit-overflow-scrolling: touch;
-    overflow-scrolling: touch
 }
 
 .dropcart__empty {
@@ -4488,7 +4484,12 @@ screen and (-ms-high-contrast:active) {
 }
 
 .dropcart__products-list {
-    padding: 20px 16px
+    max-height: 290px;
+    padding: 20px 16px;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
 }
 
 .dropcart__product {

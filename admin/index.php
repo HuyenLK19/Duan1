@@ -138,7 +138,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 insert_taikhoan($tentk, $user, $pass, $email, $address, $hinh, $tel, $role);
                 echo "<script type='text/javascript'>
                         alert('Thêm thành công!');
-                        window.location.href='index.php?act=listsp'
+                        window.location.href='index.php?act=listtk'
                     </script>";
             }
             include "taikhoan/add.php";
@@ -172,7 +172,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
                 echo "<script type='text/javascript'>
                         alert('Sửa thành công!');
-                        window.location.href='index.php?act=listsp'
+                        window.location.href='index.php?act=listtk'
                     </script>";
             }
             $tk = listone_taikhoan($_GET['id']);
