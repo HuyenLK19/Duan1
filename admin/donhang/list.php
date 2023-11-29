@@ -16,42 +16,46 @@
                         <tr>
                             <th>ID</th>
                             <th>Tên sản phẩm</th>
-                            <th>Số lượng</th>
-                            <th>Đơn giá</th>
-                            <th>Người đặt</th>
+                            <th>Địa chỉ</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
                             <th>Ngày đặt hàng</th>
+                            <th>Đơn giá</th>
                             <th>Phương thức thanh toán</th>
-                            <th>Trạng thái đơn hàng</th>
-                            <th class="text-right">Tổng cộng</th>
+                            <th class="text-right">Trạng thái đơn hàng</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         foreach ($listbill as $bill) {
                         ?>
-                        <tr onclick="window.location.href='index.php?act=chitietdonhang&&id=<?php echo $bill['id'] ?>'" style="cursor: pointer;">
-                            <td><?php echo $bill['id'] ?></td>
-                            <td><?php echo $bill['tensp'] ?></td>
-                            <td><?php echo $bill['soluong'] ?></td>
-                            <td><?php echo $bill['giasp'] ?>đ</td>
-                            <td><?php echo $bill['tentk'] ?></td>
-                            <td><?php echo $bill['ngaydathang'] ?></td>
-                            <td>
-                                <?php
-                                    if($bill['pttt'] ==  1){
+                            <tr onclick="window.location.href='index.php?act=chitietdonhang&&id=<?php echo $bill['id'] ?>'" style="cursor: pointer;">
+                                <td><?php echo $bill['id'] ?></td>
+                                <td><?php echo $bill['name'] ?></td>
+                                <td><?php echo $bill['address'] ?></td>
+                                <td><?php echo $bill['tel'] ?></td>
+                                <td><?php echo $bill['email'] ?></td>
+                                <td><?php echo $bill['ngaydathang'] ?></td>
+                                <!-- <td><?php echo $bill['pttt'] ?></td> -->
+                                <!-- <td><?php echo $bill['status'] ?></td> -->
+                                <td><?php echo $bill['tong'] ?></td>
+                                
+                                <td>
+                                    <?php
+                                    if ($bill['pttt'] ==  1) {
                                         echo "Thanh toán bằng tiền mặt";
                                     } else echo "Chuyển khoản";
-                                ?>
-                            </td>
-                            <td>
-                                <?php
-                                    if($bill['status'] ==  0){
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    if ($bill['status'] ==  0) {
                                         echo "Đơn hàng đang được vận chuyển";
                                     } else echo "Đơn hàng đã bị hủy";
-                                ?>
-                            </td>
-                            <td class="text-right"><?php echo $bill['giasp'] * $bill['soluong'] ?>đ</td>
-                        </tr>
+                                    ?>
+                                </td>
+                                
+                            </tr>
                         <?php
                         }
                         ?>

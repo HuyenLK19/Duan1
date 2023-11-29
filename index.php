@@ -312,6 +312,13 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
         case "cart":
             include "view/cart.php";
             break;
+        case "lichsumua":
+            if (isset($_SESSION['user'])) {
+                $iduser = $_SESSION['user']['id'];
+                $lichsumua = lichsumua($iduser);
+            }
+            include "view/lichsumua.php";
+            break;
         case "checkout":
             if (isset($_POST['checkout'])) {
                 $id = $_SESSION['user']['id'];
@@ -344,3 +351,4 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 } else include "view/home.php";
 
 include "view/footer.php";
+
