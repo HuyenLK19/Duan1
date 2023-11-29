@@ -30,8 +30,10 @@
     <?php
     $soluong = 0;
     $cart_total = 0;
-    foreach ($_SESSION['cart'] as $cart) {
-        $soluong += $cart[1];
+    if (isset($_SESSION['cart'])){
+        foreach ($_SESSION['cart'] as $cart) {
+            $soluong += $cart[1];
+        }
     }
     ?>
 </head>
@@ -153,8 +155,9 @@
                                                 <div class="dropcart__body">
                                                     <div class="dropcart__products-list">
                                                         <?php
-                                                        foreach ($_SESSION['cart'] as $cart) {
-                                                            $sp = listone_sanpham($cart[0]);
+                                                        if (isset($_SESSION['cart'])){
+                                                            foreach ($_SESSION['cart'] as $cart) {
+                                                                $sp = listone_sanpham($cart[0]);
                                                         ?>
                                                             <div class="dropcart__product">
                                                                 <div class="product-image dropcart__product-image">
@@ -217,6 +220,7 @@
                                                         <a class="btn btn-primary" href="index.php?act=checkout">Đơn hàng</a>
                                                         <?php
                                                         }
+                                                    }
                                                         ?>
                                                     </div>
                                                 </div>
