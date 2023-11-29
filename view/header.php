@@ -277,8 +277,8 @@
                                                         }
                                                         ?>
                                                         <li><a href="index.php?act=lichsumua">Lịch sử đặt hàng</a></li>
-                                                        <li><a href="index.php?act=capnhattt">Cập nhật thông tin</a></li>
-                                                        <li><a href="index.php?act=doimk">Đổi mật khẩu</a></li>
+                                                        <li><a href="index.php?act=suatk&&id=<?php echo $user_info[0][0]; ?>">Cập nhật thông tin</a></li>
+                                                        <li><a href="index.php?act=quenmk">Đổi mật khẩu</a></li>
                                                     </ul>
                                                     <div class="account-menu__divider"></div>
                                                     <ul class="account-menu__links">
@@ -294,11 +294,12 @@
                                                             <input id="header-signin-email" type="text" name="user" required class="form-control form-control-sm" placeholder="Nhập tài khoản">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="header-signin-password" class="sr-only">Mật khẩu</label>
+                                                            <a href="index.php?act=matkhau"><label for="header-signin-password" class="sr-only">Mật khẩu</label></a>
+                                                            
                                                             <div class="account-menu__form-forgot">
                                                                 <input id="header-signin-password" type="password" name="pass" required class="form-control form-control-sm" placeholder="Mật khẩu">
-                                                                <a href="index.php?act=quenmk" class="account-menu__form-forgot-link">
-                                                                    Quên mật khẩu ?
+                                                                <a href="index.php?act=matkhau" class="account-menu__form-forgot-link">
+                                                                    Đổi mật khẩu
                                                                 </a>
                                                             </div>
                                                         </div>

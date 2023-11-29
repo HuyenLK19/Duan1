@@ -101,7 +101,6 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>TÊN SẢN PHẨM</th>
-                                            <th>Ngày đặt hàng</th>
                                             <th>GIÁ</th>
                                             <th>SỐ LƯỢNG</th>
                                             <th>TRẠNG THÁI</th>
@@ -114,21 +113,21 @@
                                         foreach ($listdh as $dh) {
                                         ?>
                                             <tr>
-                                                <td><a href="#"><?=$dh['id']?></a></td>
-                                                <td><?=$dh['tensp']?></td>
-                                                <td><?=$dh['ngaydathang']?></td>
-                                                <td><?=$dh['giasp']?> VND</td>
-                                                <td><?=$dh['soluong']?></td>
-                                                <td><?php  
-                                                    if ($dh['status'] == 0){
+                                                <td><a href="#"><?= $dh['id'] ?></a></td>
+                                                <td><?= $dh['tensp'] ?></td>
+
+                                                <td><?= $dh['giasp'] ?> VND</td>
+                                                <td><?= $dh['soluong'] ?></td>
+                                                <td><?php
+                                                    if ($dh['status'] == 0) {
                                                         echo "Đang vận chuyển";
                                                     } else echo "Đơn đã hủy";
-?></td>
-                                                <td><?php  
-                                                    if ($dh['pttt'] == 1){
+                                                    ?></td>
+                                                <td><?php
+                                                    if ($dh['pttt'] == 1) {
                                                         echo "Thanh toán khi nhận hàng";
                                                     } else echo "Chuyển khoản";
-                                                ?></td>
+                                                    ?></td>
                                                 <td><?php echo $dh['giasp'] * $dh['soluong'] ?> VND</td>
                                             </tr>
                                         <?php

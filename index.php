@@ -39,27 +39,27 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                             }
                         });
                     </script>";
-                <?php
+                    <?php
                 } else {
                     $thongbao = $check_login;
                     if (strlen($check_login) == 48) {
-                ?>
-                    <script type='text/javascript'>
-                        Swal.fire({
-                            title: "<?=$thongbao?>",
-                            icon: "error",
-                            confirmButtonText: "OK"
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                window.location.href = "index.php";
-                            }
-                        });
-                    </script>;
-                <?php
+                    ?>
+                        <script type='text/javascript'>
+                            Swal.fire({
+                                title: "<?= $thongbao ?>",
+                                icon: "error",
+                                confirmButtonText: "OK"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = "index.php";
+                                }
+                            });
+                        </script>;
+                    <?php
                     } else ?>
                     <script type='text/javascript'>
                         Swal.fire({
-                            title: "<?=$thongbao?>",
+                            title: "<?= $thongbao ?>",
                             icon: "error",
                             confirmButtonText: "OK"
                         }).then((result) => {
@@ -80,32 +80,32 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 if (!is_array(repass($user, $email))) {
                     $thongbao = "Tài khoản không tồn tại!";
                 ?>
-                <script type='text/javascript'>
-                    Swal.fire({
-                        title: "<?=$thongbao?>",
-                        icon: "error",
-                        confirmButtonText: "OK"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.location.href = "index.php";
-                        }
-                    });
-                </script>;
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            title: "<?= $thongbao ?>",
+                            icon: "error",
+                            confirmButtonText: "OK"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = "index.php";
+                            }
+                        });
+                    </script>;
                 <?php
                 } else {
                 ?>
-                <script type='text/javascript'>
-                    Swal.fire({
-                        title: "<?=$thongbao?>",
-                        icon: "success",
-                        confirmButtonText: "OK"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.location.href = "index.php?act=formdangnhap";
-                        }
-                    });
-                </script>;
-                <?php
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            title: "<?= $thongbao ?>",
+                            icon: "success",
+                            confirmButtonText: "OK"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = "index.php?act=formdangnhap";
+                            }
+                        });
+                    </script>;
+            <?php
                 }
             }
             include "view/quenmk.php";
@@ -133,46 +133,46 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $pass = $_POST['pass'];
                 $repass = $_POST['repass'];
                 if (checkuser($user) != '') {
-                ?> 
-                <script type='text/javascript'>
-                Swal.fire({
-                    title: "Tài khoản đã tồn tại!",
-                    icon: "error",
-                });
-                </script>;
+            ?>
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            title: "Tài khoản đã tồn tại!",
+                            icon: "error",
+                        });
+                    </script>;
                 <?php
                 } else if (checkemail($email) != '') {
                 ?>
-                <script type='text/javascript'>
-                Swal.fire({
-                    title: "Email đã được gắn vào tài khoản khác!",
-                    icon: "error",
-                });
-                </script>;
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            title: "Email đã được gắn vào tài khoản khác!",
+                            icon: "error",
+                        });
+                    </script>;
                 <?php
                 } else if ($pass != $repass) {
                 ?>
-                <script type='text/javascript'>
-                Swal.fire({
-                    title: "Mật khẩu không trùng khớp!",
-                    icon: "error",
-                });
-                </script>;
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            title: "Mật khẩu không trùng khớp!",
+                            icon: "error",
+                        });
+                    </script>;
                 <?php
                 } else {
                     dangky($user, $email, $pass);
                 ?>
-                <script type='text/javascript'>
-                    Swal.fire({
-                        title: "Đăng ký thành công! Vui lòng đăng nhập lại!",
-                        icon: "success",
-                        confirmButtonText: "OK"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.location.href = "index.php?act=formdangnhap";
-                        };
-                    });
-                </script>;
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            title: "Đăng ký thành công! Vui lòng đăng nhập lại!",
+                            icon: "success",
+                            confirmButtonText: "OK"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = "index.php?act=formdangnhap";
+                            };
+                        });
+                    </script>;
                 <?php
                 };
             }
@@ -241,16 +241,14 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $target_dir = "upload/avatar/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
                 } else {
-                    // echo "Sorry, there was an error uploading your file.";
                 }
                 $email = isset($_POST["email"]) ? $_POST["email"] : '';
                 $address = isset($_POST["address"]) ? $_POST["address"] : '';
                 $tel = isset($_POST["tel"]) ? $_POST["tel"] : '';
                 $status = isset($_POST["status"]) ? $_POST["status"] : '';
                 $role = isset($_POST["role"]) ? $_POST["role"] : '';
-                // Kiểm tra xem 'id' có tồn tại trong $_GET không
+
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                 } else {
@@ -289,7 +287,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $newPassword = $_POST['new_password'];
                 $confirmPassword = $_POST['confirm_password'];
 
-                // Kiểm tra xem có trường nào không được nhập không
+
                 $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
 
                 foreach ($requiredFields as $field) {
@@ -298,22 +296,30 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     }
                 }
 
-                // Kiểm tra mật khẩu mới có ít nhất 6 ký tự
+
                 if (strlen($newPassword) < 6) {
                     $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
                 }
 
-                // Kiểm tra xác nhận mật khẩu
+
                 if ($newPassword != $confirmPassword) {
                     $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
                 }
 
-                // Nếu không có lỗi, thực hiện các hành động cập nhật mật khẩu
-                if (empty($errors)) {
-                    echo "Cập nhật mật khẩu thành công!";
-                }
-            }
 
+                if (empty($errors)) {
+                    echo '<script>
+                             Swal.fire({
+                            icon: "success",
+                            title: "Cập nhật thành công",
+                            showConfirmButton: false,
+                            timer: 1500
+                             });
+                            </script>';
+
+                }
+                
+            }
             include "view/matkhau.php";
             break;
         case "cart":
@@ -358,4 +364,3 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 } else include "view/home.php";
 
 include "view/footer.php";
-

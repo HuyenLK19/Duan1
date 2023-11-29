@@ -53,8 +53,6 @@
                 for ($i = 0; $i < count($lichsumua); $i++) {
                     $id = $lichsumua[$i]['id'];
                     $pttt = $lichsumua[$i]['pttt'];
-                 
-                    
                     $soluong = $lichsumua[$i]['soluong'];
                     $tong = $lichsumua[$i]['tong'];
                     $status = $lichsumua[$i]['status'];
