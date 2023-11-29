@@ -12,7 +12,6 @@ $allsp = listall_sanpham();
 $sphot = loadall_sanpham_hot();
 $listdm = listall_danhmuc();
 
-
 include "view/header.php";
 
 if (isset($_GET["act"]) && $_GET["act"] !== "") {
