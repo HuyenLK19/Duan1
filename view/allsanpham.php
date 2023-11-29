@@ -33,9 +33,6 @@
                                         ?>
                                             <div class="products-list__item" onclick="window.location.href='index.php?act=chitietsanpham&&idsp=<?php echo $all['id']?>'">
                                                 <div class="product-card">
-                                                    <div class="product-card__badges-list">
-                                                        <div class="product-card__badge product-card__badge--new">New</div>
-                                                    </div>
                                                     <div class="product-card__image product-image"><a href="index.php?act=chitietsanpham&&idsp=<?php echo $all['id']?>"
                                                             class="product-image__body"><img class="product-image__img"
                                                                 src="upload/product/<?php echo $all['img']?>" alt=""></a></div>

@@ -1,70 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-  .mb10 {
-    margin: 20px 0;
-}
-table{
-width: 100%;
-height: 300px;
-margin-left: 50px;
-
-
-
-}
-.mb10 a input{
-    width: 100px;
-    height: 30px;
-    background-color: #80AACC;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    margin-left: 50px;
-
-
-}
-</style>
-<body>
+<!-- start  -->
 <div class="row">
-    <div class="row frmtitle">
-        <h1>THỐNG KÊ SẢN PHẨM THEO LOẠI</h1>
-    </div>
-
-    <div class="row frmcontent">
-        <div class="row mb10 frmdslh">
-            <table border="1">
-                <tr>
-                    <th>MÃ DANH MỤC</th>
-                    <th>TÊN DANH MỤC</th>
-                    <th>SỐ LƯỢNG</th>
-                    <th>GIÁ CAO NHẤT</th>
-                    <th>GIÁ THẤP NHẤT</th>
-                    <th>GIÁ TRUNG BÌNH</th>                    
-                </tr>
-                <?php
-                    foreach ($listthongke as $thongke){
-                        extract($thongke);
-                        echo '<tr>
-                        <td>'.$madm.'</td>
-                        <td>'.$tendm.'</td>
-                        <td>'.$countsp.'</td>
-                        <td>'.$maxprice.'</td>
-                        <td>'.$minprice.'</td>
-                        <td>'.$avgprice.'</td>
-                        </tr>';
-                    }
-                ?>
-                <div class="row mb10">
-                    <a href="index.php?act=bieudo"><input type="button" value="Xem biểu đồ"></a>
-                </div>
-            </table>
+    <div class="col-12">
+        <div>
+            <h4 class="header-title mb-3">Thống Kê sản phẩm</h4>
         </div>
     </div>
 </div>
-</body>
-</html>
+<!-- end row -->
+<div class="row">
+    <div class="col-12">
+        <div>
+            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Mã Sản Phẩm</th>
+                        <th>Hình Ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Số Lượng Đã Bán</th>
+                        <th>Kho</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php
+                    foreach ($listthongke as $thongke) {
+                        extract($thongke);
+                    ?>
+                        <tr>
+                            <td><?= $id ?></td>
+                            <td><img src="../upload/product/<?= $img ?>" alt="" style="width: 80px;"></td>
+                            <td><?= $name ?></td>
+                            <td></td>
+                            <td><?= $kho ?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+            <button style="border: 1px solid ; border-radius: 3px;"><a href="index.php?act=bieudo">Biểu Đồ Thống Kê</a></button>
+        </div>
+        <!-- end -->
+    </div>
+</div>

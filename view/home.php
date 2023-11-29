@@ -265,14 +265,7 @@ ini_set('display_errors', 1);
                                         <div class="product-card__prices"><?php echo $price; ?> VND</div>
                                         <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" <?php if (!isset($_SESSION['user'])) {
                                                                                                                                         echo "onclick='alert(`Vui lòng đăng nhập trước khi đặt hàng!`); window.location.href=`index.php?act=formdangnhap`;'";
-                                                                                                                                    } else { ?> onclick="addToCart(<?php echo $id ?>, 'add')" <?php } ?> type="button">Thêm vào giỏ
-                                            </button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
-                                                    <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
-                                                </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
-                                            <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
-                                                    <use xlink:href="css/images/sprite.svg#compare-16"></use>
-                                                </svg>
-                                                <spa class="fake-svg-icon fake-svg-icon--compare-16"></span>
+                                                                                                                                    } else { ?> onclick="addToCart(<?php echo $id ?>, 'add')" <?php } ?> type="button" style="font-size: 12px;">Thêm vào giỏ hàng
                                             </button>
                                         </div>
                                     </div>
@@ -298,7 +291,7 @@ ini_set('display_errors', 1);
             <?php
 
             $i = 0;
-            foreach ($allsp as $sp) {
+            foreach ($newsp as $sp) {
                 extract($sp);
                 $hinh = "upload/product/" . $img;
                 $linksp = "index.php?act=chitietsanpham&idsp=" . $id;
@@ -320,16 +313,9 @@ ini_set('display_errors', 1);
 
                                 <div class="product-card__buttons atc"><button class="btn btn-primary product-card__addtocart" <?php if (!isset($_SESSION['user'])) {
                                                                                                                                     echo "onclick='alert(`Vui lòng đăng nhập trước khi đặt hàng!`); window.location.href=`index.php?act=formdangnhap`;'";
-                                                                                                                                } else { ?> onclick="addToCart(<?php echo $id ?>, 'add')" <?php } ?> type="button">Thêm vào giỏ
+                                                                                                                                } else { ?> onclick="addToCart(<?php echo $id ?>, 'add')" <?php } ?> type="button" style="font-size: 12px;">Thêm vào giỏ hàng
                                     </button>
-                                    <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
-                                            <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
-                                        </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
-                                    <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
-                                            <use xlink:href="css/images/sprite.svg#compare-16"></use>
-                                        </svg>
-                                        <spa class="fake-svg-icon fake-svg-icon--compare-16"></span>
-                                    </button>
+                                    
                                 </div>
                             </div>
                         </div>

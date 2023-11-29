@@ -7,6 +7,7 @@ include "model/taikhoan.php";
 include "model/danhmuc.php";
 include "model/cart.php";
 
+$newsp = list_sanphamnew();
 $allsp = listall_sanpham();
 $sphot = loadall_sanpham_hot();
 $listdm = listall_danhmuc();
