@@ -274,13 +274,6 @@ ini_set('display_errors', 1);
                                                                                                                                             }
                                                                                                                                         });';
                                                                                                                                     <?php } else { ?> onclick=" addToCart(<?php echo $id ?>, 'add' )" <?php } ?> type="button">Thêm vào giỏ
-                                            </button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
-                                                    <use xlink:href="css/images/sprite.svg#wishlist-16"></use>
-                                                </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
-                                            <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
-                                                    <use xlink:href="css/images/sprite.svg#compare-16"></use>
-                                                </svg>
-                                                <spa class="fake-svg-icon fake-svg-icon--compare-16"></span>
                                             </button>
                                         </div>
                                     </div>
