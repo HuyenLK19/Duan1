@@ -99,14 +99,13 @@
                                                             foreach ($listdm as $dm) {
                                                             ?>
                                                                 <li class="menu__item">
-                                                                    <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                                     <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="index.php?act=danhmuc&&id=<?php echo $dm['id'] ?>"><?php echo $dm['name'] ?></a>
                                                                 </li>
                                                             <?php
                                                             }
                                                             ?>
                                                         </ul>
-                                                    </div><!-- .menu / end -->
+                                                    </div>
                                                 </div>
                                         </ul>
                                         <li class="nav-links__item nav-links__item--has-submenu"><a class="nav-links__item-link" href="index.php?act=allsanpham">
