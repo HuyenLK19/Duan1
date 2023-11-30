@@ -180,7 +180,12 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             include "taikhoan/edit.php";
             break;
         case "listbill":
-            $listbill = listall_donhang();
+            $listdh = listone_donhang_user($_SESSION['user']['id']);
+            if (isset($_SESSION['user']['id'])) {
+                $user_id = $_SESSION['user']['id'];
+                $user_info = listone_taikhoan($user_id);
+                
+            }
             include "donhang/list.php";
             break;
         case "chitietdonhang":

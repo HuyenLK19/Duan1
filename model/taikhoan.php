@@ -17,11 +17,13 @@
 
     function update_taikhoan($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role){
         if ($hinh != "") {
-            $sql = "UPDATE taikhoan SET name = '$tentk', user = '$user', pass = '$pass', email = '$email', address = '$address', avatar = '$hinh', tel = '$tel', active = '$status', role = '$role' WHERE id = '$id'";
-        } else $sql = "UPDATE taikhoan SET name = '$tentk', user = '$user', pass = '$pass', email = '$email', address = '$address', tel = '$tel', active = '$status', role = '$role' WHERE id = '$id'";
+            $statusValue = !empty($status) ? $status : 'default_value'; 
+            $sql = "UPDATE taikhoan SET name = '$tentk', user = '$user', pass = '$pass', email = '$email', address = '$address', avatar = '$hinh', tel = '$tel', role = '$role' WHERE id = '$id'";
+        } else {
+            $sql = "UPDATE taikhoan SET name = '$tentk', user = '$user', pass = '$pass', email = '$email', address = '$address', tel = '$tel', role = '$role' WHERE id = '$id'";
+        }
         pdo_execute($sql);
     }
-
     function login($user, $pass){
         $sql = "SELECT * FROM taikhoan WHERE user = '$user' AND pass = '$pass'";
         if (is_array(pdo_query_one($sql))){

@@ -112,7 +112,7 @@
                                         <?php
                                         foreach ($listdh as $dh) {
                                         ?>
-                                            <tr>
+                                            <tr onclick="window.location.href='index.php?act=chitietdonhang&&id=<?php echo $dh['id'] ?>'" style="cursor: pointer;">
                                                 <td><a href="#"><?= $dh['id'] ?></a></td>
                                                 <td><?= $dh['tensp'] ?></td>
 

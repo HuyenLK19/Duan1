@@ -316,9 +316,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                             timer: 1500
                              });
                             </script>';
-
                 }
-                
             }
             include "view/matkhau.php";
             break;
@@ -326,12 +324,19 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/cart.php";
             break;
         case "lichsumua":
-            if (isset($_SESSION['user'])) {
-                $iduser = $_SESSION['user']['id'];
-                $lichsumua = lichsumua($iduser);
+            $listdh = listone_donhang_user($_SESSION['user']['id']);
+            if (isset($_SESSION['user']['id'])) {
+                $user_id = $_SESSION['user']['id'];
+                $user_info = listone_taikhoan($user_id);
             }
             include "view/lichsumua.php";
             break;
+
+        case "chitietdonhang":
+            $oneBill = listone_donhang($_GET['id']);
+            include "view/chitietdonhang.php";
+            break;
+
         case "checkout":
             if (isset($_POST['checkout'])) {
                 $id = $_SESSION['user']['id'];

@@ -1,61 +1,86 @@
-<!-- start  -->
-<div class="row">
-    <div class="col-12">
-        <div>
-            <h4 class="header-title mb-3">Danh sách đơn hàng</h4>
-        </div>
-    </div>
-</div>
-<!-- end row -->
-<div class="row">
-    <div class="col-lg-12">
-        <div class="mt-5">
-            <div class="table-responsive">
-                <table class="table m-0">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Số lượng</th>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lịch sử đặt hàng</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-                            <th>Tổng</th>
-                            <th>Pương thức thanh toán</th>
-                            <th>Trạng thái đơn hàng</th>
+        h1 {
+            color: #3D464C;
+        }
 
+        table {
+            width: 100%;
+            margin: auto;
+            border-collapse: collapse;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        foreach ($listbill as $bill) {
-                        ?>
-                            <tr onclick="window.location.href='index.php?act=chitietdonhang&&id=<?php echo $bill['id'] ?>'" style="cursor: pointer;">
-                                <td><?php echo $bill['id'] ?></td>
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            height: 100px;
+        }
 
-                                <td><?php echo $bill['soluong'] ?></td>
+        th {
+            background-color: #f2f2f2;
+        }
 
-                                <td><?php echo $bill['tong'] ?></td>
-                                <td>
-                                    <?php
-                                    if ($bill['pttt'] ==  1) {
-                                        echo "Thanh toán bằng tiền mặt";
-                                    } else echo "Chuyển khoản";
-                                    ?>
-                                </td>
-                                <td>
-                                    <?php
-                                    if ($bill['status'] ==  0) {
-                                        echo "Đơn hàng đang được vận chuyển";
-                                    } else echo "Đơn hàng đã bị hủy";
-                                    ?>
-                                </td>
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        h3{
+            margin: 50px 0 0 250px;
+        }
+    </style>
+    <table>
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>TÊN SẢN PHẨM</th>
+                                            <th>GIÁ</th>
+                                            <th>SỐ LƯỢNG</th>
+                                            <th>TRẠNG THÁI</th>
+                                            <th>PHƯƠNG THỨC THANH TOÁN</th>
+                                            <th>TỔNG</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        foreach ($listdh as $dh) {
+                                        ?>
+                                            <tr onclick="window.location.href='index.php?act=chitietdonhang&&id=<?php echo $dh['id'] ?>'" style="cursor: pointer;">
+                                                <td><a href="#"><?= $dh['id'] ?></a></td>
+                                                <td><?= $dh['tensp'] ?></td>
+
+                                                <td><?= $dh['giasp'] ?> VND</td>
+                                                <td><?= $dh['soluong'] ?></td>
+                                                <td><?php
+                                                    if ($dh['status'] == 0) {
+                                                        echo "Đang vận chuyển";
+                                                    } else echo "Đơn đã hủy";
+                                                    ?></td>
+                                                <td><?php
+                                                    if ($dh['pttt'] == 1) {
+                                                        echo "Thanh toán khi nhận hàng";
+                                                    } else echo "Chuyển khoản";
+                                                    ?></td>
+                                                <td><?php echo $dh['giasp'] * $dh['soluong'] ?> VND</td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+     </table>
+</body>
+</html>

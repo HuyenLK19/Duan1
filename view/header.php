@@ -276,7 +276,7 @@
                                                         }
                                                         ?>
                                                         <li><a href="index.php?act=lichsumua">Lịch sử đặt hàng</a></li>
-                                                        <li><a href="index.php?act=suatk&&id=<?php echo $user_info[0][0]; ?>">Cập nhật thông tin</a></li>
+                                                        <li><a href="index.php?act=thongtintk">Cập nhật thông tin</a></li>
                                                         <li><a href="index.php?act=quenmk">Đổi mật khẩu</a></li>
                                                     </ul>
                                                     <div class="account-menu__divider"></div>
