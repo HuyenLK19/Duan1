@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-6">
                     <div class="float-left mt-3">
-                        <p><strong>Ngày đặt hàng: </strong><?php echo $oneBill['ngaydathang'] ?></p>
+                        <!-- <p><strong>Ngày đặt hàng: </strong><?php echo $oneBill['ngaydathang'] ?></p> -->
                         <p><strong>Tình trạng đơn hàng: </strong><?php if ($oneBill['status'] == 0) { ?>
                                 <span class="badge badge-success">Đang được vận chuyển</span>
                         </p>
