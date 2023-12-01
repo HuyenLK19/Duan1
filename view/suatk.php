@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-12">
         <div>
-            <h4 class="header-title mb-3">Cập nhật tài khoản</h4>
+            <h4 class="header-title mb-3" style="position: relative;right: 30px;bottom: 25px;">Cập nhật tài khoản</h4>
         </div>
     </div>
 </div>
@@ -40,7 +40,7 @@
                     <?php
                         if ($tk[0][5] != ""){
                     ?>
-                    <img src="upload/avatar/<?php echo $tk[0][5] ?>" style="width: 100px; height: 100px;">
+                    <img src="upload/avatar/<?php echo $tk[0][5] ?>" style="width: 80px; height: 80px; margin-bottom: 25px;">
                     <?php
                         }
                     ?>

@@ -1,23 +1,25 @@
 <style>
     .box-ul li a {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .profile-card__name,
     .profile-card__email,
     .address-card__name,
     .address-card__row,
-    .address-card__row-content {
-        font-size: 20px;
-        margin-top: 15px;
+    .address-card__row-content,
+    .table-responsive-sm table thead tr th {
+        font-size: 15px;
+        margin-top: 5px;
     }
 
     .address-card__row-title {
         font-size: 18px;
     }
 
-    .address-card__row-content{
-        margin-bottom: 40px;
+    .address-card__row-content,
+    .address-card__name{
+        margin-bottom: 15px;
     }
 </style>
 <!-- site__body -->

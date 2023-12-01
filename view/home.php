@@ -273,7 +273,7 @@ ini_set('display_errors', 1);
                                                                                                                                                 window.location.href = "index.php?act=formdangnhap";
                                                                                                                                             }
                                                                                                                                         });';
-                                                                                                                                    <?php } else { ?> onclick=" addToCart(<?php echo $id ?>, 'add' )" <?php } ?> type="button">Thêm vào giỏ
+                                                                                                                                    <?php } else { ?> onclick=" addToCart(<?php echo $id ?>, 'add' )" <?php } ?> type="button" style="font-size: 12px;">Thêm vào giỏ hàng
                                             </button>
                                         </div>
                                     </div>
@@ -329,7 +329,7 @@ ini_set('display_errors', 1);
                                                                                                                                                 window.location.href = "index.php?act=formdangnhap";
                                                                                                                                             }
                                                                                                                                         });';
-                                                                                                                                    <?php } else { ?> onclick=" addToCart(<?php echo $id ?>, 'add' )" <?php } ?> type="button">Thêm vào giỏ
+                                                                                                                                    <?php } else { ?> onclick=" addToCart(<?php echo $id ?>, 'add' )" <?php } ?> type="button" style="font-size: 12px;">Thêm vào giỏ hàng
                                     </button>
                                     
                                 </div>

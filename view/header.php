@@ -124,7 +124,7 @@
                                         if (isset($_SESSION['user'])) {
                                         ?>
                                             <li style="line-height: 54px; text-align: right; width: 373px;">
-                                                Xin chào! <?php echo $_SESSION['user']['name'] ?>
+                                            <marquee width="200px">Xin chào! <?php echo $_SESSION['user']['name'] ?></marquee> 
                                             <?php
                                         }
                                             ?>
