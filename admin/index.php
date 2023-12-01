@@ -10,6 +10,11 @@ include "../model/thongke.php";
 include "../model/binhluan.php";
 include "header.php";
 
+$sum_bl = pdo_query_one("SELECT COUNT(*) as tongbl FROM binhluan");
+$sum_dh = pdo_query_one("SELECT SUM(soluong) as tongdh FROM donhang");
+$sum_tk = pdo_query_one("SELECT COUNT(*) as tongtk FROM taikhoan");
+$sum_sp = pdo_query_one("SELECT SUM(kho) as tongsp FROM sanpham");
+
 if (isset($_GET['act']) && ($_GET['act'] != '')) {
     switch ($_GET['act']) {
         case "addsp":

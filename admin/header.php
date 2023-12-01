@@ -109,17 +109,17 @@ session_start();
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <a href="http://localhost/Duan1/index.php" class="dropdown-item notify-item">
                             <i class="mdi mdi-home-outline"></i>
-                            <span onclick="window.location.href='http://localhost/Duan1/index.php'">Về trang sản phẩm</span>
+                            <span>Về trang sản phẩm</span>
                         </a>
 
                         <div class="dropdown-divider"></div>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <a href="http://localhost/Duan1/index.php?act=dangxuat" class="dropdown-item notify-item">
                             <i class="mdi mdi-logout-variant"></i>
-                            <span>Logout</span>
+                            <span>Đăng xuất</span>
                         </a>
 
                     </div>
