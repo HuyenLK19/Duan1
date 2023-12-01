@@ -27,7 +27,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 if (is_array($check_login)) {
                     $_SESSION['cart'] = [];
                     $_SESSION['user'] = $check_login;
-?>
+                    ?>
                     <script type='text/javascript'>
                         Swal.fire({
                             title: "Đăng nhập thành công!",
@@ -309,12 +309,12 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 
                 if (empty($errors)) {
                     echo '<script>
-                             Swal.fire({
-                            icon: "success",
-                            title: "Cập nhật thành công",
-                            showConfirmButton: false,
-                            timer: 1500
-                             });
+                            Swal.fire({
+                                icon: "success",
+                                title: "Cập nhật thành công",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
                             </script>';
                 }
             }
@@ -358,7 +358,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                         }
                     });
                 </script>
-<?php
+                <?php
             }
             include "view/checkout.php";
             break;

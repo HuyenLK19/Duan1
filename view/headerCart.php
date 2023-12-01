@@ -17,7 +17,8 @@ if ($_GET['act'] == 'add') {
     }
 } else if ($_GET['act'] == 'del') {
     del_giohang($_GET['id']);
-}
+};
+
 $soluong = 0;
 foreach ($_SESSION['cart'] as $cart) {
     $soluong += $cart[1];

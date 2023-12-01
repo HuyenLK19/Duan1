@@ -15,6 +15,10 @@
     .address-card__row-title {
         font-size: 18px;
     }
+
+    .address-card__row-content{
+        margin-bottom: 40px;
+    }
 </style>
 <!-- site__body -->
 <div class="site__body">
@@ -37,7 +41,6 @@
                         <ul class="box-ul">
                             <li class="account-nav__item"><a href="index.php?act=suatk&&id=<?php echo $user_info[0][0]; ?>">Chỉnh sửa hồ sơ</a></li>
                             <li class="account-nav__item"><a href="index.php?act=lichsumua">Lịch sử đặt hàng</a></li>
-                            <!-- <li class="account-nav__item"><a href="account-order-details.html">Đơn mua</a> -->
                             </li>
 
                             <li class="account-nav__item"><a href="index.php?act=matkhau">Mật khẩu</a></li>
@@ -58,8 +61,6 @@
                             <div class="profile-card__avatar"><img src="' . $hinh . '" alt=""></div>
                         <div class="profile-card__name">' . $name . '</div>
                         <div class="profile-card__email">' . $email . '</div>
-                        <div class="profile-card__edit">
-                        </div>
                     </div>
                 <div class="dashboard__address card address-card address-card--featured">
                     <div class="address-card__badge">ĐỊA CHỈ MẶC ĐỊNH</div>
@@ -67,8 +68,9 @@
                     <div class="address-card__row-title">Tài khoản</div>
 
                         <div class="address-card__name">' . $user . '</div>
-<div class="address-card__row">
-                            ' . $address . '
+                        <div class="address-card__row">
+                            <div class="address-card__row-title">Địa chỉ</div>
+                            <div class="address-card__row-content">' . $address . '</div>
                         </div>
                         <div class="address-card__row">
                             <div class="address-card__row-title">Số điện thoại</div>

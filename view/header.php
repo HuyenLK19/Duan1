@@ -34,8 +34,8 @@
     if (isset($_SESSION['cart'])) {
         foreach ($_SESSION['cart'] as $cart) {
             $soluong += $cart[1];
-        }
-    }
+        };
+    };
     ?>
 </head>
 

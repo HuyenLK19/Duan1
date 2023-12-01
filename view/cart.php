@@ -52,9 +52,10 @@
                             </td>
                             <td class="cart-table__column cart-table__column--price" data-title="Price"><?php echo $sp['price'] ?> VNĐ</td>
                             <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
-                                <div class="input-number"><input class="form-control input-number__input" type="number" min="1" value="<?php echo $cart[1] ?>">
-                                    <div class="input-number__add" onclick="<?php $cart[1]++ ?>"></div>
-                                    <div class="input-number__sub"  onclick="<?php $cart[1]-- ?>"></div>
+                                <div class="input-number">
+                                    <input class="form-control input-number__input" type="number" min="1" value="<?php echo $cart[1] ?>">
+                                    <div class="input-number__add" onclick="incre(<?=$sp['id']?>)"></div>
+                                    <div class="input-number__sub" onclick="decre(<?=$sp['id']?>)"></div>
                                 </div>
                             </td>
                             <td class="cart-table__column cart-table__column--total" data-title="Total"><?php echo $cart[1]*$sp['price'] ?> VNĐ</td>
@@ -126,10 +127,40 @@
 </div>
 <!-- site__body / end -->
 <script>
+    incre = (id) => {
+        var result = $.ajax({
+            type: "POST",
+            url: "http://localhost/Duan1/view/morecart.php?act=incre&id=" + id,
+            param: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: false,
+            success: function(data) {
+
+            }
+        }).responseText;
+        document.getElementById("cartbody").innerHTML = result;
+    }
+
+    decre = (id) => {
+        var result = $.ajax({
+            type: "POST",
+            url: "http://localhost/Duan1/view/morecart.php?act=decre&id=" + id,
+            param: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: false,
+            success: function(data) {
+
+            }
+        }).responseText;
+        document.getElementById("cartbody").innerHTML = result;
+    }
+
     delCart = (id) => {
         var result = $.ajax({
             type: "POST",
-            url: "http://localhost/Duan1/view/morecart.php?id=" + id,
+            url: "http://localhost/Duan1/view/morecart.php?act=del&id=" + id,
             param: '{}',
             contentType: "application/json; charset=utf-8",
             dataType: "html",

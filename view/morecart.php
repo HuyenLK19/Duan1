@@ -3,9 +3,18 @@ session_start();
 include "../model/sanpham.php";
 include "../model/pdo.php";
 include "../model/cart.php";
-if (isset($_GET['id'])) {
+if (isset($_GET['id']) && $_GET['act'] == 'del'){
     del_giohang($_GET['id']);
 }
+
+if (isset($_GET['id']) && $_GET['act'] == 'incre'){
+    incre($_GET['id']);
+}
+
+if (isset($_GET['id']) && $_GET['act'] == 'decre'){
+    decre($_GET['id']);
+}
+
 ?>
 <div class="page-header">
     <div class="page-header__container container">
@@ -60,8 +69,8 @@ if (isset($_GET['id'])) {
                         <td class="cart-table__column cart-table__column--price" data-title="Price"><?php echo $sp['price'] ?> VNĐ</td>
                         <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
                             <div class="input-number"><input class="form-control input-number__input" type="number" min="1" value="<?php echo $cart[1] ?>">
-                                <div class="input-number__add" onclick="<?php $cart[1]++ ?>"></div>
-                                <div class="input-number__sub" onclick="<?php $cart[1]-- ?>"></div>
+                                <div class="input-number__add" onclick="incre(<?=$sp['id']?>)"></div>
+                                <div class="input-number__sub" onclick="decre(<?=$sp['id']?>)"></div>
                             </div>
                         </td>
                         <td class="cart-table__column cart-table__column--total" data-title="Total"><?php echo $cart[1] * $sp['price'] ?> VNĐ</td>
