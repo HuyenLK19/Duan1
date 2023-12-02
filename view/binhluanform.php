@@ -12,46 +12,10 @@ $dsbl = loadall_binhluan($idpro);
         color: red;
     }
     .demobinhluan {
-        border: .5px solid gray;
-
         width: 100%;
-
-        overflow-y: auto;
-
-    }
-
-    .demobinhluan h2 {
-        width: 96%;
-        height: 40px;
-        background-color: #80aacc;
-        color: #fff;
-        padding: 0 20px;
-    }
-
-    .demobinhluan .form_searchs {
-        margin-top: 20px;
-
-
-    }
-
-    .demobinhluan .form_searchs input {
-        height: 30px;
         
     }
 
-    .demobinhluan .form_searchs input:nth-child(2) {
-        width: 80%;
-        margin-left: 20px;
-
-    }
-
-    .demobinhluan .form_searchs input:nth-child(1) {
-
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 0 10px;
-    }
   .btbinhluan{
     background-color: #FFD333;
     border: none;
@@ -62,60 +26,113 @@ $dsbl = loadall_binhluan($idpro);
     border: 1px solid #fff;
     color: #fff;
   }
-    table {
-        width: 100%;
-        margin-left: 10px;
-        height: 200px;
+  .binhluan {
+    width: 100%;
+   height: 300px; 
+    overflow-y: auto;
+    border: .1px solid #D3D6DA;
+    padding: 10px auto;
 
-    }
-
+}
+tr.row-comment {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 50px;
+}
     table td:nth-child(1) {
-        width: 50%;
+        width: 300px;
     }
 
     table td:nth-child(2) {
-        width: 20%;
+        width: 40%;
     }
 
     table td:nth-child(3) {
-        width: 30%;
+        width: 20%;
     }
+ 
+.noidung input{
+    margin-top: 30px;
+    width: 924px;
+    height: 40px;
+    border: .1px solid #D3D6DA;
+    padding-left: 2%;
+
+}
+.gui{
+    width: 924px;
+    height: 40px;
+    border: .1px solid #D3D6DA;
+    border-top: none;
+    background-color: #F5F6F7;
+}
+.gui input{
+    height: 30px;
+    border-top: none;
+    margin-left: 85%;
+    margin-top: 5px;
+    background-color: #9BC6FA;
+    color: #fff;
+    border-radius: 3px;
+}
+.cmt{
+    font-size: 12px;
+    color: #4167B2;
+    margin: -17px 0 0 10px;
+  
+}
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <body>
     <div class="demobinhluan">
         <div class="list">
-            <ul>
+        <form id="commentForm" action="' . $_SERVER['PHP_SELF'] . '" method="POST">
+                <input type="hidden" name="idpro" value="' . $idpro . '">
+                <div class="gui"></div>
+               
+            </form>
+            <ul class="binhluan">
                 <table>
-                    <?php
-                    foreach ($dsbl as $bl) {
-                        extract($bl);
-                        echo '<tr><td>' . $noidung . '</td>';
-                        echo '<td>' . $iduser . '</td>';
-                        echo '<td>' . $ngaybinhluan . '</td></tr>';
-                    }
-                    ?>
-                </table>
-
+            
                 <?php
+                   foreach ($dsbl as $bl) {
+                    echo '<tr class="row-comment"><td>' . $bl['username'] . '
+                    
+                    </td>';
+                    echo '<td>' . $bl['noidung'] . '</td>';
+                    echo '<td>' . $bl['ngaybinhluan'] . '</td></tr>';
+                    echo '<td class="cmt">Thích . phản hồi</td></tr>';
+
+                    
+
+                }
+                    ?>
+
+                </table>
+               
+
+            </ul>
+            <?php
                 if (isset($_SESSION['user'])) {
                     extract($_SESSION['user']);
                     echo '
         <div id="commentFormWrapper">
             <form id="commentForm" action="' . $_SERVER['PHP_SELF'] . '" method="POST">
                 <input type="hidden" name="idpro" value="' . $idpro . '">
-                <input type="text" name="noidung" placeholder="Nội dung bình luận">
-                <input type="submit" name="guibinhluan" class="btbinhluan" value="Gửi bình luận">
+                <div class="noidung"> <input type="text" name="noidung" placeholder="Viết bình luận..."></div>
+                <div class="gui"> <input type="submit" name="guibinhluan" class="btbinhluan" value="Gửi bình luận"></div>
+               
             </form>
         </div>
     ';
+   
                 } else {
                     echo '<h1>*Bạn vui lòng đăng nhập để bình luận</h1>';
                 }
                 ?>
-
-            </ul>
         </div>
     </div>
     <?php
@@ -125,7 +142,7 @@ $dsbl = loadall_binhluan($idpro);
             $iduser = $_SESSION['user']['id'];
         }
         $idpro = $_POST['idpro'];
-        $ngaybinhluan = date('Y-m-d H:i:s'); // Định dạng ngày tháng giống MySQL
+        $ngaybinhluan = date('Y-m-d H:i:s'); 
         insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
         header("location: " . $_SERVER['HTTP_REFERER']);
     }
@@ -135,17 +152,17 @@ $dsbl = loadall_binhluan($idpro);
 <script>
     $(document).ready(function() {
         $("#commentForm").submit(function(e) {
-            e.preventDefault(); // Ngăn chặn sự kiện mặc định của form
+            e.preventDefault(); 
 
             $.ajax({
                 type: "POST",
                 url: $(this).attr('action'),
                 data: $(this).serialize(),
                 success: function(response) {
-                    // Xử lý phản hồi từ server nếu cần
+
                     console.log(response);
 
-                    // Nếu muốn cập nhật phần bình luận sau khi gửi
+
                     $("#binhluan").load("view/binhluanform.php", {
                         idpro: <?= isset($_REQUEST['idsp']) ? $_REQUEST['idsp'] : null ?>
                     });

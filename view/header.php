@@ -58,11 +58,16 @@
                     <div class="site-header__search">
                         <div class="search search--location--header">
                             <div class="search__body">
-                                <form class="search__form" action="#"> <input class="search__input" name="search" placeholder="Tìm kiếm hơn 1000 sản phẩm" aria-label="Site search" type="text" autocomplete="off"> <button class="search__button search__button--type--submit" type="submit"><svg width="20px" height="20px">
+                                <form class="search__form" action="index.php?act=allsanpham" method="POST">
+                                    <input class="search__input" name="kyw" placeholder="Tìm kiếm hơn 1000 sản phẩm" aria-label="Site search" type="text" autocomplete="off">
+                                    <button class="search__button search__button--type--submit" name="timkiem" type="submit">
+                                        <svg width="20px" height="20px">
                                             <use xlink:href="css/images/sprite.svg#search-20"></use>
-                                        </svg></button>
+                                        </svg>
+                                    </button>
                                     <div class="search__border"></div>
                                 </form>
+
                                 <div class="search__suggestions suggestions suggestions--location--header"></div>
                             </div>
                         </div>
@@ -125,7 +130,7 @@
                                         if (isset($_SESSION['user'])) {
                                         ?>
                                             <li style="line-height: 54px; text-align: right; width: 373px;">
-                                            <marquee width="200px">Xin chào! <?php echo $_SESSION['user']['name'] ?></marquee> 
+                                                <marquee width="200px">Xin chào! <?php echo $_SESSION['user']['name'] ?></marquee>
                                             <?php
                                         }
                                             ?>
@@ -295,7 +300,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <a href="index.php?act=matkhau"><label for="header-signin-password" class="sr-only">Mật khẩu</label></a>
-                                                            
+
                                                             <div class="account-menu__form-forgot">
                                                                 <input id="header-signin-password" type="password" name="pass" required class="form-control form-control-sm" placeholder="Mật khẩu">
                                                                 <a href="index.php?act=matkhau" class="account-menu__form-forgot-link">

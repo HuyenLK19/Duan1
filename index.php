@@ -178,21 +178,10 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             }
             include "view/dangky.php";
             break;
-        case "sanpham":
-            if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
-                $kyw = $_POST['kyw'];
-            } else {
-                $kyw = "";
-            }
-            if (isset($_GET['iddm']) && ($_GET['iddm']) > 0) {
-                $iddm = $_GET['iddm'];
-            } else {
-                $iddm = 0;
-            }
-            $dssp = list_sanphamnew();
-            // $tendm = load_ten_dm($iddm);
-            include "view/sanpham.php";
-            break;
+            case "sanpham":
+                $dssp = list_sanphamnew();
+                break;
+            
         case "chitietsnpham":
             if (isset($_GET['idsp']) && ($_GET['idsp']) > 0) {
                 $id = $_GET['idsp'];
@@ -215,8 +204,20 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/chitietsanpham.php";
             break;
         case "allsanpham":
-            $list = listall_sanpham();
-            include "view/allsanpham.php";
+            if (isset($_POST['kyw']) && ($_POST['kyw']!="")) {
+                $kyw = $_POST['kyw'];
+
+            }else {
+                $kyw ="";
+            }
+            if (isset($_GET['iddm']) && ($_GET['iddm']>0)) {
+                $iddm = $_GET['iddm'];  
+            }else{
+                $iddm = 0;
+            }
+            $list= search_sanpham_name($kyw,$iddm);
+            $tendm = listall_sanpham($kyw,$iddm);
+            include 'view/allsanpham.php';
             break;
         case "gioithieu":
             include "view/gioithieu.php";
@@ -257,7 +258,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     exit;
                 }
                 update_taikhoans($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
-
+               
                 echo "<script type='text/javascript'>
                         alert('Sửa thành công!');
                         window.location.href='index.php?act=thongtintk'
@@ -291,11 +292,20 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                         $row = pdo_query_one($sql, $tentk, $oldPassword);
 
                         if ($row) {
-                            // Thực hiện câu lệnh UPDATE bằng PDO
                             $sql_update = "UPDATE taikhoan SET name=?, pass=? WHERE name=?";
                             pdo_execute($sql_update, $tentk, $newPassword, $tentk);
             
-                            echo "Mật khẩu đã được thay đổi";
+                            
+                        if (empty($errors)) {
+                            echo '<script>
+                                    Swal.fire({
+                                        icon: "success",
+                                        title: "Cập nhật thành công",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    </script>';
+                        }
                         } else {
                             echo "Tài khoản và mật khẩu cũ không đúng";
                         }
@@ -316,16 +326,6 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                         }
         
         
-                        if (empty($errors)) {
-                            echo '<script>
-                                    Swal.fire({
-                                        icon: "success",
-                                        title: "Cập nhật thành công",
-                                        showConfirmButton: false,
-                                        timer: 1500
-                                    });
-                                    </script>';
-                        }
                     }
                     
                 }
