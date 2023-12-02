@@ -256,7 +256,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 
                     exit;
                 }
-                update_taikhoan($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
+                update_taikhoans($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
 
                 echo "<script type='text/javascript'>
                         alert('Sửa thành công!');
@@ -273,53 +273,64 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 echo "ko co id";
             }
             break;
-        case "matkhau":
-            if (!isset($_SESSION['user']['user'])) {
-                header("Location: login.php");
-                exit();
-            }
+            case "matkhau":
+                if (!isset($_SESSION['user']['user'])) {
+                    header("Location: login.php");
+                    exit();
+                }
+                $errors = array();
+    
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    if(isset($_POST['doimatkhau'])){
+                        $tentk = $_POST['tendn'];
+                        $oldPassword = $_POST['old_password'];
+                        $newPassword = $_POST['new_password'];
+                        $confirmPassword = $_POST['confirm_password'];
+                        $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
+                        $sql="SELECT * FROM taikhoan WHERE name='".$tentk."' AND pass='".$oldPassword."' LIMIT 1 ";
+                        $row = pdo_query_one($sql, $tentk, $oldPassword);
 
-            $errors = array();
-
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $tendn = $_POST['tendn'];
-                $oldPassword = $_POST['old_password'];
-                $newPassword = $_POST['new_password'];
-                $confirmPassword = $_POST['confirm_password'];
-
-
-                $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
-
-                foreach ($requiredFields as $field) {
-                    if (empty($_POST[$field])) {
-                        $errors[$field] = 'Vui lòng nhập thông tin.';
+                        if ($row) {
+                            // Thực hiện câu lệnh UPDATE bằng PDO
+                            $sql_update = "UPDATE taikhoan SET name=?, pass=? WHERE name=?";
+                            pdo_execute($sql_update, $tentk, $newPassword, $tentk);
+            
+                            echo "Mật khẩu đã được thay đổi";
+                        } else {
+                            echo "Tài khoản và mật khẩu cũ không đúng";
+                        }
+    
+    
+                        foreach ($requiredFields as $field) {
+                            if (empty($_POST[$field])) {
+                                $errors[$field] = 'Vui lòng nhập thông tin.';
+                            }
+                        }
+                        if (strlen($newPassword) < 6) {
+                            $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
+                        }
+        
+        
+                        if ($newPassword != $confirmPassword) {
+                            $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
+                        }
+        
+        
+                        if (empty($errors)) {
+                            echo '<script>
+                                    Swal.fire({
+                                        icon: "success",
+                                        title: "Cập nhật thành công",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    </script>';
+                        }
                     }
+                    
                 }
-
-
-                if (strlen($newPassword) < 6) {
-                    $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
-                }
-
-
-                if ($newPassword != $confirmPassword) {
-                    $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
-                }
-
-
-                if (empty($errors)) {
-                    echo '<script>
-                            Swal.fire({
-                                icon: "success",
-                                title: "Cập nhật thành công",
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                            </script>';
-                }
-            }
-            include "view/matkhau.php";
-            break;
+                include "view/matkhau.php";
+                break;
         case "cart":
             include "view/cart.php";
             break;

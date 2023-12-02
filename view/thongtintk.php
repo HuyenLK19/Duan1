@@ -82,7 +82,10 @@
                             <div class="address-card__row-title">Địa chỉ email</div>
                             <div class="address-card__row-content">' . $email . '</div>
                         </div>
-                       
+                        <div class="address-card__row">
+                            <div class="address-card__row-title">Mật khẩu</div>
+                            <div class="address-card__row-content">' . $pass . '</div>
+                        </div>
                         <div class="address-card__footer">
                             
                         </div>
