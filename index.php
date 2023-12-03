@@ -237,7 +237,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
                 $tentk = isset($_POST["name"]) ? $_POST["name"] : '';
                 $user = isset($_POST["user"]) ? $_POST["user"] : '';
-                $pass = isset($_POST["pass"]) ? $_POST["pass"] : '';
+                // $pass = isset($_POST["pass"]) ? $_POST["pass"] : '';
                 $hinh = $_FILES['hinh']['name'];
                 $target_dir = "upload/avatar/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
@@ -257,7 +257,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 
                     exit;
                 }
-                update_taikhoans($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
+                update_taikhoans($id, $tentk, $user, $email, $address, $hinh, $tel, $status, $role);
                
                 echo "<script type='text/javascript'>
                         alert('Sửa thành công!');

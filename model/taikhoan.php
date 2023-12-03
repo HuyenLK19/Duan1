@@ -19,12 +19,12 @@
         }
         pdo_execute($sql);
     }
-    function update_taikhoans($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role){
+    function update_taikhoans($id, $tentk, $user, $email, $address, $hinh, $tel, $status, $role){
         if ($hinh != "") {
             $statusValue = !empty($status) ? $status : 'default_value'; 
-            $sql = "UPDATE taikhoan SET name = '$tentk', user = '$user', pass = '$pass', email = '$email', address = '$address', avatar = '$hinh', tel = '$tel' WHERE id = '$id'";
+            $sql = "UPDATE taikhoan SET name = '$tentk', user = '$user', email = '$email', address = '$address', avatar = '$hinh', tel = '$tel' WHERE id = '$id'";
         } else {
-            $sql = "UPDATE taikhoan SET name = '$tentk', user = '$user', pass = '$pass', email = '$email', address = '$address', tel = '$tel' WHERE id = '$id'";
+            $sql = "UPDATE taikhoan SET name = '$tentk', user = '$user', email = '$email', address = '$address', tel = '$tel' WHERE id = '$id'";
         }
         pdo_execute($sql);
     }
