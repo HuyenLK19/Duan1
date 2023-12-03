@@ -178,21 +178,10 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             }
             include "view/dangky.php";
             break;
-        case "sanpham":
-            if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
-                $kyw = $_POST['kyw'];
-            } else {
-                $kyw = "";
-            }
-            if (isset($_GET['iddm']) && ($_GET['iddm']) > 0) {
-                $iddm = $_GET['iddm'];
-            } else {
-                $iddm = 0;
-            }
-            $dssp = list_sanphamnew();
-            // $tendm = load_ten_dm($iddm);
-            include "view/sanpham.php";
-            break;
+            case "sanpham":
+                $dssp = list_sanphamnew();
+                break;
+            
         case "chitietsnpham":
             if (isset($_GET['idsp']) && ($_GET['idsp']) > 0) {
                 $id = $_GET['idsp'];
@@ -215,8 +204,20 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/chitietsanpham.php";
             break;
         case "allsanpham":
-            $list = listall_sanpham();
-            include "view/allsanpham.php";
+            if (isset($_POST['kyw']) && ($_POST['kyw']!="")) {
+                $kyw = $_POST['kyw'];
+
+            }else {
+                $kyw ="";
+            }
+            if (isset($_GET['iddm']) && ($_GET['iddm']>0)) {
+                $iddm = $_GET['iddm'];  
+            }else{
+                $iddm = 0;
+            }
+            $list= search_sanpham_name($kyw,$iddm);
+            $tendm = listall_sanpham($kyw,$iddm);
+            include 'view/allsanpham.php';
             break;
         case "gioithieu":
             include "view/gioithieu.php";
@@ -256,8 +257,8 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
 
                     exit;
                 }
-                update_taikhoan($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
-
+                update_taikhoans($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
+               
                 echo "<script type='text/javascript'>
                         alert('Sửa thành công!');
                         window.location.href='index.php?act=thongtintk'
@@ -273,53 +274,55 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 echo "ko co id";
             }
             break;
-        case "matkhau":
-            if (!isset($_SESSION['user']['user'])) {
-                header("Location: login.php");
-                exit();
-            }
-
-            $errors = array();
-
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $tendn = $_POST['tendn'];
-                $oldPassword = $_POST['old_password'];
-                $newPassword = $_POST['new_password'];
-                $confirmPassword = $_POST['confirm_password'];
-
-
-                $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
-
-                foreach ($requiredFields as $field) {
-                    if (empty($_POST[$field])) {
-                        $errors[$field] = 'Vui lòng nhập thông tin.';
+            case "matkhau":
+                if (!isset($_SESSION['user']['user'])) {
+                    header("Location: view/dangnhap.php");
+                    exit();
+                }
+                $errors = array();
+                $updateSuccess = false; 
+            
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['doimatkhau'])) {
+                    $tentk = $_POST['tendn'];
+                            $oldPassword = $_POST['old_password'];
+                            $newPassword = $_POST['new_password'];
+                            $confirmPassword = $_POST['confirm_password'];
+                            $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
+                            $sql = "SELECT * FROM taikhoan WHERE name=? AND pass=? LIMIT 1";
+                            $row = pdo_query_one($sql, $tentk, $oldPassword);
+            
+                    if ($row) {
+                        if ($newPassword == $confirmPassword && strlen($newPassword) >= 6) {
+                            $sql_update = "UPDATE taikhoan SET pass=? WHERE name=?";
+                            pdo_execute($sql_update, $newPassword, $tentk);
+            
+                            $updateSuccess = true; 
+                        } else {
+                            if ($newPassword != $confirmPassword) {
+                                                    $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
+                                                }
+                                                if (strlen($newPassword) < 6) {
+                                                    $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
+                                                }
+                                            }
+                        
+                    } else {
+                        foreach ($requiredFields as $field) {
+                                            if (empty($_POST[$field])) {
+                                                $errors[$field] = 'Vui lòng nhập thông tin.';
+                                            }
+                                        }
                     }
                 }
-
-
-                if (strlen($newPassword) < 6) {
-                    $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
+                if ($updateSuccess) {
+                    header("Location: index.php?act=formdangnhap");
+                    exit();
                 }
-
-
-                if ($newPassword != $confirmPassword) {
-                    $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
-                }
-
-
-                if (empty($errors)) {
-                    echo '<script>
-                            Swal.fire({
-                                icon: "success",
-                                title: "Cập nhật thành công",
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                            </script>';
-                }
-            }
-            include "view/matkhau.php";
-            break;
+                include "view/matkhau.php";
+                break;
+            
+            
+            
         case "cart":
             include "view/cart.php";
             break;

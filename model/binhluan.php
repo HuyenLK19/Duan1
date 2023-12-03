@@ -15,10 +15,13 @@
     }
 
     function loadall_binhluan($idpro){
-        $sql = "select * from binhluan where 1";
-        if ($idpro>0)$sql.=" AND idpro='".$idpro."'";
-        $sql.=" order by id desc";
-        $listbl=pdo_query($sql);
+        $sql = "SELECT binhluan.*, taikhoan.name as username FROM binhluan
+                INNER JOIN taikhoan ON binhluan.iduser = taikhoan.id
+                WHERE 1";
+        if ($idpro > 0) $sql .= " AND binhluan.idpro = '" . $idpro . "'";
+        $sql .= " ORDER BY binhluan.id DESC";
+        $listbl = pdo_query($sql);
         return $listbl;
     }
+    
 ?>
