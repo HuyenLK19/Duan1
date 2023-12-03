@@ -76,8 +76,6 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                                }
                            });
                        </script>;
-             
-                 
                  <?php
                
             }
@@ -101,10 +99,20 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 insert_danhmuc($tendm, $hinh);
-                echo "<script type='text/javascript'>
-                        alert('Thêm thành công!');
-                        window.location.href='index.php?act=listdm'
-                    </script>";
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Thêm thành công",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listdm'
+                               }
+                           });
+                       </script>;
+                 <?php
+
             };
             include "danhmuc/add.php";
             break;
@@ -124,10 +132,21 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_danhmuc($_GET['id'], $tendm, $hinh);
-                echo "<script type='text/javascript'>
-                        alert('Sửa thành công!');
-                        window.location.href='index.php?act=listdm'
-                    </script>";
+                insert_danhmuc($tendm, $hinh);
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Sửa thành công!",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listdm'
+                               }
+                           });
+                       </script>;
+                 <?php
+               
             }
             $danhmuc = listone_danhmuc($_GET['id']);
             include "danhmuc/edit.php";
