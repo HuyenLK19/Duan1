@@ -64,10 +64,22 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_sanpham($_GET['id'], $tensp, $giasp, $hinh, $mota, $iddm);
-                echo "<script type='text/javascript'>
-                        alert('Sửa thành công!');
-                        window.location.href='index.php?act=listsp'
-                    </script>";
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Sửa thành công!",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listsp'
+                               }
+                           });
+                       </script>;
+             
+                 
+                 <?php
+               
             }
             $listdanhmuc = listall_danhmuc();
             $product = listone_sanpham($_GET['id']);
@@ -142,10 +154,22 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $tel = $_POST["tel"];
                 $role = $_POST["role"];
                 insert_taikhoan($tentk, $user, $pass, $email, $address, $hinh, $tel, $role);
-                echo "<script type='text/javascript'>
-                        alert('Thêm thành công!');
-                        window.location.href='index.php?act=listtk'
-                    </script>";
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Thêm thành công!",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listtk'
+                               }
+                           });
+                       </script>;
+             
+                 
+                 <?php
+               
             }
             include "taikhoan/add.php";
             break;
@@ -174,10 +198,23 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $status = $_POST["status"];
                 $role = $_POST["role"];
                 update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
-                echo "<script type='text/javascript'>
-                        alert('Sửa thành công!');
-                        window.location.href='index.php?act=listtk'
-                    </script>";
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Cập nhật thành công",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listtk'
+                               }
+                           });
+                       </script>;
+             
+                 
+                 <?php
+               
+               
             }
             $tk = listone_taikhoan($_GET['id']);
             include "taikhoan/edit.php";
@@ -187,16 +224,15 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             if (isset($_SESSION['user']['id'])) {
                 $user_id = $_SESSION['user']['id'];
                 $user_info = listone_taikhoan($user_id);
-                
             }
             include "donhang/list.php";
             break;
+           
             case "chitietdonhang":
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $newStatus = $_POST['status'];
                     $orderId = $_GET['id'];
                     if ($newStatus == 0) {
-
                         $query = "UPDATE donhang SET status = 0 WHERE id = ?";
                     } elseif ($newStatus == 1) {
 
@@ -212,7 +248,23 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                         $conn = pdo_get_connection();
                         $stmt = $conn->prepare($query);
                         $stmt->execute([$orderId]);
-                        header("Location: index.php?act=chitietdonhang&id=$orderId");
+                        ?>
+                        <script type='text/javascript'>
+                                   Swal.fire({
+                                       title: "Cập nhật thành công",
+                                       icon: "success",
+                                       confirmButtonText: "OK"
+                                   }).then((result) => {
+                                       if (result.isConfirmed) {
+                                           window.location.href='index.php?act=listbill'
+                                       }
+                                   });
+                               </script>;
+                     
+                         
+                         <?php
+             
+                        // header("Location: index.php?act=chitietdonhang&id=$orderId");
                         exit();
                     } catch (PDOException $e) {
                         echo "Có lỗi xảy ra khi cập nhật trạng thái: " . $e->getMessage();
@@ -224,31 +276,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 include "donhang/chitietdonhang.php";
                 break;
             
-            // case "chitietdonhang":
-            //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //         $newStatus = $_POST['status'];
-            //         $orderId = $_GET['id'];
-            //         $query = "UPDATE donhang SET status = ? WHERE id = ?";
-            //         var_dump($newStatus, $orderId);
-            //         try {
-            //             $conn = pdo_get_connection();
-            //             $stmt = $conn->prepare($query);
-            //             $stmt->execute([$newStatus, $orderId]);
-            
-            //             // Chuyển hướng đến trang chi tiết đơn hàng
-            //             header("Location: index.php?act=chitietdonhang&id=$orderId");
-            //             exit();
-            //         } catch (PDOException $e) {
-            //             echo "Có lỗi xảy ra khi cập nhật trạng thái: " . $e->getMessage();
-            //         } finally {
-            //             unset($conn);
-            //         }
-            //     }
-            
-            //     // Load lại thông tin đơn hàng sau khi cập nhật trạng thái
-            //     $oneBill = listone_donhang($_GET['id']);
-            //     include "donhang/chitietdonhang.php";
-            //     break;
+          
         case "thongke":
             $listthongke = loadall_thongke();
             include "thongke/list.php";

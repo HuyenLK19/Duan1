@@ -54,14 +54,13 @@
                                                     <form class="site__body" method="post" action="index.php?act=chitietdonhang&id=<?php echo $_GET['id'] ?>">
                                                         <input type="hidden" name="orderId" value="<?php echo $_GET['id']; ?>">
                                                         <p><strong>Tình trạng đơn hàng: </strong>
-                                                        
                                                             <select name="status" id="status" class="form-control">
                                                                 <option value="0" <?php echo ($oneBill['status'] == 0) ? 'selected' : ''; ?>>Đang vận chuyển</option>
                                                                 <option value="1" <?php echo ($oneBill['status'] == 1) ? 'selected' : ''; ?>>Đơn hàng bị hủy</option>
                                                                 <option value="2" <?php echo ($oneBill['status'] == 2) ? 'selected' : ''; ?>>Giao hàng thành công</option>
                                                             </select>
                                                         </p>
-                                                        <button type="submit" class="btn btn-primary">Lưu trạng thái</button>
+                                                        <button type="submit" class="btn btn-primary" id="luutrangthai">Lưu trạng thái</button>
                                                     </form>
 
 
@@ -126,23 +125,49 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 <script>
-    $(document).ready(function() {
-        $("form.site__body").submit(function(event) {
+   $(document).ready(function() {
+    $("form.site__body").submit(function(event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: 'index.php?act=chitietdonhang&id=<?php echo $_GET['id'] ?>',
+            data: formData,
+            success: function(response) {
+                // Thực hiện mã JavaScript chỉ khi yêu cầu AJAX thành công
+                Swal.fire({
+                    title: "Lưu trạng thái thành công",
+                    icon: "success",
+                    confirmButtonText: "OK"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'index.php?act=listbill';
+                    }
+                });
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+});
+
+
+</script>
+<!-- 
+<script type='text/javascript'>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('luutrangthai').addEventListener('click', function(event) {
             event.preventDefault();
-            var formData = $(this).serialize();
-            $.ajax({
-                type: 'POST',
-                url: 'index.php?act=chitietdonhang&id=<?php echo $_GET['id'] ?>',
-                data: formData,
-                success: function(response) {
-
-                    console.log(response);
-                },
-                error: function(error) {
-
-                    console.log(error);
+            Swal.fire({
+                title: "Cập nhật thành công",
+                icon: "success",
+                confirmButtonText: "OK"
+            }).then((result) =>{
+                if (result.isConfirmed) {
+                    // window.location.href = 'index.php?act=listbill'
                 }
             });
         });
     });
-</script>
+</script> -->

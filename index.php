@@ -258,11 +258,21 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     exit;
                 }
                 update_taikhoans($id, $tentk, $user, $email, $address, $hinh, $tel, $status, $role);
-               
-                echo "<script type='text/javascript'>
-                        alert('Sửa thành công!');
-                        window.location.href='index.php?act=thongtintk'
-                    </script>";
+               ?>
+                 <script type='text/javascript'>
+                            Swal.fire({
+                                title: "Cập nhật thành công",
+                                icon: "success",
+                                confirmButtonText: "OK"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href='index.php?act=thongtintk'
+                                }
+                            });
+                        </script>;
+              
+                  
+                  <?php
             }
 
             if (isset($_GET['id'])) {
@@ -274,6 +284,8 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 echo "ko co id";
             }
             break;
+
+
             case "matkhau":
                 if (!isset($_SESSION['user']['user'])) {
                     header("Location: view/dangnhap.php");
@@ -315,8 +327,22 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     }
                 }
                 if ($updateSuccess) {
-                    header("Location: index.php?act=formdangnhap");
-                    exit();
+                    ?>
+                    <script type='text/javascript'>
+                               Swal.fire({
+                                   title: "Cập nhật thành công",
+                                   icon: "success",
+                                   confirmButtonText: "OK"
+                               }).then((result) => {
+                                   if (result.isConfirmed) {
+                                       window.location.href='index.php?act=formdangnhap'
+                                   }
+                               });
+                           </script>;
+                 
+                     
+                     <?php
+                   
                 }
                 include "view/matkhau.php";
                 break;
