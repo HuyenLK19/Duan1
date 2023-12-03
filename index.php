@@ -280,23 +280,21 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     exit();
                 }
                 $errors = array();
-    
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    if(isset($_POST['doimatkhau'])){
-                        $tentk = $_POST['tendn'];
-                        $oldPassword = $_POST['old_password'];
-                        $newPassword = $_POST['new_password'];
-                        $confirmPassword = $_POST['confirm_password'];
-                        $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
-                        $sql="SELECT * FROM taikhoan WHERE name='".$tentk."' AND pass='".$oldPassword."' LIMIT 1 ";
-                        $row = pdo_query_one($sql, $tentk, $oldPassword);
-
-                        if ($row) {
-                            $sql_update = "UPDATE taikhoan SET name=?, pass=? WHERE name=?";
-                            pdo_execute($sql_update, $tentk, $newPassword, $tentk);
             
-                            
-                        if (empty($errors)) {
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['doimatkhau'])) {
+                    $tentk = $_POST['tendn'];
+                    $oldPassword = $_POST['old_password'];
+                    $newPassword = $_POST['new_password'];
+                    $confirmPassword = $_POST['confirm_password'];
+                    $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
+                    $sql = "SELECT * FROM taikhoan WHERE name=? AND pass=? LIMIT 1";
+                    $row = pdo_query_one($sql, $tentk, $oldPassword);
+            
+                    if ($row) {
+                        if ($newPassword == $confirmPassword && strlen($newPassword) >= 6) {
+                            $sql_update = "UPDATE taikhoan SET pass=? WHERE name=?";
+                            pdo_execute($sql_update, $newPassword, $tentk);
+            
                             echo '<script>
                                     Swal.fire({
                                         icon: "success",
@@ -304,33 +302,27 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                                         showConfirmButton: false,
                                         timer: 1500
                                     });
-                                    </script>';
-                        }
+                                  </script>';
                         } else {
-                            echo "Tài khoản và mật khẩu cũ không đúng";
+                            if ($newPassword != $confirmPassword) {
+                                $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
+                            }
+                            if (strlen($newPassword) < 6) {
+                                $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
+                            }
                         }
-    
-    
+                    } else {
                         foreach ($requiredFields as $field) {
                             if (empty($_POST[$field])) {
                                 $errors[$field] = 'Vui lòng nhập thông tin.';
                             }
                         }
-                        if (strlen($newPassword) < 6) {
-                            $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
-                        }
-        
-        
-                        if ($newPassword != $confirmPassword) {
-                            $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
-                        }
-        
-        
                     }
-                    
                 }
+            
                 include "view/matkhau.php";
                 break;
+            
         case "cart":
             include "view/cart.php";
             break;
