@@ -32,7 +32,6 @@ $dsbl = loadall_binhluan($idpro);
     overflow-y: auto;
     border: .1px solid #D3D6DA;
     padding: 10px auto;
-
 }
 tr.row-comment {
     width: 100%;

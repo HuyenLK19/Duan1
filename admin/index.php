@@ -168,9 +168,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $target_dir = "../upload/avatar/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
                 } else {
-                    // echo "Sorry, there was an error uploading your file.";
                 }
                 $tel = $_POST["tel"];
                 $status = $_POST["status"];
@@ -193,10 +191,64 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             }
             include "donhang/list.php";
             break;
-        case "chitietdonhang":
-            $oneBill = listone_donhang($_GET['id']);
-            include "donhang/chitietdonhang.php";
-            break;
+            case "chitietdonhang":
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $newStatus = $_POST['status'];
+                    $orderId = $_GET['id'];
+                    if ($newStatus == 0) {
+
+                        $query = "UPDATE donhang SET status = 0 WHERE id = ?";
+                    } elseif ($newStatus == 1) {
+
+                        $query = "UPDATE donhang SET status = 1 WHERE id = ?";
+                    } elseif ($newStatus == 2) {
+
+                        $query = "UPDATE donhang SET status = 2 WHERE id = ?";
+                    } else {
+                        echo "Trạng thái không hợp lệ!";
+                        exit();
+                    }
+                    try {
+                        $conn = pdo_get_connection();
+                        $stmt = $conn->prepare($query);
+                        $stmt->execute([$orderId]);
+                        header("Location: index.php?act=chitietdonhang&id=$orderId");
+                        exit();
+                    } catch (PDOException $e) {
+                        echo "Có lỗi xảy ra khi cập nhật trạng thái: " . $e->getMessage();
+                    } finally {
+                        unset($conn);
+                    }
+                }
+                $oneBill = listone_donhang($_GET['id']);
+                include "donhang/chitietdonhang.php";
+                break;
+            
+            // case "chitietdonhang":
+            //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //         $newStatus = $_POST['status'];
+            //         $orderId = $_GET['id'];
+            //         $query = "UPDATE donhang SET status = ? WHERE id = ?";
+            //         var_dump($newStatus, $orderId);
+            //         try {
+            //             $conn = pdo_get_connection();
+            //             $stmt = $conn->prepare($query);
+            //             $stmt->execute([$newStatus, $orderId]);
+            
+            //             // Chuyển hướng đến trang chi tiết đơn hàng
+            //             header("Location: index.php?act=chitietdonhang&id=$orderId");
+            //             exit();
+            //         } catch (PDOException $e) {
+            //             echo "Có lỗi xảy ra khi cập nhật trạng thái: " . $e->getMessage();
+            //         } finally {
+            //             unset($conn);
+            //         }
+            //     }
+            
+            //     // Load lại thông tin đơn hàng sau khi cập nhật trạng thái
+            //     $oneBill = listone_donhang($_GET['id']);
+            //     include "donhang/chitietdonhang.php";
+            //     break;
         case "thongke":
             $listthongke = loadall_thongke();
             include "thongke/list.php";

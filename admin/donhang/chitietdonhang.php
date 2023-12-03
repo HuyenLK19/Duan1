@@ -1,14 +1,15 @@
 <!-- site__body -->
 <style>
-    .text-sm-left{
+    .text-sm-left {
 
         margin-left: -100px;
         font-size: 17px;
     }
-  .checkout__totals-header{
-    height: 150px;
-    font-size: 16px;
-  }
+
+    .checkout__totals-header {
+        height: 150px;
+        font-size: 16px;
+    }
 </style>
 <form class="site__body" method="post" action="index.php?act=checkout">
     <div class="page-header">
@@ -49,19 +50,28 @@
                                             <div class="row mt-3">
                                                 <div class="col-sm-6">
                                                     <!-- <p><strong>Ngày đặt hàng: </strong><?php echo $oneBill['ngaydathang'] ?></p> -->
-                                                    <p><strong>Tình trạng đơn hàng: </strong><?php if ($oneBill['status'] == 0) { ?>
-                                                            <span class="badge badge-success">Đang được vận chuyển</span>
+
+                                                    <form class="site__body" method="post" action="index.php?act=chitietdonhang&id=<?php echo $_GET['id'] ?>">
+                                                        <input type="hidden" name="orderId" value="<?php echo $_GET['id']; ?>">
+                                                        <p><strong>Tình trạng đơn hàng: </strong>
+                                                        
+                                                            <select name="status" id="status" class="form-control">
+                                                                <option value="0" <?php echo ($oneBill['status'] == 0) ? 'selected' : ''; ?>>Đang vận chuyển</option>
+                                                                <option value="1" <?php echo ($oneBill['status'] == 1) ? 'selected' : ''; ?>>Đơn hàng bị hủy</option>
+                                                                <option value="2" <?php echo ($oneBill['status'] == 2) ? 'selected' : ''; ?>>Giao hàng thành công</option>
+                                                            </select>
+                                                        </p>
+                                                        <button type="submit" class="btn btn-primary">Lưu trạng thái</button>
+                                                    </form>
+
+
+                                                    <p><strong>Phương Thức thanh toán: <br> </strong><?php if ($oneBill['pttt'] == 1) { ?>
+                                                            <span class="badge badge-success">Thanh toán trực tiếp</span>
                                                     </p>
                                                 <?php } else { ?>
-                                                    <span class="badge badge-dark">Đã bị hủy</span></p>
-                                                <?php } ?>
-                                                <p><strong>Phương Thức thanh toán: <br> </strong><?php if ($oneBill['pttt'] == 1) { ?>
-                                                        <span class="badge badge-success">Thanh toán trực tiếp</span>
-                                                </p>
-                                            <?php } else { ?>
-                                                <span class="badge badge-dark">Chuyển khoản</span></p>
+                                                    <span class="badge badge-dark">Chuyển khoản</span></p>
 
-                                            <?php } ?>
+                                                <?php } ?>
 
                                                 </div>
                                                 <div class="col-sm-6">
@@ -77,7 +87,7 @@
                     <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
                         <div class="card mb-0" style="border: 0px;">
                             <div class="card-body">
-                                <h2 >Đơn hàng </h2>
+                                <h2>Đơn hàng </h2>
                                 <table class="checkout__totals">
                                     <thead class="checkout__totals-header">
                                         <tr>
@@ -85,10 +95,10 @@
                                             <td style="position: relative; left: 5px; bottom: 10px; width: 200px;"><?php echo $oneBill['tensp'] ?> <br> × <?php echo $oneBill['soluong'] ?></td>
                                             <td style="position: relative; right: 190px; top: 20px; color: red;"><?php echo $oneBill['soluong'] * $oneBill['giasp'] ?> VNĐ</td>
                                         </tr>
-                                    </thead>    
+                                    </thead>
                                 </table>
                                 <p style="margin-bottom: 5px; font-size: 16px; "><b>Thời gian đặt hàng</b></p>
-                                <?php echo $oneBill['ngaydathang'] ?> 
+                                <?php echo $oneBill['ngaydathang'] ?>
                                 <input type="hidden" value="<?= $cart_total ?>" name="tong">
                             </div>
                         </div>
@@ -111,4 +121,28 @@
             document.getElementById('checkout').disabled = true;
         }
     }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("form.site__body").submit(function(event) {
+            event.preventDefault();
+            var formData = $(this).serialize();
+            $.ajax({
+                type: 'POST',
+                url: 'index.php?act=chitietdonhang&id=<?php echo $_GET['id'] ?>',
+                data: formData,
+                success: function(response) {
+
+                    console.log(response);
+                },
+                error: function(error) {
+
+                    console.log(error);
+                }
+            });
+        });
+    });
 </script>

@@ -315,59 +315,13 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     }
                 }
                 if ($updateSuccess) {
-                    header("Location: view/dangnhap.php");
+                    header("Location: index.php?act=formdangnhap");
                     exit();
                 }
                 include "view/matkhau.php";
                 break;
             
-            // case "matkhau":
-            //     if (!isset($_SESSION['user']['user'])) {
-            //         header("Location: login.php");
-            //         exit();
-            //     }
-            //     $errors = array();
             
-            //     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['doimatkhau'])) {
-            //         $tentk = $_POST['tendn'];
-            //         $oldPassword = $_POST['old_password'];
-            //         $newPassword = $_POST['new_password'];
-            //         $confirmPassword = $_POST['confirm_password'];
-            //         $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
-            //         $sql = "SELECT * FROM taikhoan WHERE name=? AND pass=? LIMIT 1";
-            //         $row = pdo_query_one($sql, $tentk, $oldPassword);
-            //         if ($row) {
-            //             if ($newPassword == $confirmPassword && strlen($newPassword) >= 6) {
-            //                 $sql_update = "UPDATE taikhoan SET pass=? WHERE name=?";
-            //                 pdo_execute($sql_update, $newPassword, $tentk);
-            
-            //                 echo '<script>
-            //                         Swal.fire({
-            //                             icon: "success",
-            //                             title: "Cập nhật thành công",
-            //                             showConfirmButton: false,
-            //                             timer: 1500
-            //                         });
-            //                       </script>';
-            //             } else {
-            //                 if ($newPassword != $confirmPassword) {
-            //                     $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
-            //                 }
-            //                 if (strlen($newPassword) < 6) {
-            //                     $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
-            //                 }
-            //             }
-            //         } else {
-            //             foreach ($requiredFields as $field) {
-            //                 if (empty($_POST[$field])) {
-            //                     $errors[$field] = 'Vui lòng nhập thông tin.';
-            //                 }
-            //             }
-            //         }
-            //     }
-            
-            //     include "view/matkhau.php";
-            //     break;
             
         case "cart":
             include "view/cart.php";
