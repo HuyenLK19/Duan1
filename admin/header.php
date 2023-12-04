@@ -13,6 +13,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="css/images/favicon.ico">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <!-- third party css -->
     <link href="css/libs/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />

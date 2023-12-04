@@ -47,7 +47,6 @@
 
 <!-- KNOB JS -->
 <script src="css/libs/jquery-knob/jquery.knob.min.js"></script>
-
 <script src="css/js/pages/flot.init.js"></script>
 
 <!-- Required datatable js -->

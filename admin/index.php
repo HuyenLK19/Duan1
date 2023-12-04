@@ -185,12 +185,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             include "taikhoan/edit.php";
             break;
         case "listbill":
-            $listdh = listone_donhang_user($_SESSION['user']['id']);
-            if (isset($_SESSION['user']['id'])) {
-                $user_id = $_SESSION['user']['id'];
-                $user_info = listone_taikhoan($user_id);
-                
-            }
+            $listdh = listall_donhang();
             include "donhang/list.php";
             break;
         case "chitietdonhang":
@@ -202,7 +197,8 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             include "thongke/list.php";
             break;
         case "bieudo":
-            $listthongke = loadall_thongke();
+            $banchay = top5_daban();
+            $view = top5_view();
             include "thongke/chart.php";
             break;
     }

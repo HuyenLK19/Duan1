@@ -26,8 +26,8 @@
                                                     <div class="text-sm-left">
                                                         <h5 class="font-16">Địa chỉ nhận hàng:</h5>
                                                         <address class="line-h-24">
-                                                            Tên người nhận: <?php echo $oneBill['tentk'] ?><br>
-                                                            Địa chỉ: <?php echo $oneBill['diachi'] ?><br>
+                                                            Tên người nhận: <?php echo $oneBill['name'] ?><br>
+                                                            Địa chỉ: <?php echo $oneBill['address'] ?><br>
                                                             SĐT: <?php echo $oneBill['tel'] ?>
                                                         </address>
                                                     </div>

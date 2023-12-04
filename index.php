@@ -27,7 +27,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 if (is_array($check_login)) {
                     $_SESSION['cart'] = [];
                     $_SESSION['user'] = $check_login;
-                    ?>
+?>
                     <script type='text/javascript'>
                         Swal.fire({
                             title: "Đăng nhập thành công!",
@@ -42,7 +42,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     <?php
                 } else {
                     $thongbao = $check_login;
-                    if (strlen($check_login) == 48) {
+                    if (strlen($check_login) < 50) {
                     ?>
                         <script type='text/javascript'>
                             Swal.fire({
@@ -51,26 +51,27 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                                 confirmButtonText: "OK"
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.href = "index.php";
+                                    window.location.href = "index.php?act=formdangnhap";
                                 }
                             });
                         </script>;
                     <?php
-                    } else ?>
-                    <script type='text/javascript'>
-                        Swal.fire({
-                            title: "<?= $thongbao ?>",
-                            icon: "error",
-                            confirmButtonText: "OK"
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                window.location.href = "index.php?act=dangky";
-                            }
-                        });
-                    </script>;
-                <?php
+                    } else { ?>
+                        <script type='text/javascript'>
+                            Swal.fire({
+                                title: "<?= $thongbao ?>",
+                                icon: "error",
+                                confirmButtonText: "OK"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = "index.php?act=dangky";
+                                }
+                            });
+                        </script>;
+                    <?php
+                    };
                 }
-            }
+            };
             break;
         case "quenmk":
             if (isset($_POST['khoiphuc'])) {
@@ -79,7 +80,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $thongbao = "Mật khẩu của bạn là: " . repass($user, $email)['pass'];
                 if (!is_array(repass($user, $email))) {
                     $thongbao = "Tài khoản không tồn tại!";
-                ?>
+                    ?>
                     <script type='text/javascript'>
                         Swal.fire({
                             title: "<?= $thongbao ?>",
@@ -178,20 +179,8 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             }
             include "view/dangky.php";
             break;
-            case "sanpham":
-                $dssp = list_sanphamnew();
-                break;
-            
-        case "chitietsnpham":
-            if (isset($_GET['idsp']) && ($_GET['idsp']) > 0) {
-                $id = $_GET['idsp'];
-                $onesp = listall_sanpham($id);
-                extract($onesp);
-                // $sp_cungloai = load_sanpham_cungloai($id);
-                include "view/sanphamct.php";
-            } else {
-                include "view/home.php";
-            }
+        case "sanpham":
+            $dssp = list_sanphamnew();
             break;
         case "danhmuc":
             $dm = listone_danhmuc($_GET['id']);
@@ -199,24 +188,24 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/danhmuc.php";
             break;
         case "chitietsanpham":
+            pdo_execute("UPDATE sanpham SET view = view + 1 WHERE id = ".$_GET['idsp']);
             $ctsp = listone_sanpham($_GET['idsp']);
             $list = listsptheodm($ctsp['iddm']);
             include "view/chitietsanpham.php";
             break;
         case "allsanpham":
-            if (isset($_POST['kyw']) && ($_POST['kyw']!="")) {
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
                 $kyw = $_POST['kyw'];
-
-            }else {
-                $kyw ="";
+            } else {
+                $kyw = "";
             }
-            if (isset($_GET['iddm']) && ($_GET['iddm']>0)) {
-                $iddm = $_GET['iddm'];  
-            }else{
+            if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
+                $iddm = $_GET['iddm'];
+            } else {
                 $iddm = 0;
             }
-            $list= search_sanpham_name($kyw,$iddm);
-            $tendm = listall_sanpham($kyw,$iddm);
+            $list = search_sanpham_name($kyw, $iddm);
+            $tendm = listall_sanpham($kyw, $iddm);
             include 'view/allsanpham.php';
             break;
         case "gioithieu":
@@ -258,7 +247,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     exit;
                 }
                 update_taikhoans($id, $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
-               
+
                 echo "<script type='text/javascript'>
                         alert('Sửa thành công!');
                         window.location.href='index.php?act=thongtintk'
@@ -274,63 +263,58 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 echo "ko co id";
             }
             break;
-            case "matkhau":
-                if (!isset($_SESSION['user']['user'])) {
-                    header("Location: login.php");
-                    exit();
-                }
-                $errors = array();
-    
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    if(isset($_POST['doimatkhau'])){
-                        $tentk = $_POST['tendn'];
-                        $oldPassword = $_POST['old_password'];
-                        $newPassword = $_POST['new_password'];
-                        $confirmPassword = $_POST['confirm_password'];
-                        $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
-                        $sql="SELECT * FROM taikhoan WHERE name='".$tentk."' AND pass='".$oldPassword."' LIMIT 1 ";
-                        $row = pdo_query_one($sql, $tentk, $oldPassword);
+        case "matkhau":
+            if (!isset($_SESSION['user']['user'])) {
+                header("Location: login.php");
+                exit();
+            }
+            $errors = array();
 
-                        if ($row) {
-                            $sql_update = "UPDATE taikhoan SET name=?, pass=? WHERE name=?";
-                            pdo_execute($sql_update, $tentk, $newPassword, $tentk);
-            
-                            
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_POST['doimatkhau'])) {
+                    $tentk = $_POST['tendn'];
+                    $oldPassword = $_POST['old_password'];
+                    $newPassword = $_POST['new_password'];
+                    $confirmPassword = $_POST['confirm_password'];
+                    $requiredFields = ['tendn', 'old_password', 'new_password', 'confirm_password'];
+                    $sql = "SELECT * FROM taikhoan WHERE name='" . $tentk . "' AND pass='" . $oldPassword . "' LIMIT 1 ";
+                    $row = pdo_query_one($sql, $tentk, $oldPassword);
+
+                    if ($row) {
+                        $sql_update = "UPDATE taikhoan SET name=?, pass=? WHERE name=?";
+                        pdo_execute($sql_update, $tentk, $newPassword, $tentk);
                         if (empty($errors)) {
                             echo '<script>
-                                    Swal.fire({
-                                        icon: "success",
-                                        title: "Cập nhật thành công",
-                                        showConfirmButton: false,
-                                        timer: 1500
-                                    });
-                                    </script>';
+                                        Swal.fire({
+                                            icon: "success",
+                                            title: "Cập nhật thành công",
+                                            showConfirmButton: false,
+                                            timer: 1500
+                                        });
+                                        </script>';
                         }
-                        } else {
-                            echo "Tài khoản và mật khẩu cũ không đúng";
-                        }
-    
-    
-                        foreach ($requiredFields as $field) {
-                            if (empty($_POST[$field])) {
-                                $errors[$field] = 'Vui lòng nhập thông tin.';
-                            }
-                        }
-                        if (strlen($newPassword) < 6) {
-                            $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
-                        }
-        
-        
-                        if ($newPassword != $confirmPassword) {
-                            $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
-                        }
-        
-        
+                    } else {
+                        echo "Tài khoản và mật khẩu cũ không đúng";
                     }
-                    
+
+
+                    foreach ($requiredFields as $field) {
+                        if (empty($_POST[$field])) {
+                            $errors[$field] = 'Vui lòng nhập thông tin.';
+                        }
+                    }
+                    if (strlen($newPassword) < 6) {
+                        $errors['new_password'] = 'Mật khẩu mới phải chứa ít nhất 6 ký tự.';
+                    }
+
+
+                    if ($newPassword != $confirmPassword) {
+                        $errors['confirm_password'] = 'Mật khẩu và xác nhận mật khẩu mới không khớp.';
+                    }
                 }
-                include "view/matkhau.php";
-                break;
+            }
+            include "view/matkhau.php";
+            break;
         case "cart":
             include "view/cart.php";
             break;
@@ -351,10 +335,14 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
         case "checkout":
             if (isset($_POST['checkout'])) {
                 $id = $_SESSION['user']['id'];
+                $name = $_POST['name'];
+                $address = $_POST['address'];
+                $mail = $_POST['mail'];
+                $tel = $_POST['tel'];
                 $pttt = $_POST['checkout_payment_method'];
                 $tong = $_POST['tong'];
                 foreach ($_SESSION['cart'] as $cart) {
-                    pdo_execute("INSERT INTO donhang(pttt, tong, soluong, idpro, iduser) VALUES('$pttt', '$tong', '$cart[1]', '$cart[0]', '$id')");
+                    insert_donhang($name, $address, $mail, $tel, $pttt, $tong, $cart[1], $cart[0], $id);
                 }
                 $_SESSION['cart'] = [];
                 ?>
@@ -369,7 +357,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                         }
                     });
                 </script>
-                <?php
+<?php
             }
             include "view/checkout.php";
             break;

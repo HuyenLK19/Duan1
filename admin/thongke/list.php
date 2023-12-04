@@ -17,6 +17,7 @@
                         <th>Hình Ảnh</th>
                         <th>Tên sản phẩm</th>
                         <th>Số Lượng Đã Bán</th>
+                        <th>Số lượt xem</th>
                         <th>Kho</th>
                     </tr>
                 </thead>
@@ -30,7 +31,8 @@
                             <td><?= $id ?></td>
                             <td><img src="../upload/product/<?= $img ?>" alt="" style="width: 80px;"></td>
                             <td><?= $name ?></td>
-                            <td></td>
+                            <td><?= $daban ?></td>
+                            <td><?= $view ?></td>
                             <td><?= $kho ?></td>
                         </tr>
                     <?php

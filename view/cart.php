@@ -54,19 +54,20 @@
                             <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
                                 <div class="input-number">
                                     <input class="form-control input-number__input" type="number" min="1" value="<?php echo $cart[1] ?>">
-                                    <div class="input-number__add" onclick="incre(<?=$sp['id']?>)"></div>
-                                    <div class="input-number__sub" onclick="decre(<?=$sp['id']?>)"></div>
+                                    <div class="input-number__add" onclick="incre(<?= $sp['id'] ?>)"></div>
+                                    <div class="input-number__sub" onclick="decre(<?= $sp['id'] ?>)"></div>
                                 </div>
                             </td>
-                            <td class="cart-table__column cart-table__column--total" data-title="Total"><?php echo $cart[1]*$sp['price'] ?> VNĐ</td>
+                            <td class="cart-table__column cart-table__column--total" data-title="Total"><?php echo $cart[1] * $sp['price'] ?> VNĐ</td>
                             <td class="cart-table__column cart-table__column--remove">
                                 <button type="button" class="btn btn-light btn-sm btn-svg-icon" onclick="delCart(<?php echo $sp['id'] ?>)">
                                     <svg width="12px" height="12px">
                                         <use xlink:href="css/images/sprite.svg#cross-12"></use>
-                                    </svg></button></td>
+                                    </svg></button>
+                            </td>
                         </tr>
                     <?php
-                    $cart_total += $sp['price']*$cart[1];
+                        $cart_total += $sp['price'] * $cart[1];
                     }
                     ?>
                 </tbody>
@@ -99,22 +100,22 @@
                                 <tfoot class="cart__totals-footer">
                                     <tr>
                                         <th>Tổng tiền</th>
-                                        <td><?php 
-                                        if ($cart_total != 0){
-                                            echo $cart_total + 25000;
-                                        } else echo 0;
-                                        ?> VNĐ</td>
+                                        <td><?php
+                                            if ($cart_total != 0) {
+                                                echo $cart_total + 25000;
+                                            } else echo 0;
+                                            ?> VNĐ</td>
                                     </tr>
                                 </tfoot>
                             </table>
                             <?php
-                            if (count($_SESSION['cart']) == 0){
+                            if (count($_SESSION['cart']) == 0) {
                             ?>
-                            <button class="btn btn-secondary btn-xl btn-block cart__checkout-button" disabled>Thanh toán</button>
+                                <button class="btn btn-secondary btn-xl btn-block cart__checkout-button" disabled>Thanh toán</button>
                             <?php
                             } else {
                             ?>
-                            <a class="btn btn-primary btn-xl btn-block cart__checkout-button" href="index.php?act=checkout">Thanh toán</a>
+                                <a class="btn btn-primary btn-xl btn-block cart__checkout-button" href="index.php?act=checkout">Thanh toán</a>
                             <?php
                             }
                             ?>
@@ -140,6 +141,18 @@
             }
         }).responseText;
         document.getElementById("cartbody").innerHTML = result;
+        var result = $.ajax({
+            type: "POST",
+            url: "http://localhost/Duan1/view/headerCart.php?act=abcd",
+            param: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: false,
+            success: function(data) {
+
+            }
+        }).responseText;
+        document.getElementById("dropdowncart").innerHTML = result;
     }
 
     decre = (id) => {
@@ -155,6 +168,18 @@
             }
         }).responseText;
         document.getElementById("cartbody").innerHTML = result;
+        var result = $.ajax({
+            type: "POST",
+            url: "http://localhost/Duan1/view/headerCart.php?act=abcd",
+            param: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: false,
+            success: function(data) {
+
+            }
+        }).responseText;
+        document.getElementById("dropdowncart").innerHTML = result;
     }
 
     delCart = (id) => {

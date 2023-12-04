@@ -1,5 +1,5 @@
 <!-- site__body -->
-<form class="site__body" method="post" action="index.php?act=checkout">
+<form class="site__body" method="post" action="index.php?act=checkout" id="checkform">
     <div class="page-header">
         <div class="page-header__container container">
             <div class="page-header__title">
@@ -14,19 +14,25 @@
                     <div class="card mb-lg-0">
                         <div class="card-body">
                             <h3 class="card-title">Hóa đơn</h3>
-                            <div class="form-group"><label for="checkout-first-name">Họ tên</label>
-                                <input type="text" class="form-control" placeholder="<?= $_SESSION['user']['name'] ?>" id="checkout-first-name">
+                            <div class="form-group"><label for="name">Họ tên</label>
+                                <input type="text" class="form-control" value="<?= $_SESSION['user']['name'] ?>" name="name">
                             </div>
-                            <div class="form-group"><label for="checkout-street-address">Địa chỉ</label>
-                                <input type="text" class="form-control" placeholder="<?= $_SESSION['user']['address'] ?>" id="checkout-street-address">
+                            <div class="form-group"><label for="address">Địa chỉ</label>
+                                <input type="text" class="form-control" value="<?= $_SESSION['user']['address'] ?>" name="address">
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-6"><label for="checkout-email">Địa chỉ email</label>
-                                    <input type="email" class="form-control" placeholder="<?= $_SESSION['user']['email'] ?>" id="checkout-email">
+                                <div class="form-group col-md-6"><label for="mail">Địa chỉ mail</label>
+                                    <input type="email" class="form-control" value="<?= $_SESSION['user']['email'] ?>" name="mail">
                                 </div>
-                                <div class="form-group col-md-6"><label for="checkout-phone">Điện thoại</label> <input type="text" class="form-control" placeholder="<?= $_SESSION['user']['tel'] ?>" id="checkout-phone"></div>
+                                <div class="form-group col-md-6"><label for="tel">Điện thoại</label>
+                                    <input type="text" class="form-control" value="<?= $_SESSION['user']['tel'] ?>" name="tel">
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 20px;">
+                        Voucher <input id="voucher" type="text" class="form-control" placeholder="Nhập mã giảm giá" style="display: inline-block; width: 400px;">
+                        <div onclick="checkvoucher(document.getElementById('voucher').value)" class="btn btn-primary">Áp dụng</div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
@@ -108,20 +114,21 @@
                                     </li>
                                 </ul>
                             </div>
-                            <input type="hidden" value="<?=$cart_total?>" name="tong">
+                            <input type="hidden" value="<?= $cart_total ?>" name="tong">
                             <div class="checkout__agree form-group">
                                 <div class="form-check" onclick="checkterm()">
                                     <span class="form-check-input input-check">
                                         <span class="input-check__body">
-                                            <input class="input-check__input" type="checkbox" id="checkout-terms"> 
-                                            <span class="input-check__box"></span> 
+                                            <input class="input-check__input" type="checkbox" id="checkout-terms">
+                                            <span class="input-check__box"></span>
                                             <svg class="input-check__icon" width="9px" height="7px">
                                                 <use xlink:href="css/images/sprite.svg#check-9x7"></use>
-                                            </svg> 
+                                            </svg>
                                         </span>
                                     </span>
                                     <label class="form-check-label" for="checkout-terms">Tôi đã đọc và đồng ý với các điều khoản và điều kiện của trang
-                                            web*</label></div>
+                                        web*</label>
+                                </div>
                             </div><button type="submit" id="checkout" name="checkout" class="btn btn-secondary btn-xl btn-block" disabled>Đặt hàng</button>
                         </div>
                     </div>
@@ -132,8 +139,23 @@
 </form>
 <!-- site__body / end -->
 <script>
+    checkvoucher = (value) => {
+        var result = $.ajax({
+            type: "POST",
+            url: "http://localhost/Duan1/view/checkoutAjax.php?v=" + value,
+            param: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: false,
+            success: function() {
+
+            }
+        }).responseText;
+        document.getElementById("checkform").innerHTML = result;
+    };
+
     checkterm = () => {
-        if(document.getElementById('checkout-terms').checked == false){
+        if (document.getElementById('checkout-terms').checked == false) {
             document.getElementById('checkout-terms').checked = true;
             document.getElementById('checkout').className = 'btn btn-primary btn-xl btn-block';
             document.getElementById('checkout').disabled = false;
@@ -141,8 +163,6 @@
             document.getElementById('checkout-terms').checked = false;
             document.getElementById('checkout').className = 'btn btn-secondary btn-xl btn-block';
             document.getElementById('checkout').disabled = true;
-        }
-    }
-
-
+        };
+    };
 </script>

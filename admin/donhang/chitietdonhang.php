@@ -23,10 +23,10 @@
                 <!-- end col -->
                 <div class="col-4 offset-2">
                     <div class="text-sm-right">
-                        <h5 class="font-16">Địa chỉ giao hàng <?php echo $oneBill['diachi'] ?></h5>
+                        <h5 class="font-16">Địa chỉ giao hàng <?php echo $oneBill['address'] ?></h5>
                         <address class="line-h-24">
-                            Tên người nhận: <?php echo $oneBill['tentk'] ?><br>
-                            Địa chỉ: <?php echo $oneBill['diachi'] ?><br>
+                            Tên người nhận: <?php echo $oneBill['name'] ?><br>
+                            Địa chỉ: <?php echo $oneBill['address'] ?><br>
                             SĐT: <?php echo $oneBill['tel'] ?>
                         </address>
                     </div>

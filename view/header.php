@@ -31,7 +31,6 @@
     <?php
     $soluong = 0;
     $cart_total = 0;
-    $sp = pdo_query_one("SELECT kho FROM sanpham WHERE id = '41'");
     if (isset($_SESSION['cart'])) {
         foreach ($_SESSION['cart'] as $cart) {
             $soluong += $cart[1];
