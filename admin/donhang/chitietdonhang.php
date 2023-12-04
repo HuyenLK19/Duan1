@@ -38,8 +38,8 @@
                                                     <div class="text-sm-left">
                                                         <h5 class="font-16">Địa chỉ nhận hàng:</h5>
                                                         <address class="line-h-24">
-                                                            Tên người nhận: <?php echo $oneBill['tentk'] ?><br>
-                                                            Địa chỉ: <?php echo $oneBill['diachi'] ?><br>
+                                                            Tên người nhận: <?php echo $oneBill['name'] ?><br>
+                                                            Địa chỉ: <?php echo $oneBill['address'] ?><br>
                                                             SĐT: <?php echo $oneBill['tel'] ?>
                                                         </address>
                                                     </div>
@@ -67,7 +67,7 @@
                                                     <p><strong>Phương Thức thanh toán: <br> </strong><?php if ($oneBill['pttt'] == 1) { ?>
                                                             <span class="badge badge-success">Thanh toán trực tiếp</span>
                                                     </p>
-                                                <?php } else { ?>
+                                                <?php } else { ?>   
                                                     <span class="badge badge-dark">Chuyển khoản</span></p>
 
                                                 <?php } ?>
@@ -92,7 +92,7 @@
                                         <tr>
                                             <td><img src="../upload/product/<?= $oneBill['img'] ?>" style="width: 80px;border: 2px solid #f0f0f0;" alt=""></td>
                                             <td style="position: relative; left: 5px; bottom: 10px; width: 200px;"><?php echo $oneBill['tensp'] ?> <br> × <?php echo $oneBill['soluong'] ?></td>
-                                            <td style="position: relative; right: 190px; top: 20px; color: red;"><?php echo $oneBill['soluong'] * $oneBill['giasp'] ?> VNĐ</td>
+                                            <td style="position: relative; right: 190px; top: 30px; color: red; width: 100px;"><?php echo $oneBill['soluong'] * $oneBill['giasp'] ?> VNĐ</td>
                                         </tr>
                                     </thead>
                                 </table>

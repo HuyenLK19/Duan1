@@ -74,3 +74,8 @@ function top5_view(){
     $sql = "SELECT * FROM sanpham ORDER BY view DESC LIMIT 5";
     return pdo_query($sql);
 }
+
+function tonkho($id){
+    $sql = "SELECT * FROM sanpham WHERE id = '$id'";
+    return pdo_query_one($sql);
+}

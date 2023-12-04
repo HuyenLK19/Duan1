@@ -3,15 +3,16 @@ session_start();
 include "../model/sanpham.php";
 include "../model/pdo.php";
 include "../model/cart.php";
-if (isset($_GET['id']) && $_GET['act'] == 'del'){
+
+if (isset($_GET['id']) && $_GET['act'] == 'del') {
     del_giohang($_GET['id']);
 }
 
-if (isset($_GET['id']) && $_GET['act'] == 'incre'){
+if (isset($_GET['id']) && $_GET['act'] == 'incre') {
     incre($_GET['id']);
 }
 
-if (isset($_GET['id']) && $_GET['act'] == 'decre'){
+if (isset($_GET['id']) && $_GET['act'] == 'decre') {
     decre($_GET['id']);
 }
 
@@ -54,12 +55,14 @@ if (isset($_GET['id']) && $_GET['act'] == 'decre'){
                 $cart_total = 0;
                 foreach ($_SESSION['cart'] as $cart) {
                     $sp = listone_sanpham($cart[0]);
+                    $idsp = $sp['id'];
+                    $kho = tonkho($cart[0]);
                 ?>
                     <tr class="cart-table__row">
                         <td class="cart-table__column cart-table__column--image">
                             <div class="product-image">
                                 <a href="#" class="product-image__body">
-                                    <img class="product-image__img" src="upload/product/<?php echo $sp['img'] ?>" alt="">
+                                    <img class="product-image__img" src="upload/product/<?php echo $sp['img'] ?>">
                                 </a>
                             </div>
                         </td>
@@ -67,11 +70,29 @@ if (isset($_GET['id']) && $_GET['act'] == 'decre'){
                             <a href="#" class="cart-table__product-name"><?php echo $sp['name'] ?></a>
                         </td>
                         <td class="cart-table__column cart-table__column--price" data-title="Price"><?php echo $sp['price'] ?> VNĐ</td>
-                        <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
-                            <div class="input-number"><input class="form-control input-number__input" type="number" min="1" value="<?php echo $cart[1] ?>">
-                                <div class="input-number__add" onclick="incre(<?=$sp['id']?>)"></div>
-                                <div class="input-number__sub" onclick="decre(<?=$sp['id']?>)"></div>
-                            </div>
+                        <td class="cart-table__column cart-table__column--quantity" data-title="Quantity" style="width: 130px;">
+                            <?php
+                            if ($kho['kho'] <= $cart[1]) {
+                            ?>
+                                <div style="position: relative; top: -20px; width: 130px; font-size: 12px;">Đã đặt tối đa số sản phẩm còn trong kho</div>
+                                <div class="input-number" style="position: relative; top: -15px;"><input class="form-control input-number__input" type="number" min="1" value="<?php echo $cart[1] ?>">
+                                    <div class="input-number__add" style="pointer-events: none; opacity: 0.4;"></div>
+                                    <div class="input-number__sub" <?php if ($cart == 1){ 
+                                        echo "onclick='delCart($idsp)'"; 
+                                        } else { ?>onclick="decre(<?= $sp['id'] ?>);">
+                                        <?php  
+                                            }; ?></div>
+                                </div>
+                            <?php
+                            } else {
+                            ?>
+                                <div class="input-number" style="position: relative; top: 3px; width: 130px"><input class="form-control input-number__input" type="number" min="1" value="<?php echo $cart[1] ?>">
+                                    <div class="input-number__add" onclick="incre(<?= $sp['id'] ?>)"></div>
+                                    <div class="input-number__sub" onclick="decre(<?= $sp['id'] ?>)"></div>
+                                </div>
+                            <?php
+                            }
+                            ?>
                         </td>
                         <td class="cart-table__column cart-table__column--total" data-title="Total"><?php echo $cart[1] * $sp['price'] ?> VNĐ</td>
                         <td class="cart-table__column cart-table__column--remove">

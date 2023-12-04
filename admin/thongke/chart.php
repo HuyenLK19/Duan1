@@ -41,7 +41,7 @@ https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js
         ?>
       ],
       datasets: [{
-        label: 'Top 5 sản phẩm bán chạy nhất',
+        label: 'Số sản phẩm đã bán',
         data: [<?php 
           for ($i = 0; $i < 5; $i++){
             echo $banchay[$i]['daban'];
@@ -80,7 +80,7 @@ https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js
         ?>
       ],
       datasets: [{
-        label: 'Top 5 sản phẩm bán chạy nhất',
+        label: 'Số lượt xem',
         data: [<?php 
           for ($i = 0; $i < 5; $i++){
             echo $view[$i]['view'];
