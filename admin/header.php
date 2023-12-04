@@ -35,6 +35,8 @@ session_start();
     <link href="css/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
     <link href="css/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="css/css/app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <style>
         .pos {
             position: relative;

@@ -9,7 +9,7 @@ ini_set('display_errors', 1);
     }
 
     .slide img {
-        height: 400px;
+        height: 380px;
 
 
     }

@@ -67,25 +67,32 @@
                     <td><a href="#"><?= $dh['id'] ?></a></td>
                     <td><?= $dh['tensp'] ?></td>
 
-                    <td><?= $dh['giasp'] ?> VND</td>
-                    <td><?= $dh['soluong'] ?></td>
-                    <td><?php
-                        if ($dh['status'] == 0) {
-                            echo "Đang vận chuyển";
-                        } else echo "Đơn đã hủy";
-                        ?></td>
-                    <td><?php
-                        if ($dh['pttt'] == 1) {
-                            echo "Thanh toán khi nhận hàng";
-                        } else echo "Chuyển khoản";
-                        ?></td>
-                    <td><?php echo $dh['giasp'] * $dh['soluong'] ?> VND</td>
-                </tr>
-            <?php
-            }
-            ?>
-        </tbody>
-    </table>
+                                                <td><?= $dh['giasp'] ?> VND</td>
+                                                <td><?= $dh['soluong'] ?></td>
+                                                <td><?php
+                                                    if ($dh['status'] == 0) {
+                                                        echo "Đang vận chuyển";
+                                                    } elseif($dh['status'] == 1){
+                                                        echo "Đơn đã hủy";
+                                                    }elseif($dh['status'] == 2){
+                                                        echo "Đơn đã giao thành công";
+
+                                                    }
+                                                    
+                                                    
+                                                    ?></td>
+                                                <td><?php
+                                                    if ($dh['pttt'] == 1) {
+                                                        echo "Thanh toán khi nhận hàng";
+                                                    } else echo "Chuyển khoản";
+                                                    ?></td>
+                                                <td><?php echo $dh['giasp'] * $dh['soluong'] ?> VND</td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+     </table>
 </body>
 
 </html>

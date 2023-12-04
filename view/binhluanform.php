@@ -28,11 +28,10 @@ $dsbl = loadall_binhluan($idpro);
   }
   .binhluan {
     width: 100%;
-   height: 300px; 
+   height: 250px; 
     overflow-y: auto;
     border: .1px solid #D3D6DA;
     padding: 10px auto;
-
 }
 tr.row-comment {
     width: 100%;

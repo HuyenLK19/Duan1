@@ -38,19 +38,28 @@
                                             <div class="row mt-3">
                                                 <div class="col-sm-6">
                                                     <!-- <p><strong>Ngày đặt hàng: </strong><?php echo $oneBill['ngaydathang'] ?></p> -->
-                                                    <p><strong>Tình trạng đơn hàng: </strong><?php if ($oneBill['status'] == 0) { ?>
-                                                            <span class="badge badge-success">Đang được vận chuyển</span>
+                                                    <p><strong>Tình trạng đơn hàng: </strong>
+                                                        <?php
+                                                        if ($oneBill['status'] == 0) {
+                                                            echo "<span class='badge badge-success'>Đang được vận chuyển</span>";
+                                                        } elseif ($oneBill['status'] == 2) {
+                                                            echo "<span class='badge badge-success'>Vận chuyển thành công</span>";
+                                                        } else {
+                                                            echo "<span class='badge badge-dark'>Đã bị hủy</span>";
+                                                        }
+                                                        ?>
+                                                    </p>
+
+
+
+
+                                                    <p><strong>Phương Thức thanh toán: <br> </strong><?php if ($oneBill['pttt'] == 1) { ?>
+                                                            <span class="badge badge-success">Thanh toán trực tiếp</span>
                                                     </p>
                                                 <?php } else { ?>
-                                                    <span class="badge badge-dark">Đã bị hủy</span></p>
-                                                <?php } ?>
-                                                <p><strong>Phương Thức thanh toán: <br> </strong><?php if ($oneBill['pttt'] == 1) { ?>
-                                                        <span class="badge badge-success">Thanh toán trực tiếp</span>
-                                                </p>
-                                            <?php } else { ?>
-                                                <span class="badge badge-dark">Chuyển khoản</span></p>
+                                                    <span class="badge badge-dark">Chuyển khoản</span></p>
 
-                                            <?php } ?>
+                                                <?php } ?>
 
                                                 </div>
                                                 <div class="col-sm-6">
@@ -74,10 +83,10 @@
                                             <td style="position: relative; left: 5px; bottom: 10px; width: 200px;"><?php echo $oneBill['tensp'] ?> <br> × <?php echo $oneBill['soluong'] ?></td>
                                             <td style="position: relative; right: 190px; top: 20px; color: red;"><?php echo $oneBill['soluong'] * $oneBill['giasp'] ?> VNĐ</td>
                                         </tr>
-                                    </thead>    
+                                    </thead>
                                 </table>
                                 <p style="margin-bottom: 5px;"><b>Thời gian đặt hàng</b></p>
-                                <?php echo $oneBill['ngaydathang'] ?> 
+                                <?php echo $oneBill['ngaydathang'] ?>
                                 <input type="hidden" value="<?= $cart_total ?>" name="tong">
                             </div>
                         </div>

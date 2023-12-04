@@ -7,7 +7,7 @@
                         </nav>
                     </div>
                     <div class="page-header__title">
-                        <h1>Tất cả sản phẩm <strong><?=$tendm[0]['name'] ?></strong></h1>
+                        <h1>Tất cả sản phẩm <strong><?=$list[0]['name'] ?></strong></h1>
                     </div>
                 </div>
             </div>

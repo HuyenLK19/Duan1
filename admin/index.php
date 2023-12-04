@@ -64,10 +64,20 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_sanpham($_GET['id'], $tensp, $giasp, $hinh, $mota, $iddm);
-                echo "<script type='text/javascript'>
-                        alert('Sửa thành công!');
-                        window.location.href='index.php?act=listsp'
-                    </script>";
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Sửa thành công!",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listsp'
+                               }
+                           });
+                       </script>;
+                 <?php
+               
             }
             $listdanhmuc = listall_danhmuc();
             $product = listone_sanpham($_GET['id']);
@@ -89,10 +99,20 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 insert_danhmuc($tendm, $hinh);
-                echo "<script type='text/javascript'>
-                        alert('Thêm thành công!');
-                        window.location.href='index.php?act=listdm'
-                    </script>";
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Thêm thành công",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listdm'
+                               }
+                           });
+                       </script>;
+                 <?php
+
             };
             include "danhmuc/add.php";
             break;
@@ -112,10 +132,21 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_danhmuc($_GET['id'], $tendm, $hinh);
-                echo "<script type='text/javascript'>
-                        alert('Sửa thành công!');
-                        window.location.href='index.php?act=listdm'
-                    </script>";
+                insert_danhmuc($tendm, $hinh);
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Sửa thành công!",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listdm'
+                               }
+                           });
+                       </script>;
+                 <?php
+               
             }
             $danhmuc = listone_danhmuc($_GET['id']);
             include "danhmuc/edit.php";
@@ -142,10 +173,22 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $tel = $_POST["tel"];
                 $role = $_POST["role"];
                 insert_taikhoan($tentk, $user, $pass, $email, $address, $hinh, $tel, $role);
-                echo "<script type='text/javascript'>
-                        alert('Thêm thành công!');
-                        window.location.href='index.php?act=listtk'
-                    </script>";
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Thêm thành công!",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listtk'
+                               }
+                           });
+                       </script>;
+             
+                 
+                 <?php
+               
             }
             include "taikhoan/add.php";
             break;
@@ -168,18 +211,29 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $target_dir = "../upload/avatar/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                 if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                    // echo "The file " . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " has been uploaded.";
                 } else {
-                    // echo "Sorry, there was an error uploading your file.";
                 }
                 $tel = $_POST["tel"];
                 $status = $_POST["status"];
                 $role = $_POST["role"];
                 update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
-                echo "<script type='text/javascript'>
-                        alert('Sửa thành công!');
-                        window.location.href='index.php?act=listtk'
-                    </script>";
+                ?>
+                <script type='text/javascript'>
+                           Swal.fire({
+                               title: "Cập nhật thành công",
+                               icon: "success",
+                               confirmButtonText: "OK"
+                           }).then((result) => {
+                               if (result.isConfirmed) {
+                                   window.location.href='index.php?act=listtk'
+                               }
+                           });
+                       </script>;
+             
+                 
+                 <?php
+               
+               
             }
             $tk = listone_taikhoan($_GET['id']);
             include "taikhoan/edit.php";
@@ -188,10 +242,56 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             $listdh = listall_donhang();
             include "donhang/list.php";
             break;
-        case "chitietdonhang":
-            $oneBill = listone_donhang($_GET['id']);
-            include "donhang/chitietdonhang.php";
-            break;
+           
+            case "chitietdonhang":
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $newStatus = $_POST['status'];
+                    $orderId = $_GET['id'];
+                    if ($newStatus == 0) {
+                        $query = "UPDATE donhang SET status = 0 WHERE id = ?";
+                    } elseif ($newStatus == 1) {
+
+                        $query = "UPDATE donhang SET status = 1 WHERE id = ?";
+                    } elseif ($newStatus == 2) {
+
+                        $query = "UPDATE donhang SET status = 2 WHERE id = ?";
+                    } else {
+                        echo "Trạng thái không hợp lệ!";
+                        exit();
+                    }
+                    try {
+                        $conn = pdo_get_connection();
+                        $stmt = $conn->prepare($query);
+                        $stmt->execute([$orderId]);
+                        ?>
+                        <script type='text/javascript'>
+                                   Swal.fire({
+                                       title: "Cập nhật thành công",
+                                       icon: "success",
+                                       confirmButtonText: "OK"
+                                   }).then((result) => {
+                                       if (result.isConfirmed) {
+                                           window.location.href='index.php?act=listbill'
+                                       }
+                                   });
+                               </script>;
+                     
+                         
+                         <?php
+             
+                        // header("Location: index.php?act=chitietdonhang&id=$orderId");
+                        exit();
+                    } catch (PDOException $e) {
+                        echo "Có lỗi xảy ra khi cập nhật trạng thái: " . $e->getMessage();
+                    } finally {
+                        unset($conn);
+                    }
+                }
+                $oneBill = listone_donhang($_GET['id']);
+                include "donhang/chitietdonhang.php";
+                break;
+            
+          
         case "thongke":
             $listthongke = loadall_thongke();
             include "thongke/list.php";
