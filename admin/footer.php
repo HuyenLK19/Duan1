@@ -17,22 +17,9 @@
 </div>
 </div>
 
-<script src="css/js/pages/morris.init.js"></script>
-<script src="css/libs/morris-js/morris.min.js"></script>
 <script src="css/libs/raphael/raphael.min.js"></script>
-<script src="css/js/pages/dashboard.init.js"></script>
 <script src="css/js/vendor.min.js"></script>
 <script src="css/libs/raphael/raphael.min.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.time.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.tooltip.min.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.resize.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.pie.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.selection.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.stack.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.orderBars.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.crosshair.js"></script>
-<script src="css/libs/flot-charts/jquery.flot.axislabels.js"></script>
 <script src="css/libs/moment/moment.min.js"></script>
 <script src="css/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
 <script src="css/libs/switchery/switchery.min.js"></script>
@@ -47,7 +34,6 @@
 
 <!-- KNOB JS -->
 <script src="css/libs/jquery-knob/jquery.knob.min.js"></script>
-<script src="css/js/pages/flot.init.js"></script>
 
 <!-- Required datatable js -->
 <script src="css/libs/datatables/jquery.dataTables.min.js"></script>
