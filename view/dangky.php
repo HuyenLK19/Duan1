@@ -36,11 +36,11 @@
                                     <input type="email" name="email" class="form-control" placeholder="Nhập email" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Mật khẩu</label> 
+                                    <label>Mật khẩu</label>
                                     <input type="password" name="pass" class="form-control" placeholder="Nhập mật khẩu" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Nhập lại mật khẩu</label> 
+                                    <label>Nhập lại mật khẩu</label>
                                     <input type="password" name="repass" class="form-control" placeholder="Nhập lại mật khẩu" required>
                                 </div>
                                 <input type="submit" class="btn btn-primary mt-4" style="position: relative; left: 40%;" value="Đăng ký" name="dangky">

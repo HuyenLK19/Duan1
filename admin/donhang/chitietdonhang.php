@@ -151,23 +151,4 @@
         });
     });
 });
-
-
 </script>
-<!-- 
-<script type='text/javascript'>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('luutrangthai').addEventListener('click', function(event) {
-            event.preventDefault();
-            Swal.fire({
-                title: "Cập nhật thành công",
-                icon: "success",
-                confirmButtonText: "OK"
-            }).then((result) =>{
-                if (result.isConfirmed) {
-                    // window.location.href = 'index.php?act=listbill'
-                }
-            });
-        });
-    });
-</script> -->

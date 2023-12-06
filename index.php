@@ -1,6 +1,15 @@
 <?php
 session_start();
 ob_start();
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//required files
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+
 include "model/pdo.php";
 include "model/sanpham.php";
 include "model/taikhoan.php";
@@ -35,7 +44,17 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                             confirmButtonText: "OK"
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.href = "index.php";
+                                <?php
+                                if ($_SESSION['user']['role'] == 2) {
+                                ?>
+                                    window.location.href = "admin/index.php";
+                                <?php
+                                } else {
+                                ?>
+                                    window.location.href = "index.php";
+                                <?php
+                                }
+                                ?>
                             }
                         });
                     </script>";
@@ -188,7 +207,7 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
             include "view/danhmuc.php";
             break;
         case "chitietsanpham":
-            pdo_execute("UPDATE sanpham SET view = view + 1 WHERE id = ".$_GET['idsp']);
+            pdo_execute("UPDATE sanpham SET view = view + 1 WHERE id = " . $_GET['idsp']);
             $ctsp = listone_sanpham($_GET['idsp']);
             $list = listsptheodm($ctsp['iddm']);
             include "view/chitietsanpham.php";
@@ -247,21 +266,21 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                     exit;
                 }
                 update_taikhoans($id, $tentk, $user, $email, $address, $hinh, $tel, $status, $role);
-               ?>
-                 <script type='text/javascript'>
-                            Swal.fire({
-                                title: "Cập nhật thành công",
-                                icon: "success",
-                                confirmButtonText: "OK"
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href='index.php?act=thongtintk'
-                                }
-                            });
-                        </script>;
-              
-                  
-                  <?php
+                ?>
+                <script type='text/javascript'>
+                    Swal.fire({
+                        title: "Cập nhật thành công",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'index.php?act=thongtintk'
+                        }
+                    });
+                </script>;
+
+
+            <?php
             }
 
             if (isset($_GET['id'])) {
@@ -347,15 +366,16 @@ if (isset($_GET["act"]) && $_GET["act"] !== "") {
                 $id = $_SESSION['user']['id'];
                 $name = $_POST['name'];
                 $address = $_POST['address'];
-                $mail = $_POST['mail'];
+                $email = $_POST['mail'];
                 $tel = $_POST['tel'];
                 $pttt = $_POST['checkout_payment_method'];
                 $tong = $_POST['tong'];
+                
                 foreach ($_SESSION['cart'] as $cart) {
-                    insert_donhang($name, $address, $mail, $tel, $pttt, $tong, $cart[1], $cart[0], $id);
+                    insert_donhang($name, $address, $email, $tel, $pttt, $tong, $cart[1], $cart[0], $id);
                 }
                 $_SESSION['cart'] = [];
-                ?>
+            ?>
                 <script>
                     Swal.fire({
                         title: "Thanh toán thành công!",

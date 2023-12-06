@@ -1,4 +1,3 @@
-
 <div class="site__body">
     <div class="page-header">
         <div class="page-header__container container">
@@ -146,17 +145,16 @@
                     <div class="product__sidebar">
                         <div class="product__availability">Availability: <span class="text-success">In
                                 Stock</span></div>
-                        <div class="product__prices"><?=$ctsp['price']?> VND</div><!-- .product__options -->
-                            <div class="form-group product__option"><label class="product__option-label" for="product-quantity">Số Lượng</label>
-                                <div class="product__actions">
-                                    <div class="product__actions-item">
-                                        <div class="input-number product__quantity"><input id="product-quantity" class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
-                                            <div class="input-number__add"></div>
-                                            <div class="input-number__sub"></div>
-                                        </div>
+                        <div class="product__prices"><?= $ctsp['price'] ?> VND</div><!-- .product__options -->
+                        <div class="form-group product__option"><label class="product__option-label" for="product-quantity">Số Lượng</label>
+                            <div class="product__actions">
+                                <div class="product__actions-item">
+                                    <div class="input-number product__quantity"><input id="product-quantity" class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                        <div class="input-number__add"></div>
+                                        <div class="input-number__sub"></div>
                                     </div>
-                                    <div class="product__actions-item product__actions-item--addtocart"><button class="btn btn-primary btn-lg" <?php if (!isset($_SESSION['user'])) { ?> 
-                                                                                                                                    onclick='Swal.fire({
+                                </div>
+                                <div class="product__actions-item product__actions-item--addtocart"><button class="btn btn-primary btn-lg" <?php if (!isset($_SESSION['user'])) { ?> onclick='Swal.fire({
                                                                                                                                         title: "Vui lòng đăng nhập trước khi thêm sản phẩm!",
                                                                                                                                         icon: "info",
                                                                                                                                         confirmButtonText: "OK",
@@ -164,10 +162,9 @@
                                                                                                                                             if (result.isConfirmed) {
                                                                                                                                                 window.location.href = "index.php?act=formdangnhap";
                                                                                                                                             }
-                                                                                                                                        });';
-                                                                                                                                    <?php } else { ?> onclick=" addToCart(<?php echo $ctsp['id'] ?>, 'add' )" <?php } ?> >Thêm vào giỏ hàng</button></div>
-                                </div>
+                                                                                                                                        });' ; <?php } else { ?> onclick=" addToCart(<?php echo $ctsp['id'] ?>, 'add' )" <?php } ?>>Thêm vào giỏ hàng</button></div>
                             </div>
+                        </div>
                     </div><!-- .product__end -->
                     <div class="product__footer">
                         <div class="product__tags tags">
@@ -178,81 +175,80 @@
                 </div>
             </div>
             <div class="product-tabs product-tabs--sticky">
-    <div class="product-tabs__list">
-        <div class="product-tabs__list-body">
-            <div class="product-tabs__list-container container">
-            <a href="#tab-reviews" class="product-tabs__item" onclick="showTab('tab-reviews')">Bình luận</a>
+                <div class="product-tabs__list">
+                    <div class="product-tabs__list-body">
+                        <div class="product-tabs__list-container container">
+                            <a href="#tab-reviews" class="product-tabs__item" onclick="showTab('tab-reviews')">Bình luận</a>
 
-                <a href="#tab-description" class="product-tabs__item product-tabs__item--active" onclick="showTab('tab-description')">Mô tả</a>
+                            <a href="#tab-description" class="product-tabs__item product-tabs__item--active" onclick="showTab('tab-description')">Mô tả</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-tabs__content">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            $("#binhluan").load("view/binhluanform.php", {
+                                idpro: <?= isset($_REQUEST['idsp']) ? $_REQUEST['idsp'] : null ?>
+                            });
+
+                            $(".product-tabs__item").on("click", function() {
+                                var tabId = $(this).attr("href");
+                                showTab(tabId);
+                            });
+
+                            function showTab(tabId) {
+                                $(".product-tabs__pane").removeClass("product-tabs__pane--active");
+                                $(tabId).addClass("product-tabs__pane--active");
+                            }
+                        });
+                    </script>
+
+                    <div class="product-tabs__pane" id="tab-reviews">
+                        <div class="binhluanclass" id="binhluan"></div>
+                    </div>
+                    <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
+                        <div class="typography">
+                            <h3>Mô tả sản phẩm</h3>
+                            <p><?php echo $ctsp['mota'] ?></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
-        </div>
-    </div>
-    <div class="product-tabs__content">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#binhluan").load("view/binhluanform.php", {
-                idpro: <?= isset($_REQUEST['idsp']) ? $_REQUEST['idsp'] : null ?>
-            });
-
-            $(".product-tabs__item").on("click", function() {
-                var tabId = $(this).attr("href");
-                showTab(tabId);
-            });
-
-            function showTab(tabId) {
-                $(".product-tabs__pane").removeClass("product-tabs__pane--active");
-                $(tabId).addClass("product-tabs__pane--active");
-            }
-        });
-    </script>
-
-    <div class="product-tabs__pane" id="tab-reviews">
-        <div class="binhluanclass" id="binhluan"></div>
-    </div>
-    <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
-        <div class="typography">
-            <h3>Mô tả sản phẩm</h3>
-            <p><?php echo $ctsp['mota'] ?></p>
-        </div>
-    </div>
-</div>
-
-
-
-        </div>
-    </div><!-- .block-products-carousel -->
-    <div class="block block-products-carousel" data-layout="grid-5" data-mobile-grid-columns="2" style="margin-top: 40px;">
-        <div class="container">
-            <div class="block-header">
-                <h3 class="block-header__title">Sản phẩm tương tự</h3>
-                <div class="block-header__divider"></div>
-                <div class="block-header__arrows-list"><button class="block-header__arrow block-header__arrow--left" type="button"><svg width="7px" height="11px">
-                            <use xlink:href="css/images/sprite.svg#arrow-rounded-left-7x11"></use>
-                        </svg></button> <button class="block-header__arrow block-header__arrow--right" type="button"><svg width="7px" height="11px">
-                            <use xlink:href="css/images/sprite.svg#arrow-rounded-right-7x11"></use>
-                        </svg></button></div>
-            </div>
-            <div class="block-products-carousel__slider">
-                <div class="block-products-carousel__preloader"></div>
-                <div class="owl-carousel">
-                    <?php
-                            foreach ($list as $sp) {
-                            ?>
-                    <div class="block-products-carousel__column">
-                        <div class="block-products-carousel__cell">
-                            <div class="product-card">
-                                <div class="product-card__image product-image"><a href="index.php?act=chitietsanpham&idsp=<?=$sp['id']?>" class="product-image__body"><img class="product-image__img" src="upload/product/<?=$sp['img']?>" alt=""></a></div>
-                                <div class="product-card__info">
-                                    <div class="product-card__name"><a href="index.php?act=chitietsanpham&idsp=<?=$sp['id']?>"><?php echo $sp['name'] ?></a>
-                                    </div>
-                                </div>
-                                <div class="product-card__actions">
-                                    <div class="product-card__availability">Availability: <span class="text-success">In Stock</span></div>
-                                    <div class="product-card__prices"><?=$sp['price']?> VND</div>
-                                    <div class="product-card__buttons">
-                                        <button class="btn btn-primary product-card__addtocart" type="button" <?php if (!isset($_SESSION['user'])) { ?> 
-                                                                                                                                    onclick='Swal.fire({
+        </div><!-- .block-products-carousel -->
+        <div class="block block-products-carousel" data-layout="grid-5" data-mobile-grid-columns="2" style="margin-top: 40px;">
+            <div class="container">
+                <div class="block-header">
+                    <h3 class="block-header__title">Sản phẩm tương tự</h3>
+                    <div class="block-header__divider"></div>
+                    <div class="block-header__arrows-list"><button class="block-header__arrow block-header__arrow--left" type="button"><svg width="7px" height="11px">
+                                <use xlink:href="css/images/sprite.svg#arrow-rounded-left-7x11"></use>
+                            </svg></button> <button class="block-header__arrow block-header__arrow--right" type="button"><svg width="7px" height="11px">
+                                <use xlink:href="css/images/sprite.svg#arrow-rounded-right-7x11"></use>
+                            </svg></button></div>
+                </div>
+                <div class="block-products-carousel__slider">
+                    <div class="block-products-carousel__preloader"></div>
+                    <div class="owl-carousel">
+                        <?php
+                        foreach ($list as $sp) {
+                        ?>
+                            <div class="block-products-carousel__column">
+                                <div class="block-products-carousel__cell">
+                                    <div class="product-card">
+                                        <div class="product-card__image product-image"><a href="index.php?act=chitietsanpham&idsp=<?= $sp['id'] ?>" class="product-image__body"><img class="product-image__img" src="upload/product/<?= $sp['img'] ?>" alt=""></a></div>
+                                        <div class="product-card__info">
+                                            <div class="product-card__name"><a href="index.php?act=chitietsanpham&idsp=<?= $sp['id'] ?>"><?php echo $sp['name'] ?></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-card__actions">
+                                            <div class="product-card__availability">Availability: <span class="text-success">In Stock</span></div>
+                                            <div class="product-card__prices"><?= $sp['price'] ?> VND</div>
+                                            <div class="product-card__buttons">
+                                                <button class="btn btn-primary product-card__addtocart" type="button" <?php if (!isset($_SESSION['user'])) { ?> onclick='Swal.fire({
                                                                                                                                         title: "Vui lòng đăng nhập trước khi thêm sản phẩm!",
                                                                                                                                         icon: "info",
                                                                                                                                         confirmButtonText: "OK",
@@ -260,23 +256,23 @@
                                                                                                                                             if (result.isConfirmed) {
                                                                                                                                                 window.location.href = "index.php?act=formdangnhap";
                                                                                                                                             }
-                                                                                                                                        });';
-                                                                                                                                    <?php } else { ?> onclick=" addToCart(<?php echo $sp['id'] ?>, 'add' )" <?php } ?>>Thêm vào giỏ hàng</button>
+                                                                                                                                        });' ; <?php } else { ?> onclick=" addToCart(<?php echo $sp['id'] ?>, 'add' )" <?php } ?>>Thêm vào giỏ hàng</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
-                <?php
-                    }
-                ?>
                 </div>
             </div>
-        </div>
-    </div><!-- .block-products-carousel / end -->
-</div><!-- site__body / end -->
+        </div><!-- .block-products-carousel / end -->
+    </div><!-- site__body / end -->
+</div>
 <script>
-        addToCart = (id, act) => {
+    addToCart = (id, act) => {
         var result = $.ajax({
             type: "POST",
             url: "http://localhost/Duan1/view/headerCart.php?act=" + act + "&id=" + id,

@@ -1,5 +1,14 @@
 <?php
 ob_start();
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//required files
+require '../phpmailer/src/Exception.php';
+require '../phpmailer/src/PHPMailer.php';
+require '../phpmailer/src/SMTP.php';
+
 include "../model/pdo.php";
 include "../model/sanpham.php";
 include "../model/danhmuc.php";
@@ -64,20 +73,20 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_sanpham($_GET['id'], $tensp, $giasp, $hinh, $mota, $iddm);
-                ?>
+?>
                 <script type='text/javascript'>
-                           Swal.fire({
-                               title: "Sửa thành công!",
-                               icon: "success",
-                               confirmButtonText: "OK"
-                           }).then((result) => {
-                               if (result.isConfirmed) {
-                                   window.location.href='index.php?act=listsp'
-                               }
-                           });
-                       </script>;
-                 <?php
-               
+                    Swal.fire({
+                        title: "Sửa thành công!",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'index.php?act=listsp'
+                        }
+                    });
+                </script>;
+            <?php
+
             }
             $listdanhmuc = listall_danhmuc();
             $product = listone_sanpham($_GET['id']);
@@ -99,19 +108,19 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 insert_danhmuc($tendm, $hinh);
-                ?>
+            ?>
                 <script type='text/javascript'>
-                           Swal.fire({
-                               title: "Thêm thành công",
-                               icon: "success",
-                               confirmButtonText: "OK"
-                           }).then((result) => {
-                               if (result.isConfirmed) {
-                                   window.location.href='index.php?act=listdm'
-                               }
-                           });
-                       </script>;
-                 <?php
+                    Swal.fire({
+                        title: "Thêm thành công",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'index.php?act=listdm'
+                        }
+                    });
+                </script>;
+            <?php
 
             };
             include "danhmuc/add.php";
@@ -133,20 +142,20 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 }
                 update_danhmuc($_GET['id'], $tendm, $hinh);
                 insert_danhmuc($tendm, $hinh);
-                ?>
+            ?>
                 <script type='text/javascript'>
-                           Swal.fire({
-                               title: "Sửa thành công!",
-                               icon: "success",
-                               confirmButtonText: "OK"
-                           }).then((result) => {
-                               if (result.isConfirmed) {
-                                   window.location.href='index.php?act=listdm'
-                               }
-                           });
-                       </script>;
-                 <?php
-               
+                    Swal.fire({
+                        title: "Sửa thành công!",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'index.php?act=listdm'
+                        }
+                    });
+                </script>;
+            <?php
+
             }
             $danhmuc = listone_danhmuc($_GET['id']);
             include "danhmuc/edit.php";
@@ -156,7 +165,7 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             header("Location: index.php?act=listdm");
             break;
         case "addtk":
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])){
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $tentk = $_POST["tentk"];
                 $user = $_POST["user"];
                 $pass = $_POST["pass"];
@@ -173,22 +182,22 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $tel = $_POST["tel"];
                 $role = $_POST["role"];
                 insert_taikhoan($tentk, $user, $pass, $email, $address, $hinh, $tel, $role);
-                ?>
+            ?>
                 <script type='text/javascript'>
-                           Swal.fire({
-                               title: "Thêm thành công!",
-                               icon: "success",
-                               confirmButtonText: "OK"
-                           }).then((result) => {
-                               if (result.isConfirmed) {
-                                   window.location.href='index.php?act=listtk'
-                               }
-                           });
-                       </script>;
-             
-                 
-                 <?php
-               
+                    Swal.fire({
+                        title: "Thêm thành công!",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'index.php?act=listtk'
+                        }
+                    });
+                </script>;
+
+
+            <?php
+
             }
             include "taikhoan/add.php";
             break;
@@ -217,23 +226,23 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
                 $status = $_POST["status"];
                 $role = $_POST["role"];
                 update_taikhoan($_GET['id'], $tentk, $user, $pass, $email, $address, $hinh, $tel, $status, $role);
-                ?>
+            ?>
                 <script type='text/javascript'>
-                           Swal.fire({
-                               title: "Cập nhật thành công",
-                               icon: "success",
-                               confirmButtonText: "OK"
-                           }).then((result) => {
-                               if (result.isConfirmed) {
-                                   window.location.href='index.php?act=listtk'
-                               }
-                           });
-                       </script>;
-             
-                 
-                 <?php
-               
-               
+                    Swal.fire({
+                        title: "Cập nhật thành công",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'index.php?act=listtk'
+                        }
+                    });
+                </script>;
+
+
+                <?php
+
+
             }
             $tk = listone_taikhoan($_GET['id']);
             include "taikhoan/edit.php";
@@ -242,56 +251,44 @@ if (isset($_GET['act']) && ($_GET['act'] != '')) {
             $listdh = listall_donhang();
             include "donhang/list.php";
             break;
-           
-            case "chitietdonhang":
-                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    $newStatus = $_POST['status'];
-                    $orderId = $_GET['id'];
-                    if ($newStatus == 0) {
-                        $query = "UPDATE donhang SET status = 0 WHERE id = ?";
-                    } elseif ($newStatus == 1) {
 
-                        $query = "UPDATE donhang SET status = 1 WHERE id = ?";
-                    } elseif ($newStatus == 2) {
+        case "chitietdonhang":
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $newStatus = $_POST['status'];
+                $sql = "UPDATE donhang SET status = '$newStatus' WHERE id = " . $_GET['id'];
+                pdo_execute($sql);
+                if ($newStatus == 2) {
+                    $email = pdo_query_one("SELECT mail FROM donhang WHERE id = ".$_GET['id']);
+                    $mail = new PHPMailer(true);
 
-                        $query = "UPDATE donhang SET status = 2 WHERE id = ?";
-                    } else {
-                        echo "Trạng thái không hợp lệ!";
-                        exit();
-                    }
-                    try {
-                        $conn = pdo_get_connection();
-                        $stmt = $conn->prepare($query);
-                        $stmt->execute([$orderId]);
-                        ?>
-                        <script type='text/javascript'>
-                                   Swal.fire({
-                                       title: "Cập nhật thành công",
-                                       icon: "success",
-                                       confirmButtonText: "OK"
-                                   }).then((result) => {
-                                       if (result.isConfirmed) {
-                                           window.location.href='index.php?act=listbill'
-                                       }
-                                   });
-                               </script>;
-                     
-                         
-                         <?php
-             
-                        // header("Location: index.php?act=chitietdonhang&id=$orderId");
-                        exit();
-                    } catch (PDOException $e) {
-                        echo "Có lỗi xảy ra khi cập nhật trạng thái: " . $e->getMessage();
-                    } finally {
-                        unset($conn);
-                    }
+                    //Server settings
+                    $mail->isSMTP();                              //Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';       //Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;             //Enable SMTP authentication
+                    $mail->Username   = 'vuvtkute2705@gmail.com';   //SMTP write your email
+                    $mail->Password   = 'edagonvbdmizaqea';      //SMTP password
+                    $mail->SMTPSecure = 'ssl';            //Enable implicit SSL encryption
+                    $mail->Port       = 465;
+
+                    //Recipients
+                    $mail->setFrom('vuvtkute2705@gmail.com', "Mailer"); // Sender Email and name
+                    $mail->addAddress($email['mail']);     //Add a recipient email  
+                    // $mail->addReplyTo($email, "Nguyễn Vũ"); // reply to sender email
+
+                    //Content
+                    $mail->isHTML(true);               //Set email format to HTML
+                    $mail->Subject = "Thank you!";   // email subject headings
+                    $mail->Body    = "Cảm ơn quý khách hàng đã mua hàng tại cửa hàng STROYKAI!"; //email message
+
+                    // Success sent message alert
+                    $mail->send();
                 }
-                $oneBill = listone_donhang($_GET['id']);
-                include "donhang/chitietdonhang.php";
-                break;
-            
-          
+            }
+            $oneBill = listone_donhang($_GET['id']);
+            include "donhang/chitietdonhang.php";
+            break;
+
+
         case "thongke":
             $listthongke = loadall_thongke();
             include "thongke/list.php";

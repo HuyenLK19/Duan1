@@ -302,8 +302,8 @@
 
                                                             <div class="account-menu__form-forgot">
                                                                 <input id="header-signin-password" type="password" name="pass" required class="form-control form-control-sm" placeholder="Mật khẩu">
-                                                                <a href="index.php?act=matkhau" class="account-menu__form-forgot-link">
-                                                                    Đổi mật khẩu
+                                                                <a href="index.php?act=quenmk" class="account-menu__form-forgot-link">
+                                                                    Quên mật khẩu?
                                                                 </a>
                                                             </div>
                                                         </div>

@@ -26,12 +26,12 @@
                                     <h3 class="card-title">Đăng nhập</h3>
                                     <form action="index.php?act=dangnhap" method="post">
                                         <div class="form-group">
-                                            <label>Tài khoản</label> 
+                                            <label>Tài khoản</label>
                                             <input type="text" name="user" class="form-control" placeholder="Nhập tài khoản" required>
                                         </div>
                                         <div class="form-group">
-                                            <label>Mật khẩu</label> 
-                                            <input type="password" name="pass" class="form-control" placeholder="Nhập mật khẩu"> 
+                                            <label>Mật khẩu</label>
+                                            <input type="password" name="pass" class="form-control" placeholder="Nhập mật khẩu">
                                             <small class="form-text text-muted"><a href="index.php?act=quenmk">Quên mật khẩu?</a></small>
                                         </div>
                                         <div class="form-group">

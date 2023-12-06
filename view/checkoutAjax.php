@@ -24,23 +24,23 @@ if (isset($_GET['v'])) {
         <div class="row">
             <div class="col-12 col-lg-6 col-xl-7">
                 <div class="card mb-lg-0">
-                <div class="card-body">
-                            <h3 class="card-title">Hóa đơn</h3>
-                            <div class="form-group"><label for="name">Họ tên</label>
-                                <input type="text" class="form-control" value="<?= $_SESSION['user']['name'] ?>" name="name">
+                    <div class="card-body">
+                        <h3 class="card-title">Hóa đơn</h3>
+                        <div class="form-group"><label for="name">Họ tên</label>
+                            <input type="text" class="form-control" value="<?= $_SESSION['user']['name'] ?>" name="name">
+                        </div>
+                        <div class="form-group"><label for="address">Địa chỉ</label>
+                            <input type="text" class="form-control" value="<?= $_SESSION['user']['address'] ?>" name="address">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6"><label for="mail">Địa chỉ mail</label>
+                                <input type="email" class="form-control" value="<?= $_SESSION['user']['email'] ?>" name="mail">
                             </div>
-                            <div class="form-group"><label for="address">Địa chỉ</label>
-                                <input type="text" class="form-control" value="<?= $_SESSION['user']['address'] ?>" name="address">
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6"><label for="mail">Địa chỉ mail</label>
-                                    <input type="email" class="form-control" value="<?= $_SESSION['user']['email'] ?>" name="mail">
-                                </div>
-                                <div class="form-group col-md-6"><label for="tel">Điện thoại</label>
-                                    <input type="text" class="form-control" value="<?= $_SESSION['user']['tel'] ?>" name="tel">
-                                </div>
+                            <div class="form-group col-md-6"><label for="tel">Điện thoại</label>
+                                <input type="text" class="form-control" value="<?= $_SESSION['user']['tel'] ?>" name="tel">
                             </div>
                         </div>
+                    </div>
                 </div>
                 <div class="form-group" style="margin-top: 20px;">
                     Voucher <input id="voucher" type="text" class="form-control" placeholder="Nhập mã giảm giá" style="display: inline-block; width: 400px;">
